@@ -113,5 +113,12 @@
 .navbar-inner a.brand{
 	font-size: 32px;
 	font-family: 'Joti One', cursive;
-	color: white;
+	color: #faa732;
+}
+.span3 h5{
+	color:#faa732;
+	// *background-color:#f89406;
+}
+p.textcolors{
+	color:#faa732;
 }
