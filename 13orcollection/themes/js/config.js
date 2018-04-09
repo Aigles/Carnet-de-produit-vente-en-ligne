@@ -1,0 +1,1 @@
+var Fullurl="http://localhost:1230/";
