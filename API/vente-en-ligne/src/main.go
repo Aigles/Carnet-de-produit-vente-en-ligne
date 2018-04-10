@@ -41,6 +41,9 @@ func main() {
 		//envoie de texte HTML
 		//ctx.HTML("<h1>Hello Word</h1>")
 		//categorieModels.Newcategory(&categorieModels.Category{Type:"Men"})
+		ctx.Header("Access-Control-Allow-Origin","*")
+		ctx.Header("Access-Control-Allow-Headers","Content-Type")
+		ctx.Header("Access-Control-Allow-Methods","GET")
 
 		ctx.JSON(categorieModels.Allcategorie())
 	})

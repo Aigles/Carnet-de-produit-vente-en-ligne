@@ -2,10 +2,23 @@ package produitModels
 
 import (
 	"Configuration"
-	"log"
 	"time"
 	"fmt"
 )
+
+type Caracteristiques struct{
+	IdCaracteristiques   int `json:"id"`
+	Couleur      string      `json:"couleur"`
+	Size         float64     `json:"size"`
+	Prix         float64     `json:"prix"`
+	Image        string     `json:"image"`
+	Quantite       int        `json:"quantite"`
+    Caracteristiquescol  string  `json:"Caracteristiquescol"`
+	// CreateAt time.Time        `json:"date_creation"`
+	// UpdateAt time.Time        `json:"date_update"`
+}
+
+type caracteristique []Caracteristiques
 
 type Produit struct{
 	Id           int         `json:"id"`
@@ -19,12 +32,17 @@ type Produit struct{
 	Categorie_idCategorie  int  `json:"categorie_id"`
 	CreateAt time.Time        `json:"date_creation"`
 	UpdateAt time.Time        `json:"date_update"`
+	Caracteristic caracteristique `json:"caracteristic"`
+
 }
 type produit []Produit
+
+
+
 //fonction permettant d'enregistrer une voiture
 func Newproduit(c *Produit){
 if c==nil{
-	log.Fatal(c)
+	fmt.Println(c)
 }
 c.CreateAt=time.Now();
 c.UpdateAt=time.Now();
@@ -32,7 +50,7 @@ c.UpdateAt=time.Now();
 err :=Configuration.Db().QueryRow("INSERT INTO produit (nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie) VALUES (?,?,?,?,?,?,?,?,?,?);",c.Nom,c.Description,c.Nbre_like,c.Nbre_vendu,c.Nbre_en_stock,c.Rabais,c.CreateAt,c.UpdateAt,c.Activer,c.Categorie_idCategorie).Scan(&c.Id)
 
 if err!=nil{
-	log.Fatal(err)
+	fmt.Println(err)
 }
 }
 
@@ -46,20 +64,47 @@ func FindProduitById(id int) *Produit{
 	
 	 
 	if err!=nil{
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 
 	return &produit
+}
+
+
+//fonction permettant de trouver nue voiture  par Id
+func FindCaracteristiquesByIdProduit(id int) caracteristique{
+
+	var caracteristique caracteristique
+ 
+	rows, err :=Configuration.Db().Query("SELECT idCaracteristiques,couleur,size,prix,image,quantite,caracteristiquescol FROM caracteristiques WHERE Produit_idProduit=?;",id)
+     	//close rows after all readed
+	defer rows.Close()
+
+	for rows.Next(){
+		
+	var c Caracteristiques 
+	err= rows.Scan(&c.IdCaracteristiques,&c.Couleur,&c.Size,&c.Prix,&c.Image,&c.Quantite,&c.Caracteristiquescol)
+	
+	 
+	if err !=nil{
+		fmt.Println(err)
+	}
+	fmt.Printf("before append")
+	caracteristique=append(caracteristique, c)
+	fmt.Printf("after produit")
+	
+}
+	return caracteristique
 }
 
 //fonction permettant de trouver toutes les voitures
 func Allproduit() *produit {
 	var produit produit 
 
-	rows, err :=Configuration.Db().Query("SELECT idProduit, nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie FROM produit")
-	//log.Fatal("after rows")
+	rows, err :=Configuration.Db().Query("SELECT produit.idProduit, nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie FROM produit")
+	//fmt.Println("after rows")
 	if err!=nil{
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	fmt.Printf("before close")
 	//close rows after all readed
@@ -67,15 +112,16 @@ func Allproduit() *produit {
 	fmt.Printf("afer close")
 	for rows.Next(){
 		var c Produit 
-
-		err := rows.Scan(&c.Id,&c.Nom,&c.Description,&c.Nbre_like,&c.Nbre_vendu,&c.Nbre_en_stock,&c.Rabais,&c.CreateAt,&c.UpdateAt,&c.Activer,&c.Categorie_idCategorie)
-        fmt.Printf("before log")
+	
+		err := rows.Scan(&c.Id,&c.Nom,&c.Description,&c.Nbre_like,&c.Nbre_vendu,&c.Nbre_en_stock,&c.Rabais,&c.CreateAt,&c.UpdateAt,&c.Activer,&c.Categorie_idCategorie )
+		c.Caracteristic=FindCaracteristiquesByIdProduit(c.Id);
+		fmt.Printf("before log")
 		if err !=nil{
-			log.Fatal(err)
+			fmt.Println(err)
 		}
 		fmt.Printf("before append")
 		produit=append(produit, c)
-		fmt.Printf("after produit");
+		fmt.Printf("after produit")
 	}
 
 	return &produit
@@ -88,13 +134,13 @@ func UpdateProduit(produit *Produit){
 	stmt, err := Configuration.Db().Prepare("UPDATE produit SET nom=?, description=?, nbre_en_stock=?,rabais=?, Date_update=?,activer=? WHERE id=?;")
 	
 	if err !=nil{
-	log.Fatal(err)
+	fmt.Println(err)
 	}
 
 	_, err = stmt.Exec(&produit.Nom,&produit.Description,&produit.Nbre_en_stock,&produit.Rabais,&produit.UpdateAt,&produit.Activer,produit.Id)
 
 	if err!=nil{
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 }
 
@@ -104,7 +150,7 @@ func DeleteProduitById(id int) error{
 	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE id=?;")
 	
 	if err!=nil{
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	_, err = stmt.Exec(id)
 
