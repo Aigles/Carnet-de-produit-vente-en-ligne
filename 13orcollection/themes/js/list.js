@@ -20,8 +20,8 @@
         var tableau_produit="";
     
         $.each( data, function( key, produit ){
-         tableau_produit+='<li class="span3"><div class="thumbnail"><a  href="product_details.php"><img class="taille-img" src="themes/images/products/sweater.jpg" alt=""/></a>';
-         tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <p>'+produit.description+'. </p><p>Prix : '+produit.prix+'. </p><h4 style="text-align:center"><a  href="cart.php?prodid='+produit.id+'" class="btn btn-warning">Ajouter <i class="icon-shopping-cart"></i></a> <button type="button" class="btn btn-sm btn-warning" onclick="detailmodals()">Voir</button></h4>';
+         tableau_produit+='<li class="span3"><div class="thumbnail"><a  href="product_details.php"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
+         tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <p>'+produit.description+'. </p><p>Prix : '+produit.caracteristic[0].prix+'. </p><h4 style="text-align:center"><a  href="cart.php?prodid='+produit.id+'" class="btn btn-warning">Ajouter <i class="icon-shopping-cart"></i></a> <button type="button" class="btn btn-sm btn-warning" onclick="detailmodals()">Voir</button></h4>';
          tableau_produit+='</div></div></li>';
         
          });
