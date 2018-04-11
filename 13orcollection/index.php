@@ -1,19 +1,15 @@
+
+<?php 
+	require_once 'core/init.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>13 Or Collection</title>
+    <title>Acceuil | 13 Or Collection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-<!--Less styles -->
-   <!-- Other Less css file //different less files has different color scheam
-	<link rel="stylesheet/less" type="text/css" href="themes/less/simplex.less">
-	<link rel="stylesheet/less" type="text/css" href="themes/less/classified.less">
-	<link rel="stylesheet/less" type="text/css" href="themes/less/amelia.less">  MOVE DOWN TO activate
-	-->
-	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
-	<script src="themes/js/less.js" type="text/javascript"></script> -->
 	
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
@@ -112,7 +108,7 @@
 		<!-- <div class="span12"> -->
 		<div class="">		
 			<div class="well well-small">
-			<h4>Produits proposés <small class="pull-right">200+ produits fournis</small></h4>
+			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 200+ produits fournis</small></h4>
 			<div class="row-fluid">
 			<div id="featured" class="carousel slide">
 			<div class="carousel-inner">
@@ -288,11 +284,12 @@
 			  </div>
 			  </div>
 		</div>
-		<h4>Derniers produits </h4>
+		 
+	
+		<h4 class="text-center">Derniers produits </h4>
 			  <ul class="thumbnails" id="List_produit">
 				
 			  </ul>	
-
 		</div>
 		</div>
 	</div>
@@ -312,5 +309,6 @@
     <script src="themes/js/list.js"></script>
 	
 	<!-- Themes switcher section ============================================================================================= -->
+<?php include 'script.php'; ?>
 </body>
 </html>
