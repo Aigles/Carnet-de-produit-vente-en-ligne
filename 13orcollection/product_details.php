@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>13 Or collection</title>
+    <title>Details produits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -38,15 +38,22 @@
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
-<!-- ======================= Sidebar ================================================== -->
+<!-- ======================= Sidebar -->
 	
-<!-- ======================= Sidebar End =============================================== -->
+<!-- ======================= Sidebar End -->
+<?php ob_start(); ?>
+  <!-- ======================CODE AJOUTER -->
+<div class="modal fade details-1" id="details-modal" tabindex="-1" role="dialog" aria-labelledby="details-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" type="button" data-dismiss="modal" aria-labe="close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title text-center">Levis  Jeans</h4>
+<div class="modal-body"> 
+<!-- =========================FIN CODE AJOUTER -->
 
 	<div class="span9">
     <ul class="breadcrumb">
-    <li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
-    <li>Produits <span class="divider">/</span></li>
-    <li class="active">Détails Produits</li>
     </ul>	
 	<div class="row">	  
 			<div id="gallery" class="span3">
@@ -84,48 +91,20 @@
 			</div>
 			</div>
 <!-- ================== produit detail ============================= -->
-			<div class="span6" id="detail_produit">
-				<h3>Nom Produit à appeler dans JSON  </h3>
-				<small>- (14MP, 18x Optical Zoom) 3-inch LCD</small>
-				<hr class="soft"/>
-				<form class="form-horizontal qtyFrm">
-				  <div class="control-group">
-					<label class="control-label"><span>$222.00</span></label>
-					<div class="controls">
-					<input type="number" class="span1" placeholder="Qty."/>
-					  <button type="submit" class="btn btn-large btn-warning pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
-					</div>
-				  </div>
-				</form>
+
+<?php echo ob_get_clean(); ?>
+		
+
+			
+<!-- ======================= Information End =========================================-->	
+</div></div>
+<!-- ========================DIV AJOUTER -->
+</div></div></div></div></div>
+<div class="span6" id="detail_produit">
 				
-				<hr class="soft"/>
-				<h4>100 items in stock</h4>
-				<form class="form-horizontal qtyFrm pull-right">
-				  <div class="control-group">
-					<label class="control-label"><span>Color</span></label>
-					<div class="controls">
-					  <select class="span2">
-						  <option>Black</option>
-						  <option>Red</option>
-						  <option>Blue</option>
-						  <option>Brown</option>
-						</select>
-					</div>
-				  </div>
-				</form>
-				<hr class="soft clr"/>
-				<p><h2>Description à appeler dans JSON</h2><br/>
-				14 Megapixels. 18.0 x Optical Zoom. 3.0-inch LCD Screen. Full HD photos and 1280 x 720p HD movie capture. ISO sensitivity ISO6400 at reduced resolution. 
-				Tracking Auto Focus. Motion Panorama Mode. Face Detection technology with Blink detection and Smile and shoot mode. 4 x AA batteries not included. WxDxH 110.2 ×81.4x73.4mm. 
-				Weight 0.341kg (excluding battery and memory card). Weight 0.437kg (including battery and memory card).
-				
-				</p>
-				<a class="btn btn-small pull-right" href="#detail">More Details</a>
-				<br class="clr"/>
-			<a href="#" name="detail"></a>
-			<hr class="soft"/> -->
-			</div>
-<!-- ======================= Information End =========================================-->			
+			</div>	
+<!-- ========================FIN DIV AJOUTER -->
+	
 			<div class="span9">
             <ul id="productDetail" class="nav nav-tabs">
               <li class="active"><a href="#home" data-toggle="tab">Product Details</a></li>
@@ -153,7 +132,6 @@
 					 </div>
 		</div>
           </div>
-
 	</div>
 </div>
 </div> </div>
@@ -175,6 +153,6 @@
 	
 
 <span id="themesBtn"></span>
-<?php include 'script.php'; ?>
+
 </body>
 </html>

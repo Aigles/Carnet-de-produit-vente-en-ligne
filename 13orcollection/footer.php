@@ -35,3 +35,5 @@
 		<p class="pull-right textcolors">&copy; tous droits réservés 2018-2019 | 13 Or Collection</p>
 	</div><!-- Container End -->
 	</div>
+
+	
