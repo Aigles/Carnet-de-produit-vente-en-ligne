@@ -402,10 +402,10 @@
 </div><!--/row-->
 
 <div class="row">
-    <div class="box col-md-9">
+    <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Ajouter un produit</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Ajouter un vetement</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -418,26 +418,76 @@
             </div>
             <div class="box-content">
                 <form role="form">
+                    <div class="row">
+                  <div class="box col-md-6">  
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nom Vetement</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Entrer le nom d'un Vetement">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">No. Vetement</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Entrer le no. d'un Vetement">
+                        <label for="exampleInputPassword1">Description</label>
+                        <textarea type="number" class="form-control autogrow" id="exampleInputPassword1" placeholder="Entrer la description d'un Vetement"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">Choisir une image</label>
-                        <input type="file" id="exampleInputFile">
-
-                        <p class="help-block"></p>
+                        <label for="exampleInputPassword1">Nombre de Vetements vendus</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Entrer le nombre de Vetements vendus ">
                     </div>
+                </div>
+                <div class="box col-md-6">  
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Nombre de Vetements en stock</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Entrer le nombre de Vetements en stock">
+                    </div>
+                          <div class="form-group">
+                        <label for="exampleInputPassword1">Rabais(%) </label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Entrer un Rabais(%)">
+                    </div>
+                     <div class="form-group">
+                        <label for="exampleInputPassword1">Activer un vetement : </label>
+                        <input data-no-uniform="true" type="checkbox" class="iphone-toggle">
+                    </div>
+                    </div>
+                   </div>
+                         <div class="row" id="tableday-id">
+                          <!-- <select class="form-control" name="day" required>
+                            <option>Lundi</option>
+                            <option>Mardi</option>
+                          </select></br>
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                              <input class="form-control" id="h-start-time" type="time" aria-describedby="nameHelp" placeholder="8:00 AM" name="start-time" value="8:00" >
+                              </div>
+                              <div class="col-md-4 col-lg-4">
+                                  <input class="form-control" id="h-end-time" type="time" aria-describedby="nameHelp" placeholder="Heure fermeture" name="end-time">
+                                  </div>
+                           </div> -->
+                          </div>
+                          <div class="row">
+                           <div class="form-group">
+                            
+                              <div class="col-md-3 col-md-offset-1">
+                              <button type="button" id="add" class="  btn btn-success" key="ajouter_ligne">ajouter ligne</button></br>
+                              </div>
+                              <div class="col-md-3">
+                              <input class=" form-control" id="ligne" type="number" aria-describedby="nameHelp" placeholder="" name="ligne" value="1"></br>
+                              </div></br>
+                          </div>
+                            </div>
+                            <div class="row">
+                     <div class="form-group">
+                              <div class="col-md-offset-11">
+                    <button type="submit" class="btn btn-default">Ajouter</button></br>
+                </div>
+            </div>
+            </div>
+                    </div>
+
               <!--       <div class="checkbox">
                         <label>
                             <input type="checkbox"> Check me out
                         </label>
                     </div> -->
-                    <button type="submit" class="btn btn-default">Ajouter</button>
+
                 </form>
 
             </div>
@@ -445,6 +495,7 @@
     </div>
     <!--/span-->
 
+    <!--/span-->
 </div><!--/row-->
 
     <!-- content ends -->
@@ -516,6 +567,8 @@
 </div><!--/.fluid-container-->
 
 <!-- external javascript -->
+<script src="bower_components/jquery_2/dist/jquery.min.js"></script>
+<script src="js/menu/loadmenu.js"></script>
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -549,8 +602,8 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
-<script src="js/menu/loadmenu.js"></script>
-
+<script src="js/Produit/creerProduit.js"></script>
+<script src="js/Produit/rowCaracteristiques.js"></script>
 </body>
 </html>
 

@@ -83,6 +83,18 @@ func main() {
 	   
 		ctx.JSON(produitModels.FindProduitById(produitID));
 	})
+	app.Post("/creerproduit", func(ctx iris.Context) {
+		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
+	   ctx.Header("Access-Control-Allow-Origin","*")
+	   ctx.Header("Access-Control-Allow-Headers","Content-Type")
+	   ctx.Header("Access-Control-Allow-Methods","GET")
+	   var produit produitModels.Produit 
+
+		ctx.ReadJSON(&produit)
+	  
+	   ctx.JSON( Newproduit(&Produit));
+	})
+	
 	
 	app.Run(iris.Addr(":1230"))
 }

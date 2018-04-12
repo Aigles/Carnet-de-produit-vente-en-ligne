@@ -61,7 +61,7 @@ func FindProduitById(id int) *Produit{
  
 	row:=Configuration.Db().QueryRow("SELECT * FROM produit WHERE idProduit=?;",id)
 	err:= row.Scan(&produit.Id,&produit.Nom,&produit.Description,&produit.Nbre_like,&produit.Nbre_vendu,&produit.Nbre_en_stock,&produit.Rabais,&produit.CreateAt,&produit.UpdateAt,&produit.Activer,&produit.Categorie_idCategorie)
-	
+	   produit.Caracteristic=FindCaracteristiquesByIdProduit(produit.Id);
 	 
 	if err!=nil{
 		fmt.Println(err)
