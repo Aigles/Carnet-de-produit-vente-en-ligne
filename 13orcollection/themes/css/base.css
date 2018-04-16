@@ -133,3 +133,9 @@ h4{
 .position-droite{
 	float: right; 
 }
+.container-modifier{
+	width:540px;
+}
+p.textcolors h4{
+	color:#faa732;
+}

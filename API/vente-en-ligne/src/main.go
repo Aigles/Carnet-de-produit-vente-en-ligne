@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/kataras/iris"
+	"github.com/iris-contrib/middleware/cors"
 	"models"
 	"models/categorieModels"
 	"models/produitModels"
@@ -10,7 +11,18 @@ import (
 )
 
 func main() {
-	app := iris.New()
+	newapp := iris.New()
+	crs := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.
+		// AllowedMethods:   []string{"*"},
+		// AllowedHeaders:   []string{"Authorization"},
+		AllowCredentials: true,
+	})
+
+	app:= newapp.Party("/api/app", crs).AllowMethods(iris.MethodOptions)
+
+	//app.Use(crs)
+
 	Configuration.DatabaseInitial()
 
 	app.Get("/", func(ctx iris.Context) {
@@ -41,9 +53,9 @@ func main() {
 		//envoie de texte HTML
 		//ctx.HTML("<h1>Hello Word</h1>")
 		//categorieModels.Newcategory(&categorieModels.Category{Type:"Men"})
-		ctx.Header("Access-Control-Allow-Origin","*")
-		ctx.Header("Access-Control-Allow-Headers","Content-Type")
-		ctx.Header("Access-Control-Allow-Methods","GET")
+		// ctx.Header("Access-Control-Allow-Origin","*")
+		// ctx.Header("Access-Control-Allow-Headers","Content-Type")
+		// ctx.Header("Access-Control-Allow-Methods","GET")
 
 		ctx.JSON(categorieModels.Allcategorie())
 	})
@@ -57,9 +69,9 @@ func main() {
 		//envoie de texte HTML
 		//ctx.HTML("<h1>Hello Word</h1>")
 		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
-	   ctx.Header("Access-Control-Allow-Origin","*")
-	   ctx.Header("Access-Control-Allow-Headers","Content-Type")
-	   ctx.Header("Access-Control-Allow-Methods","GET")
+	//    ctx.Header("Access-Control-Allow-Origin","*")
+	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
+	//    ctx.Header("Access-Control-Allow-Methods","GET")
 	   
 		ctx.JSON(produitModels.Allproduit())
 	})
@@ -77,24 +89,36 @@ func main() {
 		//envoie de texte HTML
 		//ctx.HTML("<h1>Hello Word</h1>")
 		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
-	   ctx.Header("Access-Control-Allow-Origin","*")
-	   ctx.Header("Access-Control-Allow-Headers","Content-Type")
-	   ctx.Header("Access-Control-Allow-Methods","GET")
+	//    ctx.Header("Access-Control-Allow-Origin","*")
+	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
+	//    ctx.Header("Access-Control-Allow-Methods","*")
 	   
 		ctx.JSON(produitModels.FindProduitById(produitID));
 	})
 	app.Post("/creerproduit", func(ctx iris.Context) {
 		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
-	   ctx.Header("Access-Control-Allow-Origin","*")
-	   ctx.Header("Access-Control-Allow-Headers","Content-Type")
-	   ctx.Header("Access-Control-Allow-Methods","GET")
-	   var produit produitModels.Produit 
+	//    ctx.Header("Access-Control-Allow-Origin","*")
+	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
+	//    ctx.Header("Access-Control-Allow-Methods","POST")
+	   var prod produitModels.Produit 
 
-		ctx.ReadJSON(&produit)
+		ctx.ReadJSON(&prod)
 	  
-	   ctx.JSON( Newproduit(&Produit));
+	   ctx.JSON( produitModels.Newproduit(&prod));
+	})
+	app.Post("/creerproduit/caracteristics", func(ctx iris.Context) {
+		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
+	//    ctx.Header("Access-Control-Allow-Origin","*")
+	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
+	//    ctx.Header("Access-Control-Allow-Methods","POST")
+	   var caract produitModels.Caracteristiques 
+
+		ctx.ReadJSON(&caract)
+	  
+	   //ctx.JSON( 
+		   produitModels.NewCaracteristiques(&caract)
+		   //);
 	})
 	
-	
-	app.Run(iris.Addr(":1230"))
+	newapp.Run(iris.Addr(":1230"))
 }
