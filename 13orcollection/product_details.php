@@ -91,42 +91,7 @@
 			</div>
 			</div>
 <!-- ================== produit detail ============================= -->
-<<<<<<< HEAD
-			<div class="span6" id="detail_produit">
-				<!-- <h3>Fujifilm FinePix S2950 Digital Camera  </h3>-->
-				<small>- (14MP, 18x Optical Zoom) 3-inch LCD</small>
-				<hr class="soft"/>
-				<form class="form-horizontal qtyFrm">
-				  <div class="control-group">
-					<label class="control-label"><span>$222.00</span></label>
-					<div class="controls">
-					<input type="number" class="span1" placeholder="Qty."/>
-					  <button type="submit" class="btn btn-large btn-warning pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
-					</div>
-				  </div>
-				</form>
-				
-				<hr class="soft"/>
-				<h4>100 items in stock</h4>
-				<form class="form-horizontal qtyFrm pull-right">
-				  <div class="control-group">
-					<label class="control-label"><span>Color</span></label>
-					<div class="controls">
-					  <select class="span2">
-						  <option>Black</option>
-						  <option>Red</option>
-						  <option>Blue</option>
-						  <option>Brown</option>
-						</select>
-					</div>
-				  </div>
-				</form>
-				<hr class="soft clr"/>
-				<p>
-				14 Megapixels. 18.0 x Optical Zoom. 3.0-inch LCD Screen. Full HD photos and 1280 x 720p HD movie capture. ISO sensitivity ISO6400 at reduced resolution. 
-				Tracking Auto Focus. Motion Panorama Mode. Face Detection technology with Blink detection and Smile and shoot mode. 4 x AA batteries not included. WxDxH 110.2 ×81.4x73.4mm. 
-				Weight 0.341kg (excluding battery and memory card). Weight 0.437kg (including battery and memory card).
-=======
+
 
 <?php echo ob_get_clean(); ?>
 		
@@ -137,7 +102,7 @@
 <!-- ========================DIV AJOUTER -->
 </div></div></div></div></div>
 <div class="span6" id="detail_produit">
->>>>>>> 0ef42cd0a3158f6d505b245cd3cfdfb746517deb
+
 				
 			</div>	
 <!-- ========================FIN DIV AJOUTER -->
@@ -198,7 +163,7 @@
 			<div class="tab-pane" id="listView">
 				<div class="row">	  
 					<div class="span2">
-						<img src="themes/images/products/4.jpg" alt=""/>
+						<img src="themes/images/products/4.png" alt=""/>
 					</div>
 					<div class="span4">
 						<h3>New | Available</h3>				
@@ -227,7 +192,7 @@
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-						<img src="themes/images/products/5.jpg" alt=""/>
+						<img src="themes/images/products/5.png" alt=""/>
 					</div>
 					<div class="span4">
 						<h3>New | Available</h3>				
@@ -256,7 +221,7 @@
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-					<img src="themes/images/products/6.jpg" alt=""/>
+					<img src="themes/images/products/6.png" alt=""/>
 					</div>
 					<div class="span4">
 						<h3>New | Available</h3>				
@@ -285,7 +250,7 @@
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-					<img src="themes/images/products/7.jpg" alt=""/>
+					<img src="themes/images/products/7.png" alt=""/>
 					</div>
 					<div class="span4">
 						<h3>New | Available</h3>				

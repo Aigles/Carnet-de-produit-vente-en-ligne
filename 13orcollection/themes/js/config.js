@@ -1,1 +1,1 @@
-var Fullurl="http://localhost:1230/";
+var Fullurl="http://localhost:1230/api/app/";
