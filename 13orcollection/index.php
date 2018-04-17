@@ -28,13 +28,14 @@
 	<style type="text/css" id="enject"></style>
   </head>
 <body>
+<!-- =========== Header =============================================-->
 <div id="header">
 <?php 
 	include ('header.html'); 
 ?>
 
 </div>
-<!-- Header End====================================================================== -->
+<!--=========== Header End=========================================== -->
 <div id="carouselBlk">
 	<div id="myCarousel" class="carousel slide">
 		<div class="carousel-inner">
@@ -307,6 +308,7 @@
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/list.js"></script>
+    <script src="themes/js/zoom.js"></script>
 	
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>

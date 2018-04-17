@@ -3,11 +3,11 @@
 		<div class="row">
 			<div class="span3">
 				<h5>COMPTE</h5>
-				<a href="login.html">VOTRE COMPTE</a>
-				<a href="login.html">INFORMATION PERSONNEL</a> 
-				<a href="login.html">ADRESSES</a> 
-				<a href="login.html">RABAIS</a>  
-				<a href="login.html">HISTORIQUE DES COMMANDES</a>
+				<a href="login.php">VOTRE COMPTE</a>
+				<a href="login.php">INFORMATION PERSONNEL</a> 
+				<a href="login.php">ADRESSES</a> 
+				<a href="login.php">RABAIS</a>  
+				<a href="login.php">HISTORIQUE DES COMMANDES</a>
 			 </div>
 			<div class="span3">
 				<h5>INFORMATION</h5>

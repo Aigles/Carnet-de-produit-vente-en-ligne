@@ -35,4 +35,24 @@
 		})
 	}
 
+	function add_to_cart(){
+		//alert("work!");
+		jQuery('modal_errors').html("");
+		var size = jQuery('size').hide();
+		setTimeout(function(){
+			jQuery('#details-modal').remove();
+			jQuery('.modal-backdrop').remove();
+		},500);
+
+	}
+	function add_to_cart(){
+		//alert("work!");
+		jQuery('#details-modal').modal('hide');
+		setTimeout(function(){
+			jQuery('#details-modal').remove();
+			jQuery('.modal-backdrop').remove();
+		},500);
+
+	}
+
 </script>

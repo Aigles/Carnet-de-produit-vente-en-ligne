@@ -6,19 +6,19 @@ import (
 	"fmt"
 )
 
-type Caracteristiques struct{
-	IdCaracteristiques   int `json:"id"`
-	Couleur      string      `json:"couleur"`
-	Size         float64     `json:"size"`
-	Prix         float64     `json:"prix"`
-	Image        string     `json:"image"`
-	Quantite       int        `json:"quantite"`
-    Caracteristiquescol  string  `json:"Caracteristiquescol"`
-	// CreateAt time.Time        `json:"date_creation"`
-	// UpdateAt time.Time        `json:"date_update"`
-}
+// type Caracteristiques struct{
+// 	IdCaracteristiques   int `json:"id"`
+// 	Couleur      string      `json:"couleur"`
+// 	Size         float64     `json:"size"`
+// 	Prix         float64     `json:"prix"`
+// 	Image        string     `json:"image"`
+// 	Quantite       int        `json:"quantite"`
+//     Caracteristiquescol  string  `json:"Caracteristiquescol"`
+// 	// CreateAt time.Time        `json:"date_creation"`
+// 	// UpdateAt time.Time        `json:"date_update"`
+// }
 
-type caracteristique []Caracteristiques
+//type caracteristique []Caracteristiques
 
 type Produit struct{
 	Id           int         `json:"id"`
@@ -37,21 +37,38 @@ type Produit struct{
 }
 type produit []Produit
 
-
+type Message struct{
+	Id           int64         `json:"id"`
+	Code        int      `json:"code"`
+	Status  string       `json:"status"`
+}
 
 //fonction permettant d'enregistrer une voiture
-func Newproduit(c *Produit){
+func Newproduit(c *Produit) Message{
+
+	var message Message
 if c==nil{
 	fmt.Println(c)
 }
 c.CreateAt=time.Now();
 c.UpdateAt=time.Now();
 
-err :=Configuration.Db().QueryRow("INSERT INTO produit (nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie) VALUES (?,?,?,?,?,?,?,?,?,?);",c.Nom,c.Description,c.Nbre_like,c.Nbre_vendu,c.Nbre_en_stock,c.Rabais,c.CreateAt,c.UpdateAt,c.Activer,c.Categorie_idCategorie).Scan(&c.Id)
+res, err :=Configuration.Db().Exec("INSERT INTO produit (nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie) VALUES (?,?,?,?,?,?,?,?,?,?);",c.Nom,c.Description,c.Nbre_like,c.Nbre_vendu,c.Nbre_en_stock,c.Rabais,c.CreateAt,c.UpdateAt,c.Activer,c.Categorie_idCategorie)//.Scan(&c.Id)
 
-if err!=nil{
+if err==nil{
+	id,_:=res.LastInsertId()
+	message.Id=id
+	message.Code=200
+	message.Status="insertion reussie"
+
+}else{
 	fmt.Println(err)
+	message.Id=0
+	message.Code=0
+	message.Status="insertion echouee"
 }
+
+return message
 }
 
 //fonction permettant de trouver nue voiture  par Id
@@ -72,30 +89,30 @@ func FindProduitById(id int) *Produit{
 
 
 //fonction permettant de trouver nue voiture  par Id
-func FindCaracteristiquesByIdProduit(id int) caracteristique{
+// func FindCaracteristiquesByIdProduit(id int) caracteristique{
 
-	var caracteristique caracteristique
+// 	var caracteristique caracteristique
  
-	rows, err :=Configuration.Db().Query("SELECT idCaracteristiques,couleur,size,prix,image,quantite,caracteristiquescol FROM caracteristiques WHERE Produit_idProduit=?;",id)
-     	//close rows after all readed
-	defer rows.Close()
+// 	rows, err :=Configuration.Db().Query("SELECT idCaracteristiques,couleur,size,prix,image,quantite,caracteristiquescol FROM caracteristiques WHERE Produit_idProduit=?;",id)
+//      	//close rows after all readed
+// 	defer rows.Close()
 
-	for rows.Next(){
+// 	for rows.Next(){
 		
-	var c Caracteristiques 
-	err= rows.Scan(&c.IdCaracteristiques,&c.Couleur,&c.Size,&c.Prix,&c.Image,&c.Quantite,&c.Caracteristiquescol)
+// 	var c Caracteristiques 
+// 	err= rows.Scan(&c.IdCaracteristiques,&c.Couleur,&c.Size,&c.Prix,&c.Image,&c.Quantite,&c.Caracteristiquescol)
 	
 	 
-	if err !=nil{
-		fmt.Println(err)
-	}
-	fmt.Printf("before append")
-	caracteristique=append(caracteristique, c)
-	fmt.Printf("after produit")
+// 	if err !=nil{
+// 		fmt.Println(err)
+// 	}
+// 	fmt.Printf("before append")
+// 	caracteristique=append(caracteristique, c)
+// 	fmt.Printf("after produit")
 	
-}
-	return caracteristique
-}
+// }
+// 	return caracteristique
+// }
 
 //fonction permettant de trouver toutes les voitures
 func Allproduit() *produit {
