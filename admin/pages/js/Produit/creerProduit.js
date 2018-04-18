@@ -1,6 +1,6 @@
-function previewFile(row){
-       var preview = document.querySelector('#divimg-'+row+' img'); //selects the query named img
-       var file    = document.querySelector('#diva-'+row+' input[type=file]').files[0]; //sames as here
+function previewFile(prev,fil){
+       var preview = document.querySelector(prev+' img'); //selects the query named img
+       var file    = document.querySelector(fil+' input[type=file]').files[0]; //sames as here
        var reader  = new FileReader();
 
     if (file.size<=30720) {
@@ -21,8 +21,10 @@ function previewFile(row){
      return preview.src;
   }
 
-function UpdatepreviewFile(){
-       var preview = document.querySelector('#divimg-'+row+'img'); //selects the query named img
+function UpdatepreviewFile(row){
+       var preview = document.querySelector(prev+'img'); //selects the query named img
     
      return preview.src;
   }
+
+

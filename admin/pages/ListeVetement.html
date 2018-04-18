@@ -41,9 +41,12 @@
 
     <!-- jQuery -->
   <!--   <script src="bower_components/jquery/jquery.min.js"></script> -->
-   <link href='js/DataTables/DataTables-1.10.16/css/jquery.dataTables.min.css' rel='stylesheet'>
-   <link href='js/DataTables/DataTables-1.10.16/css/dataTables.semanticui.min.css'>
+  <!--  <link href='js/DataTables/DataTables-1.10.16/css/jquery.dataTables.min.css' rel='stylesheet'> -->
+   <!-- data table plugin -->
+<!-- data table plugin -->
 
+ <!-- DataTables -->
+   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -233,7 +236,7 @@
         <th>Nom</th>
         <th>Description</th>
         <th>Nombre Like</th>
-        <th>Nombre vendu</th>
+        <th>Code Article</th>
         <th>Nombre en stock</th>
         <th>Rabais</th>
         <th>Activer</th>
@@ -1020,20 +1023,28 @@
     </footer>
 </div><!--/.fluid-container-->
 
-<!-- external javascript -->
-<script src="bower_components/jquery_2/dist/jquery.min.js"></script>
-<script src="js/menu/loadmenu.js"></script>
+<!-- DataTables -->
 
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="bower_components/jquery/jquery.min.js"></script>
+ <script src="bower_components/jquery/jquery.min.js"></script>
+ <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+ <!-- external javascript -->
+<!-- <script src="bower_components/jquery_2/dist/jquery.min.js"></script> -->
+
+
+<!-- data table plugin -->
+
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+
+ 
+<script  src="js/menu/loadmenu.js"></script>
 <!-- library for cookie management -->
 <script src="js/jquery.cookie.js"></script>
 <!-- calender plugin -->
 <script src='bower_components/moment/min/moment.min.js'></script>
 <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-<!-- data table plugin -->
-<script src='js/DataTables/DataTables-1.10.16/js/jquery.dataTables.min.js'></script>
-<script src='js/DataTables/DataTables-1.10.16/js/dataTables.semanticui.min.js'></script>
+
 
 <!-- select or dropdown enhancer -->
 <script src="bower_components/chosen/chosen.jquery.min.js"></script>
@@ -1057,7 +1068,7 @@
 <!-- history.js for cross-browser state change on ajax -->
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
+<!-- <script src="js/charisma.js"></script> -->
 <script src="js/config.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/Produit/list.js"></script>

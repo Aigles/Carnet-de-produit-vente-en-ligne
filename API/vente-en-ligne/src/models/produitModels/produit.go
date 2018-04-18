@@ -144,6 +144,36 @@ func Allproduit() *produit {
 	return &produit
 }
 
+
+func FindProduitByIdcategorie(id int) *produit{
+	var produit produit 
+
+	rows, err :=Configuration.Db().Query("SELECT produit.idProduit, nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie FROM produit where Categorie_idCategorie=?",id)
+	//fmt.Println("after rows")
+	if err!=nil{
+		fmt.Println(err)
+	}
+	fmt.Printf("before close")
+	//close rows after all readed
+	defer rows.Close()
+	fmt.Printf("afer close")
+	for rows.Next(){
+		var c Produit 
+	
+		err := rows.Scan(&c.Id,&c.Nom,&c.Description,&c.Nbre_like,&c.Nbre_vendu,&c.Nbre_en_stock,&c.Rabais,&c.CreateAt,&c.UpdateAt,&c.Activer,&c.Categorie_idCategorie )
+		c.Caracteristic=FindCaracteristiquesByIdProduit(c.Id);
+		fmt.Printf("before log")
+		if err !=nil{
+			fmt.Println(err)
+		}
+		fmt.Printf("before append")
+		produit=append(produit, c)
+		fmt.Printf("after produit")
+	}
+
+	return &produit
+}
+
 //cette fonction permet de modifier les informations d'une voiture
 func UpdateProduit(produit *Produit){
 	produit.UpdateAt=time.Now()

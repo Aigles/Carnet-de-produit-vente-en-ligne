@@ -103,11 +103,11 @@
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
-<!-- Sidebar ================================================== -->
+<!-- Sidebar a gauche ================================================== -->
 	
-<!-- Sidebar end=============================================== -->
+<!-- Sidebar a gauche end=============================================== -->
 		<!-- <div class="span12"> -->
-		<div class="">		
+		<div class="span9">		
 			<div class="well well-small">
 			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 200+ produits fournis</small></h4>
 			<div class="row-fluid">
@@ -117,41 +117,41 @@
 			  <ul class="thumbnails">
 				<li class="span3">
 				  <div class="thumbnail">
-				  <i class="tag"></i>
+				  <!-- <i class="tag"></i> -->
 					<a href="product_details.html"><img src="themes/images/products/b1.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-				  <i class="tag"></i>
+				  <!-- <i class="tag"></i> -->
 					<a href="product_details.html"><img src="themes/images/products/b2.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-				  <i class="tag"></i>
+				  <!-- <i class="tag"></i> -->
 					<a href="product_details.html"><img src="themes/images/products/b3.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-				  <i class="tag"></i>
+				  <!-- <i class="tag"></i> -->
 					<a href="product_details.html"><img src="themes/images/products/b4.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -161,21 +161,21 @@
 			  <ul class="thumbnails">
 				<li class="span3">
 				  <div class="thumbnail">
-				  <i class="tag"></i>
+				  <!-- <i class="tag"></i> -->
 					<a href="product_details.html"><img src="themes/images/products/6.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-				  <i class="tag"></i>
-					<a href="product_details.html"><img src="themes/images/products/6.jpg" alt=""></a>
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/A.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -184,7 +184,7 @@
 					<a href="product_details.html"><img src="themes/images/products/b3.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -193,7 +193,7 @@
 					<a href="product_details.html"><img src="themes/images/products/robe.png" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -206,7 +206,7 @@
 					<a href="product_details.html"><img src="themes/images/products/9.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -215,7 +215,7 @@
 					<a href="product_details.html"><img src="themes/images/products/10.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -224,7 +224,7 @@
 					<a href="product_details.html"><img src="themes/images/products/11.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -233,7 +233,7 @@
 					<a href="product_details.html"><img src="themes/images/products/1.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -246,7 +246,7 @@
 					<a href="product_details.html"><img src="themes/images/products/2.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -255,7 +255,7 @@
 					<a href="product_details.html"><img src="themes/images/products/sweater.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					  <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -264,7 +264,7 @@
 					<a href="product_details.html"><img src="themes/images/products/4.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -273,7 +273,7 @@
 					<a href="product_details.html"><img src="themes/images/products/sweater1.jpg" alt=""></a>
 					<div class="caption">
 					  <h5>Nom produit</h5>
-					   <h4><a class="btn" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
 					</div>
 				  </div>
 				</li>
@@ -286,13 +286,16 @@
 			  </div>
 		</div>
 		 
-	
+	</div>
+<!-- Sidebar à droite ================================================== -->
+	<?php include 'sidebar.php'; ?>
+<!-- Sidebar à droite end=============================================== -->
+	<br/>
+			
+		
+		</div>
 		<h4 class="text-center">Derniers produits </h4>
-			  <ul class="thumbnails" id="List_produit">
-				
-			  </ul>	
-		</div>
-		</div>
+			  <ul class="thumbnails" id="List_produit"></ul>
 	</div>
 </div>
 <!-- Footer ================================================================== -->
@@ -309,6 +312,7 @@
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>
+    <script src="themes/js/categorie.js"></script>
 	
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>

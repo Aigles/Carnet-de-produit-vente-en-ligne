@@ -5,12 +5,17 @@
     "gulp-rename": "^1.2.0"
   },
   "dependencies": {
-    "bower": "^1.8.2",
+    "bower": "^1.8.4",
+    "datatables.net-autofill-bs": "^2.0.0",
+    "datatables.net-bs": "^1.10.16",
     "datatables.net-buttons-dt": "^1.5.1",
     "datatables.net-dt": "^1.10.16",
     "datatables.net-keytable-dt": "^2.3.2",
+    "datatables.net-responsive-bs": "^2.2.1",
     "datatables.net-responsive-dt": "^2.2.1",
+    "datatables.net-se": "^1.10.16",
     "datatables.net-select-dt": "^1.2.5",
+    "jquey": "0.0.1-security",
     "pdfmake": "^0.1.36"
   }
 }

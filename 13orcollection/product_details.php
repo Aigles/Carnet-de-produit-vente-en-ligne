@@ -41,102 +41,12 @@
 <!-- ======================= Sidebar -->
 	
 <!-- ======================= Sidebar End -->
-<<<<<<< HEAD
-<?php ob_start(); ?>
-  <!-- ======================CODE AJOUTER -->
-<div class="modal fade details-1" id="details-modal" tabindex="-1" role="dialog" aria-labelledby="details-1" aria-hidden="true">
-<div class="modal-dialog modal-lg">
-<div class="modal-content">
-<div class="modal-header">
-<button class="close" type="button" data-dismiss="modal" aria-labe="close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title text-center">Levis  Jeans</h4>
-<div class="modal-body"> 
-<!-- =========================FIN CODE AJOUTER -->
-
-	<div class="span9">
-    <ul class="breadcrumb">
-    </ul>	
-	<div class="row">	  
-			<div id="gallery" class="span3">
-            <a href="themes/images/products/large/f1.jpg" title="Fujifilm FinePix S2950 Digital Camera">
-				<img src="themes/images/products/large/sweater.jpg" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera"/>
-            </a>
-			<div id="differentview" class="moreOptopm carousel slide">
-                <div class="carousel-inner">
-                  <div class="item active">
-                   <a href="themes/images/products/large/sweater.jpg"> <img style="width:29%" src="themes/images/products/large/sweater.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/sweater.jpg"> <img style="width:29%" src="themes/images/products/large/sweater.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/sweater.jpg" > <img style="width:29%" src="themes/images/products/large/sweater.jpg" alt=""/></a>
-                  </div>
-                  <div class="item">
-                   <a href="themes/images/products/large/f3.jpg" > <img style="width:29%" src="themes/images/products/large/f3.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/f1.jpg"> <img style="width:29%" src="themes/images/products/large/f1.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/f2.jpg"> <img style="width:29%" src="themes/images/products/large/f2.jpg" alt=""/></a>
-                  </div>
-                </div>
-              <!--  
-			  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a> 
-			  -->
-              </div>
-			  
-			 <div class="btn-toolbar">
-			  <div class="btn-group">
-				<span class="btn"><i class="icon-envelope"></i></span>
-				<span class="btn" ><i class="icon-print"></i></span>
-				<span class="btn" ><i class="icon-zoom-in"></i></span>
-				<span class="btn" ><i class="icon-star"></i></span>
-				<span class="btn" ><i class=" icon-thumbs-up"></i></span>
-				<span class="btn" ><i class="icon-thumbs-down"></i></span>
-			  </div>
-			</div>
-			</div>
-<!-- ================== produit detail ============================= -->
-
-
-<?php echo ob_get_clean(); ?>
-		
-
-			
-<!-- ======================= Information End =========================================-->	
-</div></div>
-<!-- ========================DIV AJOUTER -->
-</div></div></div></div></div>
-<div class="span6" id="detail_produit">
-
-=======
 </div>
 <div class="span6" id="detail_produit">
->>>>>>> c01224f49e715ce10c00e5fa407e465e65574b95
 				
 			</div>	
 <!-- ========================FIN DIV AJOUTER -->
 	
-			<div class="span12">
-            <ul id="productDetail" class="nav nav-tabs">
-              <li class="active"><a href="#home" data-toggle="tab">Product Details</a></li>
-              <li><a href="#profile" data-toggle="tab">Related Products</a></li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade active in" id="home">
-			  <h4>Product Information</h4>
-                <table class="table table-bordered">
-				<tbody>
-				<tr class="techSpecRow"><th colspan="2">Product Details</th></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Brand: </td><td class="techSpecTD2">Fujifilm</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Model:</td><td class="techSpecTD2">FinePix S2950HD</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Released on:</td><td class="techSpecTD2"> 2011-01-28</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Dimensions:</td><td class="techSpecTD2"> 5.50" h x 5.50" w x 2.00" l, .75 pounds</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Display size:</td><td class="techSpecTD2">3</td></tr>
-				</tbody>
-				</table>
-	
-
-			<hr class="soft"/>
-			</div>
-		</div>
-				<br class="clr">
-					 </div>
 		</div>
           </div>
 	</div>

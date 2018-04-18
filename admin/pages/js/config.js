@@ -1,1 +1,1 @@
-var fullUrl="http://127.0.0.1:1230/";
+var fullUrl="http://127.0.0.1:1230/api/app/";
