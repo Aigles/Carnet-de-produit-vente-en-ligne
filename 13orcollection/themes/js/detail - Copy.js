@@ -34,7 +34,7 @@
             tableau_produit +='</div> </div></form><hr class="soft"/><h4>'+data.nbre_en_stock+' element(s) en stock</h4><form class="form-horizontal qtyFrm pull-right"><div class="control-group"><label class="control-label"><span>couleur</span></label><div class="controls">';
             tableau_produit +='<select class="span2">';
                      $.each(data.caracteristic, function( key, donnee ){
-            tableau_produit +='<option onclick="changerInfo(\''+donnee.id+'\')">'+donnee.couleur+'</option>';
+            tableau_produit +='<option>'+donnee.couleur+'</option>';
   });
             tableau_produit +='</select></div></div></form><hr class="soft clr"/><p><h2>Description de '+data.nom+'</h2><br/>'+data.description;
             tableau_produit +='</p><hr class="soft"/>';
@@ -59,9 +59,5 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
     function changerImage(argument) {
         jQuery('#principale_image').attr("src",argument);
          // alert(argument)
-    }
-    function changerInfo(argument) {
-        jQuery('#detail_produit').attr("src",argument);
-          //alert(argument)
     }
         

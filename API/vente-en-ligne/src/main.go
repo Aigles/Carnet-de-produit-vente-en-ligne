@@ -95,6 +95,24 @@ func main() {
 	   
 		ctx.JSON(produitModels.FindProduitById(produitID));
 	})
+
+	app.Get("/produit/categorie/{id:int}", func(ctx iris.Context) {
+		categorieID, _ := ctx.Params().GetInt("id")
+		//config.DatabaseInit()
+		//liste := map[string]int8{"un": 1, "deux": 2, "trois": 3, "quatres": 4}
+		//envoie de texte simple
+		//ctx.WriteString("Hello word")
+		//envoie de texte HTML
+		//ctx.HTML("<h1>Hello Word</h1>")
+		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
+	//    ctx.Header("Access-Control-Allow-Origin","*")
+	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
+	//    ctx.Header("Access-Control-Allow-Methods","*")
+	   
+		ctx.JSON(produitModels.FindProduitByIdcategorie(categorieID));
+	})
+
+
 	app.Post("/creerproduit", func(ctx iris.Context) {
 		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
 	//    ctx.Header("Access-Control-Allow-Origin","*")

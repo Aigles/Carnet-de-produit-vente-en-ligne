@@ -3,13 +3,32 @@
     var page = path.split("/").pop();
 
 
+
+function GET_PARAM(param) { var vars = {}; window.location.href.replace( location.hash, '' ).replace( 
+    /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp 
+    function( m, key, value ) { // callback 
+        vars[key] = value !== undefined ? value : '';
+     } );
+         if ( param ) { return vars[param] ? vars[param] : null;
+         }
+         return vars; 
+        } 
+
+
     //List personnel all records
     if(page == '' || page == 'index.php'){
+        var prodid=GET_PARAM('prodid');
 
-    
+
+   if ((prodid!=null)&&(prodid!="undefined")) {
+
+     var url=Fullurl+"produit/categorie/"+prodid;
+   }else{
+    var url=Fullurl+"produit";
+}
 
     $.ajax({ 
-            url: Fullurl+"produit",
+            url: url,
             type: 'GET', 
             dataType: 'json', 
             Accept : "application/json;charset=UTF-8"
@@ -20,7 +39,6 @@
         
     
         $.each( data, function( key, produit ){
-
             if (produit.caracteristic != null) {
                 var tableau_produit="";
                  tableau_produit+='<li class="span3"><div class="thumbnail"><a  href="product_details.php?pid='+produit.id+'"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
@@ -29,7 +47,6 @@
 
                 jQuery('#List_produit').append(tableau_produit);
             }
-
         
          });
      // affectation des produits dans l'id
