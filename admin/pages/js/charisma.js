@@ -171,7 +171,7 @@ function docReady() {
 
     //uploadify - multiple uploads
     $('#file_upload').uploadify({
-        'swf': 'misc/uploadify.swf',
+        'swf': 'misi ne serve pas a granc/uploadify.swf',
         'uploader': 'misc/uploadify.php'
         // Put your options here
     });
@@ -278,7 +278,9 @@ function docReady() {
         "oLanguage": {
             "sLengthMenu": "_MENU_ records per page"
         }
+        "retrieve"     : true,
     });
+
     $('.btn-close').click(function (e) {
         e.preventDefault();
         $(this).parent().parent().parent().fadeOut();
@@ -359,6 +361,7 @@ $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
         "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
     };
 }
+
 $.extend($.fn.dataTableExt.oPagination, {
     "bootstrap": {
         "fnInit": function (oSettings, nPaging, fnDraw) {
