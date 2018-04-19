@@ -9,9 +9,14 @@
  // $("#nav").load("menuLogin.html");
  //  }
  //  else{
+window.onload=load_menu();
 
- $("#nav_menu").load("menu.html");
+function load_menu(){
+
+  $("#nav_menu").load("menu.html");
   $("#navbar").load("topmenu.html");
+
+}
 
   //}
 

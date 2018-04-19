@@ -48,8 +48,12 @@ if(page == '' || page == 'ListeVetement.html'){
     });
      $('#dataTableList > tbody').append(items);
 
+
+    
+    });
+
+
      $('#dataTableList').dataTable({
-         'retrieve': true,
          'paging'      : true,
          'lengthChange': false,
          'searching'   : true,
@@ -57,6 +61,5 @@ if(page == '' || page == 'ListeVetement.html'){
          'info'        : true,
          'autoWidth'   : false
      });
-    });
 
  }
