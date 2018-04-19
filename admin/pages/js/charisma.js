@@ -277,8 +277,9 @@ function docReady() {
         "sPaginationType": "bootstrap",
         "oLanguage": {
             "sLengthMenu": "_MENU_ records per page"
-        }
-        "retrieve"     : true,
+        },
+        "retrieve": "true"
+
     });
 
     $('.btn-close').click(function (e) {
