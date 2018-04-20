@@ -8,7 +8,7 @@ var page = path.split("/").pop();
 // }
 
 //List personnel all records
-if(page == '' || page == 'EditVetement.html'){
+if(page == '' || page == 'index.html'){
 	var id = GET_PARAM('pid');
 
 	 $.ajax({ 

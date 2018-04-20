@@ -12,7 +12,7 @@ var page = path.split("/").pop();
 // }
 
 //List personnel all records
-if(page == '' || page == 'CreateVetement.html'){
+if(page == '' || page == 'index.html'){
 
     var currentrow=initrow;
     for (i = 0; i < initrow; i++) { 

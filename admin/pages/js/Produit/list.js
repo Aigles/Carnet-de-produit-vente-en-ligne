@@ -8,7 +8,7 @@ var page = path.split("/").pop();
 // }
 
 //List personnel all records
-if(page == '' || page == 'ListeVetement.html'){
+if(page == '' || page == 'index.html'){
 
 //alert("ListeVetement.html")
 

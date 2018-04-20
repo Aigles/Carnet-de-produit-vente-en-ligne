@@ -128,57 +128,57 @@
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-gift"></i><span>Vetement</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Ajouter Vetement</a></li>
-                                <li><a href="ListeVetement.html">Lister Vetement</a></li>
+                                <li><a href="vetement/create.html">Ajouter Vetement</a></li>
+                                <li><a href="vetement/liste.html">Lister Vetement</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Commande</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Passer une commande</a></li>
-                                <li><a href="ListeVetement.html">Lister Commande</a></li>
+                                <li><a href="commande/create.html">Passer une commande</a></li>
+                                <li><a href="commande/liste.html">Lister Commande</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-calendar"></i><span>Categorie</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Ajouter Categorie</a></li>
-                                <li><a href="ListeVetement.html">Lister Categorie</a></li>
+                                <li><a href="categorie/create.html">Ajouter Categorie</a></li>
+                                <li><a href="categorie/liste.html">Lister Categorie</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span>User</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Ajouter User</a></li>
-                                <li><a href="ListeVetement.html">Lister User</a></li>
+                                <li><a href="user/create.html">Ajouter User</a></li>
+                                <li><a href="user/liste.html">Lister User</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-edit"></i><span>Paiements</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Effectuer Paiement</a></li>
-                                <li><a href="ListeVetement.html">Lister Paiement</a></li>
+                                <li><a href="paiement/create.html">Effectuer Paiement</a></li>
+                                <li><a href="paiement/liste.html">Lister Paiement</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-briefcase"></i><span>Livraison</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="ListeVetement.html">Lister Livraison</a></li>
+                                <li><a href="livraison/liste.html">Lister Livraison</a></li>
                             </ul>
                         </li>
 
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-lock"></i><span>Permissions</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Creer Permission</a></li>
-                                <li><a href="ListeVetement.html">Lister Permissions</a></li>
+                                <li><a href="permission/create.html">Creer Permission</a></li>
+                                <li><a href="permission/liste.html">Lister Permissions</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>Role</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="CreateVetement.html">Effectuer Role</a></li>
-                                <li><a href="ListeVetement.html">Lister Role</a></li>
+                                <li><a href="role/create.html">Effectuer Role</a></li>
+                                <li><a href="role/liste.html">Lister Role</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -194,13 +194,14 @@
 
 <script type="text/javascript">
 
-    var lien = ["CreateVetement.html", "ListeVetement.html" ];
+    var lien = ["vetement/create.html", "vetement/liste.html","commande/create.html","commande/liste.html","categorie/create.html","categorie/liste.html","user/create.html","user/liste.html","paiement/create.html","paiement/liste.html","livraison/create.html","livraison/liste.html","permission/create.html","permission/liste.html","role/create.html","role/liste.html" ];
     
     $(document).ready(function(){
         pageLoader();
     });
 
     function pageLoader() {  
+         $("#content").load('home.html');
         $(document).ready(function(){
             $('a').click(function(e){
                 if(jQuery.inArray($(this).attr('href'), lien) != -1){
