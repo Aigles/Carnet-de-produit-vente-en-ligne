@@ -207,7 +207,8 @@
                     e.preventDefault();
                     $("#content").load($(this).attr('href'));
                     return false;                    
-                }
+                }else
+                    $("#content").load('home.html');
                 return false;
             });
         });
@@ -216,9 +217,7 @@
 </script>
 
 <!-- external javascript -->
-<!-- <script src="bower_components/jquery/jquery.min.js"></script> -->
-<script src="bower_components/jquery_2/dist/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="bower_components/jquery/jquery.min.js"></script>
 
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -253,7 +252,6 @@
 <script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
 <!-- star rating plugin -->
 <script src="js/jquery.raty.min.js"></script>
-
 <!-- for iOS style toggle switch -->
 <script src="js/jquery.iphone.toggle.js"></script>
 <!-- autogrowing textarea plugin -->
