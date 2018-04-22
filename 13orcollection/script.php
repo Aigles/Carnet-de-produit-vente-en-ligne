@@ -23,11 +23,12 @@
 		var data = {"id" : id};
 		jQuery.ajax({
 			url: <?=BASEURL;?>+'each_product.php',
-			method : "get",
+			method : "POST",
 			data : data,
 			success: function(data){
 				jQuery('body').append(data);
 				jQuery('#details-modal').modal('toggle');
+				//alert(id);
 			},
 			error: function(){
 				alert("something went wrong");
@@ -54,5 +55,7 @@
 		},500);
 
 	}
+
+	
 
 </script>

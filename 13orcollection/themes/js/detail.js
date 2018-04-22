@@ -1,7 +1,8 @@
-
+  
     var path = window.location.pathname;
     var page = path.split("/").pop();
     var id = GET_PARAM('pid');
+    var strings= "  ";
 
 
     //List personnel all records
@@ -21,23 +22,22 @@
         var tableau_produit="";
             tableau_produit += '<div class="span12"><ul class="breadcrumb"><li><a href="index.php">Acceuil</a><span class="divider">/</span></li><li class="active"> Details produit</li></ul>';
 
-            tableau_produit += ' <div class="row"><div id="gallery" class="span4"><a href="themes/images/products/large/f1.jpg" title="Fujifilm FinePix S2950 Digital Camera"><div ><img  id="principale_image" src="'+data.caracteristic[0].image+'" style="width:250px; height:300px; alt="Fujifilm FinePix S2950 Digital Camera"/></div>';
+            tableau_produit += ' <div class="row"><div id="gallery" class="span4"><a href="themes/images/products/large/f1.jpg" title="'+data.nom+'"><div ><img  id="principale_image" src="'+data.caracteristic[0].image+'" style="width:392px height:588px" alt="Fujifilm FinePix S2950 Digital Camera"/></div>';
             tableau_produit += '</a><div id="differentview" class="moreOptopm carousel slide"><div class="carousel-inner"><div class="item active">';
                    $.each(data.caracteristic, function( key, donnee ){
-            tableau_produit +=' <a ><img style="width:130px; height:150px;" src="'+donnee.image+'" alt="" onclick="changerImage(\''+donnee.image+'\')"/></a>';
-            tableau_produit +=' <a ><img style="width:130px"; height:150px; src="'+donnee.image_1+'" alt="" onclick="changerImage(\''+donnee.image_1+'\')"/></a>';
+            tableau_produit +=' <a ><img style="width:29%; height: 100px;" src="'+donnee.image+'" alt="" onmouseover="changerImage(\''+donnee.image+'\')"/></a>';
             });
             tableau_produit += '</div><div class="item"><a href="themes/images/products/large/f3.jpg" > <img style="width:29%" src="themes/images/products/large/f3.jpg" alt=""/></a><a href="themes/images/products/large/f1.jpg"> <img style="width:29%" src="themes/images/products/large/f1.jpg" alt=""/></a><a href="themes/images/products/large/f2.jpg"> <img style="width:29%" src="themes/images/products/large/f2.jpg" alt=""/></a>';
             tableau_produit +='</div></div></div></div>';
 
             tableau_produit +='<div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form class="form-horizontal qtyFrm"><div class="control-group"><label class="control-label"><span>Prix : $'+data.caracteristic[0].prix+'.00</span></label>';
             tableau_produit +='<div class="controls"><input type="number" class="span1" placeholder="Qty." max="'+data.nbre_en_stock+'" min="1"/><button type="submit" class="btn btn-large btn-warning pull-right"> Ajouter <i class=" icon-shopping-cart"></i></button>';
-            tableau_produit +='</div> </div></form><hr class="soft"/><h4>'+data.nbre_en_stock+' element(s) en stock</h4><form class="form-horizontal qtyFrm pull-right"><div class="control-group"><label class="control-label"><span>couleur</span></label><div class="controls">';
-            tableau_produit +='<select class="span2">';
+            tableau_produit +='</div> </div></form><hr class="soft"/><form class="form-horizontal qtyFrm "><h5>Élement(s) en stock :  <span class="badge badge-warning">'+data.nbre_en_stock+'</span></h5><label class="control-label"><span>Couleur :</span></label><div class="controls">';
+            tableau_produit +='<p><select class="span2">';
                      $.each(data.caracteristic, function( key, donnee ){
             tableau_produit +='<option onclick="changerInfo(\''+donnee.id+'\')">'+donnee.couleur+'</option>';
   });
-            tableau_produit +='</select></div></div></form><hr class="soft clr"/><p><h2>Description de '+data.nom+'</h2><br/>'+data.description;
+            tableau_produit +='</select></a></div></form><hr class="soft clr"/><p><h3>Déscription de '+data.nom+'</h3><br/>'+data.description;
             tableau_produit +='</p><hr class="soft"/>';
         
      // affectation des produits dans l'id
@@ -62,7 +62,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
          // alert(argument)
     }
     function changerInfo(argument) {
-        jQuery('#detail_produit').attr("src",argument);
-          //alert(argument)
+        //jQuery('#detail_produit').attr("src",argument);
+          alert(argument)
     }
         
