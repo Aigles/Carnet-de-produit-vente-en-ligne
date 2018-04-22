@@ -14,6 +14,7 @@ var page = path.split("/").pop();
 //List personnel all records
 if(page == '' || page == 'index.html'){
 
+//alert("test row")
     var currentrow=initrow;
     for (i = 0; i < initrow; i++) { 
         createRow(i);
@@ -169,7 +170,7 @@ var preview_1 = document.querySelector(prev_1+i+' img');
 
           alert(data.status);
           caracteristicProd(data.id,"#divimg-","#divimgg-");
-     window.location = "ListeVetement.html"
+      $("#content").load('Produit/liste.html');
          // window.location = "./index.html"
          })
          .fail(function(error){  
@@ -196,7 +197,8 @@ function sendDataCaracteristiques(data, url){
          .done(function(data) { 
 
           alert(data.status);
-          window.location = "ListeVetement.html"
+
+          $("#content").load('Produit/liste.html');
          })
          .fail(function(error){  
           // alert("requete échouée !")
@@ -216,7 +218,7 @@ function sendDataCaracteristiques(data, url){
 
 
 
-    $.getJSON({ 
+    $.ajax({ 
         url: url,
         type: 'GET', 
         dataType: 'json', 
