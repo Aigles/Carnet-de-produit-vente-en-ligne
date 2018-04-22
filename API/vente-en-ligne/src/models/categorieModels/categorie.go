@@ -7,6 +7,13 @@ import (
 	"fmt"
 )
 
+type Message struct{
+	Id      int64   `json:"id"`
+	Code    int     `json:"code"`
+	Status  string  `json:"status"`
+}
+
+
 type Category struct{
 	Id           int          `json:"id"`
     Type        string        `json:"type"`
@@ -15,18 +22,27 @@ type Category struct{
 }
 type categorie []Category
 //fonction permettant d'enregistrer une voiture
-func Newcategory(c *Category){
+func Newcategory(c *Category) Message{
+
+	var message Message
 if c==nil{
 	log.Fatal(c)
 }
 c.CreateAt=time.Now();
 c.UpdateAt=time.Now();
 
-err :=Configuration.Db().QueryRow("INSERT INTO categorie (type, date_creation, date_update) VALUES (?,?,?);",c.Type,c.CreateAt,c.UpdateAt).Scan(&c.Id)
+_,err :=Configuration.Db().Exec("INSERT INTO categorie (type, date_creation, date_update) VALUES (?,?,?);",c.Type,c.CreateAt,c.UpdateAt)
 
-if err!=nil{
-	log.Fatal(err)
+if err==nil{
+	message.Code=200
+	message.Status="l'enregistrement a ete un succes  !!!"
+
+}else{
+	fmt.Println(err)
+	message.Code=0
+	message.Status="l'enregistrement a ete un echec !!!"
 }
+return message
 }
 
 //fonction permettant de trouver nue voiture  par Id

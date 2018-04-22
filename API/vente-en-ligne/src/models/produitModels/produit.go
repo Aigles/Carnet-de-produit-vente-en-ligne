@@ -88,31 +88,7 @@ func FindProduitById(id int) *Produit{
 }
 
 
-//fonction permettant de trouver nue voiture  par Id
-// func FindCaracteristiquesByIdProduit(id int) caracteristique{
 
-// 	var caracteristique caracteristique
- 
-// 	rows, err :=Configuration.Db().Query("SELECT idCaracteristiques,couleur,size,prix,image,quantite,caracteristiquescol FROM caracteristiques WHERE Produit_idProduit=?;",id)
-//      	//close rows after all readed
-// 	defer rows.Close()
-
-// 	for rows.Next(){
-		
-// 	var c Caracteristiques 
-// 	err= rows.Scan(&c.IdCaracteristiques,&c.Couleur,&c.Size,&c.Prix,&c.Image,&c.Quantite,&c.Caracteristiquescol)
-	
-	 
-// 	if err !=nil{
-// 		fmt.Println(err)
-// 	}
-// 	fmt.Printf("before append")
-// 	caracteristique=append(caracteristique, c)
-// 	fmt.Printf("after produit")
-	
-// }
-// 	return caracteristique
-// }
 
 //fonction permettant de trouver toutes les voitures
 func Allproduit() *produit {
