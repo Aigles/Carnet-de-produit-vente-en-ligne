@@ -104,7 +104,7 @@
 	<div class="container">
 	<div class="row">
 <!-- Sidebar a gauche ================================================== -->
-	
+	<?php include 'sidebar.php'; ?>
 <!-- Sidebar a gauche end=============================================== -->
 		<!-- <div class="span12"> -->
 		<div class="span9">		
@@ -288,7 +288,7 @@
 		 
 	</div>
 <!-- Sidebar à droite ================================================== -->
-	<?php include 'sidebar.php'; ?>
+	
 <!-- Sidebar à droite end=============================================== -->
 	<br/>
 			
@@ -297,6 +297,7 @@
 		<h4 class="text-center">Derniers produits </h4>
 			  <ul class="thumbnails" id="List_produit"></ul>
 	</div>
+<?php include 'each_product.php'; ?>
 </div>
 <!-- Footer ================================================================== -->
 <?php include 'footer.php'; ?>

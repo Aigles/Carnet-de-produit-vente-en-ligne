@@ -2,9 +2,9 @@
     var path = window.location.pathname;
     var page = path.split("/").pop();
     var id = GET_PARAM('pid');
-
     var compterCategorie = 0;
-        //List personnel all records
+
+    //List personnel all records
     if(page == '' || page == 'index.php'){
 
     
@@ -26,12 +26,10 @@
             // affectation des produits dans l'id
          
             jQuery('#sideMnu').append(tableau_caracteristic);
-
           compterCategorie = compterCategorie + 1;
         
         });
         jQuery('.subMenu.open').append('<a style="color:#faa732; text-align:center;"> CATÉGORIES ['+compterCategorie+']</a>')
-
         //document.getElementById('sideMnu').innerHTML=tableau_caracteristic;
     });
 }
