@@ -20,6 +20,8 @@ var executer=0;
       }
     });
 
+      fullcategorie('nb-categorie');
+
   
 function createRow(row){
     var item=[]; 
@@ -75,8 +77,8 @@ function supprimer(id){
 
         if(!$valid) {
 
-        $validator.focusInvalid();
-        return false;
+          $validator.focusInvalid();
+          return false;
 
         }
 
@@ -119,12 +121,12 @@ function supprimer(id){
   }
 
 
-function caracteristicProd(argument,prev,prev_1) {
+        function caracteristicProd(argument,prev,prev_1) {
          for(i=0;i<currentrow;i++){
   
-    var preview = document.querySelector(prev+i+' img');
+var preview = document.querySelector(prev+i+' img');
 
-    var preview_1 = document.querySelector(prev_1+i+' img');
+var preview_1 = document.querySelector(prev_1+i+' img');
      //dateFormat retourne une chaine vide pour les date invalides
       var caracteristics ={};
 
@@ -231,5 +233,4 @@ function sendDataCaracteristiques(data, url){
         console.log(items);
      });
 }
-
 
