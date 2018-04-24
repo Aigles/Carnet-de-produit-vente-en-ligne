@@ -1,6 +1,7 @@
 <?php
 
 
+
 	if(isset($_GET['p']))
 	{
 		//si notre variable est defini on la met dans une autre
@@ -9,7 +10,7 @@
 	else
 	{
 		//dans le cas contraire on initialise la page d'aceuille par defaut
-		$p = '';
+		$p = 'home';
 	}
 
 
@@ -22,6 +23,10 @@
 		case 'log':
 			# code...
 			require('loging.php');
+			break;
+		case 'home':
+			# code...
+			require 'home.php';
 			break;
 
 		case 'creerVetement':
@@ -36,6 +41,12 @@
 		case 'listerVetement':
 			require('vetement/liste.php');
 			break;
+
+		case 'delProd':
+			# code...
+			require('vetement/supprimer.php');
+			break;
+			
 		case 'creercommande':
 			# code...
 			require('commande/crate.php');
@@ -52,7 +63,7 @@
 
 	default:
 			# code...
-			//require('404.php');
+			header('Location:404.php');
 			break;
 	}
 

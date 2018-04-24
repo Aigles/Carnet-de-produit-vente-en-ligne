@@ -74,8 +74,8 @@ function modifierProduit(){
     data=JSON.stringify(produit);
 
     console.log( data);
-    var url=fullUrl+"creerproduit";
-    sendData(data, url);
+    var url=fullUrl+"modifierproduit";
+    updateProduit(data, url);
 
   }
 

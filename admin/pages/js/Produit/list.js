@@ -25,9 +25,9 @@ $(document).ready(function(){
             is_actif = personnel.activer ? "True":"False";
             dataTable_tr+='<td>'+is_actif+'</td>';
             dataTable_tr+='<td>';
-            dataTable_tr+='<a href="index.php?p=editerVetement&pid='+personnel.id+'" return false; class="btn btn-success btn-xs" title="Voir les détails de cet enregistrement"><i class="fa fa-search" >Details</i></a>&nbsp;';
-            dataTable_tr+='<a href="index.php?p=editerVetement&pid='+personnel.id+'"  return false; class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
-            dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" title="Supprimer cet enregistrement" data-pid="'+personnel.id+'"><i class="fa fa-trash" >Supprimer</i></a>';
+            dataTable_tr+='<a href="index.php?p=editerVetement&pid='+personnel.id+'" class="btn btn-success btn-xs" title="Voir les détails de cet enregistrement"><i class="fa fa-search" >Details</i></a>&nbsp;';
+            dataTable_tr+='<a href="index.php?p=editerVetement&pid='+personnel.id+'" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
+            dataTable_tr+='<a href="index.php?p=delProd&pid='+personnel.id+'" class="btn btn-danger btn-xs delete-datatable-record" title="Supprimer cet enregistrement" data-pid="'+personnel.id+'"><i class="fa fa-trash" >Supprimer</i></a>';
             dataTable_tr+='</tr>';            
             //items.push(dataTable_tr); 
             $('.tableV > tbody').append(dataTable_tr);

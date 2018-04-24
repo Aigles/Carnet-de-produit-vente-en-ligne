@@ -111,7 +111,7 @@
 
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header"> Main</li>
-                        <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> Tableau de Bord</span></a>
+                        <li><a class="ajax-link" href="index.php?p=home"><i class="glyphicon glyphicon-home"></i><span> Tableau de Bord</span></a>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-gift"></i><span>Vetement</span></a>
