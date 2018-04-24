@@ -1,40 +1,27 @@
 function creerCategorie(){
-     //validatiion
-        var $valid;
-        var $validator;
-        //validation
-        $validator = $("#save_categorie form").validate();
+    //validatiion
+    var $valid;
+    var $validator;
+    //validation
+    $validator = $("#save_categorie form").validate();
 
+    $valid= $("#save_categorie form").valid();
 
-        $valid= $("#save_categorie form").valid();
-
-        if(!$valid) {
-
+    if(!$valid) {
         $validator.focusInvalid();
         return false;
-
-        }
-
-    
-     var categorie ={};
-    
-        categorie.type=$('#nom-categorie').val();
+    }
+   
+    var categorie ={};
+ 
+    categorie.type=$('#nom-categorie').val();
         
+    data=JSON.stringify(categorie);
 
-        
-        data=JSON.stringify(categorie);
-
-        console.log( data);
-       var url=fullUrl+"creercategorie";
-         sendData(data, url);
-         listeCat();
-  }
-
-
-    
-
-
-
+    console.log( data);
+    var url=fullUrl+"creercategorie";
+    sendData(data, url);
+}
 
 
 
@@ -49,7 +36,7 @@ function sendData(data, url){
          .done(function(data) { 
 
           alert(data.status);
-          $("#content").load('categorie/liste.html');
+          //$("#content").load('categorie/liste.html');
          })
          .fail(function(error){  
           // alert("requete échouée !")
@@ -62,3 +49,5 @@ function sendData(data, url){
 
 
 }
+
+

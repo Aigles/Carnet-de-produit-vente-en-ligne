@@ -2,19 +2,9 @@ var initrow=1;
 var schedules=[];
 var executer=0;
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
 
 
-//Delete personnel record 
-// function deleteRecord(personnelId){
-    
-// }
 
-//List personnel all records
-if(page == '' || page == 'index.html'){
-
-//alert("test row")
     var currentrow=initrow;
     for (i = 0; i < initrow; i++) { 
         createRow(i);
@@ -30,7 +20,6 @@ if(page == '' || page == 'index.html'){
       }
     });
 
-      fullcategorie('nb-categorie');
   
 function createRow(row){
     var item=[]; 
@@ -130,12 +119,12 @@ function supprimer(id){
   }
 
 
-        function caracteristicProd(argument,prev,prev_1) {
+function caracteristicProd(argument,prev,prev_1) {
          for(i=0;i<currentrow;i++){
   
-var preview = document.querySelector(prev+i+' img');
+    var preview = document.querySelector(prev+i+' img');
 
-var preview_1 = document.querySelector(prev_1+i+' img');
+    var preview_1 = document.querySelector(prev_1+i+' img');
      //dateFormat retourne une chaine vide pour les date invalides
       var caracteristics ={};
 
@@ -242,4 +231,5 @@ function sendDataCaracteristiques(data, url){
         console.log(items);
      });
 }
-}
+
+

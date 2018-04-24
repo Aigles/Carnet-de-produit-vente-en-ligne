@@ -1,36 +1,28 @@
+$(this).load("../main.js");
 var path = window.location.pathname;
 var page = path.split("/").pop();
+console.log(page);
 
 
-//Delete personnel record 
-// function deleteRecord(personnelId){
-    
-// }
-
-//List personnel all records
-if(page == '' || page == 'index.html'){
-
-//alert("ListeVetement.html")
-
-//alert("Vetement");
-        $.ajax({ url: fullUrl+"categorie",
-        type: 'GET', 
-        dataType: 'json', 
-        Accept : "application/json;charset=UTF-8"
+$.ajax({ url: fullUrl+"categorie",
+    type: 'GET', 
+    dataType: 'json', 
+    Accept : "application/json;charset=UTF-8"
     }).done(function(data) { 
   
         var items = [];
         var is_actif;
         
-        $.each( data, function( key, personnel ) {         
+        $.each( data, function( key, personnel ) {     
+            //console.log(personnel);    
             dataTable_tr = '<tr data-pid="'+personnel.id+'">';
             dataTable_tr+='<td>'+personnel.type+'</td>';
        
             dataTable_tr+='<td>';
-            dataTable_tr+='<a href="index.html?pid='+personnel.id+'" onclick="edit();" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
+            dataTable_tr+='<a href="#?pid='+personnel.id+'" onclick="urlLoad();" return false; class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
             dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" title="Supprimer cet enregistrement" data-pid="'+personnel.id+'"><i class="fa fa-trash" >Supprimer</i></a>';
             dataTable_tr+='</tr>';            
-            //items.push(dataTable_tr); 
+
             $('.tablecategorie > tbody').append(dataTable_tr);
         });
 
@@ -52,10 +44,10 @@ if(page == '' || page == 'index.html'){
                 
     });
 
-
-function edit(){
-     $("#content").load('categorie/edit.html');
-}
-
-
+function urlLoad()
+{
+    $(document).ready(function(){
+        $("#content").load("categorie/edit.html");
+        
+    })
 }

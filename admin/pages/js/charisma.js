@@ -272,13 +272,6 @@ function docReady() {
     }
 
     //datatable
-    $('.datatable').dataTable({
-        "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>",
-        "sPaginationType": "bootstrap",
-        "oLanguage": {
-            "sLengthMenu": "_MENU_ records per page"
-        }
-    });
     
     $('.btn-close').click(function (e) {
         e.preventDefault();
@@ -421,7 +414,7 @@ $.extend($.fn.dataTableExt.oPagination, {
                 }
 
                 // add / remove disabled classes from the static elements
-                /*if (oPaging.iPage === 0) {
+                if (oPaging.iPage === 0) {
                     $('li:first', an[i]).addClass('disabled');
                 } else {
                     $('li:first', an[i]).removeClass('disabled');
@@ -431,7 +424,7 @@ $.extend($.fn.dataTableExt.oPagination, {
                     $('li:last', an[i]).addClass('disabled');
                 } else {
                     $('li:last', an[i]).removeClass('disabled');
-                }*/
+                }
             }
         }
     }
