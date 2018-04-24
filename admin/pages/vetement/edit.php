@@ -83,7 +83,7 @@
                     <div class="row">
                         <div class="form-group">
                             <div class="col-md-offset-9">
-                                <button type="button" class="btn btn-success" onclick="creerproduit()">Enregistrer</button>
+                                <button type="button" class="btn btn-success" onclick="modifierProduit()">Enregistrer</button>
                             </div>
                         </div>
                     </div>
@@ -92,8 +92,6 @@
         </div>
     </div>
 </div> 
-<script src="js/Produit/creerProduit.js"></script>
-<script src="js/Produit/rowCaracteristiques.js"></script>
 
 
     <hr>
@@ -117,4 +115,6 @@
         </div>
     </div>
 
+<script src="js/Produit/creerProduit.js"></script>
+<script src="js/Produit/rowCaracteristiques.js"></script>
 <script src="js/Produit/modifier.js"></script>

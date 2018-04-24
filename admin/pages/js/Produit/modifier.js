@@ -1,5 +1,5 @@
 	var id = GET_PARAM('pid');
-
+    currentrow = 0;
 	 $.ajax({ 
             // url: Fullurl+"produit",
             url: fullUrl+"produit/"+id,
@@ -21,6 +21,7 @@
 
         if (data.caracteristic!=null) {
             $.each( data.caracteristic, function( key, personnel ) {
+                currentrow++;
                 if(key != null)
                     fullRow(key,personnel.image,personnel.image_1,personnel.couleur,personnel.size,personnel.prix,personnel.quantite)
             });
@@ -73,14 +74,16 @@ function modifierProduit(){
 
     data=JSON.stringify(produit);
 
-    console.log( data);
+    console.log(data);
+
+    caracteristicProd(id);
     var url=fullUrl+"modifierproduit";
     updateProduit(data, url);
 
   }
 
     
-function caracteristicProd(argument,prev,prev_1) {
+function caracteristicProd(argument) {
     
     for(i=0;i<currentrow;i++){
       
@@ -100,7 +103,7 @@ function caracteristicProd(argument,prev,prev_1) {
           
         data=JSON.stringify(caracteristics);
         console.log( data);
-        var url=fullUrl+"creerproduit/caracteristics";
+        var url=fullUrl+"modifiercaracteristique";
         updateProduit(data, url);
 
     }

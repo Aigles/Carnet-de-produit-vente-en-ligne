@@ -1,3 +1,21 @@
+
+function deleteProduit()
+{
+    console.log(GET_PARAM('pid'));
+    $.ajax({ 
+        url: 'deleteproduit/'+GET_PARAM('pid'),
+        type: 'DELETE',
+        success: function(rs){
+            alert("Suppression reuissite");
+        },
+        error: function(request,msg,error){
+            alert(error);
+        }
+    });
+
+}
+deleteProduit();
+
 function GET_PARAM(param) { var vars = {}; window.location.href.replace( location.hash, '' ).replace( 
     /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp 
     function( m, key, value ) { // callback 
@@ -7,20 +25,3 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
          }
          return vars; 
 }
-
-function deleteProduit()
-{
-	$.ajax({ 
-        url: 'deleteproduit/'+GET_PARAM('id'),
-        type: 'DELETE', 
-        dataType: 'json', 
-        crossDomain: true,
-
-    }).done(function(data) { 
-        alert("produit supprimer");
-    }).fail(function(error){  
-        alert('echec de la suppression');
-    });
-
-}
-deleteProduit();
