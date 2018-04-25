@@ -1,12 +1,12 @@
-<div class="col-lg-10 col-sm-10">
+<div class="col-lg-12 col-sm-12">
             <!-- content starts -->
 <div>
     <ul class="breadcrumb">
         <li>
-            <a href="#">Home</a>
+            <a href="#">Accueil</a>
         </li>
         <li>
-            <a href="#">Dashboard</a>
+            <a href="#">Tableau de bord</a>
         </li>
     </ul>
 </div>

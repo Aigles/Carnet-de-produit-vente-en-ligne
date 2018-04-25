@@ -124,49 +124,49 @@
                             <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Commande</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="index.php?p=creerCommande">Passer une commande</a></li>
-                                <li><a href="listerCommande">Lister Commande</a></li>
+                                <li><a href="index.php?p=listerCommande">Lister Commande</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-calendar"></i><span>Categorie</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="creerCategorie">Ajouter Categorie</a></li>
-                                <li><a href="listerCategorie">Lister Categorie</a></li>
+                                <li><a href="index.php?p=creerCategorie">Ajouter Categorie</a></li>
+                                <li><a href="index.php?p=listerCategorie">Lister Categorie</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span>User</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="user/create.html">Ajouter User</a></li>
-                                <li><a href="user/liste.html">Lister User</a></li>
+                                <li><a href="index.php?p=creerUser">Ajouter User</a></li>
+                                <li><a href="index.php?p=listerUser">Lister User</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-edit"></i><span>Paiements</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="paiement/create.html">Effectuer Paiement</a></li>
-                                <li><a href="paiement/liste.html">Lister Paiement</a></li>
+                                <li><a href="index.php?p=creerPaiement">Effectuer Paiement</a></li>
+                                <li><a href="index.php?p=listerPaiement">Lister Paiement</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-briefcase"></i><span>Livraison</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="livraison/liste.html">Lister Livraison</a></li>
+                                <li><a href="index.php?p=listerLivraison">Lister Livraison</a></li>
                             </ul>
                         </li>
 
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-lock"></i><span>Permissions</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="permission/create.html">Creer Permission</a></li>
-                                <li><a href="permission/liste.html">Lister Permissions</a></li>
+                                <li><a href="index.php?p=creerPermission">Creer Permission</a></li>
+                                <li><a href="index.php?p=listerPermission">Lister Permissions</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>Role</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="role/create.html">Effectuer Role</a></li>
-                                <li><a href="role/liste.html">Lister Role</a></li>
+                                <li><a href="index.php?p=creerRole">Effectuer Role</a></li>
+                                <li><a href="index.php?p=listerRole">Lister Role</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -182,6 +182,14 @@
 
 </div>
 
+<!-- chart libraries start -->
+<script src="bower_components/flot/excanvas.min.js"></script>
+<script src="bower_components/flot/jquery.flot.js"></script>
+<script src="bower_components/flot/jquery.flot.pie.js"></script>
+<script src="bower_components/flot/jquery.flot.stack.js"></script>
+<script src="bower_components/flot/jquery.flot.resize.js"></script>
+<!-- chart libraries end -->
+<script src="js/init-chart.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- library for cookie management -->

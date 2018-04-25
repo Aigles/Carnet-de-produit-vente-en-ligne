@@ -1,12 +1,14 @@
 	var id = GET_PARAM('pid');
+    var tableauIdCategorie=[];
     currentrow = 0;
+
 	 $.ajax({ 
             // url: Fullurl+"produit",
             url: fullUrl+"produit/"+id,
             type: 'GET', 
             dataType: 'json',
             crossDomain: true, 
-            Accept : "application/json;charset=UTF-8"
+            Accept : "application/json;charset=UTF-8",
             })
 
     .done(function(data) {   
@@ -23,6 +25,7 @@
             $.each( data.caracteristic, function( key, personnel ) {
                 currentrow++;
                 if(key != null)
+                    tableauIdCategorie.push(personnel.id);
                     fullRow(key,personnel.image,personnel.image_1,personnel.couleur,personnel.size,personnel.prix,personnel.quantite)
             });
         }
@@ -57,12 +60,13 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
 } 
 
 function modifierProduit(){
-    
+     var id = GET_PARAM('pid'); 
     var produit ={};
     
+    produit.id=parseInt(id);
     produit.nom=$('#nom-poduit').val();
     produit.description=$('#description-poduit').val();
-    produit.nbre_vendu=parseInt($('#nb-vendu').val());
+    // produit.nbre_vendu=parseInt($('#nb-vendu').val());
     produit.nbre_en_stock=parseInt($('#nb-poduit').val());
     produit.rabais=parseInt($('#nb-rabais').val());
     var ActiverProd=0;
@@ -76,15 +80,18 @@ function modifierProduit(){
 
     console.log(data);
 
-    caracteristicProd(id);
+    caracteristicProd();
     var url=fullUrl+"modifierproduit";
     updateProduit(data, url);
+
 
   }
 
     
-function caracteristicProd(argument) {
-    
+function caracteristicProd() {
+
+   var id = GET_PARAM('pid'); 
+
     for(i=0;i<currentrow;i++){
       
         var preview = document.querySelector('#divimg-'+i+' img');
@@ -93,7 +100,7 @@ function caracteristicProd(argument) {
         //dateFormat retourne une chaine vide pour les date invalides
         var caracteristics ={};
 
-        caracteristics.produit_idProduit=parseInt(argument);
+        caracteristics.id=parseInt(tableauIdCategorie[i]);
         caracteristics.image=preview.src;
         caracteristics.image_1=preview_1.src;
         caracteristics.couleur=$('#couleur-'+i).val();
@@ -103,8 +110,8 @@ function caracteristicProd(argument) {
           
         data=JSON.stringify(caracteristics);
         console.log( data);
-        var url=fullUrl+"modifiercaracteristique";
-        updateProduit(data, url);
+        var url=fullUrl+"modifierproduit/caracteristics";
+        updateProduitCaract(data, url);
 
     }
 }
@@ -113,16 +120,42 @@ function updateProduit(data, url)
 {
     $.ajax({ 
         url: url,
-        type: 'PUT', 
+        type: 'POST', 
         dataType: 'json', 
-        crossDomain: true,
+        Accept : "application/json;charset=UTF-8",
         data: data,
+        
+            success: function (data) {
+                alert(data.status);
+                window.location="index.php?p=listerVetement";
+    
+            },
+            error: function(data){
+             alert('echec de mise a jour du produit'); 
+            }    
 
-    }).done(function(data) { 
-        alert(data.status);
-    }).fail(function(error){  
-        alert('echec de mise a jour du produit');
-    });
+    })
+
+}
+
+function updateProduitCaract(data, url)
+{
+    $.ajax({ 
+        url: url,
+        type: 'POST', 
+        dataType: 'json', 
+        Accept : "application/json;charset=UTF-8",
+        data: data,
+     
+            success: function (data) {
+                alert(data.status);
+    
+            },
+            error: function(data){
+             alert('echec de mise a jour du produit'); 
+            }    
+
+    })
 
 }
 
