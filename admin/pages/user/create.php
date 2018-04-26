@@ -1,11 +1,10 @@
-
 <div>
     <ul class="breadcrumb">
        <li>
            <a href="#">Tableau de bord</a>
        </li>
        <li>
-           <a href="#">Ajouter un Vetement</a>
+           <a href="#">ajouter utilisateur</a>
        </li>
     </ul>
 </div>
@@ -14,7 +13,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Ajouter un vetement</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Creer un utilisateur</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -30,49 +29,45 @@
                     <div class="row">
                         <div class="box col-md-6">  
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Nom Vetement</label>
-                                <input type="text" class="form-control " required id="nom-poduit" placeholder="Entrer le nom d'un Vetement">
+                                <label for="exampleInputEmail1">Nom</label>
+                                <input type="text" class="form-control " required id="user-nom" placeholder="Entrer le nom">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Code Vetement</label>
-                                <input type="number" class="form-control required" required id="nb-vendu" placeholder="Code Vetement">
+                                <label for="exampleInputPassword1">Prenom</label>
+                                <input type="text" class="form-control required" required id="user-prenom" placeholder="Entre le prenom">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Description</label>
-                                <textarea type="number" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
-                            </div>                   
+                                <label for="exampleInputPassword1">Email</label>
+                                <input type="email" class="form-control required" required id="user-email" placeholder="Entre l'adresse email">
+                            </div>
+                
                         </div>
                         <div class="box col-md-6">  
+                             <div class="form-group">
+                                <label for="exampleInputPassword1">Avatar</label>
+                                <input type="text" class="form-control required" required id="user-avatar" placeholder="Choisir un avatar">
+                            </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Nombre de Vetements en stock</label>
-                                <input type="number" class="form-control required" id="nb-poduit" placeholder="Entrer le nombre de Vetements en stock">
+                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <input type="password" class="form-control required" required id="user-password" placeholder="Entrer le mot de passe">
                             </div>
-                                  <div class="form-group">
-                                <label for="exampleInputPassword1">Rabais(%) </label>
-                                <input type="number" class="form-control required" id="nb-rabais" placeholder="Entrer un Rabais(%)">
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="exampleInputPassword1">Activer un vetement : </label>
-                                    <input data-no-uniform="true" type="checkbox" class="iphone-toggle" id='toggle-two'>
-                                    
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="exampleInputPassword1">Categorie : </label>
-                                    <select class="form-control" id="nb-categorie">                               
-                                    </select>
-                                </div>
-                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirmer mot de passe</label>
+                                <input type="password" class="form-control required" required id="user-cPassword" placeholder="Confirmer le mot de passe">
+                            </div>                            
                         </div>
                     </div>
                     
-                    <div class="row" id="tableday-id">
+                    <div class="row" >
+                        <div class=" box col-md-6">
+                            <div id="tableday-id"></div>                          
+                        </div>                       
                     </div>                    
                     
                     <div class="row col-md-6">
                         <div class="form-group">                            
                             <div class="col-md-3 col-md-offset-1">
-                                <button type="button" id="add" class="  btn btn-success" key="ajouter_ligne">ajouter ligne</button>
+                                <button type="button" id="addRole" class="btn btn-success" key="ajouter_ligne">ajouter Role</button>
                             </div>
                             <div class="col-md-3">
                               <input class=" form-control" id="ligne" type="number" aria-describedby="nameHelp" placeholder="" name="ligne" value="1">
@@ -93,6 +88,7 @@
         </div>
     </div>
 </div>
+<script src="js/User/create.js"></script>
     
 
  
