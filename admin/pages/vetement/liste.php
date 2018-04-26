@@ -1,4 +1,5 @@
 <script src="js/Produit/list.js"></script>
+<script src="js/Produit/supprimer.js"></script>
 <div class="row">
     <div class="box col-md-12">
         <div class="box-inner">

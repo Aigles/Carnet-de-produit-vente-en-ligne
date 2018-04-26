@@ -39,10 +39,10 @@ func main() {
 
 
 	app.Get("/categorie/{id:int}", func(ctx iris.Context) {
-		categorieID, _ := ctx.Params().GetInt("id")
-		
+
+		categorieID, _ := ctx.Params().GetInt("id")		
 	   
-		ctx.JSON(categorieModels.FindcategoryById(categorieID));
+		//ctx.JSON(categorieModels.FindcategoryById(categorieID));
 	})
 
 	app.Put("/modifiercategorie", func(ctx iris.Context) {

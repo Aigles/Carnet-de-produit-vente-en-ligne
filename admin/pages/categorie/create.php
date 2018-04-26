@@ -1,3 +1,4 @@
+<script src="js/categorie/categorie.js"></script>
 <div>
     <ul class="breadcrumb">
        <li>
@@ -31,19 +32,15 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nom Categorie</label>
                                 <input type="text" class="form-control " required id="nom-categorie" placeholder="Entrer Nom Categorie">
-                            </div>
-                            
-                                      
-                        </div>
-         
-                    </div>
-                                
+                            </div>                                     
+                        </div>       
+                    </div>                               
                             
                     <div class="row">
                         <div class="form-group">
                             <div class="col-md-offset-9">
                                 <button type="reset" class="btn btn-default" >Annuler</button>
-                                <button type="button" class="btn btn-primary" onclick="creerCategorie()">Enregistrer</button>
+                                <button type="button" class="btn btn-primary" onclick="creerCategorie();">Enregistrer</button>
                             </div>
                         </div>
                     </div>

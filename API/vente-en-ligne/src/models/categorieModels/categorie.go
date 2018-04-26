@@ -25,24 +25,25 @@ type categorie []Category
 func Newcategory(c *Category) Message{
 
 	var message Message
-if c==nil{
-	log.Fatal(c)
-}
-c.CreateAt=time.Now();
-c.UpdateAt=time.Now();
+	if c==nil{
+		log.Fatal(c)
+	}
+	c.CreateAt=time.Now();
+	c.UpdateAt=time.Now();
 
-_,err :=Configuration.Db().Exec("INSERT INTO categorie (type, date_creation, date_update) VALUES (?,?,?);",c.Type,c.CreateAt,c.UpdateAt)
+	_,err :=Configuration.Db().Exec("INSERT INTO categorie (type, date_creation, date_update) VALUES (?,?,?);",c.Type,c.CreateAt,c.UpdateAt)
 
-if err==nil{
-	message.Code=200
-	message.Status="l'enregistrement a ete un succes  !!!"
+	if err==nil{
+		message.Code=200
+		message.Status="l'enregistrement a ete un succes  !!!"
 
-}else{
-	fmt.Println(err)
-	message.Code=0
-	message.Status="l'enregistrement a ete un echec !!!"
-}
-return message
+	}else{
+		fmt.Println(err)
+		message.Code=0
+		message.Status="l'enregistrement a ete un echec !!!"
+	}
+
+	return message
 }
 
 //fonction permettant de trouver nue voiture  par Id
@@ -50,7 +51,8 @@ func FindcategoryById(id int) *Category{
 
 	var category Category 
  
-	row:=Configuration.Db().QueryRow("SELECT * FROM categorie WHERE id =?;",id)
+	row:=Configuration.Db().QueryRow("SELECT * FROM categorie WHERE idCategorie=?",id)
+	
 	err:= row.Scan(&category.Id,&category.Type,&category.CreateAt, &category.UpdateAt)
 	 
 	if err!=nil{
@@ -93,7 +95,7 @@ func Allcategorie() *categorie {
 func Updatecategory(category *Category){
 	category.UpdateAt=time.Now()
 
-	stmt, err := Configuration.Db().Prepare("UPDATE categorie SET type=?, date_update=? WHERE id=?;")
+	stmt, err := Configuration.Db().Prepare("UPDATE categorie SET type=?, date_update=? WHERE idCategorie=?;")
 	
 	if err !=nil{
 	log.Fatal(err)
@@ -109,7 +111,7 @@ func Updatecategory(category *Category){
 
 //cette fonction permet la suppression d'un produit
 func DeletecategoryById(id int) error{
-	stmt, err := Configuration.Db().Prepare("DELETE FROM categorie WHERE id=?;")
+	stmt, err := Configuration.Db().Prepare("DELETE FROM categorie WHERE idCategorie=?;")
 	
 	if err!=nil{
 		log.Fatal(err)

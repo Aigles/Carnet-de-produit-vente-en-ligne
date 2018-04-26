@@ -1,4 +1,3 @@
-$(this).load("../main.js");
 var path = window.location.pathname;
 var page = path.split("/").pop();
 console.log(page);
@@ -19,7 +18,7 @@ $.ajax({ url: fullUrl+"categorie",
             dataTable_tr+='<td>'+personnel.type+'</td>';
        
             dataTable_tr+='<td>';
-            dataTable_tr+='<a href="#?pid='+personnel.id+'" onclick="urlLoad();" return false; class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
+            dataTable_tr+='<a href="index.php?p=editerCategorie&pid='+personnel.id+'" onclick="modifierCategorie();" return false; class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
             dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" title="Supprimer cet enregistrement" data-pid="'+personnel.id+'"><i class="fa fa-trash" >Supprimer</i></a>';
             dataTable_tr+='</tr>';            
 
@@ -43,11 +42,3 @@ $.ajax({ url: fullUrl+"categorie",
 
                 
     });
-
-function urlLoad()
-{
-    $(document).ready(function(){
-        $("#content").load("categorie/edit.html");
-        
-    })
-}

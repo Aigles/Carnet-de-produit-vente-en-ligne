@@ -1,4 +1,4 @@
-
+<script src="js/categorie/modifier.js"></script>
 <div>
     <ul class="breadcrumb">
        <li>

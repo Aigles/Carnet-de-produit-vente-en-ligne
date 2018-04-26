@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     var id = GET_PARAM('pid');
+    console.log(id);
     $.ajax({ 
         // url: Fullurl+"produit",
         url: fullUrl+"categorie/"+id,
@@ -10,7 +11,8 @@ $(document).ready(function(){
         Accept : "application/json;charset=UTF-8"
 
     }).done(function(data) { 
-        $("#nom-categorie").val(data.type);
+        console.log(data);
+        //$("#nom-categorie").val(data.type);
     });
 
 });
@@ -23,7 +25,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
      } );
          if ( param ) { 
             
-            console.log(param);
+           
 
             return vars[param] ? vars[param] : null;
          }
