@@ -8,11 +8,17 @@ $(document).ready(function(){
         type: 'GET', 
         dataType: 'json',
         crossDomain: true, 
-        Accept : "application/json;charset=UTF-8"
+        Accept : "application/json;charset=UTF-8",
+        success: function (rs) {
+          console.log(JSON.stringify(rs));
+          $("#nom-categorie").val(rs.type);
+        },
+        error: function (xhr,status,error) {
+            console.log("Status: " + status);
+            console.log("Error: " + error);
+            console.log("xhr: " + JSON.stringify(xhr));
+        }
 
-    }).done(function(data) { 
-        console.log(data);
-        //$("#nom-categorie").val(data.type);
     });
 
 });
@@ -54,8 +60,19 @@ function updateData(data, url){
         dataType: 'json', 
         crossDomain: true,
         data: data,
+        success: function (rs) {
+          alert(data.status);
+          $("#content").load('categorie/liste.html');
+        },
+        error: function (xhr,status,error) {
+            console.log("Status: " + status);
+            console.log("Error: " + error);
+            console.log("xhr: " + JSON.stringify(xhr));
+        }
 
-    }).done(function(data) { 
+    })
+
+    /*done(function(data) { 
         alert(data.status);
         $("#content").load('categorie/liste.html');
     }).fail(function(error){  
@@ -63,8 +80,7 @@ function updateData(data, url){
         if (error.status==404) {
             //window.location = "./login.html";                    
         }
-
-    });
+    });*/
 
 
 }

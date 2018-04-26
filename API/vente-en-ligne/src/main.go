@@ -42,7 +42,7 @@ func main() {
 
 		categorieID, _ := ctx.Params().GetInt("id")		
 	   
-		//ctx.JSON(categorieModels.FindcategoryById(categorieID));
+		ctx.JSON(categorieModels.FindcategoryById(categorieID));
 	})
 
 	app.Put("/modifiercategorie", func(ctx iris.Context) {

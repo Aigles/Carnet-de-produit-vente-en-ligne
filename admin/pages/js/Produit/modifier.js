@@ -68,7 +68,7 @@ function modifierProduit() {
   produit.activer = ActiverProd;
   data = JSON.stringify(produit);
   console.log(data);
-  caracteristicProd(id);
+  //caracteristicProd(id);
   var url = fullUrl + 'modifierproduit';
   updateProduit(data, url);
 }
@@ -89,7 +89,7 @@ function caracteristicProd(argument) {
     caracteristics.quantite = parseInt($('#qte-' + i).val());
     data = JSON.stringify(caracteristics);
     console.log(data);
-    var url = fullUrl + 'modifiercaracteristique';
+    var url = fullUrl + 'modifierproduit/caracterics';
     updateProduit(data, url);
   }
 }
