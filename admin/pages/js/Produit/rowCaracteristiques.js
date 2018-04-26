@@ -121,12 +121,17 @@ function sendData(data, url) {
     crossDomain: true,
     data: data,
   }).done(function (data) {
-    alert(data.status);
-    caracteristicProd(data.id, '#divimg-', '#divimgg-');
+    $('#result-title').html('Reultat de l\'operation');
+    $('#result-info').html(data.status);
+    $('#myModal').modal('show');
   }).fail(function (error) {
-    // alert("requete échouée !")
+    
+    $('#result-title').html('Reultat de l\'operation');
+    $('#result-info').html('Echec de l\'operation encour');
+    $('#myModal').modal('show');
+
     if (error.status == 404) {
-      //window.location = "./login.html";                    
+      window.location = "index.php?p=404";                    
     }
   });
 }
@@ -139,12 +144,17 @@ function sendDataCaracteristiques(data, url) {
     crossDomain: true,
     data: data,
   }).done(function (data) {
-    alert(data.status);
-    $('#content').load('Produit/liste.html');
+    $('#result-title').html('Reultat de l\'operation');
+    $('#result-info').html(data.status);
+    $('#myModal').modal('show');
   }).fail(function (error) {
-    // alert("requete échouée !")
+    
+    $('#result-title').html('Reultat de l\'operation');
+    $('#result-info').html('Echec de l\'operation encour');
+    $('#myModal').modal('show');
+
     if (error.status == 404) {
-      //window.location = "./login.html";                    
+      window.location = "index.php?p=404";                    
     }
   });
 }

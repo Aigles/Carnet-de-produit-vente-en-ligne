@@ -46,10 +46,11 @@ function sendData(url, data)
 		crossDomain : 'true',
 		data : data,
 		success : function(){
-
+			$('#myModal').modal('show');
+			$('#myModal').modal('hidde');
 		},
 		error : function(){
-			
+
 		}
 
 

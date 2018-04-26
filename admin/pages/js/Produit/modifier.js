@@ -103,9 +103,17 @@ function updateProduit(data, url)
     crossDomain: true,
     data: data,
   }).done(function (data) {
-    alert(data.status);
-  }).fail(function (xhr,msg,error) {
-    //alert('echec de mise a jour du produit');
-    console.log(JSON.stringify(xhr));
+    $('#result-title').html('Reultat de l\'operation');
+    $('#result-info').html(data.status);
+    $('#myModal').modal('show');
+  }).fail(function (error) {
+    
+    $('#result-title').html('Reultat de l\'operation');
+    $('#result-info').html('Echec de l\'operation encour');
+    $('#myModal').modal('show');
+
+    if (error.status == 404) {
+      window.location = "index.php?p=404";                    
+    }
   });
 }
