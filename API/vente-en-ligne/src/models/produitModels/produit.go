@@ -76,9 +76,9 @@ func FindProduitById(id int) *Produit{
 
 	var produit Produit 
  
-	row:=Configuration.Db().QueryRow("SELECT * FROM produit WHERE idProduit=?",id)
+	row:=Configuration.Db().QueryRow("SELECT * FROM produit WHERE idProduit=?;",id)
 	err:= row.Scan(&produit.Id,&produit.Nom,&produit.Description,&produit.Nbre_like,&produit.Nbre_vendu,&produit.Nbre_en_stock,&produit.Rabais,&produit.CreateAt,&produit.UpdateAt,&produit.Activer,&produit.Categorie_idCategorie)
-	produit.Caracteristic=FindCaracteristiquesByIdProduit(produit.Id);
+	   produit.Caracteristic=FindCaracteristiquesByIdProduit(produit.Id);
 	 
 	if err!=nil{
 		fmt.Println(err)
@@ -151,7 +151,9 @@ func FindProduitByIdcategorie(id int) *produit{
 }
 
 //cette fonction permet de modifier les informations d'une voiture
-func UpdateProduit(produit *Produit){
+func UpdateProduit(produit *Produit)Message{
+
+	var message Message
 	produit.UpdateAt=time.Now()
 
 	stmt, err := Configuration.Db().Prepare("UPDATE produit SET nom=?, description=?, nbre_en_stock=?,rabais=?, Date_update=?,activer=? WHERE idProduit=?;")
@@ -162,22 +164,41 @@ func UpdateProduit(produit *Produit){
 
 	_, err = stmt.Exec(&produit.Nom,&produit.Description,&produit.Nbre_en_stock,&produit.Rabais,&produit.UpdateAt,&produit.Activer,produit.Id)
 
-	if err!=nil{
+	if err==nil{
+		message.Code=200
+		message.Status="Modification reussie"
+	
+	}else{
 		fmt.Println(err)
+		message.Code=0
+		message.Status="Modification echouee"
 	}
+	return message
 }
 
 
 //cette fonction permet la suppression d'un produit
-func DeleteProduitById(id int) error{
-	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE id=?;")
+func DeleteProduitById(id int) Message{
+
+	var message Message
+
+	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE idProduit=?       ;")
 	
 	if err!=nil{
 		fmt.Println(err)
 	}
 	_, err = stmt.Exec(id)
-
-	return err
+	 
+	if err==nil{
+		message.Code=200
+		message.Status="Suppression reussie"
+	
+	}else{
+		fmt.Println(err)
+		message.Code=0
+		message.Status="Suppression echouee"
+	}
+	return message
 	
 }
 

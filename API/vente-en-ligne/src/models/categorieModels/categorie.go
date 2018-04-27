@@ -25,25 +25,24 @@ type categorie []Category
 func Newcategory(c *Category) Message{
 
 	var message Message
-	if c==nil{
-		log.Fatal(c)
-	}
-	c.CreateAt=time.Now();
-	c.UpdateAt=time.Now();
+if c==nil{
+	log.Fatal(c)
+}
+c.CreateAt=time.Now();
+c.UpdateAt=time.Now();
 
-	_,err :=Configuration.Db().Exec("INSERT INTO categorie (type, date_creation, date_update) VALUES (?,?,?);",c.Type,c.CreateAt,c.UpdateAt)
+_,err :=Configuration.Db().Exec("INSERT INTO categorie (type, date_creation, date_update) VALUES (?,?,?);",c.Type,c.CreateAt,c.UpdateAt)
 
-	if err==nil{
-		message.Code=200
-		message.Status="l'enregistrement a ete un succes  !!!"
+if err==nil{
+	message.Code=200
+	message.Status="l'enregistrement a ete un succes  !!!"
 
-	}else{
-		fmt.Println(err)
-		message.Code=0
-		message.Status="l'enregistrement a ete un echec !!!"
-	}
-
-	return message
+}else{
+	fmt.Println(err)
+	message.Code=0
+	message.Status="l'enregistrement a ete un echec !!!"
+}
+return message
 }
 
 //fonction permettant de trouver nue voiture  par Id
@@ -51,8 +50,7 @@ func FindcategoryById(id int) *Category{
 
 	var category Category 
  
-	row:=Configuration.Db().QueryRow("SELECT * FROM categorie WHERE idCategorie=?",id)
-	
+	row:=Configuration.Db().QueryRow("SELECT * FROM categorie WHERE idCategorie =?;",id)
 	err:= row.Scan(&category.Id,&category.Type,&category.CreateAt, &category.UpdateAt)
 	 
 	if err!=nil{
@@ -92,7 +90,9 @@ func Allcategorie() *categorie {
 }
 
 //cette fonction permet de modifier les informations d'une voiture
-func Updatecategory(category *Category){
+func Updatecategory(category *Category)Message{
+
+	var message Message
 	category.UpdateAt=time.Now()
 
 	stmt, err := Configuration.Db().Prepare("UPDATE categorie SET type=?, date_update=? WHERE idCategorie=?;")
@@ -103,14 +103,24 @@ func Updatecategory(category *Category){
 
 	_, err = stmt.Exec(category.Type,category.UpdateAt,category.Id)
 
-	if err!=nil{
-		log.Fatal(err)
+	if err==nil{
+		message.Code=200
+		message.Status="la mise a jour a ete un succes  !!!"
+	
+	}else{
+		fmt.Println(err)
+		message.Code=0
+		message.Status="la mise a jour a ete un echec !!!"
 	}
+	return message
 }
 
 
 //cette fonction permet la suppression d'un produit
-func DeletecategoryById(id int) error{
+func DeletecategoryById(id int) Message{
+
+	var message Message
+
 	stmt, err := Configuration.Db().Prepare("DELETE FROM categorie WHERE idCategorie=?;")
 	
 	if err!=nil{
@@ -118,7 +128,16 @@ func DeletecategoryById(id int) error{
 	}
 	_, err = stmt.Exec(id)
 
-	return err
+	if err==nil{
+		message.Code=200
+		message.Status="la Supression a ete un succes  !!!"
+	
+	}else{
+		fmt.Println(err)
+		message.Code=0
+		message.Status="la Supression a ete un echec !!!"
+	}
+	return message
 	
 }
 

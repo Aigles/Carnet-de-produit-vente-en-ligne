@@ -13,7 +13,7 @@ func main() {
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.
 		// AllowedMethods:   []string{"*"},
-		// AllowedHeaders:   []string{"Authorization"},
+		// AllowedHeaders:   []string{"*"},
 		AllowCredentials: true,
 	})
 
@@ -30,7 +30,7 @@ func main() {
 		ctx.HTML("<h1>Hello Word</h1>")
 	})
 
-
+//categorie
 	app.Get("/categorie", func(ctx iris.Context) {
 
 
@@ -39,18 +39,26 @@ func main() {
 
 
 	app.Get("/categorie/{id:int}", func(ctx iris.Context) {
-
-		categorieID, _ := ctx.Params().GetInt("id")		
+		categorieID, _ := ctx.Params().GetInt("id")
+		
 	   
 		ctx.JSON(categorieModels.FindcategoryById(categorieID));
 	})
 
-	app.Put("/modifiercategorie", func(ctx iris.Context) {
+	app.Post("/modifiercategorie", func(ctx iris.Context) {
 		var cat categorieModels.Category 
 
 		ctx.ReadJSON(&cat)
 	   
-		categorieModels.Updatecategory(&cat)
+		ctx.JSON(categorieModels.Updatecategory(&cat))
+	})
+
+	app.Post("/deletecategorie/{id:int}", func(ctx iris.Context) {
+		var cat categorieModels.Category 
+
+		ctx.ReadJSON(&cat)
+	   
+		ctx.JSON(categorieModels.Updatecategory(&cat))
 	})
 
 	app.Post("/creercategorie", func(ctx iris.Context) {
@@ -80,37 +88,47 @@ func main() {
 
 	app.Get("/produit/categorie/{id:int}", func(ctx iris.Context) {
 		categorieID, _ := ctx.Params().GetInt("id")
-		//config.DatabaseInit()
-		//liste := map[string]int8{"un": 1, "deux": 2, "trois": 3, "quatres": 4}
-		//envoie de texte simple
-		//ctx.WriteString("Hello word")
-		//envoie de texte HTML
-		//ctx.HTML("<h1>Hello Word</h1>")
-		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
-	//    ctx.Header("Access-Control-Allow-Origin","*")
-	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
-	//    ctx.Header("Access-Control-Allow-Methods","*")
+
 	   
 		ctx.JSON(produitModels.FindProduitByIdcategorie(categorieID));
 	})
 
 
+	app.Post("/modifierproduit", func(ctx iris.Context) {
+		var prod produitModels.Produit  
+
+		ctx.ReadJSON(&prod)
+	   
+		ctx.JSON(produitModels.UpdateProduit(&prod))
+	})
+
+
+	app.Post("/modifierproduit/caracteristics", func(ctx iris.Context) {
+		var caract produitModels.Caracteristiques  
+
+		ctx.ReadJSON(&caract)
+	   
+		ctx.JSON(produitModels.Updatecaracteristique(&caract))
+	})
+
+	app.Post("/deleteproduit/{id:int}", func(ctx iris.Context) {
+		produitID, _ := ctx.Params().GetInt("id")
+	   
+		ctx.JSON(produitModels.DeleteProduitById(produitID))
+	})
+
 	app.Post("/creerproduit", func(ctx iris.Context) {
-		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
-	//    ctx.Header("Access-Control-Allow-Origin","*")
-	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
-	//    ctx.Header("Access-Control-Allow-Methods","POST")
+	
 	   var prod produitModels.Produit 
 
 		ctx.ReadJSON(&prod)
 	  
 	   ctx.JSON( produitModels.Newproduit(&prod));
 	})
+
+
 	app.Post("/creerproduit/caracteristics", func(ctx iris.Context) {
-		//produitModels.Newproduit(&produitModels.Produit{Nom:"Jeans jupe",Description:"Jeans blanc",Nbre_like:0,Nbre_vendu:0, Nbre_en_stock:23,Rabais:0, Activer:0,Categorie_idCategorie:2})
-	//    ctx.Header("Access-Control-Allow-Origin","*")
-	//    ctx.Header("Access-Control-Allow-Headers","Content-Type")
-	//    ctx.Header("Access-Control-Allow-Methods","POST")
+
 	   var caract produitModels.Caracteristiques 
 
 		ctx.ReadJSON(&caract)
@@ -119,6 +137,48 @@ func main() {
 		   produitModels.NewCaracteristiques(&caract)
 		   //);
 	})
+
+
+
+	//commande
+	// app.Get("/commande", func(ctx iris.Context) {
+
+
+	// 	ctx.JSON(commandeModels.AllCommande())
+	// })
+
+
+	// app.Get("/commande/{id:int}", func(ctx iris.Context) {
+	// 	commandeID, _ := ctx.Params().GetInt("id")
+		
+	   
+	// 	ctx.JSON(categorieModels.FindCommandeById(commandeID));
+	// })
+
+	// app.Put("/modifiercommande", func(ctx iris.Context) {
+	// 	var commande commandeModels.Commande 
+
+	// 	ctx.ReadJSON(&commande)
+	   
+	// 	ctx.JSON(commandeModels.UpdateCategory(&commande))
+	// })
+
+	// app.Delete("/deletecommande/{id:int}", func(ctx iris.Context) {
+	// 	var commande commandeModels.Commande 
+
+	// 	ctx.ReadJSON(&commande)
+	   
+	// 	ctx.JSON(commandeModels.UpdateCommande(&commande))
+	// })
+
+	// app.Post("/creercommande", func(ctx iris.Context) {
+
+	//    var commande commandeModels.Commande 
+
+	// 	ctx.ReadJSON(&commande)
+	  
+	//    ctx.JSON( commandeModels.NewCommande(&commande));
+	// })
 	
 	newapp.Run(iris.Addr(":1230"))
-}
+}         
