@@ -133,6 +133,10 @@
         case 'kendy':
 			require('coeur/coeur.php');
 			break;
+		case 'tabie':
+			require('coeur/love.php');
+			break;
+
 
 	default:
 			# code...
