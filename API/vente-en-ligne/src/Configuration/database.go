@@ -13,7 +13,7 @@ var db *sql.DB
 //creation d'une instance de la base de donnees
 func DatabaseInitial() {
 	var err error
-	db, err = sql.Open("mysql", "root:@/aigle_vente_en_ligne?parseTime=true")
+	db, err = sql.Open("mysql", "root:TABITHA@/aigle_vente_en_ligne?parseTime=true")
 	//defer db.close()
 
 	if err != nil {
