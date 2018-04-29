@@ -1,5 +1,5 @@
 var id = GET_PARAM('pid');
-currentrow = 0;
+currentrows = 0;
 
 $.ajax({
   // url: Fullurl+"produit",
@@ -18,14 +18,14 @@ $.ajax({
   $('#toggle-two').prop('checked', 'true')
   if (data.caracteristic != null) {
     $.each(data.caracteristic, function (key, personnel) {
-      currentrow++;
-      if (key != null)
-      fullRow(key, personnel.image, personnel.image_1, personnel.couleur, personnel.size, personnel.prix, personnel.quantite)
+      currentrows = currentrows + 1;
+      fullRow(key, personnel.image, personnel.image_1, personnel.couleur, personnel.size, personnel.prix, personnel.quantite, personnel.id)
+      console.log("ligne: "+currentrows+" donnee: "+JSON.stringify(personnel));
     });
   }
 });
 
-function fullRow(row, image, image_1, couleur, size, prix, quantite) {
+function fullRow(row, image, image_1, couleur, size, prix, quantite, Cid) {/*<input type="hidden" name="caracId" value = "'+idCaracteristiques+'">*/
   var item = [
   ];
   dataTable_tf = '<div id="divi-' + row + '"><hr></div><div class="row"><div class="col-md-3"><div class="col-md-12 " id="divimg-' + row + '"><img class="" id="start-' + row + '" src="' + image + '" style="height:130px;"></br></div> ';
@@ -36,6 +36,7 @@ function fullRow(row, image, image_1, couleur, size, prix, quantite) {
   dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><input class="form-control" id="size-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer la taille " name="size" value="' + size + '" ></br></div> ';
   dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" value="' + prix + '"></br></div> ';
   dataTable_tf += '<div class="col-md-4 " id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" aria-describedby="nameHelp" placeholder="quantite" name="quantite" value="' + quantite + '"></br></div> ';
+  dataTable_tf += '<div class="col-md-4 " id="divg-' + row + '"><input class="form-control" id="cId-' + row + '" type="hidden" aria-describedby="nameHelp" placeholder="quantite" name="idCaracteristiques" value="' + Cid + '"></br></div> ';
   dataTable_tf += '<div class="col-md-2" id="divf-' + row + '"><a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="s-' + row + '" onclick="supprimer(' + row + ')"><i class=" glyphicon glyphicon-remove"></i></a></br></div></div></div><div id="divh-' + row + '"><hr></div> ';
   item.push(dataTable_tf);
   $('#tableday-id').append(item);
@@ -57,7 +58,7 @@ function GET_PARAM(param) {
 function modifierProduit() {
   var produit = {
   };
-  
+
   produit.id =parseInt(id);
   produit.nom = $('#nom-poduit').val();
   produit.description = $('#description-poduit').val();
@@ -67,31 +68,34 @@ function modifierProduit() {
   var ActiverProd = 0;
   if ($('#toggle-two').prop('checked') == true)
   ActiverProd = 1;
-  produit.activer = ActiverProd;
+  produit.Activer = ActiverProd;
   data = JSON.stringify(produit);
-  console.log(data);
-  //caracteristicProd(id);
+  //console.log(data);
   var url = fullUrl + 'modifierproduit';
   updateProduit(data, url);
+  caracteristicProduit(id);
 }
 
-function caracteristicProd(argument) {
-  for (i = 0; i < currentrow; i++) {
+function caracteristicProduit(argument) {
+  console.log(currentrows+" argument: "+argument);
+
+  for (i = 0; i < currentrows; i++) {
+    var id = parseInt($('#cId-'+i).val(), 10);
     var preview = document.querySelector('#divimg-' + i + ' img');
     var preview_1 = document.querySelector('#divimgg-' + i + ' img');
     //dateFormat retourne une chaine vide pour les date invalides
-    var caracteristics = {
-    };
-    caracteristics.produit_idProduit = parseInt(argument);
-    caracteristics.image = preview.src;
-    caracteristics.image_1 = preview_1.src;
-    caracteristics.couleur = $('#couleur-' + i).val();
-    caracteristics.prix = parseInt($('#prix-' + i).val());
-    caracteristics.size = parseInt($('#size-' + i).val());
-    caracteristics.quantite = parseInt($('#qte-' + i).val());
+    var caracteristics = {};
+    caracteristics.Produit_idProduit = parseInt(argument, 10);
+    caracteristics.id = id;
+    caracteristics.Image = preview.src;
+    caracteristics.Image_1 = preview_1.src;
+    caracteristics.Couleur = $('#couleur-' + i).val();
+    caracteristics.Prix = parseInt($('#prix-' + i).val());
+    caracteristics.Size = parseInt($('#size-' + i).val());
+    caracteristics.Quantite = parseInt($('#qte-' + i).val());
     data = JSON.stringify(caracteristics);
     console.log(data);
-    var url = fullUrl + 'modifierproduit/caracterics';
+    var url = fullUrl + 'modifierproduit/caracteristics';
     updateProduit(data, url);
   }
 }
@@ -99,25 +103,25 @@ function caracteristicProd(argument) {
 function updateProduit(data, url)
 {
   $.ajax({
-    url: url,
-    type: 'POST',
-    dataType: 'json',
-    data: data,
-    async :false,
-    crossDomain: true,
-    
-  }).done(function (data) {
-    $('#result-title').html('Reultat de l\'operation');
-    $('#result-info').html(data.status);
-    $('#myModal').modal('show');
-  }).fail(function (error) {
-    
-    $('#result-title').html('Reultat de l\'operation');
-    $('#result-info').html('Echec de l\'operation encour');
-    $('#myModal').modal('show');
-
-    if (error.status == 404) {
-      window.location = "index.php?p=404";                    
-    }
+      url: url,
+      type: 'POST',
+      dataType: 'json',
+      crossDomain: true,
+      data: data,
+      success: function (rs) {      
+            $('#result-title').html('Reultat de l\'operation');
+            $('#result-info').html(rs.status);
+            $.when($('#myModal').modal('show').delay(3000)).done(function(){
+              //window.location = "index.php?p=listerVetement";
+            });   
+          },
+      error: function (xhr,status,error) {
+        $('#result-title').html('Reultat de l\'operation');
+        $('#result-info').html('Echec de l\'operation encour');
+        $('#myModal').modal('show');
+        console.log("Status: " + status);
+        console.log("Error: " + error);
+        console.log("xhr: " + JSON.stringify(xhr));
+      }
   });
 }

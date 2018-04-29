@@ -1,4 +1,3 @@
-<script src="js/categorie/list.js"></script>
 <div class="row">
     <div class="box col-md-12">
         <div class="box-inner">
@@ -27,3 +26,5 @@
         </div>
     </div>
 </div>
+<script src="js/categorie/list.js"></script>
+<script src="js/categorie/supprimer.js"></script>

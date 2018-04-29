@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+
 	newapp := iris.New()
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.
@@ -54,11 +55,11 @@ func main() {
 	})
 
 	app.Post("/deletecategorie/{id:int}", func(ctx iris.Context) {
-		var cat categorieModels.Category 
 
-		ctx.ReadJSON(&cat)
+		categoryID, _ := ctx.Params().GetInt("id")
+
+		ctx.JSON(categorieModels.DeleteCategoryById(categoryID))
 	   
-		ctx.JSON(categorieModels.Updatecategory(&cat))
 	})
 
 	app.Post("/creercategorie", func(ctx iris.Context) {
@@ -134,9 +135,64 @@ func main() {
 		ctx.ReadJSON(&caract)
 	  
 	   //ctx.JSON( 
-		   produitModels.NewCaracteristiques(&caract)
+		produitModels.NewCaracteristiques(&caract)
 		   //);
 	})
+
+	//Routage pour les utilisateurs
+	app.Post("/ceerUtilisateur", func(ctx iris.Context) {
+
+
+		
+	})
+
+	//lister tout les utilisateurs
+	app.Get("/listerutilisateur", func(ctx iris.Context)
+	{
+
+
+	})
+
+	//modifier un utilisateur
+	app.Put("/modifierUtilisateur/{id}", func(ctx iris.Context){
+
+
+	})
+
+	//supprimer un utilisateur
+	app.Delete("/supprimerUtilisateur", func(ctx iris.Context){
+
+
+	})
+
+	//Routage pour les differents roles
+	app.Post("/ceerRole", func(ctx iris.Context) {
+
+
+		
+	})
+
+	//lister tout les utilisateurs
+	app.Get("/listeRole", func(ctx iris.Context)
+	{
+
+
+	})
+
+	//modifier un utilisateur
+	app.Put("/modifierModifier/{id}", func(ctx iris.Context){
+
+
+	})
+
+	//supprimer un utilisateur
+	app.Delete("/supprimerRole", func(ctx iris.Context){
+
+
+	})
+	
+
+
 
 
 

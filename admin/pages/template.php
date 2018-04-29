@@ -187,10 +187,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3 id="result-title">Setting</h3>
+                    <h3 id="result-title"></h3>
                 </div>
                 <div class="modal-body">
-                    <p id="result-info">Here settings can be configured...</p>
+                    <p id="result-info"></p>
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-danger" data-dismiss="modal">Close</a>

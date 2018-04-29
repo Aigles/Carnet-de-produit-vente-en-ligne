@@ -182,7 +182,7 @@ func DeleteProduitById(id int) Message{
 
 	var message Message
 
-	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE idProduit=?       ;")
+	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE idProduit=?;")
 	
 	if err!=nil{
 		fmt.Println(err)
