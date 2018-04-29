@@ -57,6 +57,8 @@ function GET_PARAM(param) {
 function modifierProduit() {
   var produit = {
   };
+  
+  produit.id =parseInt(id);
   produit.nom = $('#nom-poduit').val();
   produit.description = $('#description-poduit').val();
   produit.nbre_vendu = parseInt($('#nb-vendu').val());
@@ -98,10 +100,12 @@ function updateProduit(data, url)
 {
   $.ajax({
     url: url,
-    type: 'PUT',
+    type: 'POST',
     dataType: 'json',
-    crossDomain: true,
     data: data,
+    async :false,
+    crossDomain: true,
+    
   }).done(function (data) {
     $('#result-title').html('Reultat de l\'operation');
     $('#result-info').html(data.status);
