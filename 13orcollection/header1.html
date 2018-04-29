@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,6 +54,8 @@
     </form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="index.php">Accueil</a></li>
+	 <li><a href="cart.php"><span class="badge">0</span></span><span class="icon-shopping-cart"></span>Mon Panier</a></li>
+
 	 <!-- <li class=""><a href="special_offer.html">Offres</a></li>
 	 <li class=""><a href="normal.html">Livraison</a></li>
 	 <li class=""><a href="contact.html">Contact</a></li> -->
@@ -65,11 +68,13 @@
 		  </div>
 		  <div class="modal-body">
 			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="Email">
+			  <div class="control-group">
+			  <label for="email">Email:</label>								
+				<input type="email" name="email" id="inputEmail" placeholder="Email" value="<?=$email;?>">
 			  </div>
 			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="Mot de passe">
+			  <label for="password">Password:</label>	
+				<input type="password" name="password" id="inputPassword" placeholder="Mot de passe" value="<?=$password;?>">
 			  </div>
 			  <div class="control-group">
 				<label class="checkbox">
@@ -77,8 +82,8 @@
 				</label>
 			  </div>
 			</form>		
-			<button type="submit" class="btn btn-warning">Connecter</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+			<input type="submit" class="btn btn-warning" value="Connecter"/>;
+			<input class="btn" data-dismiss="modal" aria-hidden="true" value="Fermer"/>
 		  </div>
 	</div>
 	</li>
