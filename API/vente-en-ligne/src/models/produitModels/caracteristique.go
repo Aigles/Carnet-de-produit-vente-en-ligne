@@ -145,14 +145,16 @@ func Allcaracteristique() *caracteristique {
 //cette fonction permet de modifier les informations d'une voiture
 func Updatecaracteristique(caracteristique *Caracteristiques)MessageCaract{
 	// produit.UpdateAt=time.Now()
+	fmt.Println("Modification des caracteristiques d'un produit")
+	fmt.Println(caracteristique.IdCaracteristiques)
 	var message MessageCaract
-	stmt, err := Configuration.Db().Prepare("UPDATE caracteristiques SET couleur=?, size=?, prix=?,image=?,image_1=?,quantite=? WHERE idCaracteristiques=?;")
+	stmt, err := Configuration.Db().Prepare("UPDATE caracteristiques SET couleur=?, size=?, prix=?,image=?,image_1=?,quantite=? WHERE Produit_idProduit=? AND idCaracteristiques=?;")
 	
 	if err !=nil{
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&caracteristique.Couleur,&caracteristique.Size,&caracteristique.Prix,&caracteristique.Image,&caracteristique.Image_1,&caracteristique.Quantite,&caracteristique.IdCaracteristiques)
+	_, err = stmt.Exec(&caracteristique.Couleur,&caracteristique.Size,&caracteristique.Prix,&caracteristique.Image,&caracteristique.Image_1,&caracteristique.Quantite,&caracteristique.Produit_idProduit,&caracteristique.IdCaracteristiques)
 
 	if err==nil{
 		message.Code=200

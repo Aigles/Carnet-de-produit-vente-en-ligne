@@ -1,6 +1,6 @@
+var id = parseInt(GET_PARAM('pid'), 10);
 $(document).ready(function(){
 
-    var id = GET_PARAM('pid');
     console.log(id);
     $.ajax({ 
         // url: Fullurl+"produit",
@@ -40,10 +40,11 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
 
 function modifierCategorie(){
 
-    var categorie ={};
+    var category ={};
     
-    categorie.type=$('#nom-categorie').val();  
-    data=JSON.stringify(categorie);
+    category.Type=$('#nom-categorie').val();
+    category.Id = id;
+    data=JSON.stringify(category);
 
     console.log( data);
     var url=fullUrl+"modifiercategorie";
@@ -56,32 +57,27 @@ function updateData(data, url){
     
     $.ajax({ 
         url: url,
-        type: 'PUT', 
+        type: 'POST', 
         dataType: 'json', 
         crossDomain: true,
         data: data,
-        success: function (rs) {
-          alert(data.status);
-          $("#content").load('categorie/liste.html');
+        success: function (rs) {      
+            $('#result-title').html('Reultat de l\'operation');
+            $('#result-info').html(rs.status);
+            $.when($('#myModal').modal('show').delay(3000)).done(function(){
+                window.location = "index.php?p=listerCategorie";
+            });   
         },
         error: function (xhr,status,error) {
+            $('#result-title').html('Reultat de l\'operation');
+            $('#result-info').html('Echec de l\'operation encour');
+            $('#myModal').modal('show');
             console.log("Status: " + status);
             console.log("Error: " + error);
             console.log("xhr: " + JSON.stringify(xhr));
         }
 
-    })
-
-    /*done(function(data) { 
-        alert(data.status);
-        $("#content").load('categorie/liste.html');
-    }).fail(function(error){  
-        // alert("requete échouée !")
-        if (error.status==404) {
-            //window.location = "./login.html";                    
-        }
-    });*/
-
+    });
 
 }
- 
+

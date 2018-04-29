@@ -104,6 +104,8 @@ func Updatecategory(category *Category)Message{
 	_, err = stmt.Exec(category.Type,category.UpdateAt,category.Id)
 
 	if err==nil{
+		fmt.Println("le numero categorie qui a changer est:")
+		fmt.Println(category.Id)
 		message.Code=200
 		message.Status="la mise a jour a ete un succes  !!!"
 	
@@ -117,7 +119,7 @@ func Updatecategory(category *Category)Message{
 
 
 //cette fonction permet la suppression d'un produit
-func DeletecategoryById(id int) Message{
+func DeleteCategoryById(id int) Message{
 
 	var message Message
 
