@@ -147,8 +147,7 @@ func main() {
 	})
 
 	//lister tout les utilisateurs
-	app.Get("/listerutilisateur", func(ctx iris.Context)
-	{
+	app.Get("/listerutilisateur", func(ctx iris.Context){
 
 
 	})
@@ -173,8 +172,7 @@ func main() {
 	})
 
 	//lister tout les utilisateurs
-	app.Get("/listeRole", func(ctx iris.Context)
-	{
+	app.Get("/listeRole", func(ctx iris.Context) {
 
 
 	})
