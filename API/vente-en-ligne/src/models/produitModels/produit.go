@@ -6,19 +6,6 @@ import (
 	"fmt"
 )
 
-// type Caracteristiques struct{
-// 	IdCaracteristiques   int `json:"id"`
-// 	Couleur      string      `json:"couleur"`
-// 	Size         float64     `json:"size"`
-// 	Prix         float64     `json:"prix"`
-// 	Image        string     `json:"image"`
-// 	Quantite       int        `json:"quantite"`
-//     Caracteristiquescol  string  `json:"Caracteristiquescol"`
-// 	// CreateAt time.Time        `json:"date_creation"`
-// 	// UpdateAt time.Time        `json:"date_update"`
-// }
-
-//type caracteristique []Caracteristiques
 
 type Produit struct{
 	Id           int         `json:"id"`
@@ -152,7 +139,7 @@ func FindProduitByIdcategorie(id int) *produit{
 
 //cette fonction permet de modifier les informations d'une voiture
 func UpdateProduit(produit *Produit)Message{
-
+	fmt.Println(produit)
 	var message Message
 	produit.UpdateAt=time.Now()
 
@@ -182,7 +169,7 @@ func DeleteProduitById(id int) Message{
 
 	var message Message
 
-	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE idProduit=?;")
+	stmt, err := Configuration.Db().Prepare("DELETE FROM produit WHERE idProduit=?       ;")
 	
 	if err!=nil{
 		fmt.Println(err)

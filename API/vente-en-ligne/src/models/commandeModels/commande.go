@@ -1,4 +1,4 @@
-package CommandeModels
+package commandeModels
 
 import (
 	"Configuration"
@@ -9,15 +9,15 @@ import (
 
 
 type Commande struct{
-	IdCommande     int         `json:"idCommande"`
-	quantite    int           `json:"quantite"`
+	Id     int         `json:"idCommande"`
+	Quantite    int           `json:"quantite"`
 	Users_idUsers  int         `json:"users_idUsers"`
 	Paiement_idPaiement   int  `json:"paiement_idPaiement "`
 	Paiement_Reference_livraison_idReference_livraison  string  `json:"Paiement_Reference_livraison_id "`
 	CreateAt time.Time        `json:"date_creation"`
 	UpdateAt time.Time        `json:"date_update"`
 }
-type Commande []Commande
+type commande []Commande
 
 type Message struct{
 	Id        int64    `json:"id"`
@@ -59,8 +59,7 @@ func FindCommandeById(id int) *Commande{
 	var commande Commande 
  
 	row:=Configuration.Db().QueryRow("SELECT * FROM commande WHERE idCommande=?;",id)
-	err:= row.Scan(&commande.Id,&commande.CreateAt,&commande.Quantite,&commande.UpdateAt,&commande.Users_idUsers,&commande.Paiement_idPaiement,&commande.Paiement_Reference_livraison_idReference_livraison))
-	   Commande.Caracteristic=FindCaracteristiquesByIdCommande(Commande.Id);
+	err:= row.Scan(&commande.Id,&commande.CreateAt,&commande.Quantite,&commande.UpdateAt,&commande.Users_idUsers,&commande.Paiement_idPaiement,&commande.Paiement_Reference_livraison_idReference_livraison)
 	 
 	if err!=nil{
 		fmt.Println(err)
@@ -73,8 +72,8 @@ func FindCommandeById(id int) *Commande{
 
 
 //fonction permettant de trouver toutes les voitures
-func AllCommande() *Commande {
-	var commande Commande 
+func AllCommande() *commande {
+	var commande commande 
 
 	rows, err :=Configuration.Db().Query("SELECT commande.idCommande, date_commande,quantite,date_update,Users_idUsers, Paiement_idPaiement,Paiement_Reference_livraison_idReference_livraison FROM commande")
 	//fmt.Println("after rows")
@@ -94,7 +93,7 @@ func AllCommande() *Commande {
 			fmt.Println(err)
 		}
 		fmt.Printf("before append")
-		Commande=append(Commande, c)
+		commande=append(commande, c)
 		fmt.Printf("after Commande")
 	}
 
@@ -102,10 +101,10 @@ func AllCommande() *Commande {
 }
 
 //cette fonction permet de modifier les informations d'une voiture
-func UpdateCommande(Commande *Commande)Message{
+func UpdateCommande(commande *Commande)Message{
 
 	var message Message
-	Commande.UpdateAt=time.Now().UTC()
+	commande.UpdateAt=time.Now().UTC()
 
 	stmt, err := Configuration.Db().Prepare("UPDATE commande SET quantite=?, date_update=? WHERE idCommande=?;")
 	
@@ -113,7 +112,7 @@ func UpdateCommande(Commande *Commande)Message{
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&c.CreateAt,&c.Quantite,&c.UpdateAt,&c.Id)
+	_, err = stmt.Exec(&commande.CreateAt,&commande.Quantite,&commande.UpdateAt,&commande.Id)
 
 	if err==nil{
 		message.Code=200

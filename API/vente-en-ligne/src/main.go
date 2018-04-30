@@ -5,11 +5,13 @@ import (
 	"github.com/iris-contrib/middleware/cors"
 	"models/categorieModels"
 	"models/produitModels"
+	"models/commandeModels"
+	"models/rolleModels"
+	"models/usersModels"
 	"Configuration"
 )
 
 func main() {
-
 	newapp := iris.New()
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.
@@ -55,11 +57,11 @@ func main() {
 	})
 
 	app.Post("/deletecategorie/{id:int}", func(ctx iris.Context) {
+		var cat categorieModels.Category 
 
-		categoryID, _ := ctx.Params().GetInt("id")
-
-		ctx.JSON(categorieModels.DeleteCategoryById(categoryID))
+		ctx.ReadJSON(&cat)
 	   
+		ctx.JSON(categorieModels.Updatecategory(&cat))
 	})
 
 	app.Post("/creercategorie", func(ctx iris.Context) {
@@ -135,104 +137,143 @@ func main() {
 		ctx.ReadJSON(&caract)
 	  
 	   //ctx.JSON( 
-		produitModels.NewCaracteristiques(&caract)
+		   produitModels.NewCaracteristiques(&caract)
 		   //);
 	})
 
+
+
+	//commande
+	app.Get("/commande", func(ctx iris.Context) {
+
+
+		ctx.JSON(commandeModels.AllCommande())
+	})
+
+
+	app.Get("/commande/{id:int}", func(ctx iris.Context) {
+		commandeID, _ := ctx.Params().GetInt("id")
+		
+	   
+		ctx.JSON(commandeModels.FindCommandeById(commandeID))
+	})
+
+	app.Post("/modifiercommande", func(ctx iris.Context) {
+		var commande commandeModels.Commande 
+
+		ctx.ReadJSON(&commande)
+	   
+		ctx.JSON(commandeModels.UpdateCommande(&commande))
+	})
+
+	app.Post("/deletecommande/{id:int}", func(ctx iris.Context) {
+		var commande commandeModels.Commande 
+
+		ctx.ReadJSON(&commande)
+	   
+		ctx.JSON(commandeModels.UpdateCommande(&commande))
+	})
+
+	app.Post("/creercommande", func(ctx iris.Context) {
+
+	   var commande commandeModels.Commande 
+
+		ctx.ReadJSON(&commande)
+	  
+	   ctx.JSON( commandeModels.NewCommande(&commande))
+	})
+	
+ 
 	//Routage pour les utilisateurs
 	app.Post("/ceerUtilisateur", func(ctx iris.Context) {
 
 
+		var users usersModels.Users 
+
+		ctx.ReadJSON(&users)
+	  
+	   ctx.JSON( usersModels.NewUsers(&users))
 		
 	})
 
 	//lister tout les utilisateurs
 	app.Get("/listerutilisateur", func(ctx iris.Context){
-
-
+		ctx.JSON( usersModels.AllUsers())
 	})
 
-	//modifier un utilisateur
-	app.Put("/modifierUtilisateur/{id}", func(ctx iris.Context){
+		//lister tout les utilisateurs
+	app.Get("/listerutilisateur/{id:int}", func(ctx iris.Context) {
+		userID, _ := ctx.Params().GetInt("id")
 
+		ctx.JSON( usersModels.FindUsersById(userID))
+		})
+
+	//modifier un utilisateur
+	app.Post("/modifierUtilisateur", func(ctx iris.Context){
+         
+		var users usersModels.Users 
+
+		ctx.ReadJSON(&users)
+	  
+	   ctx.JSON( usersModels.UpdateUsers(&users))
 
 	})
 
 	//supprimer un utilisateur
-	app.Delete("/supprimerUtilisateur", func(ctx iris.Context){
+	app.Post("/supprimerUtilisateur/{id:int}", func(ctx iris.Context) {
+		userID, _ := ctx.Params().GetInt("id")
 
+		ctx.JSON( usersModels.DeleteUsersById(userID))
 
 	})
 
 	//Routage pour les differents roles
-	app.Post("/ceerRole", func(ctx iris.Context) {
+	app.Post("/creerRole", func(ctx iris.Context) {
+		var role rolleModels.Roles 
 
-
+		ctx.ReadJSON(&role)
+	   
+		ctx.JSON(rolleModels.NewRole(&role))
 		
 	})
 
 	//lister tout les utilisateurs
 	app.Get("/listeRole", func(ctx iris.Context) {
 
-
+		ctx.JSON(rolleModels.ListerRole())
 	})
 
+
+	app.Get("/listeRole{id:int}", func(ctx iris.Context) {
+		roleID, _ := ctx.Params().GetInt("id")
+
+		ctx.JSON(rolleModels.FindRoleById(roleID))
+	})   
+
+
 	//modifier un utilisateur
-	app.Put("/modifierModifier/{id}", func(ctx iris.Context){
+	app.Post("/modifierRole", func(ctx iris.Context){
+		var role rolleModels.Roles 
 
-
+		ctx.ReadJSON(&role)
+	   
+		ctx.JSON(rolleModels.UpdateRole(&role))    
 	})
 
 	//supprimer un utilisateur
-	app.Delete("/supprimerRole", func(ctx iris.Context){
+	app.Post("/supprimerRole{id:int}", func(ctx iris.Context) {
+		roleID, _ := ctx.Params().GetInt("id")
 
 
+		ctx.JSON(rolleModels.DeleteRoleById(roleID))
 	})
 	
 
+	//connexion 
+	app.Post("/connexion", func(ctx iris.Context) {
 
-
-
-
-	//commande
-	// app.Get("/commande", func(ctx iris.Context) {
-
-
-	// 	ctx.JSON(commandeModels.AllCommande())
-	// })
-
-
-	// app.Get("/commande/{id:int}", func(ctx iris.Context) {
-	// 	commandeID, _ := ctx.Params().GetInt("id")
-		
-	   
-	// 	ctx.JSON(categorieModels.FindCommandeById(commandeID));
-	// })
-
-	// app.Put("/modifiercommande", func(ctx iris.Context) {
-	// 	var commande commandeModels.Commande 
-
-	// 	ctx.ReadJSON(&commande)
-	   
-	// 	ctx.JSON(commandeModels.UpdateCategory(&commande))
-	// })
-
-	// app.Delete("/deletecommande/{id:int}", func(ctx iris.Context) {
-	// 	var commande commandeModels.Commande 
-
-	// 	ctx.ReadJSON(&commande)
-	   
-	// 	ctx.JSON(commandeModels.UpdateCommande(&commande))
-	// })
-
-	// app.Post("/creercommande", func(ctx iris.Context) {
-
-	//    var commande commandeModels.Commande 
-
-	// 	ctx.ReadJSON(&commande)
-	  
-	//    ctx.JSON( commandeModels.NewCommande(&commande));
-	// })
 	
+	 })
+
 	newapp.Run(iris.Addr(":1230"))
 }         

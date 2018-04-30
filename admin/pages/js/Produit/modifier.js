@@ -85,7 +85,7 @@ function caracteristicProduit(argument) {
     var preview_1 = document.querySelector('#divimgg-' + i + ' img');
     //dateFormat retourne une chaine vide pour les date invalides
     var caracteristics = {};
-    caracteristics.Produit_idProduit = parseInt(argument, 10);
+    caracteristics.produit_idProduit = parseInt(argument, 10);
     caracteristics.id = id;
     caracteristics.Image = preview.src;
     caracteristics.Image_1 = preview_1.src;

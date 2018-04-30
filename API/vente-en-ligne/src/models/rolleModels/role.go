@@ -1,9 +1,9 @@
-package roleModels
+package rolleModels
 
 import(
-	
 	"Configuration"
 	"fmt"
+	"time"
 )
 
 type Roles struct{
@@ -23,9 +23,9 @@ type MessageRole struct {
 
 }
 
-//type role []Roles
+type Role []Roles
 
-func newRole(role *Role) MessageRole{
+func NewRole(role *Roles) MessageRole{
 
 	var message MessageRole
 	if role == nil{
@@ -49,11 +49,11 @@ func newRole(role *Role) MessageRole{
 }
 
 //pour retrouver un role par son id
-func findRoleById(id int) *Role{
+func FindRoleById(id int) *Roles{
 
-	var role Role
+	var role Roles
 
-	row := Configuration.Db().QueryRow("SELECT * FROM role WHERE idRole = ?", id)
+	row := Configuration.Db().QueryRow("SELECT * FROM role WHERE idRoles= ?", id)
 
 	err := row.Scan(&role.Nom, &role.Description, &role.CreateAt, &role.UpdateAt, &role.IdRole)
 
@@ -65,17 +65,17 @@ func findRoleById(id int) *Role{
 }
 
 //pour la mise a jour d'un role
-func updateRole(role *Role) MessageRole{
+func UpdateRole(role *Roles) MessageRole{
 
 	var message MessageRole
 
-	str, err := Configuration.Db().Prepare("UPDATE ROLE SET nom = ?, description = ?, date_update = ? WHERE idRole = ? ")
+	str, err := Configuration.Db().Prepare("UPDATE ROLE SET nom = ?, description = ?, date_update = ? WHERE idRoles= ? ")
 
 	if err != nil{
 		fmt.Println(err)
 	}
 
-	_, err = str.Scan(&role.Nom, &role.Description, &role.UpdateAt, &role.IdRole)
+	_, err = str.Exec(&role.Nom, &role.Description, &role.UpdateAt, &role.IdRole)
 
 	if err ==nil{
 		message.code = 200
@@ -89,21 +89,21 @@ func updateRole(role *Role) MessageRole{
 }
 
 //pour lister les roles
-func listerRole() Role{
+func ListerRole() Role{
 
 	var role Role
 
-	rows, err := Configuration.Db().Query("SELECT idRole, nom, drescription FROM role")
+	rows, err := Configuration.Db().Query("SELECT idRole, nom, description FROM role")
 
 	if err !=nil{
 		fmt.Println(err)
 	}
 
-	defer rows.close()
+	defer rows.Close()
 	fmt.Println("Listage des differentes Roles")
 	for rows.Next(){
-		var r Role
-		err := rows.Scan(&role.IdRole, &role.Nom, &role.Description)
+		var r Roles
+		err := rows.Scan(&r.IdRole, &r.Nom, &r.Description)
 
 		if err !=nil{
 			fmt.Println(err)
@@ -113,9 +113,32 @@ func listerRole() Role{
 		fmt.Printf("after Role")
 
 	}
+	 return role
 
 }
 
 //pour supprimer un role
+func DeleteRoleById(id int) MessageRole{
 
+	var message MessageRole
+
+	stmt, err := Configuration.Db().Prepare("DELETE FROM role WHERE idRole=?;")
+	
+	if err!=nil{
+		fmt.Println(err)
+	}
+	_, err = stmt.Exec(id)
+	 
+	if err==nil{
+		message.code=200
+		message.status="Suppression reussie"
+	
+	}else{
+		fmt.Println(err)
+		message.code=0
+		message.status="Suppression echouee"
+	}
+	return message
+	
+}
 
