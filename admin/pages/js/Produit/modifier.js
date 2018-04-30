@@ -58,12 +58,13 @@ function GET_PARAM(param) {
 function modifierProduit() {
   var produit = {
   };
-  produit.Id = parseInt(id, 10);
-  produit.Nom = $('#nom-poduit').val();
-  produit.Description = $('#description-poduit').val();
-  produit.Nbre_vendu = parseInt($('#nb-vendu').val(), 10);
-  produit.Nbre_en_stock = parseInt($('#nb-poduit').val(), 10);
-  produit.Rabais = parseInt($('#nb-rabais').val(), 10);
+
+  produit.id =parseInt(id);
+  produit.nom = $('#nom-poduit').val();
+  produit.description = $('#description-poduit').val();
+  produit.nbre_vendu = parseInt($('#nb-vendu').val());
+  produit.nbre_en_stock = parseInt($('#nb-poduit').val());
+  produit.rabais = parseInt($('#nb-rabais').val());
   var ActiverProd = 0;
   if ($('#toggle-two').prop('checked') == true)
   ActiverProd = 1;
@@ -84,7 +85,7 @@ function caracteristicProduit(argument) {
     var preview_1 = document.querySelector('#divimgg-' + i + ' img');
     //dateFormat retourne une chaine vide pour les date invalides
     var caracteristics = {};
-    caracteristics.Produit_idProduit = parseInt(argument, 10);
+    caracteristics.produit_idProduit = parseInt(argument, 10);
     caracteristics.id = id;
     caracteristics.Image = preview.src;
     caracteristics.Image_1 = preview_1.src;
