@@ -22,8 +22,8 @@
 		//alert(id);
 		var data = {"id" : id};
 		jQuery.ajax({
-			url: <?=BASEURL;?>+'each_product.php',
-			method : "POST",
+			url: '/13orcollection/each_product.php',
+			type : "POST",
 			data : data,
 			success: function(data){
 				jQuery('body').append(data);
@@ -37,25 +37,47 @@
 	}
 
 	function add_to_cart(){
-		//alert("work!");
-		jQuery('modal_errors').html("");
-		var size = jQuery('size').hide();
-		setTimeout(function(){
-			jQuery('#details-modal').remove();
-			jQuery('.modal-backdrop').remove();
-		},500);
+    //alert("Votre produit a bien été ajouté dans le panier!");
+    jQuery('#modal_errors').html("");
+    var size = jQuery('#size').val();
+    var quantity = jQuery('#quantity').val();
+    var available = jQuery('#available').val();
+    var error = '';
+    var data = jQuery('#add_product_form').serialize();
+    if(quantity < 0 || quantity == '' || quantity == 0){
+      error += '<div class=\'alert alert-danger text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>Vous devez saisir une quantité valide..!</b></div>';
+      jQuery('#modal_errors').html(error);
+      return;
+    }
+    else if(quantity > available){
+      valide += '<div class=\'alert alert-succes text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>produit ajouté dans le panier.!</b></div>';
+      jQuery('#modal_errors').html(valide);
+      return;
+    }
+    else{
+        jQuery.ajax({
+            url : '/13orcollection/admin/parsers/add_cart.php',
+            type : 'POST',
+            data : data,
+            success : function(){
+				location.reload();
+			},
+            error : function(){alert("Something went wrong") }
+        });
+    }
+    }
 
-	}
-	function add_to_cart(){
-		//alert("work!");
-		jQuery('#details-modal').modal('hide');
-		setTimeout(function(){
-			jQuery('#details-modal').remove();
-			jQuery('.modal-backdrop').remove();
-		},500);
+	
+	// function add_to_cart(){
+	// 	//alert("work!");
+	// 	}
 
-	}
+	
 
 	
 
 </script>
+
+<!-- <span id="modal_errors" class="bg-danger"></span>
+<input type="hidden" name="product_id" value="<?=$id;?>">
+<input type="hidden" name="available" value=""> -->

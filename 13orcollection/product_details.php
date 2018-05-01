@@ -32,32 +32,29 @@
 	<style type="text/css" id="enject"></style>
   </head>
 <body>
-<!-- ====================== Header ============================================ -->
-<?php include 'header.html'; ?>
-<!-- ====================== Header End ============================================ -->
+	<?php include 'header.php'; ?><!-- ================== Header ============================================ -->
+
 <div id="mainBody">
 	<div class="container">
-	<div class="row">
-<!-- ======================= Sidebar -->
-	
-<!-- ======================= Sidebar End -->
-</div>
-<div class="span6" id="detail_produit">
-				
-			</div>	
+		<div class="row">
+	<!-- ======================= Sidebar -->
+		
+	<!-- ======================= Sidebar End -->
+		</div>
+
+		<div class="span6" id="detail_produit"></div><!-- ========== affichage des produits ================== -->	
 <!-- ========================FIN DIV AJOUTER -->
 	
-		</div>
-          </div>
+	</div>
+</div>
 	</div>
 </div>
 </div> </div>
 </div>
 <!-- MainBody End ============================= -->
 
-<!-- Footer ================================================================== -->
-	<?php include 'footer.php'; ?>
-<!-- end Footer ================================================================== -->
+	<?php include 'footer.php'; ?><!-- =========== Footer ===================================================== -->
+
 
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
@@ -69,7 +66,6 @@
     <script src="themes/js/detail.js"></script>
 	
 
-<span id="themesBtn"></span>
-
+<?php include 'script.php'; ?>
 </body>
 </html>
