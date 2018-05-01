@@ -28,7 +28,7 @@
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="js/config.js"></script>
 
-
+<script src="js/login/checkConnection.js"></script>
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -61,7 +61,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="#">Profil</a></li>
                     <li class="divider"></li>
-                    <li><a href="login.html">Decconnexion</a></li>
+                    <li><a href="login.html" onclick="sessionStorage.clear();">Decconnexion</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -241,5 +241,6 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <script src="js/jquery.validate.min.js"></script>
+
 </body> 
 </html>

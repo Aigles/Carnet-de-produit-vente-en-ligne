@@ -1,0 +1,144 @@
+package rolleModels
+
+import(
+	"Configuration"
+	"fmt"
+	"time"
+)
+
+type Roles struct{
+
+	IdRole			 int		`json:"idRole"`
+	Nom			     string		`json:"nom"`
+	Description		 string		`json:"description"`
+	CreateAt		 time.Time	`json:"date_creation"`
+	UpdateAt		 time.Time  `json:"date_update"`
+
+}
+
+type MessageRole struct {
+
+	code			int			`json:"code"`
+	status			string		`json:"status"`
+
+}
+
+type Role []Roles
+
+func NewRole(role *Roles) MessageRole{
+
+	var message MessageRole
+	if role == nil{
+		fmt.Println(role)
+	}
+
+	role.CreateAt = time.Now()
+
+	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation) VALUE(?, ?, ?)", role.Nom, role.Description, role.CreateAt)
+
+	if err ==nil{
+		message.code = 200
+		message.status = "success de la creation du role"
+	}else{
+		message.code = 0
+		message.status = "l'enregistrement a echoue"
+	}
+
+	return message
+
+}
+
+//pour retrouver un role par son id
+func FindRoleById(id int) *Roles{
+
+	var role Roles
+
+	row := Configuration.Db().QueryRow("SELECT * FROM role WHERE idRoles= ?", id)
+
+	err := row.Scan(&role.Nom, &role.Description, &role.CreateAt, &role.UpdateAt, &role.IdRole)
+
+	if err != nil{
+		fmt.Println(err)
+	}
+
+	return &role
+}
+
+//pour la mise a jour d'un role
+func UpdateRole(role *Roles) MessageRole{
+
+	var message MessageRole
+
+	str, err := Configuration.Db().Prepare("UPDATE ROLE SET nom = ?, description = ?, date_update = ? WHERE idRoles= ? ")
+
+	if err != nil{
+		fmt.Println(err)
+	}
+
+	_, err = str.Exec(&role.Nom, &role.Description, &role.UpdateAt, &role.IdRole)
+
+	if err ==nil{
+		message.code = 200
+		message.status = "success de la mise a jour"
+	}else{
+		message.code = 0
+		message.status = "la mise a jour a echoue"
+	}
+
+	return message
+}
+
+//pour lister les roles
+func ListerRole() Role{
+
+	var role Role
+
+	rows, err := Configuration.Db().Query("SELECT idRole, nom, description FROM role")
+
+	if err !=nil{
+		fmt.Println(err)
+	}
+
+	defer rows.Close()
+	fmt.Println("Listage des differentes Roles")
+	for rows.Next(){
+		var r Roles
+		err := rows.Scan(&r.IdRole, &r.Nom, &r.Description)
+
+		if err !=nil{
+			fmt.Println(err)
+		}
+		fmt.Println("before append")
+		role = append(role, r)
+		fmt.Printf("after Role")
+
+	}
+	 return role
+
+}
+
+//pour supprimer un role
+func DeleteRoleById(id int) MessageRole{
+
+	var message MessageRole
+
+	stmt, err := Configuration.Db().Prepare("DELETE FROM role WHERE idRole=?;")
+	
+	if err!=nil{
+		fmt.Println(err)
+	}
+	_, err = stmt.Exec(id)
+	 
+	if err==nil{
+		message.code=200
+		message.status="Suppression reussie"
+	
+	}else{
+		fmt.Println(err)
+		message.code=0
+		message.status="Suppression echouee"
+	}
+	return message
+	
+}
+
