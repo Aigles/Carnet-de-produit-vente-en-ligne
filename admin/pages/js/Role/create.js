@@ -29,7 +29,7 @@ function creerRole()
   	
 
   	url = fullUrl+'creerRole';
-    data = JSON.stringify(Role);
+     = JSON.stringify(Role);
   	sendData(url,data);
 
   	
