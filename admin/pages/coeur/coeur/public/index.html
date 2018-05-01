@@ -1,25 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, 
-    user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
-minimum-scale=1.0">
-    <link rel="stylesheet" 
-href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>File upload using Ajax</title>
+    <title>Upload</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <style>
+        input[type=file]{
+            float:left;
+        }
+    </style>
 </head>
 <body>
-    <form action="/upload" method="post" enctype="multipart/form-data" class="uploadForm">
-        <input class="uploadForm__input" type="file" name="file" id="inputFile" accept="image/*">
-        <label class="uploadForm__label" for="inputFile">
-            <i class="fa fa-upload uploadForm__icon"></i> Select a file
-        </label>
-    </form>
-    <div class="notification" id="alert"></div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="api.js"></script>
-    <script src="app.js"></script>
+
+    <div class="container">
+
+        <h1>Uploader</h1>
+        <hr>
+        <form action="#">
+            <input type="file" name="image" >
+            <button class="btn btn-sm btn-info upload" type="submit">Upload</button>
+            <button type="button" class="btn btn-sm btn-danger cancel">Cancel</button>
+            <div class="progress progress-striped active">
+                <div class="progress-bar" style="width:0%"></div>
+            </div>
+        </form>
+
+        <form action="#">
+            <input type="file" name="image" >
+            <button class="btn btn-sm btn-info upload" type="submit">Upload</button>
+            <button type="button" class="btn btn-sm btn-danger cancel">Cancel</button>
+            <div class="progress progress-striped active">
+                <div class="progress-bar" style="width:0%"></div>
+            </div>
+        </form>
+
+        <form action="#">
+            <input type="file" name="image" >
+            <button class="btn btn-sm btn-info upload" type="submit">Upload</button>
+            <button type="button" class="btn btn-sm btn-danger cancel">Cancel</button>
+            <div class="progress progress-striped active">
+                <div class="progress-bar" style="width:0%"></div>
+            </div>
+        </form>
+
+        <hr>
+
+        <button class="btn btn-sm btn-primary upload-all">Upload All</button>
+        <button class="btn btn-sm btn-danger cancel-all">Cancel All</button>
+
+    </div><!-- end .container -->
 </body>
 </html>

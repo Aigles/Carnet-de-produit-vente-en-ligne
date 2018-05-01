@@ -46,16 +46,14 @@ function sendData(url, data)
 		daType: 'json',
 		crossDomain : 'true',
 		data : data,
-		    success: function (rs) {      
+		    success: function (rs) { 
+            console.log("RS : "+ JSON.stringify(rs));   
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html(rs.status);
             $.when($('#myModal').modal('show').delay(3000)).done(function(){
                 //  if (rs.id!=0) {
                 // window.location = "index.php";  }
-            }); 
-            
-             
-          
+            });         
         },
         error: function (xhr,status,error) {
             $('#result-title').html('Reultat de l\'operation');

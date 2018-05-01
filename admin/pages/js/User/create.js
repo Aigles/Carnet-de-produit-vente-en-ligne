@@ -14,6 +14,7 @@ $('#addRole').click(function () {
   for (i = 0; i < nbligne; i++) {
     currentrow++;
     createRow(currentrow);
+    getRole('#row'+currentrow);
   	console.log('Creation du ligne: '+currentrow);
   }
 });
@@ -23,10 +24,7 @@ function createRow(row) {
   tabItem ='<div class="col-md-12">'
   tabItem += '<div class="col-md-4 pull-left" id="role'+row+'">';
   tabItem += '<div class="form-group">';
-  tabItem += '<select class="form-control">';
-  tabItem += '<option value="01">Lecture</option>';
-  tabItem += '<option value="02">ecritur</option>';
-  tabItem += '<option value="03">execution</option>';
+  tabItem += '<select class="form-control" id="roles'+row+'">';
   tabItem += '</select> ';
   tabItem += '</div>';
   tabItem += '</div>';
@@ -36,6 +34,7 @@ function createRow(row) {
   tabItem += '</div>';
   item.push(tabItem);
   $('#tableday-id').append(item);
+
 }
 
 function supprimerRow(id)
@@ -86,7 +85,46 @@ $(document).ready(function(){
 	})
 });
 
+
+function addUser()
+{
+	for (var i = 0; i < currentrow; i++) {
+		
+
+	}
+
+}
  
+
+function sendData(url, data, option)
+{
+
+}
+
+function getRole(chaine)
+{
+		var items = [];
+	  var url = fullUrl + 'role'
+	  $.ajax({
+	    url: url,
+	    type: 'GET',
+	    dataType: 'json',
+	    crossDomain: true,
+	  }).done(function (data) {
+	    var items = [
+	    ];
+	    $.each(data, function (key, value) {
+	      var mon = '';
+	      if (value.id == id)
+	      mon = 'selected'
+	      values = '<option  ' + mon + ' value="' + value.id + '">' + value.nom + '</option>';
+	      items.push(values);
+	    });
+	    $('#' + chaine).append(items);
+	    console.log(items);
+	  });
+
+}
                                                             
                            
 

@@ -46,6 +46,8 @@ function supprimer(id) {
   $('#divimgg-' + id + '').remove();
   $('#divaa-' + id + '').remove();
   currentrow = currentrow - 1;
+  if (currentrow < 0)
+    currentrow = 0;
 }
 
 function creerProduit() {

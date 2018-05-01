@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 	<body>
 		<script >
-			window.location="pages/login.html"
+			window.location="pages/login.php"
 		</script>
 	</body>
 </html>

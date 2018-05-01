@@ -18,8 +18,8 @@ type Roles struct{
 
 type MessageRole struct {
 
-	code			int			`json:"code"`
-	status			string		`json:"status"`
+	Code			int			`json:"code"`
+	Status			string		`json:"status"`
 
 }
 
@@ -33,15 +33,16 @@ func NewRole(role *Roles) MessageRole{
 	}
 
 	role.CreateAt = time.Now()
+    role.UpdateAt = time.Now()
 
-	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation) VALUE(?, ?, ?)", role.Nom, role.Description, role.CreateAt)
+	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation) VALUE(?, ?, ?)", role.Nom, role.Description, role.CreateAt,role.UpdateAt)
 
 	if err ==nil{
-		message.code = 200
-		message.status = "success de la creation du role"
+		message.Code = 200
+		message.Status = "success de la creation du role"
 	}else{
-		message.code = 0
-		message.status = "l'enregistrement a echoue"
+		message.Code = 0
+		message.Status = "l'enregistrement a echoue"
 	}
 
 	return message
@@ -69,6 +70,8 @@ func UpdateRole(role *Roles) MessageRole{
 
 	var message MessageRole
 
+	role.UpdateAt = time.Now()
+
 	str, err := Configuration.Db().Prepare("UPDATE ROLE SET nom = ?, description = ?, date_update = ? WHERE idRoles= ? ")
 
 	if err != nil{
@@ -78,11 +81,11 @@ func UpdateRole(role *Roles) MessageRole{
 	_, err = str.Exec(&role.Nom, &role.Description, &role.UpdateAt, &role.IdRole)
 
 	if err ==nil{
-		message.code = 200
-		message.status = "success de la mise a jour"
+		message.Code = 200
+		message.Status = "success de la mise a jour"
 	}else{
-		message.code = 0
-		message.status = "la mise a jour a echoue"
+		message.Code = 0
+		message.Status = "la mise a jour a echoue"
 	}
 
 	return message
@@ -130,13 +133,13 @@ func DeleteRoleById(id int) MessageRole{
 	_, err = stmt.Exec(id)
 	 
 	if err==nil{
-		message.code=200
-		message.status="Suppression reussie"
+		message.Code=200
+		message.Status="Suppression reussie"
 	
 	}else{
 		fmt.Println(err)
-		message.code=0
-		message.status="Suppression echouee"
+		message.Code=0
+		message.Status="Suppression echouee"
 	}
 	return message
 	
