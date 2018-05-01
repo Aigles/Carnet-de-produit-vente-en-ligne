@@ -92,6 +92,6 @@
         </div>
     </div>
 </div> 
-<script src="js/Produit/rowCaracteristiques.js"></script>
+<!-- <script src="js/Produit/rowCaracteristiques.js"></script> -->
 <script src="js/Produit/creerProduit.js"></script>
 <script src="js/Produit/modifier.js"></script>
