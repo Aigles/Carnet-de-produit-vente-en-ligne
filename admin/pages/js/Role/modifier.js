@@ -2,13 +2,15 @@ var id = parseInt(GET_PARAM('pid'), 10);
 $(document).ready(function(){
 
     $.ajax({ 
-        url: fullUrl+"categorie/"+id,
+        url: fullUrl+"rolle/"+id,
         type: 'GET', 
         dataType: 'json',
         crossDomain: true, 
         Accept : "application/json;charset=UTF-8",
         success: function (rs) {
-          $("#nom-categorie").val(rs.type);
+        //console.log("Status: "+JSON.stringify(rs));
+          $("#nom-rolle").val(rs.nom);
+          $("#description-rolle").val(rs.description);
         },
         error: function (xhr,status,error) {
           $("#nom-categorie").html("Aucune categorie n'est enregistre dans la base");
@@ -24,24 +26,25 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
     function( m, key, value ) { // callback 
         vars[key] = value !== undefined ? value : '';
      } );
-         if ( param ) { 
-            
-           
-
+         if ( param ) 
             return vars[param] ? vars[param] : null;
-         }
+
          return vars; 
 } 
 
-function modifierCategorie(){
+function modifierRolle(){
 
-    var category ={};
+    var role ={};
     
-    category.Type=$('#nom-categorie').val();
-    category.Id = id;
-    data=JSON.stringify(category);
+    role.id = parseInt(id);
 
-    var url=fullUrl+"modifiercategorie";
+    role.nom = $("#nom-rolle").val();
+
+    role.description = $("#description-rolle").val();
+
+    var url=fullUrl+"modifierRolle";
+
+    data = JSON.stringify(role);
     
     updateData(data, url);
 
@@ -49,6 +52,8 @@ function modifierCategorie(){
 
     
 function updateData(data, url){
+
+    console.log("Status: "+JSON.stringify(data));
     
     $.ajax({ 
         url: url,
@@ -60,7 +65,7 @@ function updateData(data, url){
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html(rs.status);
             $.when($('#myModal').modal('show').delay(100)).done(function(){
-                window.location = "index.php?p=listerCategorie";
+                window.location = "index.php?p=listerRole";
             });   
         },
         error: function (xhr,status,error) {
@@ -68,7 +73,8 @@ function updateData(data, url){
             $('#result-info').html('Echec de l\'operation encour');
             $.when($('#myModal').modal('show').delay(100)).done(function(){
                 location.reload();
-            });   
+            });  
+            //console.log("Echec: "+JSON.stringify(xhr)); 
         }
 
     });

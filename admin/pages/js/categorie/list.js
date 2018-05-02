@@ -1,8 +1,4 @@
-var path = window.location.pathname;
-var page = path.split("/").pop();
-console.log(page);
-
-
+//partie responsable de l'afficharge des differentes categories
 $.ajax({ url: fullUrl+"categorie",
     type: 'GET', 
     dataType: 'json', 

@@ -35,9 +35,9 @@
         <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="#">
             <i class="glyphicon glyphicon-shopping-cart yellow"></i>
 
-            <div>Ventes</div>
-            <div>$13320</div>
-            <span class="notification yellow">$34</span>
+            <div>Total Commande</div>
+            <div>13320</div>
+            <span class="notification yellow">34</span>
         </a>
     </div>
 
