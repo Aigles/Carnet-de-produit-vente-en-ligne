@@ -18,8 +18,8 @@ function creerCategorie(){
         
     data=JSON.stringify(categorie);
 
-    console.log( data);
     var url=fullUrl+"creercategorie";
+    
     sendData(data, url);
 }
 
@@ -35,17 +35,14 @@ function sendData(data, url){
         success: function (rs) {      
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html(rs.status);
-            $.when($('#myModal').modal('show').delay(3000)).done(function(){
-                window.location = "index.php?p=listerCategorie";
+            $.when($('#myModal').modal('show').delay(1000)).done(function(){
+                window.location = "index.php?p=creerCategorie";
             });   
         },
         error: function (xhr,status,error) {
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html('Echec de l\'operation encour');
             $('#myModal').modal('show');
-            console.log("Status: " + status);
-            console.log("Error: " + error);
-            console.log("xhr: " + JSON.stringify(xhr));
         }
 
     });

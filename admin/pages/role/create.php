@@ -35,11 +35,11 @@
                         <div class="box col-md-6">  
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nom</label>
-                                <input type="text" class="form-control " required id="nom-role" placeholder="Entrer le nom du Role">
+                                <input type="text" class="form-control " required id="nom-rolle" placeholder="Entrer le nom du Role">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Description</label>
-                                <textarea type="text" class="form-control autogrow required" id="description-role" required placeholder="Faite la description du role "></textarea>
+                                <textarea type="text" class="form-control autogrow required" id="description-rolle" required placeholder="Faite la description du role "></textarea>
                             </div>                   
                         </div>                        
                     </div>

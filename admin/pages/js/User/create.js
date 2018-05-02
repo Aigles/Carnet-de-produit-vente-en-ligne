@@ -1,56 +1,8 @@
-var initrow = 0;
-var schedules = [];
-var executer = 0;
-var currentrow = initrow;
-
-for (i = 0; i <= initrow; i++) {
-  createRow(i);
-  //console.log('Creation du ligne: '+i);
-}
-
-//la fonction pour ajouter une ligne pour la creation d'un ou des roles
-$('#addRole').click(function () {
-  var nbligne = parseInt($('#ligne').val(), 10);
-  for (i = 0; i < nbligne; i++) {
-    currentrow++;
-    createRow(currentrow);
-  	console.log('Creation du ligne: '+currentrow);
-  }
-});
-
-function createRow(row) {
-  var item = [];
-  tabItem ='<div class="col-md-12">'
-  tabItem += '<div class="col-md-4 pull-left" id="role'+row+'">';
-  tabItem += '<div class="form-group">';
-  tabItem += '<select class="form-control">';
-  tabItem += '<option value="01">Lecture</option>';
-  tabItem += '<option value="02">ecritur</option>';
-  tabItem += '<option value="03">execution</option>';
-  tabItem += '</select> ';
-  tabItem += '</div>';
-  tabItem += '</div>';
-  tabItem += '<div class="col-md-8" >';
-  tabItem += ' <button type="button" id="'+row+'" onclick="supprimerRow('+row+');" class="btn btn-danger pull-right" >supprimer role</button>';
-  tabItem += '</div>';
-  tabItem += '</div>';
-  item.push(tabItem);
-  $('#tableday-id').append(item);
-}
-
-function supprimerRow(id)
-{
-	$(document).ready(function(){
-		console.log(id);
-		$('#role'+id+' ').remove();
-		$('#'+id+'').remove();
-		currentrow -= 1;
-		
-	});
-}
-
 //Pour verifier que les mots de passe sont les memes
 $(document).ready(function(){
+
+	//afficher les role dans une liste deroulantes
+	getRole();
 
 	$password = $("#user-password");
 	$confirmP = $("#user-cPassword");
@@ -86,7 +38,95 @@ $(document).ready(function(){
 	})
 });
 
+
+function creerUtilisateur()
+{
+	//validatiion du formulaire pour la creation d'un role
+  	var data, url;
+
+  	$validator = $('#save_user form').validate();
+  	
+  	$valid = $('#save_user form').valid();
+  	
+  	if (!$valid) {
+    	$validator.focusInvalid();
+    	return false;
+  	}
+
+  	var user = {};
+
+  	user.nom = $("#user-nom").val();
+  	user.prenom = $("#user-prenom").val();
+  	user.email = $("#user-email").val();
+  	user.avatar = $("#user-avatar").val();
+  	user.password = $("#user-password").val();
+  	user.categorie_id = parseInt($( "select option:selected" ).val(), 10); //parseInt($("#user-categorie").val());
+
+  	data = JSON.stringify(user);
+
+  	console.log(data);
+
+  	var url = fullUrl+'ceerUtilisateur';
+
+  	sendData(url, data);
+
+
+}
  
+
+function sendData(url, data)
+{
+	$.ajax({
+		url : url,
+    	type: 'POST', 
+		daType: 'json',
+		crossDomain : 'true',
+		data : data,
+		    success: function (rs) {                
+            $('#result-title').html('Reultat de l\'operation');
+            $('#result-info').html(rs.status);
+            $.when($('#myModal').modal('show').delay(3000)).done(function(){
+                window.location = "index.php?p=listerUser";
+            });  
+             
+        },
+        error: function (xhr,status,error) {            
+            $('#result-title').html('Reultat de l\'operation');
+            $('#result-info').html('Echec de l\'operation encour');
+            $('#myModal').modal('show');
+            
+        }
+
+    });
+
+}
+
+function getRole(chaine)
+{
+		var items = [];
+	  var url = fullUrl + 'rolle'
+	  $.ajax({
+	    url: url,
+	    type: 'GET',
+	    dataType: 'json',
+	    crossDomain: true,
+	  }).done(function (data) {
+	    var items = [];
+
+	    $.each(data, function (key, value) {
+
+	    	if(parseInt(value.id, 10) == 11)
+	    		values = '<option selected="selected"   value="' + value.id + '">' + value.nom + '</option>';
+	    	else
+	    		values = '<option   value="' + value.id + '">' + value.nom + '</option>';
+	      items.push(values);
+	    });
+
+	    $("#user-role").append(items);
+	    console.log(items);
+	  });
+
+}
                                                             
                            
 
