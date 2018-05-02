@@ -61,7 +61,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="#">Profil</a></li>
                     <li class="divider"></li>
-                    <li><a href="login.html" onclick="sessionStorage.clear();">Decconnexion</a></li>
+                    <li><a href="login.php" onclick="sessionStorage.clear();">Decconnexion</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->

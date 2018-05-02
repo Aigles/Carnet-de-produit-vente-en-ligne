@@ -54,10 +54,7 @@ function sendData(url, data)
             $.when($('#myModal').modal('show').delay(3000)).done(function(){
                 //  if (rs.id!=0) {
                 // window.location = "index.php";  }
-            }); 
-            
-             
-          
+            });          
         },
         error: function (xhr,status,error) {
             $('#result-title').html('Reultat de l\'operation');
