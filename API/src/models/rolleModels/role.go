@@ -33,9 +33,8 @@ func NewRole(role *Roles) MessageRole{
 	}
 
 	role.CreateAt = time.Now()
-    role.UpdateAt = time.Now()
 
-	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation) VALUE(?, ?, ?)", role.Nom, role.Description, role.CreateAt,role.UpdateAt)
+	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation) VALUE(?, ?, ?)", role.Nom, role.Description, role.CreateAt)
 
 	if err ==nil{
 		message.Code = 200
@@ -69,8 +68,6 @@ func FindRoleById(id int) *Roles{
 func UpdateRole(role *Roles) MessageRole{
 
 	var message MessageRole
-
-	role.UpdateAt = time.Now()
 
 	str, err := Configuration.Db().Prepare("UPDATE ROLE SET nom = ?, description = ?, date_update = ? WHERE idRoles= ? ")
 

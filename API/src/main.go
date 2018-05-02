@@ -57,11 +57,11 @@ func main() {
 	})
 
 	app.Post("/deletecategorie/{id:int}", func(ctx iris.Context) {
-		var cat categorieModels.Category 
-
-		ctx.ReadJSON(&cat)
+		categorieID, _ := ctx.Params().GetInt("id")
+		
 	   
-		ctx.JSON(categorieModels.Updatecategory(&cat))
+		ctx.JSON(categorieModels.DeletecategoryById(categorieID));
+
 	})
 
 	app.Post("/creercategorie", func(ctx iris.Context) {
