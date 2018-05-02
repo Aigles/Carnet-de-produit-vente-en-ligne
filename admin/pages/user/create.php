@@ -1,3 +1,4 @@
+<script src="js/User/create.js"></script>
 <div>
     <ul class="breadcrumb">
        <li>
@@ -24,7 +25,7 @@
                             class="glyphicon glyphicon-remove"></i></a>
                 </div>
             </div>
-            <div class="box-content" id="save_vetement">
+            <div class="box-content" id="save_user">
                 <form role="form">
                     <div class="row">
                         <div class="box col-md-6">  
@@ -67,7 +68,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-9">
                                 <button type="reset" class="btn btn-default" >Annuler</button>
-                                <button type="button" class="btn btn-primary" onclick="creerproduit()">Enregistrer</button>
+                                <button type="button" class="btn btn-primary" onclick="creerUtilisateur();">Enregistrer</button>
                             </div>
                         </div>
                     </div>
@@ -76,7 +77,6 @@
         </div>
     </div>
 </div>
-<script src="js/User/create.js"></script>
     
 
  
