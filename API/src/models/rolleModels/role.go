@@ -8,7 +8,7 @@ import(
 
 type Roles struct{
 
-	IdRole			 int		`json:"idRole"`
+	IdRole			 int		`json:"id"`
 	Nom			     string		`json:"nom"`
 	Description		 string		`json:"description"`
 	CreateAt		 time.Time	`json:"date_creation"`
@@ -35,7 +35,7 @@ func NewRole(role *Roles) MessageRole{
 	role.CreateAt = time.Now()
     role.UpdateAt = time.Now()
 
-	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation) VALUE(?, ?, ?)", role.Nom, role.Description, role.CreateAt,role.UpdateAt)
+	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation, date_update) VALUE(?, ?, ?, ?)", role.Nom, role.Description, role.CreateAt,role.UpdateAt)
 
 	if err ==nil{
 		message.Code = 200
@@ -54,9 +54,9 @@ func FindRoleById(id int) *Roles{
 
 	var role Roles
 
-	row := Configuration.Db().QueryRow("SELECT * FROM role WHERE idRoles= ?", id)
+	row := Configuration.Db().QueryRow("SELECT * FROM role WHERE idRole= ?", id)
 
-	err := row.Scan(&role.Nom, &role.Description, &role.CreateAt, &role.UpdateAt, &role.IdRole)
+	err := row.Scan(&role.IdRole, &role.Nom, &role.Description, &role.CreateAt, &role.UpdateAt)
 
 	if err != nil{
 		fmt.Println(err)
@@ -72,7 +72,7 @@ func UpdateRole(role *Roles) MessageRole{
 
 	role.UpdateAt = time.Now()
 
-	str, err := Configuration.Db().Prepare("UPDATE ROLE SET nom = ?, description = ?, date_update = ? WHERE idRoles= ? ")
+	str, err := Configuration.Db().Prepare("UPDATE role SET nom = ?, description = ?, date_update = ? WHERE idRole= ? ")
 
 	if err != nil{
 		fmt.Println(err)

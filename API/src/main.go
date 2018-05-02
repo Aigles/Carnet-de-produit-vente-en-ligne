@@ -227,7 +227,7 @@ func main() {
 	})
 
 	//Routage pour les differents roles
-	app.Post("/creerRole", func(ctx iris.Context) {
+	app.Post("/creerRolle", func(ctx iris.Context) {
 		var role rolleModels.Roles 
 
 		ctx.ReadJSON(&role)
@@ -237,13 +237,13 @@ func main() {
 	})
 
 	//lister tout les utilisateurs
-	app.Get("/listeRole", func(ctx iris.Context) {
+	app.Get("/rolle", func(ctx iris.Context) {
 
 		ctx.JSON(rolleModels.ListerRole())
 	})
 
 
-	app.Get("/listeRole/{id:int}", func(ctx iris.Context) {
+	app.Get("/rolle/{id:int}", func(ctx iris.Context) {
 		roleID, _ := ctx.Params().GetInt("id")
 
 		ctx.JSON(rolleModels.FindRoleById(roleID))
@@ -251,7 +251,7 @@ func main() {
 
 
 	//modifier un utilisateur
-	app.Post("/modifierRole", func(ctx iris.Context){
+	app.Post("/modifierRolle", func(ctx iris.Context){
 		var role rolleModels.Roles 
 
 		ctx.ReadJSON(&role)
@@ -260,7 +260,7 @@ func main() {
 	})
 
 	//supprimer un utilisateur
-	app.Post("/supprimerRole/{id:int}", func(ctx iris.Context) {
+	app.Post("/supprimerRolle/{id:int}", func(ctx iris.Context) {
 		roleID, _ := ctx.Params().GetInt("id")
 
 

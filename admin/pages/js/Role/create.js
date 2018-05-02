@@ -1,7 +1,3 @@
-
-
-
-
 function creerRole()
 {
 	//validatiion du formulaire pour la creation d'un role
@@ -22,13 +18,13 @@ function creerRole()
   	//creation d'un objet Role
   	var Role = {};
 
-  	Role.nom = $("#nom-role").val();
+  	Role.nom = $("#nom-rolle").val();
   	
-  	Role.description = $("#description-role").val();
+  	Role.description = $("#description-rolle").val();
 
   	
 
-  	url = fullUrl+'creerRole';
+  	url = fullUrl+'creerRolle';
 
     data = JSON.stringify(Role);
     
@@ -48,15 +44,14 @@ function sendData(url, data)
 		daType: 'json',
 		crossDomain : 'true',
 		data : data,
-		    success: function (rs) { 
-            console.log("RS : "+ JSON.stringify(rs));   
+		    success: function (rs) {                
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html(rs.status);
             $.when($('#myModal').modal('show').delay(3000)).done(function(){
                 window.location = "index.php?p=listerRole";
-            });         
+            });       
         },
-        error: function (xhr,status,error) {
+        error: function (xhr,status,error) {            
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html('Echec de l\'operation encour');
             $('#myModal').modal('show');
