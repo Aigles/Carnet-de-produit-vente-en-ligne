@@ -3,24 +3,24 @@ function creerCategorie(){
     var $valid;
     var $validator;
     //validation
-    $validator = $("#save_categorie form").validate();
+    $validator = $("#save_inscription form").validate();
 
-    $valid= $("#save_categorie form").valid();
+    $valid= $("#save_inscription form").valid();
 
     if(!$valid) {
         $validator.focusInvalid();
         return false;
     }
    
-    var categorie ={};
- 
-    categorie.type=$('#nom-categorie').val();
-        
-    data=JSON.stringify(categorie);
-
-    console.log( data);
-    var url=fullUrl+"creercategorie";
-    sendData(data, url);
+  var user = {};
+  user.nom = $('#inputNom').val();
+  user.prenom = $('#inputPrenom').val();
+  user.email = $('#inputEmail1').val();
+  user.password = $('#inputPassword1').val();
+  data = JSON.stringify(user);
+  console.log(data);
+  var url = fullUrl + 'ceerUtilisateur';
+  sendData(data, url);
 }
 
 
@@ -36,7 +36,7 @@ function sendData(data, url){
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html(rs.status);
             $.when($('#myModal').modal('show').delay(3000)).done(function(){
-                window.location = "index.php?p=listerCategorie";
+                window.location = "inscription.php?p=creerUtilisateur";
             });   
         },
         error: function (xhr,status,error) {

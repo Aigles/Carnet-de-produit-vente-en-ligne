@@ -1,11 +1,11 @@
 <?php 
-	include 'log.php';
+	include 'insc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Inscription | Connection</title>
+    <title> Inscription </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -49,52 +49,75 @@
 <!-- Sidebar ================================================== -->
 
 <!-- Sidebar End ================================================== -->
+
 	<div class="span12">
     <ul class="breadcrumb">
 		<li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
-		<li class="active">Connection</li>
+		<li class="active">Inscription</li>
     </ul>
-    
-	<h3><p class="textcolors text-center"> Connection</p></h3>	
+    <!-- ======= codes php doivent etre ajouté ici pour les cas de test ====== -->
+	<h3><p class="textcolors text-center"> Création de Compte </p></h3>	
 	<hr class="soft"/>
 	
 	<div class="container" style=" margin-left: 80px;">
 	<div class="row" >
-		
 		<div class="span3"></div>
 		<div class="span4">
 			<div class="well">
-			<h5><p class="textcolors text-center">DÉJÀ ENREGISTRÉ ?</p></h5><hr><br/>
-			<form method="post" class="form-vertical loginFrm">
-
+			<h5><p class="textcolors text-center"> Formulaire d'inscription </p></h5><hr><br/>
+				<!-- <span id="modal_errors" class="bg-danger"></span> -->
+				
+			<div class="box-content" id="save_inscription">
+			<form role="form" method="post" class="form-vertical loginFrm" id="add_user_form">
 				<?php 
 					if(!empty($errors)){
 						echo display_errors($errors);
 					}
 					else{
-						echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>utilisateur connecté</p></div>';
+						echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Inscription réussi</p></div>';
 					}
 				?>
 			  <div class="control-group">
+				<label class="control-label" for="inputNom">Nom</label>
+				<div class="controls">
+				  <input class="span3"  type="text" name="nom" id="inputNom" placeholder="Nom" value="<?=$nom;?>">
+				</div>
+			  </div>
+			  <div class="control-group">
+				<label class="control-label" for="inputPrenom">Prénom</label>
+				<div class="controls">
+				  <input class="span3"  type="text" name="prenom" id="inputPrenom" placeholder="Prénom" value="<?=$prenom;?>">
+				</div>
+			  </div>
+			  <div class="control-group">
 				<label class="control-label" for="inputEmail1">Email</label>
 				<div class="controls">
-				  <input required class="span3"  type="email" name="email" id="inputEmail1" placeholder="Email" value="<?=$email;?>">
+				  <input class="span3"  type="email" name="email" id="inputEmail1" placeholder="Email" value="<?=$email;?>">
 				</div>
 			  </div>
 			  <div class="control-group">
-				<label class="control-label" for="inputPassword1">Password</label>
+				<label class="control-label" for="inputPassword1">Mot de passe</label>
 				<div class="controls">
-				  <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="Password" value="<?=$password;?>">
+				  <input type="password" class="span3"  name="password1" id="inputPassword1" placeholder="Password" value="<?=$password1;?>">
+				</div>
+				</div>
+			  <div class="control-group">
+				<label class="control-label" for="inputPassword2">Confirmer le Mot de passe</label>
+				<div class="controls">
+				  <input type="password" class="span3"  name="password2" id="inputPassword2" placeholder="Verifier Password" value="<?=$password2;?>">
 				</div>
 			  </div>
 			  <div class="control-group">
-				<div class="controls">
-				  <button type="submit" class="btn btn-warning block">Connecter </button> <a href="forgetpass.html">Forget password?</a>
-				</div>
+			  <div class="controls">
+			  <button type="submit" class="btn btn-warning">Enregistrer</button>
 			  </div>
+			</div>
 			</form>
 		</div>
 		</div>
+		</div>
+	</div>
+		
 	</div>
 </div>
 </div></div>
@@ -105,5 +128,6 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================= -->
 
+<script src="themes/js/inscription.js"></script>
 </body>
 </html>

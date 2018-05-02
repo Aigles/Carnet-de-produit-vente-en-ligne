@@ -1,11 +1,11 @@
 <?php 
 function display_errors($errors){
 	// $display = '<div class="alert alert-danger text-center"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-	$display = '<ul class="bg-danger">';
+	$display = '<div class="alert alert-danger" role="alert"><span class="sr-only">Erreur: </span>';
 	foreach($errors as $error){
-		$display .= '<li class="text-danger">'.$error.'</li>';
+		$display .= '<p>'.$error.'</p>';
 	}
-	$display .= '</ul>';
+	$display .= ' </div>';
 	return $display;
 }
 
