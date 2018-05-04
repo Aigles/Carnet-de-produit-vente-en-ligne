@@ -11,16 +11,14 @@
                 </div>
             </div>
             <div class="box-content">
-                <table  class="table table-striped table-bordered bootstrap-datatable datatable responsive tableV"  id="dataTableList">
+                <table  class="table table-striped table-bordered bootstrap-datatable datatable responsive tableUser"  id="dataTableList">
                     <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Description</th>
-                            <th>Nombre Like</th>
-                            <th>Code Article</th>
-                            <th>Nombre en stock</th>
-                            <th>Rabais</th>
-                            <th>Activer</th>
+                            <th>Prenom</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Role</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -32,16 +30,5 @@
     </div>
 </div>
 
-<script src="js/Produit/list.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- library for cookie management -->
-<script src="js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-<!-- data table plugin -->
-<script src='js/jquery.dataTables.min.js'></script>
-
-<!-- select or dropdown enhancer -->
-<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+<script src="js/User/lister.js"></script>
+<script src="js/User/supprimer.js"></script>

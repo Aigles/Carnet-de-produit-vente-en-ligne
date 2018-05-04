@@ -1,5 +1,5 @@
 //partie responsable de l'afficharge des differentes rolles
-$.ajax({ url: fullUrl+"categorie",
+$.ajax({ url: fullUrl+"utilisateur",
     type: 'GET', 
     dataType: 'json', 
     Accept : "application/json;charset=UTF-8"
@@ -11,14 +11,17 @@ $.ajax({ url: fullUrl+"categorie",
         $.each( data, function( key, value ) {     
             //console.log(value);    
             dataTable_tr = '<tr data-pid="'+value.id+'">';
-            dataTable_tr+='<td>'+value.type+'</td>';
-       
+            dataTable_tr+='<td>'+value.nom+'</td>';
+            dataTable_tr+='<td>'+value.prenom+'</td>';
+            dataTable_tr+='<td>'+value.email+'</td>';
+            dataTable_tr+='<td>'+value.etat_connection+'</td>';
+            dataTable_tr+='<td>'+value.role+'</td>';     
             dataTable_tr+='<td>';
-            dataTable_tr+='<a href="index.php?p=editerCategorie&pid='+value.id+'" onclick="modifierRole();" return false; class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
-            dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" onclick="supprimerRole('+value.id+');"><i class="fa fa-trash" >Supprimer</i></a>';
+            dataTable_tr+='<a href="index.php?p=editerUser&pid='+value.id+'" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
+            dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" onclick="supprimerUser('+value.id+');"><i class="fa fa-trash" >Supprimer</i></a>';
             dataTable_tr+='</tr>';            
 
-            $('.tableRole > tbody').append(dataTable_tr);
+            $('.tableUser > tbody').append(dataTable_tr);
         });
 
         $('.tablecategorie').dataTable({

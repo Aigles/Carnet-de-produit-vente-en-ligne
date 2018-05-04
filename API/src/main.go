@@ -196,12 +196,12 @@ func main() {
 	})
 
 	//lister tout les utilisateurs
-	app.Get("/listerutilisateur", func(ctx iris.Context){
+	app.Get("/utilisateur", func(ctx iris.Context){
 		ctx.JSON( usersModels.AllUsers())
 	})
 
 		//lister tout les utilisateurs
-	app.Get("/listerutilisateur/{id:int}", func(ctx iris.Context) {
+	app.Get("/utilisateur/{id:int}", func(ctx iris.Context) {
 		userID, _ := ctx.Params().GetInt("id")
 
 		ctx.JSON( usersModels.FindUsersById(userID))

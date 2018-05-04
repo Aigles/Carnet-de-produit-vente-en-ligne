@@ -56,7 +56,7 @@
     }
     else{
         jQuery.ajax({
-            url : '/13orcollection/admin/parsers/add_cart.php',
+            url : '/13orcollection/cart.php',
             type : 'POST',
             data : data,
             success : function(){
