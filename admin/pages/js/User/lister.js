@@ -17,7 +17,7 @@ $.ajax({ url: fullUrl+"utilisateur",
             dataTable_tr+='<td>'+value.etat_connection+'</td>';
             dataTable_tr+='<td>'+value.role+'</td>';     
             dataTable_tr+='<td>';
-            dataTable_tr+='<a href="index.php?p=editerCategorie&pid='+value.id+'" onclick="modifierUser();" return false; class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
+            dataTable_tr+='<a href="index.php?p=editerUser&pid='+value.id+'" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
             dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" onclick="supprimerUser('+value.id+');"><i class="fa fa-trash" >Supprimer</i></a>';
             dataTable_tr+='</tr>';            
 

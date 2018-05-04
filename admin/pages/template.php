@@ -28,7 +28,8 @@
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="js/config.js"></script>
 
-<script src="js/login/checkConnection.js"></script>
+
+    <script src="js/login/checkConnection.js"></script>
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -37,7 +38,7 @@
     <!-- The fav icon -->
     <link rel="shortcut icon" href="img/favicon.ico">
 
-    </head>
+</head>
 <body>
     <!-- topbar starts -->
 
@@ -202,6 +203,7 @@
 </div>
 
 <!-- chart libraries start -->
+
 <script src="bower_components/flot/excanvas.min.js"></script>
 <script src="bower_components/flot/jquery.flot.js"></script>
 <script src="bower_components/flot/jquery.flot.pie.js"></script>

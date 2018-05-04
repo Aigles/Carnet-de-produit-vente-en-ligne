@@ -1,4 +1,12 @@
-<script src="js/User/create.js"></script>
+<style type="text/css">
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+
+
+
+</style>
 <div>
     <ul class="breadcrumb">
        <li>
@@ -42,24 +50,32 @@
                                 <input type="email" class="form-control required" required id="user-email" placeholder="Entre l'adresse email">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Categorie</label>
+                                <label for="exampleInputPassword1">Rolle</label>
                                 <select class="form-control" id="user-role">
                                 </select>
                             </div>
                 
                         </div>
-                        <div class="box col-md-6">  
-                             <div class="form-group">
-                                <label for="exampleInputPassword1">Avatar</label>
-                                <input type="text" class="form-control required" required id="user-avatar" placeholder="Choisir un avatar">
+                        <div class="box col-md-6">
+                            <div class="form-group">
+                                <label>Avatar</label>
+                                <input type="file" name="img[]" class="file">
+                                <div class="input-group col-xs-12">
+                                  <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                  <input type="text" class="form-control " disabled placeholder="Upload Image">
+                                  <span class="input-group-btn">
+                                    <button class="browse btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                                  </span>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <label for="exampleInputPassword1">Nouveau mot de passe</label>
                                 <input type="password" class="form-control required" required id="user-password" placeholder="Entrer le mot de passe">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Confirmer mot de passe</label>
                                 <input type="password" class="form-control required" required id="user-cPassword" placeholder="Confirmer le mot de passe">
+                                <input type="hidden" name="id" id="user-id">
                             </div>                            
                         </div>
                     </div>                    
@@ -68,7 +84,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-9">
                                 <button type="reset" class="btn btn-default" >Annuler</button>
-                                <button type="button" class="btn btn-primary" onclick="creerUtilisateur();">Enregistrer</button>
+                                <button type="button" class="btn btn-primary" onclick="test();">Enregistrer</button>
                             </div>
                         </div>
                     </div>
@@ -77,6 +93,18 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).on('click', '.browse', function(){
+      var file = $(this).parent().parent().parent().find('.file');
+      file.trigger('click');
+    });
+    $(document).on('change', '.file', function(){
+      $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+    });
+</script>
     
+<script src="js/main.js"></script>
+<script src="js/User/modifier.js"></script>
 
  

@@ -17,7 +17,7 @@ type Users struct{
 	Date_derniere_connection time.Time          `json:"date_derniere_connection"`
 	Etat_connection          int                `json:"etat_connection"`
 	Avatar                   string             `json:"avatar"`
-	Role_idRole              int                `json:"categorie_id"`
+	Role_idRole              int                `json:"role_id"`
 	CreateAt                 time.Time          `json:"date_creation"`
 	UpdateAt                 time.Time          `json:"date_update"`
 
@@ -40,6 +40,7 @@ if u==nil{
 }
 u.CreateAt=time.Now();
 u.UpdateAt=time.Now();
+u.Date_derniere_connection = time.Now();
 
 res, err :=Configuration.Db().Exec("INSERT INTO users (nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
 
@@ -65,7 +66,7 @@ func FindUsersById(id int) *Users{
 	var Users Users 
  
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE idUsers=?;",id)
-	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
+	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,&Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
 	 
 	if err!=nil{
 		fmt.Println(err)
