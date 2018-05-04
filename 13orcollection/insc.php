@@ -12,10 +12,6 @@ require_once 'core/init.php';
     $password2 =((isset($_POST['password2']))?sanitize($_POST['password2']):'');
     $password2 =trim($password2);
     $errors = array(); 
-    //$passw1=isset($_POST['password1']);
-    //$passw2=isset($_POST['password2']);
-
-
 
     if($_POST){
 

@@ -146,7 +146,7 @@ p.textcolors h4{
 .textcolors{
 	color:#faa732;
 }
-#add_user_form input[type="text"], select, textarea, input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+#add_user_form input[type="text"], select, textarea, input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     display: inline-block;
     height: 30px;
     padding: 4px 6px;
@@ -160,7 +160,7 @@ p.textcolors h4{
     border-radius: 0px;
 }
 
-label, input, button, select, textarea {
+label, input, button, textarea {
     font-size: 16px;
     font-weight: bold;
     line-height: 20px;

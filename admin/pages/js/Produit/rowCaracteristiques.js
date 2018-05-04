@@ -60,19 +60,7 @@ function creerProduit() {
   if (!$valid) {
     $validator.focusInvalid();
     return false;
-  }  //     Id           int         `json:"id"`
-  // Nom          string       `json:"nom"`
-  // Description  string       `json:"description"`
-  // Nbre_like    int          `json:"nbre_like"`
-  // Nbre_vendu   int          `json:"nbre_vendu"`
-  // Nbre_en_stock int         `json:"nbre_en_stock"`
-  // Rabais        float64     `json:"rabais"`
-  // Activer       int          `json:"activer"`
-  // Categorie_idCategorie  int  `json:"categorie_id"`
-  // CreateAt time.Time        `json:"date_creation"`
-  // UpdateAt time.Time        `json:"date_update"`
-  // Caracteristic caracteristique `json:"caracteristic"`
-
+  }  
   var produit = {};
   produit.nom = $('#nom-poduit').val();
   produit.description = $('#description-poduit').val();

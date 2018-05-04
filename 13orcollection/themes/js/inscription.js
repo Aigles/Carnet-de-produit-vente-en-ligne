@@ -1,54 +1,39 @@
-function creerCategorie(){
-    //validatiion
-    var $valid;
-    var $validator;
-    //validation
-    $validator = $("#save_inscription form").validate();
-
-    $valid= $("#save_inscription form").valid();
-
-    if(!$valid) {
-        $validator.focusInvalid();
-        return false;
-    }
-   
-  var user = {};
-  user.nom = $('#inputNom').val();
-  user.prenom = $('#inputPrenom').val();
-  user.email = $('#inputEmail1').val();
-  user.password = $('#inputPassword1').val();
-  data = JSON.stringify(user);
-  console.log(data);
-  var url = fullUrl + 'ceerUtilisateur';
-  sendData(data, url);
+function creerUtilisateur(){
+    var user      = {};
+    user.nom      = $('#inputNom').val();
+    user.prenom   = $('#inputPrenom').val();
+    user.email    = $('#inputEmail1').val();
+    user.password = $('#inputPassword1').val();
+    var roleId = 1;
+    user.Role_idRole = roleId;
+    data = JSON.stringify(user);
+    console.log(data);
+    var url = "http://localhost:1230/api/app/ceerUtilisateur";
+    sendData(data, url);
 }
 
-
-
-function sendData(data, url){
+function sendData(data, url) {
+  $.ajax({
+    url: url,
+    type: "POST",
+    dataType: "json",
+    crossDomain: true,
+    data: data, 
+    Accept : "application/json;charset=UTF-8"
+    }).done(function (data) {
+    jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Resultat de l\'opération</p></div>');
+    jQuery('#result-info').html(data.status);
+    jQuery('#myModal').modal('show');
+  }).fail(function (error) {
     
-    $.ajax({ url: url,
-        type: 'POST', 
-        dataType: 'json', 
-        crossDomain: true,
-        data: data,
-        success: function (rs) {      
-            $('#result-title').html('Reultat de l\'operation');
-            $('#result-info').html(rs.status);
-            $.when($('#myModal').modal('show').delay(3000)).done(function(){
-                window.location = "inscription.php?p=creerUtilisateur";
-            });   
-        },
-        error: function (xhr,status,error) {
-            $('#result-title').html('Reultat de l\'operation');
-            $('#result-info').html('Echec de l\'operation encour');
-            $('#myModal').modal('show');
-            console.log("Status: " + status);
-            console.log("Error: " + error);
-            console.log("xhr: " + JSON.stringify(xhr));
-        }
+    jQuery('#result-title').html('<div class="alert alert-danger" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Resultat de l\'opération</p></div>');
+    jQuery('#result-info').html('<br/>Echec de l\'operation en cour');
+    jQuery('#myModal').modal('show');
 
-    });
- }
+    if (error.status == 404) {
+      window.location = "inscription.php?p=404";                    
+    }
+  });
+}
 
 

@@ -67,15 +67,22 @@
 			<h5><p class="textcolors text-center"> Formulaire d'inscription </p></h5><hr><br/>
 				<!-- <span id="modal_errors" class="bg-danger"></span> -->
 				
+						
+						<div id="result-title">
+								<div id="result-info"></div>
+								<div id="myModal"></div>
+						</div>
+					
+				
 			<div class="box-content" id="save_inscription">
 			<form role="form" method="post" class="form-vertical loginFrm" id="add_user_form">
 				<?php 
 					if(!empty($errors)){
 						echo display_errors($errors);
 					}
-					else{
-						echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Inscription réussi</p></div>';
-					}
+					// else{
+					// 	echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Inscription réussi</p></div>';
+					// }
 				?>
 			  <div class="control-group">
 				<label class="control-label" for="inputNom">Nom</label>
@@ -109,7 +116,7 @@
 			  </div>
 			  <div class="control-group">
 			  <div class="controls">
-			  <button type="submit" class="btn btn-warning">Enregistrer</button>
+			  <button type="submit" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
 			  </div>
 			</div>
 			</form>
@@ -128,6 +135,14 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================= -->
 
-<script src="themes/js/inscription.js"></script>
+<!-- Placed at the end of the document so the pages load faster ============================================= -->
+	<script src="themes/js/jquery.js" type="text/javascript"></script>
+	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="themes/js/google-code-prettify/prettify.js"></script>	
+	<script src="themes/js/bootshop.js"></script>
+    <script src="themes/js/jquery.lightbox-0.5.js"></script>
+    <script src="themes/js/inscription.js"></script><!-- 
+    <script src="themes/js/config.js"></script> -->
+
 </body>
 </html>
