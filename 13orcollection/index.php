@@ -2,15 +2,10 @@
 <?php 
 require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
 //require_once 'core/init.php'; 
-    $email =((isset($_POST['email']))?sanitize($_POST['email']):'');
-    $email =trim($email);
-    $password =((isset($_POST['password']))?sanitize($_POST['password']):'');
-    $password =trim($password);
-    $errors = array(); 
+    
      // $password = 'password';
      // $hashed = password_hash($password, PASSWORD_DEFAULT);
      // echo $hashed;
-    include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +23,8 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
 <!-- =========== Header =============================================-->
 <div id="header">
 <?php 
+
+    include 'header.php';
 ?>
 
 </div>
@@ -86,7 +83,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
 			<div id="featured" class="carousel slide">
 			<div class="carousel-inner">
 			  <div class="item active">
-			  <ul class="thumbnails">
+			  <ul class="thumbnails" class="nav nav-tabs nav-justified">
 				<li class="span3">
 				  <div class="thumbnail">
 				  <!-- <i class="tag"></i> -->

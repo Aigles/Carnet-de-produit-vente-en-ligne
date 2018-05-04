@@ -3,25 +3,25 @@
 		<div class="row">
 			<div class="span3">
 				<h5>COMPTE</h5>
-				<a href="login.php">VOTRE COMPTE</a>
-				<a href="login.php">INFORMATION PERSONNEL</a> 
-				<a href="login.php">ADRESSES</a> 
-				<a href="login.php">RABAIS</a>  
-				<a href="login.php">HISTORIQUE DES COMMANDES</a>
+				<a href="#">VOTRE COMPTE</a>
+				<a href="#">INFORMATION PERSONNEL</a> 
+				<a href="#">ADRESSES</a> 
+				<a href="#">RABAIS</a>  
+				<a href="#">HISTORIQUE DES COMMANDES</a>
 			 </div>
 			<div class="span3">
 				<h5>INFORMATION</h5>
 				<a href="contact.html">CONTACTE</a>  
-				<a href="register.html">ENREGISTREMENT</a>  
-				<a href="legal_notice.html">AVERTISSEMENT LEGAL</a>  
-				<a href="tac.html">TERMES ET CONDITIONS</a> 
-				<a href="faq.html">FAQ</a>
+				<a href="inscription.php">ENREGISTREMENT</a>  
+				<a href="#">AVERTISSEMENT LEGAL</a>  
+				<a href="#">TERMES ET CONDITIONS</a> 
+				<a href="#">FAQ</a>
 			 </div>
 			<div class="span3">
 				<h5>NOS OFFRES</h5>
 				<a href="#">NOUVEAUX PRODUITS</a> 
 				<a href="#">PLUS VENDUS</a>  
-				<a href="special_offer.html">OFFRES SPECIALES</a>  
+				<a href="#">OFFRES SPECIALES</a>  
 				<a href="#">MANUFACTURERS</a> 
 				<a href="#">SUPPLIERS</a> 
 			 </div>

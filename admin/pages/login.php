@@ -58,7 +58,7 @@
         
     <div class="row">
         <div class="col-md-12 center login-header">
-            <h2>Bienvenue a 13 or Collection</h2>
+            <h2>Bienvenue a 13 or Collections</h2>
         </div>
         <!--/span-->
     </div><!--/row-->

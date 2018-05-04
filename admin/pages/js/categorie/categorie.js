@@ -46,9 +46,6 @@ function sendData(data, url){
         }
 
     });
-         
-
-
-}
+ }
 
 
