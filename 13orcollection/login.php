@@ -71,9 +71,9 @@
 					if(!empty($errors)){
 						echo display_errors($errors);
 					}
-					else{
-						echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>utilisateur connecté</p></div>';
-					}
+					// else{
+					// 	echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>utilisateur connecté</p></div>';
+					// }
 				?>
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail1">Email</label>
