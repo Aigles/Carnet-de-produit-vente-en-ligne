@@ -26,7 +26,7 @@ type users []Users
 
 type Message struct{
 	Token        string        `json:"token"`
-	Id           int64         `json:"id"`
+	Id           int64           `json:"id"`
 	Code         int           `json:"code"`
 	Status       string        `json:"status"`
 }
@@ -34,7 +34,7 @@ type Message struct{
 //fonction permettant d'enregistrer une voiture
 func NewUsers(u *Users) Message{
 
-	var message Message
+var message Message
 if u==nil{
 	fmt.Println(u)
 }
@@ -42,7 +42,10 @@ u.CreateAt=time.Now();
 u.UpdateAt=time.Now();
 u.Date_derniere_connection = time.Now();
 
-res, err :=Configuration.Db().Exec("INSERT INTO users (nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
+u.Etat_connection=0
+
+
+res, err :=Configuration.Db().Exec("INSERT INTO users (idUsers,nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Id,u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
 
 if err==nil{
 	id,_:=res.LastInsertId()
@@ -138,11 +141,11 @@ func UpdateUsers(Users *Users)Message{
 }
 
 //cette fonction permet de modifier les informations d'une voiture
-func UpdateUsersonnection(id int){
-
+func UpdateUsersonnection(id int64){
+ var Users Users
 	Users.UpdateAt=time.Now().UTC();
 	Users.Etat_connection=1;
-	Users.date_derniere_connection=time.Now().UTC();
+	Users.Date_derniere_connection=time.Now().UTC();
 
 
 	stmt, err := Configuration.Db().Prepare("UPDATE users SET  date_derniere_connection=?,etat_connection=?, Date_update=? WHERE idUsers=?;")
@@ -188,7 +191,7 @@ func Connection(Users *Users) Message{
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
 	 
-	UpdateUsersonnection(&Users.Id)
+	UpdateUsersonnection(Users.Id)
 
 	if err==nil{
 		message.Token=GenerateToken.TokenGenerator();

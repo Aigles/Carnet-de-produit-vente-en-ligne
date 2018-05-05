@@ -42,7 +42,7 @@
                                 <input type="email" class="form-control required" required id="user-email" placeholder="Entre l'adresse email">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Categorie</label>
+                                <label for="exampleInputPassword1">Role</label>
                                 <select class="form-control" id="user-role">
                                 </select>
                             </div>

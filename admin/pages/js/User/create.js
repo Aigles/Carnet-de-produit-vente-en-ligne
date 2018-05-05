@@ -60,7 +60,7 @@ function creerUtilisateur()
   	user.email = $("#user-email").val();
   	user.avatar = $("#user-avatar").val();
   	user.password = $("#user-password").val();
-  	user.categorie_id = parseInt($( "select option:selected" ).val(), 10); //parseInt($("#user-categorie").val());
+  	user.role_id = parseInt($( "#user-role option:selected" ).val(), 10); //parseInt($("#user-categorie").val());
 
   	data = JSON.stringify(user);
 

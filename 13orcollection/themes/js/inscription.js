@@ -1,16 +1,18 @@
 function creerUtilisateur(){
+    alert('lo');
     var user      = {};
     user.nom      = $('#inputNom').val();
     user.prenom   = $('#inputPrenom').val();
     user.email    = $('#inputEmail1').val();
     user.password = $('#inputPassword1').val();
-    var roleId = 1;
-    user.Role_idRole = roleId;
+    var roleId = 11;
+    user.role_id = roleId;
     data = JSON.stringify(user);
     console.log(data);
     var url = "http://localhost:1230/api/app/ceerUtilisateur";
     sendData(data, url);
 }
+
 
 function sendData(data, url) {
   $.ajax({

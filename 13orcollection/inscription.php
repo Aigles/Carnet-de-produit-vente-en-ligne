@@ -116,7 +116,7 @@
 			  </div>
 			  <div class="control-group">
 			  <div class="controls">
-			  <button type="submit" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
+			  <button type="button" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
 			  </div>
 			</div>
 			</form>

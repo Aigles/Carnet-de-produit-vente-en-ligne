@@ -1,6 +1,8 @@
 <?php 
 //require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
 //require_once 'core/init.php'; 
+//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/config.php';
+  require_once 'helpers/helpers.php';
     $nom =((isset($_POST['nom']))?sanitize($_POST['nom']):'');
     $nom =trim($nom);
     $prenom =((isset($_POST['prenom']))?sanitize($_POST['prenom']):'');

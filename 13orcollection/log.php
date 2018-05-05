@@ -4,6 +4,7 @@
 // $password = 'password';
 // $hashed = password_hash($password,PASSWORD_DEFAULT);
 // echo $hashed;
+require_once 'helpers/helpers.php';
     $email =((isset($_POST['email']))?sanitize($_POST['email']):'');
     $email =trim($email);
     $password =((isset($_POST['password']))?sanitize($_POST['password']):'');
@@ -28,17 +29,17 @@
 				}
 				
 				//check if the email exist
-				$query = $db->query("SELECT * FROM users WHERE email = '$email'");
-					$user = mysqli_fetch_assoc($query);
-					$userCount = mysqli_num_rows($query);
-					//echo $userCount;
-					if ($userCount < 1) {
-					  $errors[] = '<span class="icon-exclamation-sign" aria-hidden="true"></span>Cet email n\'existe pas dans notre système ';
-					}
+				// $query = $db->query("SELECT * FROM users WHERE email = '$email'");
+				// 	$user = mysqli_fetch_assoc($query);
+				// 	$userCount = mysqli_num_rows($query);
+				// 	//echo $userCount;
+				// 	if ($userCount < 1) {
+				// 	  $errors[] = '<span class="icon-exclamation-sign" aria-hidden="true"></span>Cet email n\'existe pas dans notre système ';
+				// 	}
 
 				//Check for password
-					if (!password_verify($password, $user['password'])) {
-					  $errors[] = '<span class="icon-exclamation-sign" aria-hidden="true"></span>mot de passe incorrect ';
-					}
+					// if (!password_verify($password, $user['password'])) {
+					//   $errors[] = '<span class="icon-exclamation-sign" aria-hidden="true"></span>mot de passe incorrect ';
+					// }
 				}
 		 ?>
