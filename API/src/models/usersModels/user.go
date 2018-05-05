@@ -117,7 +117,7 @@ func UpdateUsers(Users *Users)Message{
 	var message Message
 	Users.UpdateAt=time.Now()
 
-	stmt, err := Configuration.Db().Prepare("UPDATE Users SET nom=?, prenom=?, date_derniere_connection=?,etat_connection=?, Date_update=?,avatar=? WHERE idUsers=?;")
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET nom=?, prenom=?, date_derniere_connection=?,etat_connection=?, Date_update=?,avatar=? WHERE idUsers=?;")
 	
 	if err !=nil{
 	fmt.Println(err)
@@ -135,6 +135,23 @@ func UpdateUsers(Users *Users)Message{
 		message.Status="Modification echouee"
 	}
 	return message
+}
+
+//cette fonction permet de modifier les informations d'une voiture
+func UpdateUsersonnection(id int){
+
+	Users.UpdateAt=time.Now().UTC();
+	Users.Etat_connection=1;
+	Users.date_derniere_connection=time.Now().UTC();
+
+
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET  date_derniere_connection=?,etat_connection=?, Date_update=? WHERE idUsers=?;")
+	
+	if err !=nil{
+	fmt.Println(err)
+	}
+
+	_, err = stmt.Exec(&Users.Date_derniere_connection,&Users.Etat_connection,&Users.UpdateAt,Users.Id)
 }
 
 
@@ -171,6 +188,8 @@ func Connection(Users *Users) Message{
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
 	 
+	UpdateUsersonnection(&Users.Id)
+
 	if err==nil{
 		message.Token=GenerateToken.TokenGenerator();
 		message.Id=Users.Id
