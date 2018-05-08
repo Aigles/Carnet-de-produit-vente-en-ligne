@@ -24,7 +24,7 @@
 </a>
   <div class="navbar-inner">
     <a class="brand" href="index.php">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
-	<form class="form-inline navbar-search" method="post" action="index.php" >
+	<form class="form-inline navbar-search" method="post" action="user.php" >
 		<input id="srchFld" class="srchTxt" type="text" />
 	  	<select class="srchTxt" id="search">
 			<option>TOUT</option>
@@ -32,10 +32,10 @@
 	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button>
 	</form>
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="index.php">Accueil</a></li>
+	 <li class=""><a href="user.php">Accueil</a></li>
 	 <li><a href="cart.php"><span class="badge">0</span></span><span class="icon-shopping-cart"></span>Panier</a></li>
-	 <li class="inscrire"><a href="inscription.php">Inscrire</a></li>
-	 <li class="connecter"><a href="login.php"><span class="badge badge-warning">Connecter</span></a></li>
+	 <li class="commande"><a href="?=commande_en_cour">Commande</a></li>
+	 <li class="deconnecter"><a href="index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
 	 <!-- <li class=""><a href="special_offer.html">Offres</a></li>
 	 <li class=""><a href="normal.html">Livraison</a></li>

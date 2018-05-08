@@ -48,6 +48,7 @@
 	<div class="row">
 <!-- Sidebar ================================================== -->
 
+
 <!-- Sidebar End ================================================== -->
 
 	<div class="span12">
@@ -55,6 +56,14 @@
 		<li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
 		<li class="active">Inscription</li>
     </ul>
+     <!-- ================ Partie rechercher ==================-->
+    <!-- <form>
+  <input type="text" size="30" onkeyup="showResult(this.value)">
+  <div id="livesearch"></div>
+</form> -->
+
+     <!-- ================ Fin Partie rechercher ==================-->
+
     <!-- ======= codes php doivent etre ajouté ici pour les cas de test ====== -->
 	<h3><p class="textcolors text-center"> Création de Compte </p></h3>	
 	<hr class="soft"/>
@@ -116,7 +125,7 @@
 			  </div>
 			  <div class="control-group">
 			  <div class="controls">
-			  <button type="button" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
+			  <button type="submit" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
 			  </div>
 			</div>
 			</form>
@@ -141,7 +150,8 @@
 	<script src="themes/js/google-code-prettify/prettify.js"></script>	
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
-    <script src="themes/js/inscription.js"></script><!-- 
+    <script src="themes/js/inscription.js"></script>
+    <!-- <script src="themes/js/create.js"></script>
     <script src="themes/js/config.js"></script> -->
 
 </body>

@@ -17,9 +17,7 @@ function money($number){
 	return '$'.number_format($number,2);
 }
 
-function login_error_redirect($url = 'login.php'){
-	$_SESSION['error_flash'] = 'You must be logged in to access that page!';
-	header('LOCATION: '.$url);
-}
+
+
 
 ?>

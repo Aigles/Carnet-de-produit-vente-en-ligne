@@ -17,14 +17,15 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
     <meta name="author" content="">
 	
 <!-- Bootstrap style --> 
-    
+        <script src="themes/js/login/checkConnection.js"></script>
+
   </head>
 <body>
 <!-- =========== Header =============================================-->
 <div id="header">
 <?php 
 
-    include 'header.php';
+    include 'headeruser.php';
 ?>
 
 </div>

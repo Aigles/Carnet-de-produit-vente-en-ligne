@@ -33,7 +33,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
-  </head>
+
+    <script src="themes/js/jquery.min.js"></script>
+	<script src="themes/js/jquery.validate.min.js"></script>
+	</head>
 <body>
 <!-- =========== Header =============================================-->
 <div id="header">
@@ -63,17 +66,19 @@
 		
 		<div class="span3"></div>
 		<div class="span4">
-			<div class="well">
+			<div class="well" id="save_login">
 			<h5><p class="textcolors text-center">DÉJÀ ENREGISTRÉ ?</p></h5><hr><br/>
 			<form method="post" class="form-vertical loginFrm">
 
 				<?php 
-					if(!empty($errors)){
-						echo display_errors($errors);
-					}
-					// else{
-					// 	echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>utilisateur connecté</p></div>';
+					// if(!empty($errors)){
+					// 	echo display_errors($errors);
 					// }
+					// else{
+					// 	// echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>utilisateur connecté</p></div>';
+					// 	$user_id = $user['idUsers'];
+					// 	login($user_id);
+					//}
 				?>
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail1">Email</label>
@@ -89,7 +94,7 @@
 			  </div>
 			  <div class="control-group">
 				<div class="controls">
-				  <button type="submit" class="btn btn-warning block">Connecter </button> <a href="forgetpass.html">Forget password?</a>
+				  <button type="button" class="btn btn-warning block" onclick="connection();">Connecter </button> <a href="forgetpass.html">Forget password?</a>
 				</div>
 			  </div>
 			</form>
@@ -97,6 +102,29 @@
 		</div>
 	</div>
 </div>
+
+    <!-- Commencement de modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 id="result-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="result-info"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- fin de modal -->
+
 </div></div>
 </div>
 <!-- MainBody End ============================= -->
@@ -105,5 +133,7 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================= -->
 
+    <script src="themes/js/login/login.js"></script>
+    <script src="themes/js/config.js"></script>
 </body>
 </html>

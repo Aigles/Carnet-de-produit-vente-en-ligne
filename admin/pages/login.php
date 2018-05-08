@@ -58,7 +58,7 @@
         
     <div class="row">
         <div class="col-md-12 center login-header">
-            <h2>Bienvenue a 13 or Collections</h2>
+            <h2>Bienvenue a 13 or Collection</h2>
         </div>
         <!--/span-->
     </div><!--/row-->
@@ -66,7 +66,7 @@
     <div class="row">
         <div class="well col-md-5 center login-box" id="save_login">
             <div class="alert alert-info">
-                S'il vous plaît vous connecter avec votre email et mot de passe.
+                S'il vous plaît Veuillez vous connecter avec votre email et mot de passe.
             </div>
             <form class="form-horizontal"  method="post">
                 <fieldset>

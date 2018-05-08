@@ -1,10 +1,5 @@
-<?php
 
-	$db = mysqli_connect('127.0.0.1', 'root','','aigle_vente_en_ligne'); 
-	if (mysqli_connect_errno()) {
-		echo 'Database connection failed with following errors: '. mysql_connect_error();
-		die();	
-	}
+<?php
 	session_start();
 	require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/config.php';
 	require_once BASEURL. 'helpers/helpers.php';
@@ -24,7 +19,7 @@
 	// }
 
 	if(isset($_SESSION['success_flash'])){
-		echo '<div class="bg-success"><p class="text-success text-center">'.$_SESSION['success_flash'].'</p></div>';
+		echo '<div class="alert alert-success text-center"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><b>'.$_SESSION['success_flash'].'</b></div>';
 		unset($_SESSION['success_flash']);
 	}
 
@@ -33,5 +28,4 @@
 		//echo '<div class="bg-danger"><p class="text-success text-danger">'.$_SESSION['error_flash'].'</p></div>';
 		unset($_SESSION['error_flash']);
 	}
-
-?>
+//session_destroy();

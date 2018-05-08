@@ -2,7 +2,6 @@
     var path = window.location.pathname;
     var page = path.split("/").pop();
     var id = GET_PARAM('pid');
-    var compterCategorie = 0;
 
     //List personnel all records
     if(page == '' || page == 'index.php'|| page == 'user.php'){
@@ -18,18 +17,16 @@
     
     .done(function(data){
 
-        $.each( data, function( key, categorie ){
             
-            var tableau_caracteristic="";
-
-            tableau_caracteristic += '<li id="sidheMnu" ><a class="active" href="index.php?prodid='+categorie.id+'">'+categorie.type+'</a></li>';
+           // var tableau_caracteristic="";
+        $.each( data, function( key, categorie ){
+            tableau_caracteristic = '<option><a href="index.php?prodid='+categorie.id+'">'+categorie.type+'</a></option>';
             // affectation des produits dans l'id
          
-            jQuery('#sideMnu').append(tableau_caracteristic);
-          compterCategorie = compterCategorie + 1;
+            jQuery('#search').append(tableau_caracteristic);
+         
         
         });
-        jQuery('.subMenu.open').append('<a style="color:#faa732; text-align:center;"> CATÉGORIES ['+compterCategorie+']</a>')
         //document.getElementById('sideMnu').innerHTML=tableau_caracteristic;
     });
 }
