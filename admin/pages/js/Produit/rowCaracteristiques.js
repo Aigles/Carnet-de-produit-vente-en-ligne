@@ -2,6 +2,9 @@ var initrow = 1;
 var schedules = [];
 var executer = 0;
 var currentrow = initrow;
+var id_prod;
+
+var trouv= initrow;
 
 for (i = 0; i < initrow; i++) {
   createRow(i);
@@ -12,8 +15,9 @@ $('#add').click(function () {
   for (i = 0; i < nbligne; i++) {
     createRow(currentrow);
     currentrow = currentrow + 1;
+    trouv=currentrow;
   }
-});
+});    
 
 fullcategorie('nb-categorie');
 
@@ -64,7 +68,7 @@ function creerProduit() {
   var produit = {};
   produit.nom = $('#nom-poduit').val();
   produit.description = $('#description-poduit').val();
-  produit.nbre_vendu = parseInt($('#nb-vendu').val());
+  // produit.nbre_vendu = parseInt($('#nb-vendu').val());
   produit.nbre_en_stock = parseInt($('#nb-poduit').val());
   produit.rabais = parseInt($('#nb-rabais').val());
   var ActiverProd = 0;
@@ -77,7 +81,12 @@ function creerProduit() {
   data = JSON.stringify(produit);
   console.log(data);
   var url = fullUrl + 'creerproduit';
-  sendData(data, url);
+  // sendData(data, url);
+  $.when(sendData(data, url)).done(function(){
+    id_prod=localStorage.getItem("id_prod")
+    caracteristicProd(id_prod, "#divimg-", "#divimgg-")
+  }); 
+
 }
 
 function caracteristicProd(argument, prev, prev_1) {
@@ -110,10 +119,17 @@ function sendData(data, url) {
     dataType: 'json',
     crossDomain: true,
     data: data,
-  }).done(function (data) {
-    $('#result-title').html('Reultat de l\'operation');
-    $('#result-info').html(data.status);
-    $('#myModal').modal('show');
+  }).done(function (data) { 
+     
+    if (data.id!=0) {
+      id_prod=data.id;
+      localStorage.setItem("id_prod",id_prod)
+   
+    }
+    
+    // $('#result-title').html('Reultat de l\'operation');
+    // $('#result-info').html(data.status);
+    // $('#myModal').modal('show');
   }).fail(function (error) {
     
     $('#result-title').html('Reultat de l\'operation');
@@ -127,26 +143,39 @@ function sendData(data, url) {
 }
 
 function sendDataCaracteristiques(data, url) {
+  trouv=trouv-1;
   $.ajax({
     url: url,
     type: 'POST',
     dataType: 'json',
     crossDomain: true,
     data: data,
-  }).done(function (data) {
-    $('#result-title').html('Reultat de l\'operation');
-    $('#result-info').html(data.status);
-    $('#myModal').modal('show');
-  }).fail(function (error) {
-    
+    success: function (rs) {      
+     
+      if (trouv==0) {
+        $('#result-title').html('Reultat de l\'operation');
+        $('#result-info').html(rs.status);
+        $('#myModal').modal('show');
+      }
+    },
+error: function (xhr,status,error) {
+  if (xhr.status==200) {
+    if (trouv==0) {
+      $('#result-title').html('Reultat de l\'operation');
+      $('#result-info').html("l'enregistrement a ete effectue a avec succes.");
+      $('#myModal').modal('show');
+    }
+  } else {
     $('#result-title').html('Reultat de l\'operation');
     $('#result-info').html('Echec de l\'operation encour');
     $('#myModal').modal('show');
+  }
 
-    if (error.status == 404) {
-      window.location = "index.php?p=404";                    
-    }
-  });
+  console.log("Status: " + status);
+  console.log("Error: " + error);
+  console.log("xhr: " + JSON.stringify(xhr));
+}
+});
 }
 
 function fullcategorie(chaine, id = 1) {

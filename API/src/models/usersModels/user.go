@@ -38,14 +38,14 @@ var message Message
 if u==nil{
 	fmt.Println(u)
 }
-u.CreateAt=time.Now();
-u.UpdateAt=time.Now();
-u.Date_derniere_connection = time.Now();
+u.CreateAt=time.Now().UTC()
+u.UpdateAt=time.Now().UTC()
+u.Date_derniere_connection = time.Now().UTC()
 
 u.Etat_connection=0
 
 
-res, err :=Configuration.Db().Exec("INSERT INTO users (idUsers,nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Id,u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
+res, err :=Configuration.Db().Exec("INSERT INTO users (nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
 
 if err==nil{
 	id,_:=res.LastInsertId()
@@ -118,7 +118,7 @@ func AllUsers() *users {
 func UpdateUsers(Users *Users)Message{
 	fmt.Println(Users)
 	var message Message
-	Users.UpdateAt=time.Now()
+	Users.UpdateAt=time.Now().UTC()
 
 	stmt, err := Configuration.Db().Prepare("UPDATE users SET nom=?, prenom=?, date_derniere_connection=?,etat_connection=?, Date_update=?,avatar=? WHERE idUsers=?;")
 	
@@ -142,11 +142,16 @@ func UpdateUsers(Users *Users)Message{
 
 //cette fonction permet de modifier les informations d'une voiture
 func UpdateUsersonnection(id int64){
- var Users Users
-	Users.UpdateAt=time.Now().UTC();
-	Users.Etat_connection=1;
-	Users.Date_derniere_connection=time.Now().UTC();
+	
+      var Users Users
+     loc,_:=time.LoadLocation("America/New_York")
+	Users.UpdateAt=time.Now().UTC().In(loc)
 
+
+	 
+	Users.Etat_connection=1
+	Users.Date_derniere_connection=time.Now().UTC().In(loc)
+	fmt.Println(Users.Date_derniere_connection)
 
 	stmt, err := Configuration.Db().Prepare("UPDATE users SET  date_derniere_connection=?,etat_connection=?, Date_update=? WHERE idUsers=?;")
 	
@@ -154,7 +159,7 @@ func UpdateUsersonnection(id int64){
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&Users.Date_derniere_connection,&Users.Etat_connection,&Users.UpdateAt,Users.Id)
+	_, err = stmt.Exec(&Users.Date_derniere_connection,&Users.Etat_connection,&Users.UpdateAt,id)
 }
 
 
@@ -192,6 +197,7 @@ func Connection(Users *Users) Message{
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
 	 
 	UpdateUsersonnection(Users.Id)
+	fmt.Println(Users.Id)
 
 	if err==nil{
 		message.Token=GenerateToken.TokenGenerator();

@@ -15,6 +15,7 @@ func DatabaseInitial() {
 	var err error
 	db, err = sql.Open("mysql", "root:@/aigle_vente_en_ligne?parseTime=true")
 	//defer db.close()
+	//SetTimeZone()
 
 	if err != nil {
 		log.Fatal(err)
@@ -23,8 +24,8 @@ func DatabaseInitial() {
 
 }
 
-func createCarsTable() {
-	_, err := db.Exec("CREATE TABLE IF NOT EXISTS cars(id serial,manufacturer varchar(20), design varchar(20), style varchar(20), doors int, created_at timestamp, updated_at timestamp, constraint pk primary key(id))")
+func SetTimeZone() {
+	_, err := db.Exec("set time_zone=+00:00")
 
 	if err != nil {
 		log.Fatal(err)

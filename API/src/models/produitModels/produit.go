@@ -2,6 +2,7 @@ package produitModels
 
 import (
 	"Configuration"
+	"math/rand"
 	"time"
 	"fmt"
 )
@@ -41,7 +42,7 @@ c.CreateAt=time.Now();
 
 c.UpdateAt=time.Now();
 
-// c.Nbre_vendu=CodeGenerator()+c.Nom;
+c.Nbre_vendu=rand.Intn(100000)+c.Nbre_en_stock;
 
 res, err :=Configuration.Db().Exec("INSERT INTO produit (nom, description,nbre_like,nbre_vendu, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie) VALUES (?,?,?,?,?,?,?,?,?,?);",c.Nom,c.Description,c.Nbre_like,c.Nbre_vendu,c.Nbre_en_stock,c.Rabais,c.CreateAt,c.UpdateAt,c.Activer,c.Categorie_idCategorie)//.Scan(&c.Id)
 

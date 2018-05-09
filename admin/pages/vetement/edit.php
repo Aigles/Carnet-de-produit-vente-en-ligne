@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Description</label>
-                                <textarea type="number" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
+                                <textarea type="text" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
                             </div>                   
                         </div>
                         <div class="box col-md-6">  

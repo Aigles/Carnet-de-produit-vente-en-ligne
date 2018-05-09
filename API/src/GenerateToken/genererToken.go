@@ -11,8 +11,3 @@
 	 return fmt.Sprintf("%x",b)
  }
 
- func CodeGenerator() string {
-	b:=make([] byte,2)
-	rand.Read(b)
-	return fmt.Sprintf("%x",b)
-}

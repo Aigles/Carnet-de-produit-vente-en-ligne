@@ -29,9 +29,9 @@ function fullRow(row, image, image_1, couleur, size, prix, quantite, Cid) {/*<in
   var item = [
   ];
   dataTable_tf = '<div id="divi-' + row + '"><hr></div><div class="row"><div class="col-md-3"><div class="col-md-12 " id="divimg-' + row + '"><img class="" id="start-' + row + '" src="' + image + '" style="height:130px;"></br></div> ';
-  dataTable_tf += '<div class="col-md-12 " id="diva-' + row + '"><input class="" id="start-' + row + '" type="file" name="file" onchange="previewFile(\'#divimg-' + row + '\',\'#diva-' + row + '\')"></br></div></div> ';
+  dataTable_tf += '<div class="col-md-12 " id="diva-' + row + '"><input class="btn btn-primary" id="start-' + row + '" type="file" name="file" onchange="previewFile(\'#divimg-' + row + '\',\'#diva-' + row + '\')" style="width:150px;"></br></div></div> ';
   dataTable_tf += '<div class="col-md-3"><div class="col-md-12 " id="divimgg-' + row + '"><img class="" id="start-' + row + '" src="' + image_1 + '" style="height:130px;"></br></div> ';
-  dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="" id="startt-' + row + '" type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')"></br></div></div> ';
+  dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="btn btn-primary" id="startt-' + row + '" type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')" style="width:150px;" ></br></div></div> ';
   dataTable_tf += '<div class="col-md-6 "><div class="col-md-6 " id="divb-' + row + '"><input class="form-control" id="couleur-' + row + '" type="text" aria-describedby="nameHelp" placeholder="entrer la couleur" name="couleur" value="' + couleur + '"></br></div> ';
   dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><input class="form-control" id="size-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer la taille " name="size" value="' + size + '" ></br></div> ';
   dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" value="' + prix + '"></br></div> ';

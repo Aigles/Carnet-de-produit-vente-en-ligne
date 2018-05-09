@@ -32,13 +32,13 @@
                                 <label for="exampleInputEmail1">Nom Vetement</label>
                                 <input type="text" class="form-control " required id="nom-poduit" placeholder="Entrer le nom d'un Vetement">
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="exampleInputPassword1">Code Vetement</label>
                                 <input type="number" class="form-control required" required id="nb-vendu" placeholder="Code Vetement">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Description</label>
-                                <textarea type="number" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
+                                <textarea type="text" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
                             </div>                   
                         </div>
                         <div class="box col-md-6">  
@@ -93,5 +93,5 @@
         </div>
     </div>
 </div> 
-<script src="js/Produit/modifier.js"></script>
+<script src="js/Produit/creerProduit.js"></script>
 <script src="js/Produit/rowCaracteristiques.js"></script>
