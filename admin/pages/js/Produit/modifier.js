@@ -11,7 +11,7 @@ $.ajax({
 }).done(function (data) {
   $('#nom-poduit').val(data.nom);
   $('#description-poduit').val(data.description);
-  $('#nb-vendu').val(data.nbre_vendu)
+  // $('#nb-vendu').val(data.nbre_vendu)
   $('#nb-poduit').val(data.nbre_en_stock);
   $('#nb-rabais').val(data.rabais);
   if (data.activer == 1)
@@ -33,9 +33,9 @@ function fullRow(row, image, image_1, couleur, size, prix, quantite, Cid) {/*<in
   dataTable_tf += '<div class="col-md-3"><div class="col-md-12 " id="divimgg-' + row + '"><img class="" id="start-' + row + '" src="' + image_1 + '" style="height:130px;"></br></div> ';
   dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="btn btn-primary" id="startt-' + row + '" type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')" style="width:150px;" ></br></div></div> ';
   dataTable_tf += '<div class="col-md-6 "><div class="col-md-6 " id="divb-' + row + '"><input class="form-control" id="couleur-' + row + '" type="text" aria-describedby="nameHelp" placeholder="entrer la couleur" name="couleur" value="' + couleur + '"></br></div> ';
-  dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><input class="form-control" id="size-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer la taille " name="size" value="' + size + '" ></br></div> ';
-  dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" value="' + prix + '"></br></div> ';
-  dataTable_tf += '<div class="col-md-4 " id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" aria-describedby="nameHelp" placeholder="quantite" name="quantite" value="' + quantite + '"></br></div> ';
+  dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><select class="form-control" id="size-' + row + '" aria-describedby="nameHelp" placeholder="entrer la taille " name="size"  ><option value="' + size + '">' + size + '</option><option value="Petit">Petit</option><option value="Large">Large</option><option value="Moyen">Moyen</option></select></br></div> ';
+  dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" value="' + prix + '" min=0></br></div> ';
+  dataTable_tf += '<div class="col-md-4 " id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" aria-describedby="nameHelp" placeholder="quantite" name="quantite" value="' + quantite + '" min=1></br></div> ';
   dataTable_tf += '<div class="col-md-4 " id="divg-' + row + '"><input class="form-control" id="cId-' + row + '" type="hidden" aria-describedby="nameHelp" placeholder="quantite" name="idCaracteristiques" value="' + Cid + '"></br></div> ';
   dataTable_tf += '<div class="col-md-2" id="divf-' + row + '"><a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="s-' + row + '" onclick="supprimer(' + row + ')"><i class=" glyphicon glyphicon-remove"></i></a></br></div></div></div><div id="divh-' + row + '"><hr></div> ';
   item.push(dataTable_tf);
@@ -62,7 +62,7 @@ function modifierProduit() {
   produit.id =parseInt(id);
   produit.nom = $('#nom-poduit').val();
   produit.description = $('#description-poduit').val();
-  produit.nbre_vendu = parseInt($('#nb-vendu').val());
+  // produit.nbre_vendu = $('#nb-vendu').val();
   produit.nbre_en_stock = parseInt($('#nb-poduit').val());
   produit.rabais = parseInt($('#nb-rabais').val());
   var ActiverProd = 0;
@@ -91,7 +91,7 @@ function caracteristicProduit(argument) {
     caracteristics.Image_1 = preview_1.src;
     caracteristics.Couleur = $('#couleur-' + i).val();
     caracteristics.Prix = parseInt($('#prix-' + i).val());
-    caracteristics.Size = parseInt($('#size-' + i).val());
+    caracteristics.Size = $('#size-' + i).val();
     caracteristics.Quantite = parseInt($('#qte-' + i).val());
     data = JSON.stringify(caracteristics);
     console.log(data);

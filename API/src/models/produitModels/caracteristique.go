@@ -8,7 +8,7 @@ import (
 type Caracteristiques struct{
 	IdCaracteristiques   int `json:"id"`
 	Couleur      string      `json:"couleur"`
-	Size         float64     `json:"size"`
+	Size         string     `json:"size"`
 	Prix         float64     `json:"prix"`
 	Image        string     `json:"image"`
 	Image_1        string     `json:"image_1"`

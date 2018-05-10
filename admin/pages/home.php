@@ -10,46 +10,8 @@
         </li>
     </ul>
 </div>
-<div class=" row">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="6 new members." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-user blue"></i>
-
-            <div>Total Membres</div>
-            <div>507</div>
-            <span class="notification">6</span>
-        </a>
-    </div>
-
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="4 new pro members." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-list green"></i>
-
-            <div>Produits</div>
-            <div>228</div>
-            <span class="notification green">4</span>
-        </a>
-    </div>
-
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-shopping-cart yellow"></i>
-
-            <div>Total Commande</div>
-            <div>13320</div>
-            <span class="notification yellow">34</span>
-        </a>
-    </div>
-
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="12 new messages." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-user red"></i>
-
-            <div>Clients</div>
-            <div>25</div>
-            <span class="notification red">12</span>
-        </a>
-    </div>
+<div class=" row" id="board">
+   
 </div>
 
 
@@ -57,7 +19,7 @@
 <div class="box col-md-6">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-list-alt"></i> Pie</h2>
+                <h2><i class="glyphicon glyphicon-list-alt"></i> Graphe sur les commandes par vetements</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -76,7 +38,7 @@
     <div class="box col-md-6">
         <div class="box-inner">
             <div class="box-header well">
-                <h2><i class="glyphicon glyphicon-list-alt"></i> Chart with points</h2>
+                <h2><i class="glyphicon glyphicon-list-alt"></i> Graphe sur la vente des vetements</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -96,3 +58,4 @@
     </div> 
 </div>
 </div>
+<script src="js/statistique/stat.js"></script>

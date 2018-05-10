@@ -145,42 +145,87 @@ if ($("#stackchart").length) {
     });
 }
 
-//pie chart
-var data = [
-    { label: "Internet Explorer", data: 12},
-    { label: "Mobile", data: 27},
-    { label: "Safari", data: 85},
-    { label: "Opera", data: 64},
-    { label: "Firefox", data: 90},
-    { label: "Chrome", data: 112}
-];
-
-if ($("#piechart").length) {
-    $.plot($("#piechart"), data,
-        {
-            series: {
-                pie: {
-                    show: true
+$.ajax({
+    // url: Fullurl+"produit",
+    url: fullUrl + "Graphecommande",
+    type: 'GET',
+    dataType: 'json',
+    crossDomain: true,
+    Accept: 'application/json;charset=UTF-8'
+  }).done(function (datastat) {
+    var data = [];
+    $.each( datastat, function( key, value ) {  
+        var donnees={}
+        donnees.label=value.nom;
+        donnees.data=value.valeur;
+      
+        data.push(donnees);
+    });
+    if ($("#piechart").length) {
+        $.plot($("#piechart"), data,
+            {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true,
+                    clickable: true
+                },
+                legend: {
+                    show: false
                 }
-            },
-            grid: {
-                hoverable: true,
-                clickable: true
-            },
-            legend: {
-                show: false
-            }
-        });
-
-    function pieHover(event, pos, obj) {
-        if (!obj)
-            return;
-        percent = parseFloat(obj.series.percent).toFixed(2);
-        $("#hover").html('<span style="font-weight: bold; color: ' + obj.series.color + '">' + obj.series.label + ' (' + percent + '%)</span>');
+            });
+    
+        function pieHover(event, pos, obj) {
+            if (!obj)
+                return;
+            percent = parseFloat(obj.series.percent).toFixed(2);
+            $("#hover").html('<span style="font-weight: bold; color: ' + obj.series.color + '">' + obj.series.label + ' (' + percent + '%)</span>');
+        }
+    
+        $("#piechart").bind("plothover", pieHover);
     }
 
-    $("#piechart").bind("plothover", pieHover);
-}
+  
+});
+//pie chart
+// var data = [
+//     { label: "Internet Explorer", data: 12},
+//     { label: "Mobile", data: 27},
+//     { label: "Safari", data: 85},
+//     { label: "Opera", data: 64},
+//     { label: "Firefox", data: 90},
+//     { label: "Chrome", data: 112}
+// ];
+
+// if ($("#piechart").length) {
+//     $.plot($("#piechart"), data,
+//         {
+//             series: {
+//                 pie: {
+//                     show: true
+//                 }
+//             },
+//             grid: {
+//                 hoverable: true,
+//                 clickable: true
+//             },
+//             legend: {
+//                 show: false
+//             }
+//         });
+
+//     function pieHover(event, pos, obj) {
+//         if (!obj)
+//             return;
+//         percent = parseFloat(obj.series.percent).toFixed(2);
+//         $("#hover").html('<span style="font-weight: bold; color: ' + obj.series.color + '">' + obj.series.label + ' (' + percent + '%)</span>');
+//     }
+
+//     $("#piechart").bind("plothover", pieHover);
+// }
 
 //donut chart
 if ($("#donutchart").length) {

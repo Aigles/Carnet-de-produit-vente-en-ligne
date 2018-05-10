@@ -8,6 +8,7 @@ import (
 	"models/commandeModels"
 	"models/rolleModels"
 	"models/usersModels"
+	"models/statistique"
 	"Configuration"
 )
 
@@ -277,6 +278,17 @@ func main() {
 		ctx.JSON(usersModels.Connection(&conn)) 
 	
 	 })
+	 
+	 app.Get("/statistique", func(ctx iris.Context) {
+
+		ctx.JSON(statistique.Statistique())
+	})
+ 
+
+	app.Get("/Graphecommande", func(ctx iris.Context) {
+
+		ctx.JSON(statistique.Graphecommande())
+	})
 
 	newapp.Run(iris.Addr(":1230"))
 }         

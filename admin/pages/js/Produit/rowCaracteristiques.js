@@ -29,9 +29,9 @@ function createRow(row) {
   dataTable_tf += '<div class="col-md-3"><div class="col-md-12 " id="divimgg-' + row + '"><img class="" id="start-' + row + '" src="" style="height:130px;"></br></div> ';
   dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="btn btn-primary" id="startt-' + row + '" required type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')" style="width:150px;"></br></div></div> ';
   dataTable_tf += '<div class="col-md-6 "><div class="col-md-6 " id="divb-' + row + '"><input class="form-control" required id="couleur-' + row + '" type="text" aria-describedby="nameHelp" placeholder="entrer la couleur" name="couleur" ></br></div> ';
-  dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><input class="form-control" id="size-' + row + '" type="number" required aria-describedby="nameHelp" placeholder="entrer la taille " name="size" ></br></div> ';
-  dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" required aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" ></br></div> ';
-  dataTable_tf += '<div class="col-md-4" id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" required aria-describedby="nameHelp" placeholder="quantite" name="quantite"></br></div> ';
+  dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><select class="form-control" id="size-' + row + '"  required aria-describedby="nameHelp" placeholder="entrer la taille " name="size" ><option value="">Choisissez la taille</option><option value="Petit">Petit</option><option value="Moyen">Moyen</option><option value="Large">Large</option></select></br></div> ';
+  dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" required aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" min=0></br></div> ';
+  dataTable_tf += '<div class="col-md-4" id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" required aria-describedby="nameHelp" placeholder="quantite" name="quantite" min=1></br></div> ';
   dataTable_tf += '<div class="col-md-2" id="divf-' + row + '"><a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="s-' + row + '" onclick="supprimer(' + row + ')"><i class=" glyphicon glyphicon-remove"></i></a></br></div></div></div><div id="divh-' + row + '"><hr></div> ';
   item.push(dataTable_tf);
   $('#tableday-id').append(item);
@@ -101,7 +101,7 @@ function caracteristicProd(argument, prev, prev_1) {
     caracteristics.image_1 = preview_1.src;
     caracteristics.couleur = $('#couleur-' + i).val();
     caracteristics.prix = parseInt($('#prix-' + i).val());
-    caracteristics.size = parseInt($('#size-' + i).val());
+    caracteristics.size = $('#size-' + i).val();
     caracteristics.quantite = parseInt($('#qte-' + i).val());
     data = JSON.stringify(caracteristics);
     console.log(data);

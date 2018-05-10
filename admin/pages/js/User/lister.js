@@ -15,7 +15,15 @@ $.ajax({ url: fullUrl+"utilisateur",
             dataTable_tr+='<td>'+value.prenom+'</td>';
             dataTable_tr+='<td>'+value.email+'</td>';
             dataTable_tr+='<td>'+value.etat_connection+'</td>';
-            dataTable_tr+='<td>'+value.role+'</td>';     
+            if (value.role_id=="6") {
+                value.role_id="Administrateurs"
+
+            }else if(value.role_id=="7"){
+                value.role_id="Personnels"
+            }else{
+                value.role_id="Clients"
+            }
+            dataTable_tr+='<td>'+value.role_id+'</td>';     
             dataTable_tr+='<td>';
             dataTable_tr+='<a href="index.php?p=editerUser&pid='+value.id+'" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
             dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" onclick="supprimerUser('+value.id+');"><i class="fa fa-trash" >Supprimer</i></a>';

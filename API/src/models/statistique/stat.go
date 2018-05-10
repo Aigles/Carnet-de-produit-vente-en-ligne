@@ -1,146 +1,152 @@
-package rolleModels
+package statistique
 
 import(
 	"Configuration"
 	"fmt"
-	"time"
 )
 
-type Roles struct{
+type Statistics struct{
 
-	IdRole			 int		`json:"id"`
-	Nom			     string		`json:"nom"`
-	Description		 string		`json:"description"`
-	CreateAt		 time.Time	`json:"date_creation"`
-	UpdateAt		 time.Time  `json:"date_update"`
+	IdStatistic		     int64		`json:"id"`
+	Total_membre	     int64		`json:"total_membre"`
+	Total_produit	     int64		`json:"total_produit"`
+	Total_commande	     int64		`json:"total_commande"`
+	Total_client	     int64      `json:"total_client"`
+	Total_membre_jour	 int64		`json:"total_membre_jour"`
+	Total_produit_jour	 int64		`json:"total_produit_jour"`
+	Total_commande_jour	 int64		`json:"total_commande_jour"`
+	Total_client_jour	 int64      `json:"total_client_jour"`
 
 }
 
-type MessageRole struct {
+
+type Graphecommand struct{
+
+	Id		             int64		`json:"id"`
+	Nom	                 string		`json:"nom"`
+	Valeur	             int64		`json:"valeur"`
+	
+	
+
+}
+
+type MessageStatistic struct {
 
 	Code			int			`json:"code"`
 	Status			string		`json:"status"`
 
 }
 
-type Role []Roles
+type Statistic []Statistics
+type graphecommande []Graphecommand
 
-func NewRole(role *Roles) MessageRole{
 
-	var message MessageRole
-	if role == nil{
-		fmt.Println(role)
+//pour retrouver un statistic par son id
+func Statistique() *Statistics{
+
+	var statistic Statistics
+
+	row := Configuration.Db().QueryRow("SELECT count(*) FROM users")
+
+	err := row.Scan(&statistic.Total_membre)
+
+	if err != nil{
+		fmt.Println(err)
 	}
+	 
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM users,role WHERE users.Role_idRole=role.idRole and role.nom='Clients' group by role.idRole")
 
-	role.CreateAt = time.Now()
-
-	_, err := Configuration.Db().Exec("INSERT INTO role (nom, description, date_creation, date_update) VALUE(?, ?, ?, ?)", role.Nom, role.Description, role.CreateAt,role.UpdateAt)
-
-	if err ==nil{
-		message.Code = 200
-		message.Status = "success de la creation du role"
-	}else{
-		message.Code = 0
-		message.Status = "l'enregistrement a echoue"
-	}
-
-	return message
-
-}
-
-//pour retrouver un role par son id
-func FindRoleById(id int) *Roles{
-
-	var role Roles
-
-	row := Configuration.Db().QueryRow("SELECT * FROM role WHERE idRole= ?", id)
-
-	err := row.Scan(&role.IdRole, &role.Nom, &role.Description, &role.CreateAt, &role.UpdateAt)
+	err = row.Scan(&statistic.Total_client)
 
 	if err != nil{
 		fmt.Println(err)
 	}
 
-	return &role
-}
 
-//pour la mise a jour d'un role
-func UpdateRole(role *Roles) MessageRole{
 
-	var message MessageRole
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM produit")
 
-	role.UpdateAt = time.Now()
-
-	str, err := Configuration.Db().Prepare("UPDATE role SET nom = ?, description = ?, date_update = ? WHERE idRole= ? ")
+	err = row.Scan(&statistic.Total_produit)
 
 	if err != nil{
 		fmt.Println(err)
 	}
 
-	_, err = str.Exec(&role.Nom, &role.Description, &role.UpdateAt, &role.IdRole)
 
-	if err ==nil{
-		message.Code = 200
-		message.Status = "success de la mise a jour"
-	}else{
-		message.Code = 0
-		message.Status = "la mise a jour a echoue"
-	}
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM commande ;")
 
-	return message
-}
+	err = row.Scan(&statistic.Total_commande)
 
-//pour lister les roles
-func ListerRole() Role{
-
-	var role Role
-
-	rows, err := Configuration.Db().Query("SELECT idRole, nom, description FROM role")
-
-	if err !=nil{
+	if err != nil{
 		fmt.Println(err)
 	}
 
-	defer rows.Close()
-	fmt.Println("Listage des differentes Roles")
-	for rows.Next(){
-		var r Roles
-		err := rows.Scan(&r.IdRole, &r.Nom, &r.Description)
+	//statistique journalier
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM users where date_creation>=sysdate();")
 
-		if err !=nil{
-			fmt.Println(err)
-		}
-		fmt.Println("before append")
-		role = append(role, r)
-		fmt.Printf("after Role")
+	err = row.Scan(&statistic.Total_membre_jour)
 
+	if err != nil{
+		fmt.Println(err)
 	}
-	 return role
+	 
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM users,role WHERE users.Role_idRole=role.idRole and role.nom='Clients' and users.date_creation>=sysdate()  group by role.idRole")
 
+	err = row.Scan(&statistic.Total_client_jour)
+
+	if err != nil{
+		fmt.Println(err)
+	}
+
+
+
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM graphecommande where Date_creation>=sysdate();")
+
+	err = row.Scan(&statistic.Total_produit_jour)
+
+	if err != nil{
+		fmt.Println(err)
+	}
+
+
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM commande date_commande>=sysdate();")
+
+	err = row.Scan(&statistic.Total_commande_jour)
+
+	if err != nil{
+		fmt.Println(err)
+	}
+	return &statistic
 }
 
-//pour supprimer un role
-func DeleteRoleById(id int) MessageRole{
 
-	var message MessageRole
+//fonction permettant de trouver toutes les voitures
+func Graphecommande() *graphecommande {
+	var graphecommande graphecommande 
 
-	stmt, err := Configuration.Db().Prepare("DELETE FROM role WHERE idRole=?;")
-	
+	rows, err :=Configuration.Db().Query("SELECT produit.idProduit, produit.nom, count(*) FROM produit,produit_commande where produit.idProduit=produit_commande.Produit_idProduit group by produit_commande.Produit_idProduit")
+	//fmt.Println("after rows")
 	if err!=nil{
 		fmt.Println(err)
 	}
-	_, err = stmt.Exec(id)
-	 
-	if err==nil{
-		message.Code=200
-		message.Status="Suppression reussie"
+	fmt.Printf("before close")
+	//close rows after all readed
+	defer rows.Close()
+	fmt.Printf("afer close")
+	for rows.Next(){
+		var c Graphecommand
 	
-	}else{
-		fmt.Println(err)
-		message.Code=0
-		message.Status="Suppression echouee"
+		err := rows.Scan(&c.Id,&c.Nom,&c.Valeur)
+		
+		fmt.Printf("before log")
+		if err !=nil{
+			fmt.Println(err)
+		}
+		fmt.Printf("before append")
+		graphecommande=append(graphecommande, c)
+		fmt.Printf("after graphecommande")
 	}
-	return message
-	
+
+	return &graphecommande
 }
 
