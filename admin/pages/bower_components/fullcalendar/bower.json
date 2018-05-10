@@ -1,35 +1,30 @@
 {
-  "name": "fullcalendar",
-  "version": "2.0.2",
-
-  "description": "Full-sized drag & drop event calendar",
-  "keywords": [ "calendar", "event", "full-sized" ],
-  "homepage": "http://arshaw.com/fullcalendar/",
-
+  "name": "fullcalendar-scheduler",
+  "title": "FullCalendar Scheduler",
+  "description": "A premium add-on to FullCalendar for displaying events and resources",
+  "homepage": "https://fullcalendar.io/scheduler/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fullcalendar/fullcalendar-scheduler.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "copyright": "2017 Adam Shaw",
   "dependencies": {
-    "jquery": ">=1.7.1",
-    "moment": ">=2.5.0"
+    "jquery": "2 - 3",
+    "moment": "^2.9.0",
+    "fullcalendar": "~3.8.1"
   },
-  "devDependencies": {
-    "jquery-ui": ">=1.8.17",
-    "jquery-simulate-ext": "~1.3.0",
-    "jquery-mockjax": "~1.5.3",
-    "jasmine-jquery": "~2.0.3",
-    "jasmine-fixture": "~1.2.0",
-    "moment-timezone": "~0.0.6"
-  },
-
   "main": [
-    "/dist/fullcalendar.js",
-    "/dist/fullcalendar.css"
+    "dist/scheduler.js",
+    "dist/scheduler.css"
   ],
   "ignore": [
     "*",
     "**/.*",
     "!/dist/**",
-    "!/bower.json",
-    "!/changelog.*",
-    "!/license.*",
-    "!/readme.*"
+    "!/README.*",
+    "!/LICENSE.*",
+    "!/CHANGELOG.*",
+    "!/CONTRIBUTING.*"
   ]
 }

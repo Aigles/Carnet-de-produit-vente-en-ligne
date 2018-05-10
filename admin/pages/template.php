@@ -12,6 +12,7 @@
     <link href="css/charisma-app.css" rel="stylesheet">
     <link href='bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
     <link href='bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+     <link rel="stylesheet" href="bower_components/fullcalendar/dist/scheduler.min.css">
     <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
     <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
     <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
@@ -27,6 +28,9 @@
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="js/config.js"></script>
+          <!--jQuery-->
+<link rel="stylesheet" href="bower_components/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="bower_components/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
 
 
     <script src="js/login/checkConnection.js"></script>
@@ -217,8 +221,11 @@
 <script src="js/jquery.cookie.js"></script>
 <!-- calender plugin -->
 
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src='bower_components/fullcalendar/dist/locale-all.js'></script>
+    <script src='js/calendrier-custom.js'></script>
+    <script src="bower_components/fullcalendar/dist/scheduler.min.js"></script>
 <script src='bower_components/moment/min/moment-with-locales.min.js'></script>
 <!-- data table plugin -->
 <script src='js/jquery.dataTables.min.js'></script>

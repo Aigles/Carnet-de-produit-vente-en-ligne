@@ -1,16 +1,8 @@
-# FullCalendar
+# FullCalendar Scheduler [![Build Status](https://travis-ci.org/fullcalendar/fullcalendar-scheduler.svg?branch=master)](https://travis-ci.org/fullcalendar/fullcalendar-scheduler)
 
-A full-sized drag & drop event calendar (jQuery plugin).
+A premium add-on to [FullCalendar](http://fullcalendar.io/) for displaying events and resources.
 
-- [Project website and demos](http://arshaw.com/fullcalendar/)
-- [Documentation](http://arshaw.com/fullcalendar/docs/)
-- [Support](http://arshaw.com/fullcalendar/support/)
-- [Changelog](changelog.md)
-- [License](license.txt)
-
-For contributors:
-
-- [Ways to contribute](http://arshaw.com/fullcalendar/wiki/Contributing/)
-- [General coding guidelines](https://github.com/arshaw/fullcalendar/wiki/Contributing-Code)
-- [Contributing features](https://github.com/arshaw/fullcalendar/wiki/Contributing-Features)
-- [Contributing bugfixes](https://github.com/arshaw/fullcalendar/wiki/Contributing-Bugfixes)
+- [Project website and demos](http://fullcalendar.io/scheduler/)
+- [License](http://fullcalendar.io/scheduler/license/)
+- [Changelog](CHANGELOG.md)
+- [Contributing](CONTRIBUTING.md)
