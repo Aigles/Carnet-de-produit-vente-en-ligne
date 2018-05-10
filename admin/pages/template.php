@@ -216,8 +216,10 @@
 <!-- library for cookie management -->
 <script src="js/jquery.cookie.js"></script>
 <!-- calender plugin -->
+
 <script src='bower_components/moment/min/moment.min.js'></script>
 <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<script src='bower_components/moment/min/moment-with-locales.min.js'></script>
 <!-- data table plugin -->
 <script src='js/jquery.dataTables.min.js'></script>
 <!-- select or dropdown enhancer -->

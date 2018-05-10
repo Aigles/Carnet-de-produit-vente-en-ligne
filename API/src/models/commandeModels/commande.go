@@ -9,13 +9,16 @@ import (
 
 
 type Commande struct{
-	Id     int         `json:"idCommande"`
-	Quantite    int           `json:"quantite"`
-	Users_idUsers  int         `json:"users_idUsers"`
+	Id                    int         `json:"idCommande"`
+	Quantite              int           `json:"quantite"`
+	Users_idUsers         int         `json:"users_idUsers"`
+	Users_nom             string         `json:"users_nom"`
+	Users_prenom          string         `json:"users_prenom"`
+	Produit_nom           string         `json:"produit_nom"`
 	Paiement_idPaiement   int  `json:"paiement_idPaiement "`
 	Paiement_Reference_livraison_idReference_livraison  string  `json:"Paiement_Reference_livraison_id "`
-	CreateAt time.Time        `json:"date_creation"`
-	UpdateAt time.Time        `json:"date_update"`
+	CreateAt              time.Time        `json:"date_creation"`
+	UpdateAt              time.Time        `json:"date_update"`
 }
 type commande []Commande
 
@@ -75,7 +78,7 @@ func FindCommandeById(id int) *Commande{
 func AllCommande() *commande {
 	var commande commande 
 
-	rows, err :=Configuration.Db().Query("SELECT commande.idCommande, date_commande,quantite,date_update,Users_idUsers, Paiement_idPaiement,Paiement_Reference_livraison_idReference_livraison FROM commande")
+	rows, err :=Configuration.Db().Query("SELECT commande.idCommande, date_commande,quantite,Users_idUsers,users.nom,users.prenom,produit.nom, Paiement_idPaiement,Paiement_Reference_livraison_idReference_livraison FROM commande,produit_commande,produit,users where commande.Users_idUsers=users.idUsers and commande.idCommande=produit_commande.Commande_idCommande and produit.idProduit=produit_commande.Produit_idProduit")
 	//fmt.Println("after rows")
 	if err!=nil{
 		fmt.Println(err)
@@ -87,7 +90,8 @@ func AllCommande() *commande {
 	for rows.Next(){
 		var c Commande 
 	
-		err := rows.Scan(&c.Id,&c.CreateAt,&c.Quantite,&c.UpdateAt,&c.Users_idUsers,&c.Paiement_idPaiement,&c.Paiement_Reference_livraison_idReference_livraison)
+		err := rows.Scan(&c.Id,&c.CreateAt,&c.Quantite,&c.Users_idUsers,&c.Users_nom,&c.Users_prenom ,&c.Produit_nom, &c.Paiement_idPaiement,&c.Paiement_Reference_livraison_idReference_livraison)
+		
 		fmt.Printf("before log")
 		if err !=nil{
 			fmt.Println(err)

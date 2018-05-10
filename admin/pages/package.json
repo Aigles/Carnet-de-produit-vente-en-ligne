@@ -16,6 +16,8 @@
     "datatables.net-se": "^1.10.16",
     "datatables.net-select-dt": "^1.2.5",
     "jquey": "0.0.1-security",
-    "pdfmake": "^0.1.36"
+    "moment": "^2.22.1",
+    "pdfmake": "^0.1.36",
+    "save": "^2.3.2"
   }
 }
