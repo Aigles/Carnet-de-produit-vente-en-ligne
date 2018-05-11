@@ -44,8 +44,8 @@ function creerUtilisateur(){
     user.prenom   = $('#inputPrenom').val();
     user.email    = $('#inputEmail1').val();
     user.password = $('#inputPassword1').val();
-    var roleId = 1;
-    user.Role_idRole = roleId;
+    var roleId = 11;
+    user.role_id = roleId;
     data = JSON.stringify(user);
     console.log(data);
     var url = "http://localhost:1230/api/app/ceerUtilisateur";
@@ -61,7 +61,7 @@ function sendData(data, url) {
     data: data, 
     Accept : "application/json;charset=UTF-8"
     }).done(function (data) {
-    jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Resultat de l\'opération</p></div>');
+    jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Resultat de l\'opération : '+data.status+'</p></div>');
     jQuery('#result-info').html(data.status);
     jQuery('#myModal').modal('show');
   }).fail(function (error) {
