@@ -1,8 +1,11 @@
 
 <?php
 	session_start();
-	require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/config.php';
-	require_once BASEURL. 'helpers/helpers.php';
+	
+	define('ROOT1', dirname(__DIR__));
+
+	require_once ROOT1.'/config.php';
+	require_once ROOT1.'/helpers/helpers.php';
 
 	$cart_id = '';
 	if(isset($_COOKIE[CART_COOKIE])){
