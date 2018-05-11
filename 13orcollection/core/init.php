@@ -1,7 +1,8 @@
 
 <?php
 	session_start();
-	require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/config.php';
+	require_once realpath("config.php");
+	//$_SERVER['DOCUMENT_ROOT'].'/Vente-en-ligne/13orcollection/config.php';
 	require_once BASEURL. 'helpers/helpers.php';
 
 	$cart_id = '';
