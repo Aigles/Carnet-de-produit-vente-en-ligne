@@ -44,7 +44,7 @@ function creerUtilisateur(){
     user.prenom   = $('#inputPrenom').val();
     user.email    = $('#inputEmail1').val();
     user.password = $('#inputPassword1').val();
-    var roleId = 11;
+    var roleId =  11;
     user.role_id = roleId;
     data = JSON.stringify(user);
     console.log(data);
