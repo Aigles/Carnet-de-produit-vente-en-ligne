@@ -1,7 +1,6 @@
 	<script>
 	jQuery(window).scroll(function(){
 	  var vscroll = jQuery(this).scrollTop();
-	  //var id = GET_PARAM('pid');
 
 	jQuery('#logotext').css({
 		"transform" : "translate(0px, "+vscroll/2+"px)"
