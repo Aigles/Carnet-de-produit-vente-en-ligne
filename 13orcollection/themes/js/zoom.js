@@ -18,7 +18,6 @@ function detailsmodal(id){
     
     .done(function(data) {
             var tableau_produit="";
-            tableau_produit+='<?php ob_start(); ?>';
             tableau_produit +='<div class="modal-dialog modal-lg"><div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title text-center" style="color: #faa732;">DETAILS</h4>';
             tableau_produit +='</div><div class="modal-body"> <div class="container-modifier"><ul class="thumbnails" style="width:760px; margin-left:10px;"><span id="modal_errors" class="bg-danger"></span><li class="span"><div class="center-block"><img style="width:300px; height: 320px;" src="'+data.caracteristic[0].image+'" class="taille-img" alt="Levis Jean" class="details img-responsive"></div>';
             tableau_produit +='</li><li  class="span"><p><h4>'+data.nom+'</h4></p><hr><p>'+data.description+'</p><hr><p>Prix:&nbsp;   $'+data.caracteristic[0].prix+'.00</p><p>Stock: <span class="badge badge-warning">'+data.nbre_en_stock+'</span></p><form action="add_cart.php" method="post" id="add_product_form"><div class="form-group">';
@@ -31,8 +30,7 @@ function detailsmodal(id){
             });
             tableau_produit +='</select><br><div class="span">&nbsp;</div>';
             tableau_produit +='</div></form></li></ul></div></div><div class="modal-footer"><button class="btn btn-default" data-dismiss="modal">Fermer</button><button class="btn btn-warning" onclick="add_to_cart();return false;"><span class="icon-shopping-cart"></span>Ajouter</button></div></div> '; 
-            tableau_produit+='<?php echo ob_get_clean(); ?>';
-         // affectation des produits dans l'id
+          // affectation des produits dans l'id
          //$('#details-modal').append(tableau_produit);
          jQuery('#details-modal').append(tableau_produit).modal('toggle');
         //jQuery('#details-modal').modal('toggle');
