@@ -4,7 +4,7 @@
     var id = GET_PARAM('pid');
 
     //List personnel all records
-    if(page == '' || page == 'index.php'|| page == 'user.php'){
+    if(page == '' || page == 'index.php'|| page == 'user.php' || page == 'inscription.php'){
 
     
 
@@ -23,7 +23,7 @@
             tableau_caracteristic = '<option><a href="index.php?prodid='+categorie.id+'">'+categorie.type+'</a></option>';
             // affectation des produits dans l'id
          
-            jQuery('#search').append(tableau_caracteristic);
+            jQuery('.srchTxt#search').append(tableau_caracteristic);
          
         
         });

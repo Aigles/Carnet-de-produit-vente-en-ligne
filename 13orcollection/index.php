@@ -282,7 +282,7 @@ require_once realpath("core/init.php");
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/list.js"></script>
-    <script src="themes/js/zoom.js"></script>
+    <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
 	

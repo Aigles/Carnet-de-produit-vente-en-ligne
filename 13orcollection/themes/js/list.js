@@ -42,7 +42,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
             if (produit.caracteristic != null) {
                 var tableau_produit="";
                  tableau_produit+='<li class="span3"><div class="thumbnail"><a  href="product_details.php?pid='+produit.id+'"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
-                 tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <p>En stock: '+produit.nbre_en_stock+'. </p><p>Prix : $'+produit.caracteristic[0].prix+',00 </p><h4 style="text-align:center"><a  href="product_details.php?pid='+produit.id+'" class="btn btn-warning">Details </a> <button type="button" href="'+produit.id+'"class="btn btn-sm btn-warning" onclick="detailsmodal('+produit.id+')"><i class="icon-zoom-in"></i></button></h4>';
+                 tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <p>En stock: '+produit.nbre_en_stock+'. </p><p>Prix : $'+produit.caracteristic[0].prix+',00 </p><h4 style="text-align:center"><a  href="product_details.php?pid='+produit.id+'" class="btn btn-warning">Details </a> <button type="button" id="'+produit.id+'" class="btn btn-sm btn-warning" onclick="detailsmodal('+produit.id+');"><i class="icon-zoom-in"></i></button></h4>';
                  tableau_produit+='</div></div></li>';
 
                 jQuery('#List_produit').append(tableau_produit);
@@ -53,4 +53,38 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
      //document.getElementById('List_produit').innerHTML=tableau_produit;
 });
 
+}
+function detailsmodal(id){
+
+    $.ajax({ 
+            url: Fullurl+"produit/"+id,
+            type: 'GET', 
+            dataType: 'json', 
+            Accept : "application/json;charset=UTF-8"
+            })
+
+    
+    .done(function(data) {
+            var tableau_produit="";
+            tableau_produit +='<div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button class="close" type="button" onclick="closeModal();return false;" aria-label="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title text-center" style="color: #faa732;">DETAILS</h4>';
+            tableau_produit +='</div><div class="modal-body" id="vetement_details"> <div class="container-modifier"><ul class="thumbnails" style="width:760px; margin-left:10px;"><span id="modal_errors" class="bg-danger"></span><li class="span"><div class="center-block"><img style="width:300px; height: 320px;" src="'+data.caracteristic[0].image+'" class="taille-img" alt="Levis Jean" class="details img-responsive"></div>';
+            tableau_produit +='</li><li  class="span"><p><h4>'+data.nom+'</h4></p><hr><p>'+data.description+'</p><hr><p>Prix:&nbsp;   $'+data.caracteristic[0].prix+'.00</p><p>Stock: <span class="badge badge-warning">'+data.nbre_en_stock+'</span></p><form action="add_cart.php" method="post" id="add_product_form"><div class="form-group">';
+            tableau_produit +='<label for="quantity">Quantité:</label><input type="number" class="form-control" id="quantity" name="quantity" max="'+data.nbre_en_stock+'" min="1"><br>';
+            tableau_produit +='</div><div class="form-group"><label for="size">Taille:</label>';
+
+            tableau_produit +='<select name="size" id="size" class="form-control">';
+            $.each(data.caracteristic, function( key, donnee ){
+            tableau_produit +='<option value="'+donnee.size+'">'+donnee.size+'</option>';
+            });
+            tableau_produit +='</select><br><div class="span">&nbsp;</div>';
+            tableau_produit +='</div></form></li></ul></div></div><div class="modal-footer"><button class="btn btn-default" onclick="closeModal();return false;">Fermer</button><button class="btn btn-warning" onclick="add_to_cart();return false;"><span class="icon-shopping-cart"></span>Ajouter</button></div></div></div> '; 
+          // affectation des produits dans l'id
+            //jQuery('#details-modal').append(tableau_produit);
+            //jQuery('.jeyda').modal('toggle');
+            $('#details-modal').append(tableau_produit).modal('toggle');
+
+         //$('#details-modal').append(tableau_produit);
+        //jQuery('#details-modal').modal('toggle');
+    });
+    
 }
