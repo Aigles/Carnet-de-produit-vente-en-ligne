@@ -69,7 +69,7 @@
 	<?php include 'sidebar.php'; ?>
 <!-- Sidebar a gauche end=============================================== -->
 
-	<div class="container" style=" margin-left: 50px;">
+	<div class="container">
 	<div class="row" >
 		<div class="span3"></div>
 		<div class="span4">
