@@ -27,10 +27,11 @@
             
             $.each(data.caracteristic, function( key, donnee ){
                 tableau_produit +=' <a ><img style="width:29%; height: 29%;" src="'+donnee.image+'" alt="" onmouseover="changerImage(\''+donnee.image+'\')"/></a>';
+                tableau_produit +=' <a ><img style="width:29%; height: 29%;" src="'+donnee.image_1+'" alt="" onmouseover="changerImage(\''+donnee.image_1+'\')"/></a>';
                 });
             
-            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form action="/13orcollection/cart.php" method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : $'+data.caracteristic[0].prix+'.00</span></label>';
-            tableau_produit +='<button class="btn btn-large btn-warning pull-right" onclick="add_to_cart();return false;"> Ajouter <span class=" icon-shopping-cart"></span></button>';
+            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : $'+data.caracteristic[0].prix+'.00</span></label>';
+            tableau_produit +='<button type="button" class="btn btn-large btn-warning pull-right "  id="ajouter-panier" data-nom="'+data.nom+'" data-prix="'+data.caracteristic[0].prix+'">Ajouter</button>';
             // ========== partie Size =============
             tableau_produit +='<label class="control-label" for="size"><span>Size :</span></label>';
             tableau_produit +='<select name="size" class="span1" id="size">';
@@ -50,6 +51,14 @@
         
      // affectation des produits dans l'id
      document.getElementById('detail_produit').innerHTML=tableau_produit;
+
+     $('#ajouter-panier').click(function(event) {
+        event.preventDefault();
+        var nom = $(this).data('nom');
+        var prix = Number($(this).data('prix'));
+        MonPanier.ajouter_produit_dans_panier(nom, prix, 1);
+        afficherpanier();
+      });
     
 });
 
@@ -95,7 +104,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
     }
     else{
         jQuery.ajax({
-            url : '/13orcollection/cart.php',
+            url : realpath('./../../cart.php'),
             type : 'POST',
             data : data,
             success : function(){
@@ -111,4 +120,14 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
         jQuery('#available').val(available);
     }); 
 
+
+
+    // $('#ajouter-panier').click(function(event) {
+    //     alert("ggfdfg");
+    //     event.preventDefault();
+    //     var nom = $(this).data('nom');
+    //     var prix = Number($(this).data('prix'));
+    //     MonPanier.ajouter_produit_dans_panier(nom, prix, 1);
+    //     afficherpanier();
+    //   });
  

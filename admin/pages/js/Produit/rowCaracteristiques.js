@@ -84,7 +84,7 @@ function creerProduit() {
   // sendData(data, url);
   $.when(sendData(data, url)).done(function(){
     id_prod=localStorage.getItem("id_prod")
-    caracteristicProd(id_prod, "#divimg-", "#divimgg-")
+        caracteristicProd(id_prod, "#divimg-", "#divimgg-")
   }); 
 
 }

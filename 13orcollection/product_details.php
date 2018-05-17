@@ -30,6 +30,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   </head>
 <body>
 	<?php include 'header.php'; ?><!-- ================== Header ============================================ -->
@@ -62,10 +63,36 @@
 	<script src="themes/js/google-code-prettify/prettify.js"></script>	
 	<script src="themes/js/config.js"></script>
 	<script src="themes/js/bootshop.js"></script>
+	
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/detail.js"></script>
-	
+
 
 <?php include 'script.php'; ?>
+
+<script>
+function commander(nom,prenom,cp,email,commande,prix_total,message,livraison){
+$.ajax({	
+url : 'mail.php',
+type : 'GET', 
+data : 'nom=' + nom + '&prenom=' + prenom + '&cp=' + cp + '&email=' + email + '&commande=' + commande + '&prix_total=' + prix_total + '&message=' + message + '&livraison=' + livraison, 
+dataType : 'html',
+success : function(reponse){
+document.getElementById('commande_report').innerHTML = reponse;},
+});
+}
+$('#commander').click( function(){
+var nom = document.getElementById("nom").value;
+var prenom = document.getElementById("prenom").value;
+var cp = document.getElementById("cp").value;
+var email = document.getElementById("email").value;
+var commande = document.getElementById("macommande").innerHTML;
+var prix_total = document.getElementById("prix_total").innerHTML;
+var message = document.getElementById("message").value;
+var livraison = document.querySelector('input[name="livraison"]:checked').value;
+commander(nom,prenom,cp,email,commande,prix_total,message,livraison);
+});
+</script>
+
 </body>
 </html>

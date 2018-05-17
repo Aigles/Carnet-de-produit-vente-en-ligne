@@ -34,14 +34,54 @@
 	include ('header.php'); 
 ?>
 <!-- =========== END Header =========================================-->
-<body>
-    <h3 class="textcolors text-center">Panier</h3><hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3 class="textcolors text-center">Votre Panier</h3><hr>
+<!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
+<!-- <div id="qte_minimum_report"></div> -->
+
+<!-- <table class="show-panier" id="macommande"></table> -->
+<!-- <br />
+<div>Prix total: <span class="total-panier" id="prix_total"></span> euros</div>
+<br /> -->
+
+
+<div class="container">
+  <div class="row">
+        <div class="col-sm-12 col-md-12 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nom Produit</th>
+                        <th>Quantite</th>
+                        <th class="text-center">Prix</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody class="show-panier" id="macommande">
+                
+<!--                  
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Subtotal</h5></td>
+                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Estimated shipping</h5></td>
+                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                    </tr> -->
+                  
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+    </div>
 </body>
 
 <!-- ===================  Footer ============================================================ -->
@@ -59,7 +99,7 @@
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>
     <script src="themes/js/categorie.js"></script>
-	
+	<script src="themes/js/js/panier.js"></script>
 	<!-- ======================== Themes switcher section ================================= -->
 <?php include 'script.php'; ?>
 </body>
