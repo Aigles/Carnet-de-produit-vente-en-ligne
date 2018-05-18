@@ -1,15 +1,8 @@
 
 <?php 
-<<<<<<< HEAD
-//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
-	define('ROOT', __DIR__);
-
-	require_once ROOT.'/core/init.php'; 
-=======
 require_once realpath("core/init.php");
  //$_SERVER['DOCUMENT_ROOT']. '/Vente-en-ligne/13orcollection/core/init.php';
 	//require_once 'core/init.php'; 
->>>>>>> fba8b0d26b1b3c5b68312d0fa109cb6293c3af99
 	// $password = 'password';
 	// $hashed = password_hash($password, PASSWORD_DEFAULT);
 	// echo $hashed;
