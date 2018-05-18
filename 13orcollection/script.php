@@ -1,7 +1,6 @@
 	<script>
 	jQuery(window).scroll(function(){
 	  var vscroll = jQuery(this).scrollTop();
-	  //var id = GET_PARAM('pid');
 
 	jQuery('#logotext').css({
 		"transform" : "translate(0px, "+vscroll/2+"px)"
@@ -17,24 +16,24 @@
 	});
 
 		
-	function detailsmodal(id){
+	// function detailsmodal(id){
 
-		//alert(id);
-		var data = {"id" : id};
-		jQuery.ajax({
-			url: '/13orcollection/each_product.php',
-			type : "POST",
-			data : data,
-			success: function(data){
-				jQuery('body').append(data);
-				jQuery('#details-modal').modal('toggle');
-				//alert(id);
-			},
-			error: function(){
-				alert("something went wrong");
-			}
-		})
-	}
+	// 	//alert(id);
+	// 	var data = {"id" : id};
+	// 	jQuery.ajax({
+	// 		url: '/13orcollection/each_product.php',
+	// 		type : "POST",
+	// 		data : data,
+	// 		success: function(data){
+	// 			jQuery('body').append(data);
+	// 			jQuery('#details-modal').modal('toggle');
+	// 			//alert(id);
+	// 		},
+	// 		error: function(){
+	// 			alert("something went wrong");
+	// 		}
+	// 	})
+	// }
 
 	function add_to_cart(){
     //alert("Votre produit a bien été ajouté dans le panier!");

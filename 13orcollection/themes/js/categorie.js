@@ -5,7 +5,7 @@
     var compterCategorie = 0;
 
     //List personnel all records
-    if(page == '' || page == 'index.php'|| page == 'user.php'){
+    if(page == '' || page == 'index.php'|| page == 'user.php' || page == 'inscription.php'){
 
     
 
@@ -29,7 +29,7 @@
           compterCategorie = compterCategorie + 1;
         
         });
-        jQuery('.subMenu.open').append('<a style="color:#faa732; text-align:center;"> CATÉGORIES ['+compterCategorie+']</a>')
+        jQuery('.subMenu.open').append('<a style="color:#faa732; text-align:center;"> CATÉGORIES <span class="badge badge-warning">'+compterCategorie+'</span></a>')
         //document.getElementById('sideMnu').innerHTML=tableau_caracteristic;
     });
 }

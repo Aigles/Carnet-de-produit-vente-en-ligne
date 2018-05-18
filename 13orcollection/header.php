@@ -33,7 +33,7 @@
 	</form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="index.php">Accueil</a></li>
-	 <li><a href="cart.php"><span class="badge">0</span></span><span class="icon-shopping-cart"></span>Panier</a></li>
+	 <li><a href="cart.php"><span class="badge total-count"></span></span><span class="icon-shopping-cart"></span>Panier</a></li>
 	 <li class="inscrire"><a href="inscription.php">Inscrire</a></li>
 	 <li class="connecter"><a href="login.php"><span class="badge badge-warning">Connecter</span></a></li>
 
@@ -45,3 +45,5 @@
     </ul>
   </div>
 </div>
+<script src="themes/js/jquery.js" type="text/javascript"></script>
+<script src="themes/js/js/panier.js"></script>

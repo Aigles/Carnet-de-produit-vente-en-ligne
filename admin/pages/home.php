@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="box-content">
-                <div id="piechart" style="height:330px;"></div>
+                <div id="piechart" style="height:400px;"></div>
             </div>
         </div>
     </div>

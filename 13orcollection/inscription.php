@@ -46,16 +46,13 @@
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
-<!-- Sidebar ================================================== -->
-
-
-<!-- Sidebar End ================================================== -->
 
 	<div class="span12">
     <ul class="breadcrumb">
 		<li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
 		<li class="active">Inscription</li>
     </ul>
+
      <!-- ================ Partie rechercher ==================-->
     <!-- <form>
   <input type="text" size="30" onkeyup="showResult(this.value)">
@@ -65,22 +62,26 @@
      <!-- ================ Fin Partie rechercher ==================-->
 
     <!-- ======= codes php doivent etre ajouté ici pour les cas de test ====== -->
-	<h3><p class="textcolors text-center"> Création de Compte </p></h3>	
-	<hr class="soft"/>
+	<!-- <h3><p class="textcolors text-center"> Création de Compte </p></h3>	 -->
+	<!-- <hr class="soft"/> -->
 	
-	<div class="container" style=" margin-left: 80px;">
+<!-- Sidebar a gauche ================================================== -->
+	<?php include 'sidebar.php'; ?>
+<!-- Sidebar a gauche end=============================================== -->
+
+	<div class="container">
 	<div class="row" >
 		<div class="span3"></div>
 		<div class="span4">
 			<div class="well">
-			<h5><p class="textcolors text-center"> Formulaire d'inscription </p></h5><hr><br/>
+			<h3><p class="textcolors text-center"> Création de Compte </p></h3>	<hr><br/>
 				<!-- <span id="modal_errors" class="bg-danger"></span> -->
 				
 						
-						<div id="result-title">
+						<!-- <div id="result-title">
 								<div id="result-info"></div>
 								<div id="myModal"></div>
-						</div>
+						</div> -->
 					
 				
 			<div class="box-content" id="save_inscription">
@@ -89,43 +90,46 @@
 					if(!empty($errors)){
 						echo display_errors($errors);
 					}
-					// else{
-					// 	echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>Inscription réussi</p></div>';
-					// }
 				?>
 			  <div class="control-group">
 				<label class="control-label" for="inputNom">Nom</label>
 				<div class="controls">
 				  <input class="span3"  type="text" name="nom" id="inputNom" placeholder="Nom" value="<?=$nom;?>">
 				</div>
+				<div id="result-nom" style="color: red;"></div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPrenom">Prénom</label>
 				<div class="controls">
 				  <input class="span3"  type="text" name="prenom" id="inputPrenom" placeholder="Prénom" value="<?=$prenom;?>">
 				</div>
+				<div id="result-prenom" style="color: red;"></div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail1">Email</label>
 				<div class="controls">
-				  <input class="span3"  type="email" name="email" id="inputEmail1" placeholder="Email" value="<?=$email;?>">
+				  <input required="required" class="span3" type="email" name="email" id="inputEmail1" placeholder="Email" value="<?=$email;?>">
 				</div>
+				<div id="result-email" style="color: red;"></div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword1">Mot de passe</label>
 				<div class="controls">
 				  <input type="password" class="span3"  name="password1" id="inputPassword1" placeholder="Password" value="<?=$password1;?>">
 				</div>
-				</div>
+				<div id="result-password" style="color: red;"></div>
+				<div id="result-lpassword" style="color: red;"></div>
+			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword2">Confirmer le Mot de passe</label>
 				<div class="controls">
 				  <input type="password" class="span3"  name="password2" id="inputPassword2" placeholder="Verifier Password" value="<?=$password2;?>">
 				</div>
+				<div id="result-vpassword" style="color: red;"></div>
 			  </div>
 			  <div class="control-group">
 			  <div class="controls">
-			  <button type="submit" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
+			  <button type="button" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
 			  </div>
 			</div>
 			</form>
@@ -143,16 +147,36 @@
 <!--  ========================== Footer ==================================== -->
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================= -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
 
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 id="result-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="result-info"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>	
 	<script src="themes/js/bootshop.js"></script>
+    <script src="themes/js/config.js"></script> 
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/inscription.js"></script>
-    <!-- <script src="themes/js/create.js"></script>
-    <script src="themes/js/config.js"></script> -->
+    <script src="themes/js/categorie.js"></script>
+    <script src="themes/js/rechCategorie.js"></script>
+    <!-- <script src="themes/js/create.js"></script>-->
 
 </body>
 </html>

@@ -115,7 +115,7 @@ function reloadCalendar() {
 
             
         $.ajax({
-            url: fullUrl + 'commande',
+            url: fullUrl + 'reference_livraison',
             type: 'GET',
             dataType: 'json',
             Async: false,
@@ -131,10 +131,10 @@ function reloadCalendar() {
         
                   var donnees={};
 
-                      donnees.title=commande.users_nom + ' ' + commande.users_nom ;
-                    donnees.start=moment.utc(commande.date_creation).format();
+                      donnees.title=commande.ville + ' ,' + commande.pays ;
+                    donnees.start=moment.utc(commande.date_livraison).format();
                      //donnees.resourceId='a';
-                    donnees.end="2018-05-11T03:00:00Z";
+                    // donnees.end=moment(commande.date_livraison).add(2,"hours").format();
                     donnees.backgroundColor= '#428bca'; //yellow
                     donnees.borderColor='#428bca'; 
                     donnees.description="";
@@ -169,7 +169,7 @@ console.log("echec")
  
       eventLimit: 1,
       eventLimitClick:'day',
-      eventLimitText :'RV disponibles',
+      eventLimitText :'Livraison à faire',
       handleWindowResize:true,
       navLinks: true, 
       slotLabelInterval : "00:10",
@@ -178,7 +178,7 @@ console.log("echec")
       editable  : false,
       droppable : false, 
       selectable  : true,
-     defaultView:"agendaWeek",
+     defaultView:"month",
       slotDuration:'00:03:00',
     
       validRange: function(nowDate) {

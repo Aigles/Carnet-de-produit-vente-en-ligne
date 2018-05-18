@@ -80,7 +80,7 @@ func FindProduitById(id int) *Produit{
 
 
 
-
+    
 //fonction permettant de trouver toutes les voitures
 func Allproduit() *produit {
 	var produit produit 
@@ -193,3 +193,32 @@ func DeleteProduitById(id int) Message{
 	
 }
 
+//fonction permettant de trouver toutes les voitures
+func AllproduitDate(date_debut string,date_fin string) *produit {
+	var produit produit 
+
+	rows, err :=Configuration.Db().Query("SELECT produit.idProduit, nom, description,nbre_like,code_prod, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie FROM produit where Date_creation between ? and ?",date_debut,date_fin)
+	//fmt.Println("after rows")
+	if err!=nil{
+		fmt.Println(err)
+	}
+	fmt.Printf("before close")
+	//close rows after all readed
+	defer rows.Close()
+	fmt.Printf("afer close")
+	for rows.Next(){
+		var c Produit 
+	
+		err := rows.Scan(&c.Id,&c.Nom,&c.Description,&c.Nbre_like,&c.Code_prod,&c.Nbre_en_stock,&c.Rabais,&c.CreateAt,&c.UpdateAt,&c.Activer,&c.Categorie_idCategorie )
+		c.Caracteristic=FindCaracteristiquesByIdProduit(c.Id);
+		fmt.Printf("before log")
+		if err !=nil{
+			fmt.Println(err)
+		}
+		fmt.Printf("before append")
+		produit=append(produit, c)
+		fmt.Printf("after produit")
+	}
+
+	return &produit
+}

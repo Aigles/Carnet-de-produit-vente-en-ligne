@@ -34,14 +34,259 @@
 	include ('header.php'); 
 ?>
 <!-- =========== END Header =========================================-->
-<body>
-    <h3 class="textcolors text-center">Panier</h3><hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3 class="textcolors text-center">Votre Panier</h3><hr>
+<!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
+
+
+<!-- <table class="show-panier" id="macommande"></table> -->
+<!-- <br />
+<div>Prix total: <span class="total-panier" id="prix_total"></span> euros</div>
+<br /> -->
+
+
+<div class="container" id="zerocommande_panier">
+<div class='alert alert-info text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b id="qte_minimum_report"></b></div>
+  <div class="row">
+        <div class="col-sm-12 col-md-12 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nom Produit</th>
+                        <th>Quantite</th>
+                        <th class="text-center">Prix</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody class="show-panier" id="macommande">
+                
+<!--                  
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Subtotal</h5></td>
+                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Estimated shipping</h5></td>
+                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                    </tr> -->
+                  
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    <!-- Sidebar a gauche end=============================================== -->
+		<!-- <div class="span12"> -->
+        <div class="row ">
+		<div class="col-md-12">		
+			<div class="well well-small">
+			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 200+ produits fournis</small></h4>
+			<div class="row-fluid">
+			<div id="featured" class="carousel slide">
+			<div class="carousel-inner">
+			  <div class="item active">
+			  <ul class="thumbnails" class="nav nav-tabs nav-justified">
+				<li class="span3">
+				  <div class="thumbnail">
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/b1.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/b2.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/b3.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/b4.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/6.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <!-- <i class="tag"></i> -->
+					<a href="product_details.html"><img src="themes/images/products/A.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/b3.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/robe.png"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/9.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/10.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/11.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/1.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/2.jpg"></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/sweater.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/4.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="product_details.html"><img src="themes/images/products/sweater1.jpg" alt=""></a>
+					<div class="caption">
+					  <h5>Nom produit</h5>
+					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			  </div>
+			  <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
+			  <a class="right carousel-control" href="#featured" data-slide="next">›</a>
+			  </div>
+			  </div>
+		</div>
+        </div>
+<!-- Sidebar à droite ================================================== -->
+	
+<!-- Sidebar à droite end=============================================== -->
+	<br/>
+			
+		
+		</div>
+        </div>
+        </div>
+        
 </body>
 
 <!-- ===================  Footer ============================================================ -->
@@ -59,7 +304,7 @@
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>
     <script src="themes/js/categorie.js"></script>
-	
+	<script src="themes/js/js/panier.js"></script>
 	<!-- ======================== Themes switcher section ================================= -->
 <?php include 'script.php'; ?>
 </body>

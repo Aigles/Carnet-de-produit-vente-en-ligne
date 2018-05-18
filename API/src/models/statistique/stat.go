@@ -30,6 +30,7 @@ type Graphecommand struct{
 
 }
 
+
 type MessageStatistic struct {
 
 	Code			int			`json:"code"`
@@ -100,7 +101,7 @@ func Statistique() *Statistics{
 
 
 
-	row = Configuration.Db().QueryRow("SELECT count(*) FROM graphecommande where Date_creation>=sysdate();")
+	row = Configuration.Db().QueryRow("SELECT count(*) FROM produit where Date_creation>=sysdate();")
 
 	err = row.Scan(&statistic.Total_produit_jour)
 

@@ -9,6 +9,7 @@ import (
 	"models/rolleModels"
 	"models/usersModels"
 	"models/statistique"
+	"models/reference_livraisonModels"
 	"Configuration"
 )
 
@@ -88,6 +89,15 @@ func main() {
 	   
 		ctx.JSON(produitModels.FindProduitById(produitID));
 	})
+
+	app.Get("/produit/intervalle/{debut:string}/{fin:string}", func(ctx iris.Context) {
+		date_debut:= ctx.Params().Get("debut")
+		date_fin:= ctx.Params().Get("fin") 
+		
+	   
+		ctx.JSON(produitModels.AllproduitDate(date_debut,date_fin));
+	})
+	 
 
 	app.Get("/produit/categorie/{id:int}", func(ctx iris.Context) {
 		categorieID, _ := ctx.Params().GetInt("id")
@@ -288,6 +298,49 @@ func main() {
 	app.Get("/Graphecommande", func(ctx iris.Context) {
 
 		ctx.JSON(statistique.Graphecommande())
+	})
+
+
+
+	//lister tout les utilisateurs
+	app.Post("/creer_reference_livraison", func(ctx iris.Context) {
+		var reference_livraison reference_livraisonModels.Reference_livraison 
+
+		ctx.ReadJSON(&reference_livraison)
+	   
+		ctx.JSON(reference_livraisonModels.NewReference_livraison(&reference_livraison))    
+	
+	 })
+
+
+	app.Get("/reference_livraison", func(ctx iris.Context) {
+
+		ctx.JSON(reference_livraisonModels.AllReference_livraison())
+	})
+
+
+	app.Get("/reference_livraison/{id:int}", func(ctx iris.Context) {
+		reference_livraisonID, _ := ctx.Params().GetInt("id")
+
+		ctx.JSON(reference_livraisonModels.FindReference_livraisonById(reference_livraisonID))
+	})   
+
+
+	//modifier un utilisateur
+	app.Post("/modifier/reference_livraison", func(ctx iris.Context){
+		var reference_livraison reference_livraisonModels.Reference_livraison 
+
+		ctx.ReadJSON(&reference_livraison)
+	   
+		ctx.JSON(reference_livraisonModels.UpdateReference_livraison(&reference_livraison))    
+	})
+
+	//supprimer un utilisateur
+	app.Post("/supprimer/reference_livraison/{id:int}", func(ctx iris.Context) {
+		reference_livraisonID, _ := ctx.Params().GetInt("id")
+
+
+		ctx.JSON(reference_livraisonModels.DeleteReference_livraisonById(reference_livraisonID))
 	})
 
 	newapp.Run(iris.Addr(":1230"))
