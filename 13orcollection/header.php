@@ -45,5 +45,5 @@
     </ul>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="themes/js/jquery.js" type="text/javascript"></script>
 <script src="themes/js/js/panier.js"></script>
