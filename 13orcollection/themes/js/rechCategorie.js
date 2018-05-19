@@ -4,7 +4,7 @@
     var id = GET_PARAM('pid');
 
     //List personnel all records
-    if(page == '' || page == 'index.php'|| page == 'user.php' || page == 'inscription.php'){
+    if(page == '' || page == 'index.php'|| page == 'user.php' || page == 'inscription.php' || page == 'product_details.php' || page == 'login.php'){
 
     
 

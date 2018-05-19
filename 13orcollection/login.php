@@ -135,5 +135,6 @@
 
     <script src="themes/js/login/login.js"></script>
     <script src="themes/js/config.js"></script>
+    <script src="themes/js/rechCategorie.js"></script>
 </body>
 </html>
