@@ -12,3 +12,7 @@
 		</ul>
 	</div>
 <!-- Sidebar end=============================================== -->
+<script>
+  $('.total-count').html(MonPanier.totalCount());
+  $('.total-panier').html(MonPanier.totalpanier().toFixed(2));
+</script>

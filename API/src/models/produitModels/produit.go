@@ -194,10 +194,10 @@ func DeleteProduitById(id int) Message{
 }
 
 //fonction permettant de trouver toutes les voitures
-func AllproduitDate(date_debut string,date_fin string) *produit {
+func AllproduitDate() *produit {
 	var produit produit 
 
-	rows, err :=Configuration.Db().Query("SELECT produit.idProduit, nom, description,nbre_like,code_prod, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie FROM produit where Date_creation between ? and ?",date_debut,date_fin)
+	rows, err :=Configuration.Db().Query("SELECT produit.idProduit, nom, description,nbre_like,code_prod, nbre_en_stock,rabais, Date_creation, Date_update,activer,Categorie_idCategorie FROM produit order by  Date_creation DESC limit 10")
 	//fmt.Println("after rows")
 	if err!=nil{
 		fmt.Println(err)

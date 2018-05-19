@@ -1,8 +1,9 @@
 
 <?php 
-require_once realpath("core/init.php");
- //$_SERVER['DOCUMENT_ROOT']. '/Vente-en-ligne/13orcollection/core/init.php';
-	//require_once 'core/init.php'; 
+//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
+	define('ROOT', __DIR__);
+
+	require_once ROOT.'/core/init.php'; 
 	// $password = 'password';
 	// $hashed = password_hash($password, PASSWORD_DEFAULT);
 	// echo $hashed;
@@ -32,7 +33,7 @@ require_once realpath("core/init.php");
 <!--=========== Header End=========================================== -->
 <div id="carouselBlk">
 	<div id="myCarousel" class="carousel slide">
-		<div class="carousel-inner">
+		<div class="carousel-inner" >
 		  <div class="item active">
 		  <div class="container">
 			<a href="#"><img style="width:100%" src="themes/images/carousel/1.png"/></a>
@@ -79,176 +80,37 @@ require_once realpath("core/init.php");
 		<!-- <div class="span12"> -->
 		<div class="span9">		
 			<div class="well well-small">
-			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 200+ produits fournis</small></h4>
+			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 10+ produits fournis</small></h4>
 			<div class="row-fluid">
 			<div id="featured" class="carousel slide">
-			<div class="carousel-inner">
+			<div class="carousel-inner" >
 			  <div class="item active">
-			  <ul class="thumbnails" class="nav nav-tabs nav-justified">
-				<li class="span3">
-				  <div class="thumbnail">
-				  <!-- <i class="tag"></i> -->
-					<a href="product_details.html"><img src="themes/images/products/b1.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <!-- <i class="tag"></i> -->
-					<a href="product_details.html"><img src="themes/images/products/b2.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <!-- <i class="tag"></i> -->
-					<a href="product_details.html"><img src="themes/images/products/b3.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <!-- <i class="tag"></i> -->
-					<a href="product_details.html"><img src="themes/images/products/b4.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
+			  <ul class="thumbnails" class="nav nav-tabs nav-justified"  id="recent_produit_active">
+				
+				
+				
+				
 			  </ul>
 			  </div>
-			   <div class="item">
-			  <ul class="thumbnails">
-				<li class="span3">
-				  <div class="thumbnail">
-				  <!-- <i class="tag"></i> -->
-					<a href="product_details.html"><img src="themes/images/products/6.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <!-- <i class="tag"></i> -->
-					<a href="product_details.html"><img src="themes/images/products/A.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/b3.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/robe.png"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
+				<div class="item"><ul class="thumbnails" id="recent_produit" >
+        
+				</ul></div>
+			
+				<div class="item"><ul class="thumbnails" id="recent_produit_2" >
+        
+				</ul></div>
+			   <!-- <div class="item">
+			  <ul class="thumbnails" >
+				
+				
+			
+		
+				
+			
+			
+				
 			  </ul>
-			  </div>
-			   <div class="item">
-			  <ul class="thumbnails">
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/9.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/10.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/11.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/1.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-			  </ul>
-			  </div>
-			   <div class="item">
-			  <ul class="thumbnails">
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/2.jpg"></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/sweater.jpg" alt=""></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					  <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/4.jpg" alt=""></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-				<li class="span3">
-				  <div class="thumbnail">
-					<a href="product_details.html"><img src="themes/images/products/sweater1.jpg" alt=""></a>
-					<div class="caption">
-					  <h5>Nom produit</h5>
-					   <h4><a class="btn btn-warning" href="product_details.html">voir</a> <span class="pull-right">$222.00</span></h4>
-					</div>
-				  </div>
-				</li>
-			  </ul>
-			  </div>
+			  </div> -->
 			  </div>
 			  <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
 			  <a class="right carousel-control" href="#featured" data-slide="next">›</a>
