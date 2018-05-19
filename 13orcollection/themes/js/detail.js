@@ -46,7 +46,7 @@
             $.each(data.caracteristic, function( key, donnee ){
                 tableau_produit +='<option id="couleur" onclick="changerInfo(\''+donnee.id+'\')">'+donnee.couleur+'</option>';
                 });
-            tableau_produit +='</select></a></div></form><hr class="soft clr"/><p><h3>Déscription de '+data.nom+'</h3><br/>'+data.description;
+            tableau_produit +='</select></a></div></form><hr class="soft clr"/><p><h3>Description de '+data.nom+'</h3><br/>'+data.description;
             tableau_produit +='</p><hr class="soft"/>';
         
      // affectation des produits dans l'id

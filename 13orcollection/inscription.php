@@ -65,13 +65,10 @@
 	<!-- <h3><p class="textcolors text-center"> Création de Compte </p></h3>	 -->
 	<!-- <hr class="soft"/> -->
 	
-<!-- Sidebar a gauche ================================================== -->
-	<?php include 'sidebar.php'; ?>
-<!-- Sidebar a gauche end=============================================== -->
 
 	<div class="container">
 	<div class="row" >
-		<div class="span3"></div>
+		<div class="span4"></div>
 		<div class="span4">
 			<div class="well">
 			<h3><p class="textcolors text-center"> Création de Compte </p></h3>	<hr><br/>
