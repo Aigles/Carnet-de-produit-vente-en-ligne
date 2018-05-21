@@ -70,14 +70,14 @@
 </a>
   <div class="navbar-inner">
     <a class="brand" href="index.php">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
-	<form class="form-inline navbar-search" method="post" >
+	<div class="form-inline navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off" />
    		<ul class="list-group" id="result"></ul>
 	  	<select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
 	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button>
-	</form>
+	</div>
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="index.php">Accueil</a></li>
 	 <li><a href="cart.php"><span class="badge total-count"></span></span><span class="icon-shopping-cart"></span>Panier</a></li>
