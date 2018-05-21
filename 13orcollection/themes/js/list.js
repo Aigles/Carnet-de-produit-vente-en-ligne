@@ -148,6 +148,7 @@ $.ajax({
     var image =$(this).data('image'); 
     MonPanier.ajouter_produit_dans_panier(nom, prix,qte,image);
     afficherpanier();
+    location.window="cart.php";
 });
  // affectation des produits dans l'id
  //document.getElementById('List_produit').innerHTML=tableau_produit;

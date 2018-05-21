@@ -76,10 +76,16 @@
 	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button>
 	</div>
     <ul id="topMenu" class="nav pull-right">
+<<<<<<< HEAD
 	 <li class="bold"><a href="user.php">Accueil</a></li>
 	 <li><a href="cart.php"><span class="badge badge-warning total-count"></span><span class="icon-shopping-cart"></span>Panier</a></li>
    <li class="username"><a href="?=Profile"><span class="icon-user"></span>Profile</span></a></li>
    <li class="commande"><a style="cursor: pointer;"><span class=""><span class="textcolors ">NomUser</span></a></li>
+=======
+	 <li class=""><a href="user.php">Accueil</a></li>
+	 <li><a href="cart.php"><span class="badge total-count"></span></span><span class="icon-shopping-cart"></span>Panier</a></li>
+	 <li class="commande"><a href="?=commande_en_cour">Commande</a></li>
+>>>>>>> c2c1b747e12e75ff78d6ebac1a5d1ec7a3bbda3b
 	 <li class="deconnecter"><a href="index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
 	 <!-- <li class=""><a href="special_offer.html">Offres</a></li>
@@ -91,6 +97,13 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 <script src="themes/js/jquery.js" type="text/javascript"></script>
 <script src="themes/js/js/panier.js"></script>
 <script src="themes/js/listerRecherche.js"></script>
+=======
+
+<script src="themes/js/jquery.js" type="text/javascript"></script>
+<script src="themes/js/js/panier.js"></script>
+<script src="themes/js/listerRecherche.js"></script>
+>>>>>>> c2c1b747e12e75ff78d6ebac1a5d1ec7a3bbda3b
