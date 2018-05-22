@@ -32,7 +32,9 @@
 <div id="header">
 <?php 
 	include ('header.php'); 
+	
 ?>
+</div>
 <!-- =========== END Header =========================================-->
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
@@ -52,7 +54,7 @@
                 <thead>
                     <tr>
                         <th>Nom Produit</th>
-                        <th>Quantite</th>
+                        <th class="text-right">Quantite</th>
                         <th class="text-center">Prix</th>
                         <th class="text-center">Total</th>
                         <th> </th>
@@ -145,9 +147,7 @@
 	<br/>
 			
 		
-		</div>
-        </div>
-        </div>
+	
         
 </body>
 
@@ -161,7 +161,7 @@
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
 	    <script src="themes/js/config.js"></script>
-	<script src="themes/js/bootshop.js"></script>
+	<script src="themes/js/bootshop.js"></script>        
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>

@@ -164,19 +164,23 @@ function afficherpanier() {
            +'<h5 class="media-heading"> by <a href="#">Brand name</a></h5></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"> <div>'
       + '<input type="number" min="1" width="5%" class="form-control item-count" data-nom="' + panierArray[i].nom + '" value="' + panierArray[i].count + '">'
       + '</div></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1">'
-      +'<button type="button" class="btn btn-danger effacer-item" data-nom="' + panierArray[i].nom + '"><span class="glyphicon glyphicon-remove"></span> X </button></td></tr>'
+      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"> X </button></td></tr>'
 
  
   }
 
-  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total</h3></td><td class="text-right" ><h3>$<strong class="total-panier" id="prix_total">31.53</strong></h3></td></tr>';
-  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-warning">Vider le panier</button>  </td><td><span>  </span><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span> <a href="index.php">Continuer vos achats</a></button></td><td>';
-  output +='<button type="button" class="btn btn-success"> Passer la commande <span class="glyphicon glyphicon-play"></span></button></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total</h3></td><td class="text-right" ><h3>$<strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-warning">Vider le panier</button>  </td><td><span>  </span><button type="button" class="btn btn-default"><span class="icon-shopping-cart"></span> <a href="index.php">Continuer vos achats</a></button></td><td>';
+  output +='<button type="button" class="btn btn-success"> Passer la commande <span class="icon-shopping-play"></span></button></td></tr>';
   
   $('.total-count').html(MonPanier.totalCount());
-  if(page == '' || page == 'cart.php'){
+
+  
+  if(page == 'cart.php'||" index.php" || page == ''){
   $('.show-panier').html(output);
+
   $('.total-panier').html(MonPanier.totalpanier().toFixed(2));
+
   if ((Qte_Minimum == true) && (Number.isInteger(MonPanier.totalCount() / Qte_Minimum_Valeur) == false) && (MonPanier.totalCount() != 0))
   {
 	document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_bad;
