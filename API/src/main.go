@@ -90,12 +90,12 @@ func main() {
 		ctx.JSON(produitModels.FindProduitById(produitID));
 	})
 
-	app.Get("/produit/intervalle/{debut:string}/{fin:string}", func(ctx iris.Context) {
-		date_debut:= ctx.Params().Get("debut")
-		date_fin:= ctx.Params().Get("fin") 
+	app.Get("/produit/limite", func(ctx iris.Context) {
+		// date_debut:= ctx.Params().Get("debut")
+		// date_fin:= ctx.Params().Get("fin") 
 		
 	   
-		ctx.JSON(produitModels.AllproduitDate(date_debut,date_fin));
+		ctx.JSON(produitModels.AllproduitDate());
 	})
 	 
 

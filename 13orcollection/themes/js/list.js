@@ -42,18 +42,124 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
             if (produit.caracteristic != null) {
                 var tableau_produit="";
                  tableau_produit+='<li class="span3"><div class="thumbnail"><a  href="product_details.php?pid='+produit.id+'"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
-                 tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <p>En stock: '+produit.nbre_en_stock+'. </p><p>Prix : $'+produit.caracteristic[0].prix+',00 </p><h4 style="text-align:center"><a  href="product_details.php?pid='+produit.id+'" class="btn btn-warning">Details </a> <button type="button" href="'+produit.id+'" class="btn btn-sm btn-warning" onclick="detailsmodal('+produit.id+');"><i class="icon-zoom-in"></i></button></h4>';
+                 tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <p>En stock: '+produit.nbre_en_stock+'. </p><p>Prix : $'+produit.caracteristic[0].prix+',00 </p><h4 style="text-align:center"><a  href="cart.php" class="btn btn-warning  ajouter-panier"  data-image="'+produit.caracteristic[0].image+'" data-nom="'+produit.nom+'" data-prix="'+produit.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span> </a> <button type="button" href="'+produit.id+'" class="btn btn-sm btn-warning" onclick="detailsmodal('+produit.id+');"><i class="icon-zoom-in"></i></button></h4>';
                  tableau_produit+='</div></div></li>';
 
                 jQuery('#List_produit').append(tableau_produit);
             }
         
          });
+
+         $('.ajouter-panier').click(function(event) {
+            event.preventDefault();
+            var nom = $(this).data('nom');
+            var prix = Number($(this).data('prix'));
+            var qte = 1; 
+            var image =$(this).data('image'); 
+            MonPanier.ajouter_produit_dans_panier(nom, prix,qte,image);
+            afficherpanier();
+        });
      // affectation des produits dans l'id
      //document.getElementById('List_produit').innerHTML=tableau_produit;
 });
 
 }
+
+
+  //List personnel all records
+  if(page == '' || page == 'index.php'|| page == 'user.php' || page == 'cart.php'){
+    var prodid=GET_PARAM('prodid');
+
+
+// if ((prodid!=null)&&(prodid!="undefined")) {
+
+//  var url=Fullurl+"produit/categorie/"+prodid;
+// }else{
+var url=Fullurl+"produit/limite";
+// }
+
+$.ajax({ 
+        url: url,
+        type: 'GET', 
+        dataType: 'json', 
+        Accept : "application/json;charset=UTF-8"
+        })
+
+
+.done(function(data) { 
+    var compteur=0;
+
+    $.each( data, function( key, produit ){
+
+        if (produit.caracteristic != null) {
+            compteur=compteur+1;
+       
+            var tableau_produit="";
+              
+            if (compteur<=4){
+            tableau_produit=' <li class="span3"><div class="thumbnail"><a  href="product_details.php?pid='+produit.id+'"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
+            tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <h4><a  href="product_details.php?pid='+produit.id+'" class="btn btn-warning ajouter-panier"  data-image="'+produit.caracteristic[0].image+'" data-nom="'+produit.nom+'" data-prix="'+produit.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span></a><span  class="pull-right">$'+produit.caracteristic[0].prix+'.00 </span></h4>';
+            tableau_produit+='</div></div></li>';
+           
+            jQuery('#recent_produit_active').append(tableau_produit);
+            }
+
+        }
+    
+     });
+     var compteur=0;
+     var items="";
+     $.each( data, function( key, produit ){
+
+        if (produit.caracteristic != null) {
+            compteur=compteur+1;
+       
+            var tableau_produit="";
+
+
+            // if(compteur==1 ||compteur==5 ||compteur==9){
+            //     tableau_produit+='<div class="item"><ul class="thumbnails" >';
+            // }
+             tableau_produit+=' <li class="span3"><div class="thumbnail"><a  href="product_details.php?pid='+produit.id+'"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
+             tableau_produit+='<div class="caption"><h5>'+produit.nom+'</h5> <h4><a  href="cart.php" class="btn btn-warning ajouter-panier"  data-image="'+produit.caracteristic[0].image+'" data-nom="'+produit.nom+'" data-prix="'+produit.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span></a><span  class="pull-right">$'+produit.caracteristic[0].prix+'.00 </span></h4>';
+             tableau_produit+='</div></div></li>';
+
+            //  if(compteur==4 ||compteur==8 || compteur==10){
+            //     tableau_produit+='</ul></div>';
+            // }
+            items=items+tableau_produit;
+             if(compteur<=4){
+                jQuery('#recent_produit').append(tableau_produit);
+            }    
+            else{
+            jQuery('#recent_produit_2').append(tableau_produit);
+            } 
+           
+
+        }
+    
+     });  
+   console.log(items);
+   $('.ajouter-panier').click(function(event) {
+    event.preventDefault();
+    var nom = $(this).data('nom');
+    var prix = Number($(this).data('prix'));
+    var qte = 1; 
+    var image =$(this).data('image'); 
+    MonPanier.ajouter_produit_dans_panier(nom, prix,qte,image);
+    afficherpanier();
+});
+ // affectation des produits dans l'id
+ //document.getElementById('List_produit').innerHTML=tableau_produit;
+});
+
+}
+
+
+
+
+
+
 function detailsmodal(id){
 
     $.ajax({ 

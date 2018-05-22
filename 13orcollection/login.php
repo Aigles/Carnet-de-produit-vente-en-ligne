@@ -35,7 +35,6 @@
 	<style type="text/css" id="enject"></style>
 
     <script src="themes/js/jquery.min.js"></script>
-	<script src="themes/js/jquery.validate.min.js"></script>
 	</head>
 <body>
 <!-- =========== Header =============================================-->
@@ -133,7 +132,9 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================= -->
 
+	<script src="themes/js/jquery.validate.min.js"></script>
     <script src="themes/js/login/login.js"></script>
     <script src="themes/js/config.js"></script>
+    <script src="themes/js/rechCategorie.js"></script>
 </body>
 </html>

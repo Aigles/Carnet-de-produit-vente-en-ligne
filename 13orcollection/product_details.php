@@ -66,6 +66,7 @@
 	
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
     <script src="themes/js/detail.js"></script>
+    <script src="themes/js/rechCategorie.js"></script>
 
 
 <?php include 'script.php'; ?>
