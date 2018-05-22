@@ -33,7 +33,7 @@
 	</form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="user.php">Accueil</a></li>
-	 <li><a href="cart.php"><span class="badge">0</span></span><span class="icon-shopping-cart"></span>Panier</a></li>
+	 <li><a href="cart.php"><span class="badge total-count"></span></span><span class="icon-shopping-cart"></span>Panier</a></li>
 	 <li class="commande"><a href="?=commande_en_cour">Commande</a></li>
 	 <li class="deconnecter"><a href="index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
@@ -45,3 +45,8 @@
     </ul>
   </div>
 </div>
+
+
+<script src="themes/js/jquery.js" type="text/javascript"></script>
+<script src="themes/js/js/panier.js"></script>
+<script src="themes/js/listerRecherche.js"></script>
