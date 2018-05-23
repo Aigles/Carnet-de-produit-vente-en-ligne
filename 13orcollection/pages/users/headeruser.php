@@ -68,25 +68,34 @@
   <div class="navbar-inner">
     <a class="brand" href="index.php">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
 	<div class="form-inline navbar-search" method="post" >
-		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off" />
+		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off"/>
    		<ul class="list-group" id="result"></ul>
 	  	<select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
-	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button>
+	  <!-- <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button> -->
 	</div>
-    <ul id="topMenu" class="nav pull-right">
-	 <li class="bold"><a href="user.php">Accueil</a></li>
+    <!-- <ul id="topMenu" class="nav pull-right">
+	 <li class="bold"><a href="index.php">Accueil</a></li>
 	 <li><a href="cart.php"><span class="badge badge-warning total-count"></span><span class="icon-shopping-cart"></span>Panier</a></li>
    <li class="username"><a href="?=Profile"><span class="textcolors "><span class="icon-user"></span>Profile</span></a></li>
-   <li class="commande"><a href="?=USER"><span class="bold">Jeyda</span></a></li>
-	 <li class="deconnecter"><a href="index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
-
-	 <!-- <li class=""><a href="special_offer.html">Offres</a></li>
-	 <li class=""><a href="normal.html">Livraison</a></li>
-	 <li class=""><a href="contact.html">Contact</a></li> -->
+   <li class="commande"><a href="?=USER"><span class="bold">Doudou Jeyda</span></a></li>
+	 <li class="deconnecter"><a href="../../index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
 	 
+    </ul> -->
+    <ul id="topMenu" class="nav pull-right">
+   <li class="bold"><a href="index.php"><span class="textcolors icon-home"></span>Accueil</a></li>
+   <li><a href="cart.php"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
+   <li class="username"><a href="?=Profile"><span class="textcolors icon-user"></span>Profile</a></li>
+   <li ><a style="color: #faa732; cursor: default;">Salut Jeyda</a></li>
+   <li class="deconnecter"><a href="../../index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
+
+   <!-- <li class=""><a href="special_offer.html">Offres</a></li>
+   <li class=""><a href="normal.html">Livraison</a></li>
+   <li class=""><a href="contact.html">Contact</a></li> -->
+
+   
     </ul>
   </div>
 </div>

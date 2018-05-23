@@ -1,8 +1,8 @@
 #mainBody {/* background: url(../images/seperator.png) repeat-x 0 0; */ border-top:2px solid #dedede; padding-top: 18px;}
 #carouselBlk,#header{background: url(../images/headerRepeat.png) repeat-x 0 0 #f7f7f7;}
-#srchFld {background: margin-left: -82px; border-radius: 0.1; border: 1px solid #faa732;}
+#srchFld {background: margin-left: -82px; border-radius: 0; border: 1px solid #faa732;}
 input[type="text"]#srchFld {
-    margin-left: 79px;display: table-cell; color:#fff; font-size: 13px; font-weight: inherit; border:0; background: darkgrey;box-shadow: none;
+    margin-left: 69px;
 }
 .tag {background:url(../images/new.png) no-repeat 0 0; position: absolute; display:block; top: -4px;right: -18px; height:48px; width:48px;}
 .clr{clear:both;}
@@ -71,7 +71,7 @@ input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }
 .navbar-search .srchTxt {border-radius: 0;border: 1px solid #444;}
 [class^="icon-"], [class*=" icon-"] {background-image: none;}
 .navbar .nav > li > a {padding:10px;color: #DDD;text-shadow: none;font-size: 16px;}
-.navbar .nav > li > a:hover{color:#fff}
+.navbar .nav > li > a:hover{color:#faa732;}
 #logoArea, #logoArea a{outline:none;}
 .alignR .checkbox input[type="checkbox"] {float: right;margin: 4px 0 8px 11px;}
 
@@ -121,7 +121,7 @@ input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }
 }
 .span3 h5{
     color:#faa732;
-    // *background-color:#f89406;
+    /*background-color:#f89406;*/
 }
 p.textcolors{
     color:#faa732;
