@@ -1,3 +1,7 @@
+<?php
+	define('ROOT', __DIR__);
+	require_once ROOT.'../../../core/init.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +34,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        <script src="themes/js/login/checkConnection.js"></script> -->
   </head>
 <body>
 	<?php include 'headeruser.php'; ?><!-- ================== Header ============================================ -->

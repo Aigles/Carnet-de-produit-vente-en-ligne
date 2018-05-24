@@ -1,8 +1,9 @@
 #mainBody {/* background: url(../images/seperator.png) repeat-x 0 0; */ border-top:2px solid #dedede; padding-top: 18px;}
 #carouselBlk,#header{background: url(../images/headerRepeat.png) repeat-x 0 0 #f7f7f7;}
-#srchFld {background: margin-left: -82px; border-radius: 0; border: 1px solid #faa732;}
+#srchFld {background: url(../images/search.png) no-repeat 4px center #fff;
+    background: margin-left: -82px; border-radius: 0.1; border: 1px solid #faa732;}
 input[type="text"]#srchFld {
-    margin-left: 69px;
+    margin-left: 79px;display: table-cell;  font-size: 13px; font-weight: bold; color: lightgrey; border:0; background: dimgrey;box-shadow: none;
 }
 .tag {background:url(../images/new.png) no-repeat 0 0; position: absolute; display:block; top: -4px;right: -18px; height:48px; width:48px;}
 .clr{clear:both;}

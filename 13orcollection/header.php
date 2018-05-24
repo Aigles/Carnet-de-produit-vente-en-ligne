@@ -73,10 +73,10 @@
 	<div class="form-inline navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off" />
    		<ul class="list-group" id="result"></ul>
-	  	<select class="srchTxt" id="search">
+	  	<!-- <select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
-	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button>
+	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button> -->
 	</div>
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="index.php">Accueil</a></li>

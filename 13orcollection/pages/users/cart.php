@@ -1,5 +1,6 @@
 
-<?php 
+<?php
+	define('ROOT', __DIR__); 
 	require_once '../../core/init.php'; 
 ?>
 <!DOCTYPE html>
@@ -26,6 +27,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/imagcarouselBlkes/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-72-precomposedple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
+        <script src="themes/js/login/checkConnection.js"></script> 
   </head>
 <body>
 <!-- =========== Header =============================================-->
