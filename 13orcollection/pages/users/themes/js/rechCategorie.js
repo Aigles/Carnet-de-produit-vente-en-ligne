@@ -4,7 +4,7 @@
     var id = GET_PARAM('pid');
 
     //List personnel all records
-    if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'inscription.php' || page == 'product_details.php' || page == 'login.php'){
+    if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_details.php'){
 
     
 
@@ -29,6 +29,10 @@
         });
         //document.getElementById('sideMnu').innerHTML=tableau_caracteristic;
     });
+
+
+
+
 }
 
 function GET_PARAM(param) { var vars = {}; window.location.href.replace( location.hash, '' ).replace( 
@@ -41,4 +45,19 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
          return vars; 
         } 
   
+if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_details.php'){
+  
+        var url=Fullurl+"utilisateur";
+        $.ajax({ 
+                url: url,
+                type: 'GET', 
+                dataType: 'json', 
+                Accept : "application/json;charset=UTF-8"
+                })
+                .done(function(data) { 
+                var tableau_produit="";
+                var tableau_produit='<a style="color: #ccc; cursor: default;">Salut <b>'+data.nom+'</b></a>';
+                jQuery('li.clientname').append(tableau_produit);
+                });
+            }
         
