@@ -67,16 +67,6 @@
 			<h5><p class="textcolors text-center">DÉJÀ ENREGISTRÉ ?</p></h5><hr><br/>
 			<form method="post" class="form-vertical loginFrm">
 
-				<?php 
-					// if(!empty($errors)){
-					// 	echo display_errors($errors);
-					// }
-					// else{
-					// 	// echo '<div class="alert alert-success" role="alert"><p><span class="icon-exclamation-sign" aria-hidden="true"></span>utilisateur connecté</p></div>';
-					// 	$user_id = $user['idUsers'];
-					// 	login($user_id);
-					//}
-				?>
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail1">Email</label>
 				<div class="controls">
@@ -148,16 +138,14 @@
             </div>
         </div>
     </div>
-     
-	<script src="themes/js/jquery.min.js"></script>
-	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="header.js"></script>
+
+	
 	<script src="themes/js/jquery.validate.min.js"></script>
 	<script src="themes/js/config.js"></script>
     <script src="themes/js/login/login.js"></script>
  
     <script src="themes/js/rechCategorie.js"></script>
-	
-</body>
 
+	<script src="themes/js/header.js"></script>
+</body>
 </html>
