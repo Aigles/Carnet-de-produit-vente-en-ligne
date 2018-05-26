@@ -26,8 +26,7 @@
 <!-- =========== Header =============================================-->
 <div id="header">
 <?php 
-
-    include 'headeruser.php';
+	include 'headeruser.php';
 ?>
 
 </div>

@@ -14,6 +14,12 @@ $.ajax({ url: fullUrl+"utilisateur",
             dataTable_tr+='<td>'+value.nom+'</td>';
             dataTable_tr+='<td>'+value.prenom+'</td>';
             dataTable_tr+='<td>'+value.email+'</td>';
+            if (value.etat_connection==1){
+                value.etat_connection="Connecte";
+            }
+            else{
+                value.etat_connection="Non Connecte";
+            }
             dataTable_tr+='<td>'+value.etat_connection+'</td>';
             if (value.role_id=="6") {
                 value.role_id="Administrateurs"

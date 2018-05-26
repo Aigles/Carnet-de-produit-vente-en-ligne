@@ -140,10 +140,18 @@
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span>User</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span>Personnels</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="index.php?p=creerUser">Ajouter User</a></li>
-                                <li><a href="index.php?p=listerUser">Lister User</a></li>
+                                <li><a href="index.php?p=creerPersonnel">Ajouter Personnel</a></li>
+                                <li><a href="index.php?p=listerPersonnel">Lister Personnel</a></li>
+                            </ul>
+                        </li>
+
+                             <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span>Clients</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="index.php?p=creerClient">Ajouter Client</a></li>
+                                <li><a href="index.php?p=listerClient">Lister Client</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
@@ -174,6 +182,16 @@
                                 <li><a href="index.php?p=listerRole">Lister Role</a></li>
                             </ul>
                         </li>
+
+              <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span>User</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="index.php?p=creerUser">Ajouter User</a></li>
+                                <li><a href="index.php?p=listerUser">Lister User</a></li>
+                            </ul>
+                        </li>
+
+
                     </ul>
                 </div>
             </div>        

@@ -24,10 +24,7 @@
 <body>
 <!-- =========== Header =============================================-->
 <div id="header">
-<?php 
 
-    include 'header.php';
-?>
 
 </div>
 <!--=========== Header End=========================================== -->
@@ -137,8 +134,10 @@
 
 
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
+
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
 	    <script src="themes/js/config.js"></script>
 	<script src="themes/js/bootshop.js"></script>
@@ -147,8 +146,10 @@
     <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
-	
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>
+
+	<script src="header.js"></script>
 </body>
+
 </html>

@@ -131,6 +131,25 @@
 <!--  ========================== Footer ==================================== -->
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================= -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 id="result-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="result-info"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<script src="themes/js/jquery.validate.min.js"></script>
     <script src="themes/js/login/login.js"></script>
