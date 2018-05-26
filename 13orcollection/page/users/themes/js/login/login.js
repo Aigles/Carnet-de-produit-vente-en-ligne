@@ -44,6 +44,8 @@ function sendData(data, url){
 
                 sessionStorage.setItem("id_user_vente_en_ligne",rs.id);
                 window.location = "pages/users/index.php";
+
+                <?php echo $_SESSION ["username"]=$username; ?>
             }
              else{
             $.when($('#myModal').modal('show').delay(3000)).done(function(){

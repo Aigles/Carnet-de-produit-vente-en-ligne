@@ -1,7 +1,16 @@
 
 <?php
-	session_start();
-	
+	//session_start();
+	//Start a session.
+session_start();
+
+//........some processing
+
+//After you have checked that the username is correct.
+//$_SESSION['name'] = sanitized_username;
+//Save some other things you might need like login key.
+//$_SESSION['login_key'] = user_login_key;
+
 	define('ROOT1', dirname(__DIR__));
 
 	require_once ROOT1.'/config.php';

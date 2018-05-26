@@ -89,8 +89,8 @@
    <li><a href="cart.php"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
    <li class="username"><a href="?=Profile"><span class="textcolors icon-user"></span>Profile</a></li>
    <li ><a style="color: #faa732; cursor: default;">|</a></li>
-   <li class="clientname"></li>
-   <li class="deconnecter"><a href="../../index.php" onclick="sessionStorage.clear();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="clientname"><a href="#">Welcome <?php  if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}else{ echo 'Session not set';}?>.!</a></a></li>
+   <li class="deconnecter"><a href="../../index.php" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');"><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>

@@ -43,7 +43,7 @@ function sendData(data, url){
                 sessionStorage.setItem("token_vente_en_ligne",rs.token);
 
                 sessionStorage.setItem("id_user_vente_en_ligne",rs.id);
-                window.location = "pages/users/index.php";
+                window.location = "index.php";
             }
              else{
             $.when($('#myModal').modal('show').delay(3000)).done(function(){

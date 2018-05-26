@@ -55,9 +55,9 @@ if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_de
                 Accept : "application/json;charset=UTF-8"
                 })
                 .done(function(data) { 
-                var tableau_produit="";
-                var tableau_produit='<a style="color: #ccc; cursor: default;">Salut <b>'+data.nom+'</b></a>';
-                jQuery('li.clientname').append(tableau_produit);
+                var nomclient="";
+                var nomclient='<a style="color: #ccc; cursor: default;">Salut <b>'+data.nom+'</b></a>';
+                jQuery('li.clientname').append(nomclient);
                 });
             }
         
