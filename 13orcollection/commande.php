@@ -35,10 +35,7 @@
 <body>
 <!-- =========== Header =============================================-->
 <div id="header">
-<?php 
-	include ('header.php'); 
-	
-?>
+
 </div>
 <!-- =========== END Header =========================================-->
     <h3 class="textcolors text-center">Passer votre commande </h3><hr>
@@ -366,6 +363,7 @@
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>
     <script src="themes/js/categorie.js"></script>
+    <script src="header.js"></script>
 	<script src="themes/js/js/panier.js"></script>
     <script src="themes/js/wizard.js"></script>
 	<!-- ======================== Themes switcher section ================================= -->
