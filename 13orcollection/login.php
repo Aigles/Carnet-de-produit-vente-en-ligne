@@ -33,7 +33,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
-
+    
+   
 	</head>
 <body>
 <!-- =========== Header =============================================-->
@@ -148,12 +149,15 @@
         </div>
     </div>
      
-    <script src="themes/js/jquery.min.js"></script>
-	<script src="themes/js/jquery.validate.min.js"></script>
-    <script src="themes/js/login/login.js"></script>
-    <script src="themes/js/config.js"></script>
-    <script src="themes/js/rechCategorie.js"></script>
+	<script src="themes/js/jquery.min.js"></script>
+	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="header.js"></script>
+	<script src="themes/js/jquery.validate.min.js"></script>
+	<script src="themes/js/config.js"></script>
+    <script src="themes/js/login/login.js"></script>
+ 
+    <script src="themes/js/rechCategorie.js"></script>
+	
 </body>
 
 </html>

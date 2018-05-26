@@ -101,6 +101,5 @@
   </div>
 </div>
 
-<script src="themes/js/jquery.js" type="text/javascript"></script>
 <script src="themes/js/js/panier.js"></script>
 <script src="themes/js/listerRecherche.js"></script>

@@ -176,7 +176,7 @@ function afficherpanier() {
   $('.total-count').html(MonPanier.totalCount());
 
   
-  if(page == 'cart.php'||" index.php" || page == ''){
+  if(page == 'cart.php'|| page ==" index.php" || page == ''){
   $('.show-panier').html(output);
 
   $('.total-panier').html(MonPanier.totalpanier().toFixed(2));

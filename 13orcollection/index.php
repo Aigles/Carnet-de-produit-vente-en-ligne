@@ -19,7 +19,8 @@
     <meta name="author" content="">
 	
 <!-- Bootstrap style --> 
-    
+<script src="themes/js/jquery.js" type="text/javascript"></script>   
+<script src="themes/js/js/panier.js"></script>
   </head>
 <body>
 <!-- =========== Header =============================================-->
@@ -135,7 +136,7 @@
 
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 
-	<script src="themes/js/jquery.js" type="text/javascript"></script>
+
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="header.js"></script>
 

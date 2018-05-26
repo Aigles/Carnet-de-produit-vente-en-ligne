@@ -363,8 +363,7 @@
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>
     <script src="themes/js/categorie.js"></script>
-    <script src="header.js"></script>
-	<script src="themes/js/js/panier.js"></script>
+    <script src="header.js"></script>    
     <script src="themes/js/wizard.js"></script>
 	<!-- ======================== Themes switcher section ================================= -->
 <?php include 'script.php'; ?>

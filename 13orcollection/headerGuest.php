@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/imagcarouselBlkes/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-72-precomposedple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
-	<script src="js/jquery.min.js"></script>
+
   <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css" /> -->
   <script src="js/bootstrap.min.js"></script>
 
@@ -93,6 +93,6 @@
   </div>
 </div>
 
-<script src="themes/js/jquery.js" type="text/javascript"></script>
+
 <script src="themes/js/js/panier.js"></script>
 <script src="themes/js/listerRecherche.js"></script>

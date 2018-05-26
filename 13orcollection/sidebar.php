@@ -12,6 +12,8 @@
 		</ul>
 	</div>
 <!-- Sidebar end=============================================== -->
+<script src="themes/js/jquery.js" type="text/javascript"></script>
+
 <script>
   $('.total-count').html(MonPanier.totalCount());
   $('.total-panier').html(MonPanier.totalpanier().toFixed(2));
