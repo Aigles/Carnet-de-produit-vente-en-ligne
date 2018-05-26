@@ -137,6 +137,7 @@
 
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
 	    <script src="themes/js/config.js"></script>
@@ -149,7 +150,6 @@
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>
 
-	<script src="header.js"></script>
 </body>
 
 </html>

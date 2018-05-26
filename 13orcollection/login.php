@@ -39,9 +39,7 @@
 <body>
 <!-- =========== Header =============================================-->
 <div id="header">
-<?php 
-	include ('header.php'); 
-?>
+
 
 </div>
 <!--=========== Header End=========================================== -->
@@ -156,4 +154,5 @@
     <script src="themes/js/config.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
 </body>
+<script src="header.js"></script>
 </html>

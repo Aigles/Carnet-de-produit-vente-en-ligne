@@ -33,8 +33,11 @@
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   </head>
 <body>
-	<?php include 'header.php'; ?><!-- ================== Header ============================================ -->
+	<!-- ================== Header ============================================ -->
+	<div id="header">
 
+
+</div>
 <div id="mainBody">
 	<div class="container">
 		<div class="row">
@@ -94,6 +97,6 @@ var livraison = document.querySelector('input[name="livraison"]:checked').value;
 commander(nom,prenom,cp,email,commande,prix_total,message,livraison);
 });
 </script>
-
+	<script src="header.js"></script>
 </body>
 </html>

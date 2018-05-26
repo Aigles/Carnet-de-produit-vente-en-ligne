@@ -30,10 +30,7 @@
 <body>
 <!-- =========== Header =============================================-->
 <div id="header">
-<?php 
-	include ('header.php'); 
-	
-?>
+
 </div>
 <!-- =========== END Header =========================================-->
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
@@ -159,6 +156,7 @@
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="themes/js/js/panier.js"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
 	    <script src="themes/js/config.js"></script>
 	<script src="themes/js/bootshop.js"></script>        
@@ -166,7 +164,8 @@
     <script src="themes/js/list.js"></script>
     <script src="themes/js/zoom.js"></script>
     <script src="themes/js/categorie.js"></script>
-	<script src="themes/js/js/panier.js"></script>
+    <script src="header.js"></script>
+	
 	<!-- ======================== Themes switcher section ================================= -->
 <?php include 'script.php'; ?>
 </body>
