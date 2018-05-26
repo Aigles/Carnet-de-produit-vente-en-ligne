@@ -97,6 +97,6 @@ var livraison = document.querySelector('input[name="livraison"]:checked').value;
 commander(nom,prenom,cp,email,commande,prix_total,message,livraison);
 });
 </script>
-	<script src="header.js"></script>
+	<script src="themes/js/header.js"></script>
 </body>
 </html>

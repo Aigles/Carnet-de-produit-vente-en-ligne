@@ -1,4 +1,5 @@
-function connection(){
+
+    function connection(){
     //validatiion
     var $valid;
     var $validator;
@@ -68,24 +69,4 @@ function sendData(data, url){
 
 
 }
-
-// Accept : "application/json;charset=UTF-8"
-//     }).done(function (data) {
-
-        
-//     jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
-//     jQuery('#result-info').html('<h4><p class="text-center">'+data.status+'</p></h4>');
-//     jQuery('#myModal').modal('show');
-
-//   }).fail(function (error) {
-    
-//     jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
-//     jQuery('#result-info').html('<h4><p class="text-center">Echec!!! Verifiez votre Connection...</p></h4>');
-//     jQuery('#myModal').modal('show');
-
-//     if (error.status == 404) {
-//       window.location = "inscription.php?p=404";                    
-//     }
-//   });
-
 

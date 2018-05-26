@@ -137,7 +137,7 @@
 
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="header.js"></script>
+	<script src="themes/js/header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
 	    <script src="themes/js/config.js"></script>
