@@ -47,6 +47,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
   
 if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_details.php'){
   var IdUser=sessionStorage.getItem("id_user_vente_en_ligne");
+  if (IdUser) {
         var url=Fullurl+"utilisateur/"+IdUser;
         $.ajax({ 
                 url: url,
@@ -60,4 +61,5 @@ if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_de
                 jQuery('li.clientname').append(clientname);
                 });
             }
+        }
         
