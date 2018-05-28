@@ -2,21 +2,21 @@
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
-<!-- Bootstrap style responsive -->	
-	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
-<!-- Google-code-prettify -->	
-	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
+<!-- Bootstrap style responsive --> 
+  <link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+  <link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- Google-code-prettify --> 
+  <link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
 <!-- fav and touch icons -->
     <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/imagcarouselBlkes/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-72-precomposedple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
-	<style type="text/css" id="enject"></style>
-	<!-- <script src="js/jquery.min.js"></script> -->
+  <style type="text/css" id="enject"></style>
+  <!-- <script src="js/jquery.min.js"></script> -->
   <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css" /> -->
-  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="js/bootstrap.min.js"></script> -->
 
   <style>
 
@@ -64,9 +64,9 @@
 
 <div id="logoArea" class="navbar">
 <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
     <a class="brand" href="index.php?p=home">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
@@ -84,15 +84,14 @@
 	 <li class="inscrire"><a href="index.php?p=inscription">Inscrire</a></li>
 	 <li class="connecter"><a href="index.php?p=log"><span class="badge badge-warning">Connecter</span></a></li>
 
-	 <!-- <li class=""><a href="special_offer.html">Offres</a></li>
-	 <li class=""><a href="normal.html">Livraison</a></li>
-	 <li class=""><a href="contact.html">Contact</a></li> -->
+   <!-- <li class=""><a href="special_offer.html">Offres</a></li>
+   <li class=""><a href="normal.html">Livraison</a></li>
+   <li class=""><a href="contact.html">Contact</a></li> -->
 
-	 
+   
     </ul>
   </div>
 </div>
 
-<!-- <script src="themes/js/jquery.js" type="text/javascript"></script> -->
+<!-- ce script affichera le panier a Zero dans le menu et faire tout le traitement -->
 <script src="themes/js/js/panier.js"></script>
-<script src="themes/js/listerRecherche.js"></script>
