@@ -1,9 +1,9 @@
   $(document).ready(function () {
  
-  var tokenn=sessionStorage.getItem("token_vente_en_ligne");
-  var idd=sessionStorage.getItem("id_user_vente_en_ligne");
+  var token=sessionStorage.getItem("token_vente_en_ligne");
+  var id=sessionStorage.getItem("id_user_vente_en_ligne");
 
-if ((tokenn == null) || (tokenn == undefined) || (tokenn == "") && (idd == null) || (idd == undefined) || (idd == ""))
+if ((token == null) || (token == undefined) || (token == "") && (id == null) || (id == undefined) || (id == ""))
   {
   $('#header').load('headerGuest.php');
   } 

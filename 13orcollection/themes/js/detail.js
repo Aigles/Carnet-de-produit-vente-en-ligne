@@ -6,7 +6,7 @@
 
 
     //List personnel all records
-    if(page == '' || page == 'product_details.php'){
+    if(page == '' || page == 'index.php'){
 
     
 

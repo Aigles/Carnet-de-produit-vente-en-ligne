@@ -159,7 +159,7 @@
 			require('client/edit.php');
 			break;
 
-		case 'listerClient':
+		case 'listerClient'   :
 			require('client/liste.php');
 			break;
 
