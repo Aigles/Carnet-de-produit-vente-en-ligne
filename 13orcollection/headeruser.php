@@ -66,7 +66,7 @@
 	<span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <a class="brand" href="index.php">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
+    <a class="brand" href="index.php?p=acceuil">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
 	<div class="form-inline navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off"/>
    		<ul class="list-group" id="result"></ul>
@@ -85,12 +85,12 @@
 	 
     </ul> -->
     <ul id="topMenu" class="nav pull-right">
-   <li class="bold"><a href="index.php?p=home"><span class="textcolors icon-home"></span>Accueil</a></li>
+   <li class="bold"><a href="index.php?p=acceuil"><span class="textcolors icon-home"></span>Accueil</a></li>
    <li><a href="index.php?p=panier"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
    <li ><a style="color: #faa732; cursor: default;">|</a></li>
    <li class="clientname"></li>
-   <li class="deconnecter"><a href="index.php?p=home" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="deconnecter"><a href="index.php?p=accueil" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>

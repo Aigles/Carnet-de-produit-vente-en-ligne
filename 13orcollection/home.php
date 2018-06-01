@@ -99,4 +99,6 @@
 	</div>
 <?php include 'each_product.php'; ?>
 </div>
+
+    <script src="themes/js/listerRecherche.js"></script>
   

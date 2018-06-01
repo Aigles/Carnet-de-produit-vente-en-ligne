@@ -7,8 +7,8 @@
 	}
 	else
 	{
-		//dans le cas contraire on initialise la page d'aceuille par defaut
-		$p = 'home';
+		//dans le cas contraire on initialise la page d'acceuil par defaut
+		$p = 'acceuil';
 	}
 
 
@@ -18,12 +18,12 @@
 	//un switch pour tout controle dans notre index.php
 	switch ($p)
 	{
-		case 'log':
+		case 'connection':
 			# code...
 			require('login.php');
 			break;
 
-		case 'home':
+		case 'acceuil':
 			# code...
 			require('home.php');
 			break;

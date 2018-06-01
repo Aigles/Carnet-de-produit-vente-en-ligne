@@ -21,6 +21,7 @@
 
 
     <script src="themes/js/detail.js"></script>
+    <script src="themes/js/listerRecherche.js"></script>
 
 
 
