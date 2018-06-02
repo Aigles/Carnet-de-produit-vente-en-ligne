@@ -45,6 +45,10 @@
 			require('product_details.php');
 			break;
 
+		case 'profile':
+			require('profil.php');
+			break;
+
 	default:
 			# code...
 			require('404.php');

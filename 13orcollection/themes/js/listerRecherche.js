@@ -26,6 +26,10 @@
     
   });
 }
+if (searchField.length==0) {
+  
+    $('#result').empty();
+}
  });
  
  $('#result').on('click', 'li', function() {
