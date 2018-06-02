@@ -90,7 +90,7 @@
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
    <li ><a style="color: #faa732; cursor: default;">|</a></li>
    <li class="clientname"></li>
-   <li class="deconnecter"><a href="index.php?p=accueil" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="deconnecter"><a href="index.php?p=acceuil" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
@@ -102,3 +102,4 @@
 </div>
 
 <script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/listerRecherche.js"></script>

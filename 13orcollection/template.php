@@ -69,7 +69,6 @@
     <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
-    <script src="themes/js/listerRecherche.js"></script>
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>
 

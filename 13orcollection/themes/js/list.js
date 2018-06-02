@@ -16,7 +16,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
 
 
     //List personnel all records
-    if(page == '' || page == 'index.php'|| page == 'user.php'){
+    if(page == '' || page == 'index.php'){
         var prodid=GET_PARAM('prodid');
 
 

@@ -99,3 +99,4 @@
 
 <!-- ce script affichera le panier a Zero dans le menu et faire tout le traitement -->
 <script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/listerRecherche.js"></script>
