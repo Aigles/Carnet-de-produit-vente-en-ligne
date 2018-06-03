@@ -3,7 +3,7 @@
  $.ajaxSetup({ cache: false });
  $('#srchFld').keyup(function(){
   $('#result').html('écrit...');
-  $('#state').val();
+  $('#state').empty();
   var searchField = $('#srchFld').val();
   if (searchField.length>2) {
   var expression = new RegExp(searchField, "i");
@@ -26,7 +26,7 @@
     
   });
 }
-if (searchField.length==0) {
+if (searchField.length<1) {
   
     $('#result').empty();
 }
