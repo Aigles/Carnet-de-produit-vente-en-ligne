@@ -92,7 +92,7 @@ function sendData(data, url) {
     jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
     jQuery('#result-info').html('<h4><p class="text-center">'+data.status+'</p></h4>');
     jQuery('#myModal').modal('show');
-
+    window.location ="index.php?p=connection";
   }).fail(function (error) {
     
     jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
