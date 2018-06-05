@@ -42,14 +42,20 @@
                     <p id="result-info"></p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
+                    <button type="button" onclick="closeModal();" class="btn btn-default" data-dismiss="modal">Fermer</a>
                     
                 </div>
             </div>
         </div>
     </div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
-
+<script>    
+            //Fonction permettant de fermer correctement le bouton zoom de details
+                function closeModal(){
+                            // $('#fermer-modal').modal('hide');
+                            window.location = "index.php?p=connection";
+                    }
+        </script>
 	<script src="themes/js/header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>

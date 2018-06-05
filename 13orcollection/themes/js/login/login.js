@@ -27,7 +27,6 @@
 }
 
 
-
 function sendData(data, url){
     
     $.ajax({ url: url,

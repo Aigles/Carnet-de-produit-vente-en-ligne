@@ -171,7 +171,7 @@ function afficherpanier() {
 
   output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total</h3></td><td class="text-right" ><h3>$<strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
   output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-warning">Vider le panier</button>  </td><td><span>  </span><button type="button" class="btn btn-default"><span class="icon-shopping-cart"></span> <a href="index.php">Continuer vos achats</a></button></td><td>';
-  output +='<a type="button" href="index.php?p=commande" class="btn btn-success"> Passer la commande <span class="icon-shopping-play"></span></a></td></tr>';
+  output +='<button type="button" class="btn btn-success" onclick="commande();"> Passer la commande <span class="icon-shopping-play"></span></a></td></tr>';
   
   $('.total-count').html(MonPanier.totalCount());
 

@@ -121,4 +121,5 @@
 	<br/>
 			
 		
+    <script src="themes/js/login/checkConnectionCommande.js"></script>
 	
