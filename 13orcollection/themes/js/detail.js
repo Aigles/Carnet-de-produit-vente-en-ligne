@@ -10,7 +10,7 @@
 
     
 
-    $.ajax({ 
+    $.ajax({  
             url: Fullurl+"produit/"+id,
             type: 'GET', 
             dataType: 'json', 

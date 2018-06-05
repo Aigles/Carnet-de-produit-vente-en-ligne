@@ -14,6 +14,7 @@
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/oldNavigation.js"></script>
   </head>
 <body>
 <!-- =========== Header =============================================-->
@@ -66,6 +67,7 @@
     <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
+   
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>
 
