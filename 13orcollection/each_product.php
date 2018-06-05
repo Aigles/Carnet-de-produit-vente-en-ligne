@@ -7,14 +7,14 @@
 
 		</div>
 		<!-- =================== FIN icone zoom | Details dynamique ======================= -->
+		
+
 		<script>	
+			//Fonction permettant de fermer correctement le bouton zoom de details
 				function closeModal(){
-				    $('#details-modal').modal('hide');
-				    setTimeout(function(){
-					    $('#details-modal').remove();
-					    $('.modal-backdrop').remove();
-				    },500);
-				}
+							$('#details-modal').modal('hide');
+							$('#details-modal').empty();
+					}
 		</script>
 		
 		<?php echo ob_get_clean(); ?>

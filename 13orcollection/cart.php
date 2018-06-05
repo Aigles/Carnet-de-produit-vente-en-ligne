@@ -1,4 +1,14 @@
 
+<?php 
+//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
+	define('ROOT', __DIR__);
+
+	require_once ROOT.'/core/init.php'; 
+	// $password = 'password';
+	// $hashed = password_hash($password, PASSWORD_DEFAULT);
+	// echo $hashed;
+	//echo $_SESSION['SBUser'];
+?>
 <!-- =========== END Header =========================================-->
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->

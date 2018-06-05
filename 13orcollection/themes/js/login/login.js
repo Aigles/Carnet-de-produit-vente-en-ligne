@@ -36,7 +36,7 @@ function sendData(data, url){
         crossDomain: true,
         data: data,
         success: function (rs) {      
-            $('#result-title').html('Reultat de l\'operation');
+            $('#result-title').html('Résultat de l\'opération');
             $('#result-info').html(rs.status);
 
              if (rs.id!=0) {

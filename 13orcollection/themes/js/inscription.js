@@ -73,7 +73,7 @@ function creerUtilisateur(){
         jQuery('#result-nom').hide();
         data = JSON.stringify(user);
         console.log(data);
-        var url = "http://localhost:1230/api/app/ceerUtilisateur";
+        var url = Fullurl+"ceerUtilisateur";
         sendData(data, url);
 }
 }
