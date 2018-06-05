@@ -9,10 +9,11 @@ var Qte_Minimum = true;
 // la quantité des lots
 var Qte_Minimum_Valeur = 1; 
 
+
 // les messages
-var txt_qte_minimum_bad = "<font color='red'>Attention les quantités ne sont pas correctes</font>";
-var txt_qte_minimum_ok = "<font color='green'>Le nombre de vetements commandés est correct</font>";
-var txt_qte_minimum_defaut = "La quantite de vetements a commander doit etre supérieure a zéro (0)";
+var txt_qte_minimum_bad = "<div class='alert alert-warning text-left'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='red'>Attention les quantités ne sont pas correctes</font></b></div>";
+var txt_qte_minimum_ok = "<div class='alert alert-info text-left'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='green'>Continue d'ajouter toutes les vetements que vous aimez au panier</font></b></div>";
+var txt_qte_minimum_defaut = "<div class='alert alert-danger text-left'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>La quantite de vetements a commander doit etre supérieure a zéro (0)</b></div>";
 
 // ne pas modifier la suite sauf si vous désirez modifier le code
 //Dans cette partie nous faisons la gestion du panier, 
