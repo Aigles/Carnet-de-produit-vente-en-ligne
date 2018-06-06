@@ -20,7 +20,7 @@
 <br /> -->
 
 
-<div class="container" id="zerocommande_panier">
+<div class="container" id="zerocommande_panier"             >
 <div id="qte_minimum_report"></div>
   <div class="row">
         <div class="col-sm-12 col-md-12 col-md-offset-1">
