@@ -8,6 +8,11 @@
 .well-title {
     margin-bottom: 40px;
 }
+.form-control{
+    border-radius: 0px;
+    width:300px;
+    height: 30px;
+}
 </style>
 <script src="themes/js/login/checkConnection.js"></script>
 <!-- =========== END Header =========================================-->
@@ -25,22 +30,22 @@
                             <div class="row">
                                 <div class="span6">
                                     <div class="form-group">
-                                        <label class="control-label" for="name">Name</label>
-                                        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
+                                        <label class="control-label" for="name">Nom</label>
+                                        <input id="name" name="name" type="text" placeholder="" class="form-control input-md">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
-                                        <label class="control-label" for="email">Email</label>
-                                        <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md">
+                                        <label class="control-label" for="email">Adresse Electronique</label>
+                                        <input id="email" name="email" type="text" placeholder="ex: _________@gmail.com" class="form-control input-md">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="date">Preferred Date</label>
-                                        <input id="date" name="date" type="text" placeholder="Preferred Date" class="form-control input-md">
+                                        <input id="date" name="date" type="text" placeholder="" class="form-control input-md">
                                     </div>
                                 </div>
                                 <!-- Select Basic -->
@@ -69,7 +74,7 @@
                                 <!-- Button -->
                                 <div class="span12">
                                     <div class="form-group">
-                                        <button id="singlebutton" name="singlebutton" class="btn btn-default">Livrer a cette adresse</button>
+                                        <button id="singlebutton" name="singlebutton"  class="btn btn-warning">Livrer a cette adresse</button>
                                     </div>
                                 </div>
                             </div>
