@@ -5,4 +5,4 @@ if ((token==null) || (token==undefined) || (token=="")){
 window.location = "index.php?p=connection";
 } 
 
-alert(token);
+//alert(token);
