@@ -30,7 +30,7 @@
                 tableau_produit +=' <a ><img style="width:29%; height: 29%;" src="'+donnee.image_1+'" alt="" onmouseover="changerImage(\''+donnee.image_1+'\')"/></a>';
                 });
             
-            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : $'+data.caracteristic[0].prix+'.00</span></label>';
+            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : '+data.caracteristic[0].prix+' Gdes</span></label>';
             tableau_produit +='<button type="button" class="btn btn-large btn-warning pull-right ajouter-panier"  data-image="'+data.caracteristic[0].image+'" data-nom="'+data.nom+'" data-prix="'+data.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span></button>';
             // ========== partie Size =============
             tableau_produit +='<label class="control-label" for="size"><span>Size :</span></label>';
