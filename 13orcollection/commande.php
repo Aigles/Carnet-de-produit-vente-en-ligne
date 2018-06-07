@@ -3,15 +3,24 @@
     background-color: #fff;
     border: 1px solid #e9e6e8;
     padding: 40px;
+    margin: auto;
 }
 
 .well-title {
     margin-bottom: 40px;
 }
-.form-control{
+.btn-large{
     border-radius: 0px;
-    width:300px;
+    width:100%;
+}
+input[type="text"].form-control,input[type="date"]{
+    border-radius: 0px;
+    /*width:360px;*/
     height: 30px;
+}
+select{
+    width:376px;
+    height: 40px;
 }
 </style>
 <script src="themes/js/login/checkConnection.js"></script>
@@ -31,50 +40,68 @@
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="name">Nom</label>
-                                        <input id="name" name="name" type="text" placeholder="" class="form-control input-md">
+                                        <input id="name" name="name" type="text" placeholder="John Smith" class="form-control span4">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
-                                        <label class="control-label" for="email">Adresse Electronique</label>
-                                        <input id="email" name="email" type="text" placeholder="ex: _________@gmail.com" class="form-control input-md">
+                                        <label class="control-label" for="email">E-mail</label>
+                                        <input id="email" name="email" type="text" placeholder="johnsmith@gmail.com" class="form-control input-md">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
-                                        <label class="control-label" for="date">Preferred Date</label>
-                                        <input id="date" name="date" type="text" placeholder="" class="form-control input-md">
+                                        <label class="control-label" for="telephone">Telephone</label>
+                                        <input id="telephone" name="telephone" type="text" placeholder="+(509) 47111111" class="form-control input-md">
                                     </div>
                                 </div>
-                                <!-- Select Basic -->
+                                <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
-                                        <label class="control-label" for="time">Preferred Time</label>
-                                        <select id="time" name="time" class="form-control">
-                                            <option value="8:00 to 9:00">8:00 to 9:00</option>
-                                            <option value="9:00 to 10:00">9:00 to 10:00</option>
-                                            <option value="10:00 to 1:00">10:00 to 1:00</option>
-                                        </select>
+                                        <label class="control-label" for="pays">Code Postal</label>
+                                        <input id="postal" name="postal" type="text" placeholder="C930W0" class="form-control input-md">
                                     </div>
                                 </div>
+                                <!-- Text input-->
+                                <div class="span6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="pays">Pays</label>
+                                        <input id="pays" name="pays" type="text" placeholder="HAITI" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="span6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="adresse">Adresse</label>
+                                        <input id="adresse" name="adresse" type="text" placeholder="Delma 33 Rue charbonnière" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="span6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="date">Date commande / livraison</label>
+                                        <input id="date" name="date" type="date" placeholder="" class="form-control input-md">
+                                    </div>
+                                </div>
+                                
                                 <!-- Select Basic -->
-                                <div class="span12">
+                                <!-- <div class="span12">
                                     <div class="form-group">
                                         <label class="control-label" for="appointmentfor">Appointment For</label>
-                                        <select id="appointmentfor" name="appointmentfor" class="form-control">
+                                        <select id="appointmentfor" name="appointmentfor" class="">
                                             <option value="Service#1">Service#1</option>
                                             <option value="Service#2">Service#2</option>
                                             <option value="Service#3">Service#3</option>
                                             <option value="Service#4">Service#4</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- Button -->
-                                <div class="span12">
+                                <div class="span4">
                                     <div class="form-group">
-                                        <button id="singlebutton" name="singlebutton"  class="btn btn-warning">Livrer a cette adresse</button>
+                                        <button id="singlebutton" name="singlebutton"  class="btn btn-large btn-warning">Livrer a cette adresse</button>
                                     </div>
                                 </div>
                             </div>
