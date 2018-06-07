@@ -40,6 +40,7 @@ sessionStorage.setItem('MonPanier', JSON.stringify(panier));
 jQuery('#modal_errors').html("");
 var error = '<div class=\'alert alert-info text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>Vous avez ajoute un nouveau vetement au panier !!!</b></div>';
 jQuery('#modal_errors').html(error);
+jQuery('#modal_errorss').html(error);
 }
 
 function loadpanier() {
