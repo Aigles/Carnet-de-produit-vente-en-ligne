@@ -47,42 +47,42 @@ select{
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="email">E-mail</label>
-                                        <input id="email" name="email" type="text" placeholder="johnsmith@gmail.com" class="form-control input-md">
+                                        <input id="email" name="email" type="text" placeholder="johnsmith@gmail.com" class="form-control span4">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="telephone">Telephone</label>
-                                        <input id="telephone" name="telephone" type="text" placeholder="+(509) 47111111" class="form-control input-md">
+                                        <input id="telephone" name="telephone" type="text" placeholder="+(509) 47111111" class="form-control span4">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="pays">Code Postal</label>
-                                        <input id="postal" name="postal" type="text" placeholder="C930W0" class="form-control input-md">
+                                        <input id="postal" name="postal" type="text" placeholder="C930W0" class="form-control span4">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="pays">Pays</label>
-                                        <input id="pays" name="pays" type="text" placeholder="HAITI" class="form-control input-md">
+                                        <input id="pays" name="pays" type="text" placeholder="HAITI" class="form-control span4">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="adresse">Adresse</label>
-                                        <input id="adresse" name="adresse" type="text" placeholder="Delma 33 Rue charbonnière" class="form-control input-md">
+                                        <input id="adresse" name="adresse" type="text" placeholder="Delma 33 Rue charbonnière" class="form-control span4">
                                     </div>
                                 </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="date">Date commande / livraison</label>
-                                        <input id="date" name="date" type="date" placeholder="" class="form-control input-md">
+                                        <input id="date" name="date" type="date" placeholder="" class="form-control span4">
                                     </div>
                                 </div>
                                 
