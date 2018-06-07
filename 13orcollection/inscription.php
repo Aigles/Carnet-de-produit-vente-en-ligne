@@ -8,22 +8,12 @@
 	<div class="row">
 
 	<div class="span12">
-    <ul class="breadcrumb">
+    <!-- <ul class="breadcrumb">
 		<li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
 		<li class="active">Inscription</li>
-    </ul>
+    </ul> -->
 
-     <!-- ================ Partie rechercher ==================-->
-    <!-- <form>
-  <input type="text" size="30" onkeyup="showResult(this.value)">
-  <div id="livesearch"></div>
-</form> -->
-
-     <!-- ================ Fin Partie rechercher ==================-->
-
-    <!-- ======= codes php doivent etre ajouté ici pour les cas de test ====== -->
-	<!-- <h3><p class="textcolors text-center"> Création de Compte </p></h3>	 -->
-	<!-- <hr class="soft"/> -->
+    
 	
 
 	<div class="container">
@@ -99,6 +89,34 @@
 </div>
 </div></div>
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 id="result-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="result-info"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="closeModale();" data-dismiss="modal">Fermer</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Placed at the end of the document so the pages load faster ============================================= -->
+<script>    
+            //Fonction permettant de fermer correctement le bouton zoom de details
+                function closeModale(){
+                            // $('#fermer-modal').modal('hide');
+                            window.location = "index.php?p=connection";
+                    }
+        </script>
 <!-- MainBody End ============================= -->
 
 <!--  ========================== Footer ==================================== -->

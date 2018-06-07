@@ -30,33 +30,6 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================================= -->
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3 id="result-title"></h3>
-                </div>
-                <div class="modal-body">
-                    <p id="result-info"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" onclick="closeModal();" class="btn btn-default" data-dismiss="modal">Fermer</a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- Placed at the end of the document so the pages load faster ============================================= -->
-<script>    
-            //Fonction permettant de fermer correctement le bouton zoom de details
-                function closeModal(){
-                            // $('#fermer-modal').modal('hide');
-                            window.location = "index.php?p=connection";
-                    }
-        </script>
 	<script src="themes/js/header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>

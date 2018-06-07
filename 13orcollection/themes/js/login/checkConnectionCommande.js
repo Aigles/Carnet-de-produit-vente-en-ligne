@@ -4,7 +4,7 @@
 
 // function commande(){
 
-// if ((token==null) || (token==undefined) || (token=="")){
+// if ((token==null) || (token=="undefined") || (token=="")){
 // window.location = "index.php?p=connection";
 // }
 // else{
