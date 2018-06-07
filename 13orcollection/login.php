@@ -7,7 +7,7 @@
         border-radius: 0px;
         width:100%;
     }
-    
+
 </style>
 <div id="mainBody">
     <div class="container">
@@ -47,7 +47,7 @@
               </div><br/>
               <div class="control-group">
                 <div class="controls">
-                  <button type="button" class="btn btn-warning btn-large" onclick="connection();">Connecter </button> 
+                  <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
                   <!-- <a  href="#"><p class="text-center">Forget password?</p></a> -->
                 </div>
               </div>
