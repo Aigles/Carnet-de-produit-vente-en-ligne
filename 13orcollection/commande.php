@@ -4,6 +4,8 @@
     border: 1px solid #e9e6e8;
     padding: 40px;
     margin: auto;
+    /*color: darkgoldenrod;*/
+    color: darkslategray;
 }
 
 .well-title {
@@ -32,7 +34,8 @@ select{
                 <div class="span6">
                     <div class="well-block">
                         <div class="well-title">
-                            <h2>Ajouter une adresse</h2>
+                            
+            <h3><p class="textcolors text-center"> Formulaire de la livraison </p></h3> <hr><br/>
                         </div>
                         <form>
                             <!-- Form start -->
