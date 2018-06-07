@@ -57,7 +57,7 @@ if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_de
                 })
                 .done(function(data) { 
                 var clientname="";
-                var clientname='<a style="color: #ccc; cursor: default;">Salut <b>'+data.nom+'</b></a>';
+                var clientname='<a style="color: #ccc; cursor: default;"><span style="color: #faa732;">| </span>   Salut <b>'+data.nom+'</b></a>';
                 jQuery('li.clientname').append(clientname);
                 });
             }

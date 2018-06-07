@@ -88,7 +88,7 @@
    <li class="bold"><a href="index.php?p=acceuil"><span class="textcolors icon-home"></span>Accueil</a></li>
    <li><a href="index.php?p=panier"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
-   <li ><a style="color: #faa732; cursor: default;">|</a></li>
+   <!-- <li ><a style="color: #faa732; cursor: default;">|</a></li> -->
    <li class="clientname"></li>
    <li class="deconnecter"><a href="index.php?p=acceuil" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
