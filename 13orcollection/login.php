@@ -2,7 +2,13 @@
     include 'log.php';
 ?>
 
-
+<style>
+    .btn-large{
+        border-radius: 0px;
+        width:100%;
+    }
+    
+</style>
 <div id="mainBody">
     <div class="container">
     <div class="row">
@@ -38,10 +44,11 @@
                 <div class="controls">
                   <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="Password" value="<?=$password;?>">
                 </div>
-              </div>
+              </div><br/>
               <div class="control-group">
                 <div class="controls">
-                  <button type="button" class="btn btn-warning block" onclick="connection();">Connecter </button> <a href="forgetpass.html">Forget password?</a>
+                  <button type="button" class="btn btn-warning btn-large" onclick="connection();">Connecter </button> 
+                  <!-- <a  href="#"><p class="text-center">Forget password?</p></a> -->
                 </div>
               </div>
             </form>

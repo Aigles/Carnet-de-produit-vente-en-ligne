@@ -1,6 +1,14 @@
 <?php 
 	include 'insc.php';
 ?>
+<style>
+	
+	.btn-large{
+        border-radius: 0px;
+        width:100%;
+    }
+
+</style>
 
 <!--=========== Header End=========================================== -->
 <div id="mainBody">
@@ -73,10 +81,10 @@
 				  <input type="password" class="span3"  name="password2" id="inputPassword2" placeholder="Verifier Password" value="<?=$password2;?>">
 				</div>
 				<div id="result-vpassword" style="color: red;"></div>
-			  </div>
+			  </div><br/>
 			  <div class="control-group">
 			  <div class="controls">
-			  <button type="button" class="btn btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
+			  <button type="button" class="btn btn-large btn-warning" onclick="creerUtilisateur()">Enregistrer</button>
 			  </div>
 			</div>
 			</form>
