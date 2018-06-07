@@ -10,21 +10,20 @@
 
 <!-- Sidebar End ================================================== -->
     <div class="span12">
-    <ul class="breadcrumb">
+    <!-- <ul class="breadcrumb">
         <li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
         <li class="active">Connection</li>
-    </ul>
+    </ul>  
+    <hr class="soft"/>-->
     
-    <h3><p class="textcolors text-center"> Connection</p></h3>  
-    <hr class="soft"/>
-    
-    <div class="container" style=" margin-left: 80px;">
+    <!-- <div class="container" style=" margin-left: 80px;"> -->
+        <div class="container">
     <div class="row" >
         
-        <div class="span3"></div>
+        <div class="span4"></div>
         <div class="span4">
             <div class="well" id="save_login">
-            <h5><p class="textcolors text-center">DÉJÀ ENREGISTRÉ ?</p></h5><hr><br/>
+            <h3><p class="textcolors text-center"> Connection </p></h3> <hr><br/>
             <form method="post" class="form-vertical loginFrm">
 
                
