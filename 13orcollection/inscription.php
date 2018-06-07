@@ -8,22 +8,12 @@
 	<div class="row">
 
 	<div class="span12">
-    <ul class="breadcrumb">
+    <!-- <ul class="breadcrumb">
 		<li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
 		<li class="active">Inscription</li>
-    </ul>
+    </ul> -->
 
-     <!-- ================ Partie rechercher ==================-->
-    <!-- <form>
-  <input type="text" size="30" onkeyup="showResult(this.value)">
-  <div id="livesearch"></div>
-</form> -->
-
-     <!-- ================ Fin Partie rechercher ==================-->
-
-    <!-- ======= codes php doivent etre ajouté ici pour les cas de test ====== -->
-	<!-- <h3><p class="textcolors text-center"> Création de Compte </p></h3>	 -->
-	<!-- <hr class="soft"/> -->
+    
 	
 
 	<div class="container">

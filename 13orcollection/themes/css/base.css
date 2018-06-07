@@ -29,7 +29,17 @@ input[type="text"]#srchFld {
 .control-label.alignL, .alignL{text-align:left;}
 .loginFrm{ margin-bottom:8px;}
 .loginFrm .control-group{padding:8px 26px 0; margin-bottom:0 }
-input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }
+/*
+/
+/
+/
+/
+/
+/
+/
+/
+*/
+/*input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }*/
 /* Compair product page */
 .checkbox input[type="checkbox"]{ margin:4px 0 8px -20px }
 #sm{text-align:right}
