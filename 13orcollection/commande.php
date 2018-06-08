@@ -40,7 +40,7 @@ select{
    <div class="container">
             <div class="row">
                 <div class="span6">
-                    <div class="well-block">
+                    <div class="well">
                     <!-- <div class="well"> -->
                         <div class="well-title">
                             

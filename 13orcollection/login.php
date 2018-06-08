@@ -48,7 +48,7 @@
               <div class="control-group">
                 <div class="controls">
                   <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
-                  <!-- <a  href="#"><p class="text-center">Forget password?</p></a> -->
+                  <a  href="#"><p class="text-center">Forget password?</p></a>
                 </div>
               </div>
             </form>
