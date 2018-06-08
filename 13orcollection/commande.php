@@ -26,18 +26,27 @@ select{
 }
 </style>
 <script src="themes/js/login/checkConnection.js"></script>
+
+
 <!-- =========== END Header =========================================-->
     <h3 class="textcolors text-center">Adresse d'expédition </h3><hr>
+        <div class="container">
+    <div class="row">
+
+    <div class="span12">
+
+
 
    <div class="container">
             <div class="row">
                 <div class="span6">
                     <div class="well-block">
+                    <!-- <div class="well"> -->
                         <div class="well-title">
                             
-            <h3><p class="textcolors text-center"> Formulaire de la livraison </p></h3> <hr><br/>
+            <h3><p class="textcolors text-center"> Formulaire de la livraison </p></h3> <hr>
                         </div>
-                        <form>
+                        <form style ="position: center;">
                             <!-- Form start -->
                             <div class="row">
                                 <div class="span6">
@@ -86,7 +95,7 @@ select{
                                     <div class="form-group">
                                         <label class="control-label" for="date">Date commande / livraison</label>
                                         <input id="date" name="date" type="date" placeholder="" class="form-control span4">
-                                    </div>
+                                    </div><br/>
                                 </div>
                                 
                                 <!-- Select Basic -->
@@ -141,6 +150,9 @@ select{
                 </div>
             </div>
         </div>
+
+
+    </div></div></div>
         
 
 	<br/>
