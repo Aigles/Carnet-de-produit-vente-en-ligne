@@ -10,6 +10,19 @@
 	//echo $_SESSION['SBUser'];
 ?>
 <!-- =========== END Header =========================================-->
+<style>
+    .btn-large{
+        border-radius: 0px;
+        width:100%;
+        text-shadow: none;
+    }
+    .btn-default{
+    	background-color: lightgrey;
+    	/*color: #fff;*/
+    	text-shadow: none;
+    }
+
+</style>
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
 

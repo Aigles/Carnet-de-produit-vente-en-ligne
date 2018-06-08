@@ -164,15 +164,15 @@ function afficherpanier() {
             +'<h4 class="media-heading"><a href="#">' + panierArray[i].nom + '</a></h4>'
            +'<h5 class="media-heading"> by <a href="#">Brand name</a></h5></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"> <div>'
       + '<input type="number" min="1" width="5%" class="form-control item-count" data-nom="' + panierArray[i].nom + '" value="' + panierArray[i].count + '">'
-      + '</div></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1">'
-      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"> X </button></td></tr>'
+      + '</div></td><td class="col-sm-1 col-md-1 text-center"><strong>HTG '+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>HTG ' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1">'
+      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"><span class="icon-trash"></span></button></td></tr>'
 
  
   }
 
-  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total</h3></td><td class="text-right" ><h3>$<strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
-  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-warning">Vider le panier</button>  </td><td><span>  </span><a href="index.php" type="button" class="btn btn-default"><span class="icon-shopping-cart"></span> Continuer vos achats</a></td><td>';
-  output +=' <a href="index.php?p=commande" type="button" class="btn btn-success" >Passer la commande <span class="icon-shopping-play"></span></a></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total :</h3></td><td class="text-right" ><h3>HTG <strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-default btn-carre"><span class="icon-trash"></span> Vider le panier</button>  </td><td><span>  </span><a href="index.php"><button type="button" class="btn btn-default btn-carre"><span class="icon-shopping-cart"></span> Continuer vos achats</button></td><td>';
+  output +=' <a href="index.php?p=commande"><button type="button" class="btn btn-warning btn-large" ><span class="icon-ok"></span> Passer la commande <span class="icon-shopping-play"></span></button></a></td></tr>';
   
   $('.total-count').html(MonPanier.totalCount());
 
