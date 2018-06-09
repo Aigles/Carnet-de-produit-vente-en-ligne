@@ -1,4 +1,12 @@
+<style>
+	
+	.btn-large{
+        border-radius: 0px;
+        width:25%;
+        text-shadow: none;
+    }
 
+</style>
 <div id="mainBody">
 	<div class="container">
 		<div class="row">

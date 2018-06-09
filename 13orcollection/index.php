@@ -49,6 +49,14 @@
 			require('profil.php');
 			break;
 
+		case 'modification':
+			require('modchanger.php');
+			break;
+
+		case 'reset':
+			require('reset.php');
+			break;
+
 	default:
 			# code...
 			require('404.php');
