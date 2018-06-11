@@ -11,11 +11,10 @@ import (
 	"models/statistique"
 	"models/reference_livraisonModels"
 	"Configuration"
-	"mail"
 )
 
 func main() {
-	mail.Send("massillonmyrvelie@gmail.com"," tests de email");
+	//mail.Send("bellunetabithamegane@gmail.com"," tests de email");
 	
 	newapp := iris.New()
 	crs := cors.New(cors.Options{
