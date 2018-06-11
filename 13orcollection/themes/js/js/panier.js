@@ -9,10 +9,11 @@ var Qte_Minimum = true;
 // la quantité des lots
 var Qte_Minimum_Valeur = 1; 
 
+
 // les messages
-var txt_qte_minimum_bad = "<font color='red'>Attention les quantités ne sont pas correctes</font>";
-var txt_qte_minimum_ok = "<font color='green'>Le nombre de vetements commandés est correct</font>";
-var txt_qte_minimum_defaut = "La quantite de vetements a commander doit etre supérieure a zéro (0)";
+var txt_qte_minimum_bad = "<div class='alert alert-warning text-left'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='red'>Attention les quantités ne sont pas correctes</font></b></div>";
+var txt_qte_minimum_ok = "<div class='alert alert-info text-left'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='green'>Continue d'ajouter toutes les vetements que vous aimez au panier</font></b></div>";
+var txt_qte_minimum_defaut = "<div class='alert alert-danger text-left'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>La quantite de vetements a commander doit etre supérieure a zéro (0)</b></div>";
 
 // ne pas modifier la suite sauf si vous désirez modifier le code
 //Dans cette partie nous faisons la gestion du panier, 
@@ -39,6 +40,7 @@ sessionStorage.setItem('MonPanier', JSON.stringify(panier));
 jQuery('#modal_errors').html("");
 var error = '<div class=\'alert alert-info text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>Vous avez ajoute un nouveau vetement au panier !!!</b></div>';
 jQuery('#modal_errors').html(error);
+jQuery('#modal_errorss').html(error);
 }
 
 function loadpanier() {
@@ -163,15 +165,15 @@ function afficherpanier() {
             +'<h4 class="media-heading"><a href="#">' + panierArray[i].nom + '</a></h4>'
            +'<h5 class="media-heading"> by <a href="#">Brand name</a></h5></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"> <div>'
       + '<input type="number" min="1" width="5%" class="form-control item-count" data-nom="' + panierArray[i].nom + '" value="' + panierArray[i].count + '">'
-      + '</div></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1">'
-      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"> X </button></td></tr>'
+      + '</div></td><td class="col-sm-1 col-md-1 text-center"><strong>HTG '+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>HTG ' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1">'
+      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"><span class="icon-trash"></span></button></td></tr>'
 
  
   }
 
-  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total</h3></td><td class="text-right" ><h3>$<strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
-  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-warning">Vider le panier</button>  </td><td><span>  </span><button type="button" class="btn btn-default"><span class="icon-shopping-cart"></span> <a href="index.php">Continuer vos achats</a></button></td><td>';
-  output +='<button type="button" class="btn btn-success"> Passer la commande <span class="icon-shopping-play"></span></button></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total :</h3></td><td class="text-right" ><h3>HTG <strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-default btn-carre"><span class="icon-trash"></span> Vider le panier</button>  </td><td><span>  </span><a href="index.php"><button type="button" class="btn btn-default btn-carre"><span class="icon-shopping-cart"></span> Continuer vos achats</button></td><td>';
+  output +=' <a href="index.php?p=commande"><button type="button" class="btn btn-warning btn-large" ><span class="icon-ok"></span> Passer la commande <span class="icon-shopping-play"></span></button></a></td></tr>';
   
   $('.total-count').html(MonPanier.totalCount());
 

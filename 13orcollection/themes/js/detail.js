@@ -75,7 +75,7 @@ function changerImage(argument) {
 
     
 
-    $.ajax({ 
+    $.ajax({  
             url: Fullurl+"produit/"+id,
             type: 'GET', 
             dataType: 'json', 
@@ -95,23 +95,23 @@ function changerImage(argument) {
                 tableau_produit +=' <a ><img style="width:29%; height: 29%;" src="'+donnee.image_1+'" alt="" onmouseover="changerImage(\''+donnee.image_1+'\')"/></a>';
                 });
             
-            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : $'+data.caracteristic[0].prix+'.00</span></label>';
+            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : <span class="badge badge-warning">HTG '+data.caracteristic[0].prix+'</span></span></label>';
             tableau_produit +='<button type="button" class="btn btn-large btn-warning pull-right ajouter-panier"  data-image="'+data.caracteristic[0].image+'" data-nom="'+data.nom+'" data-prix="'+data.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span></button>';
             // ========== partie Size =============
-            tableau_produit +='<label class="control-label" for="size"><span>Size :</span></label>';
+            tableau_produit +='<label class="control-label" for="size"><span>Size </span>';
             tableau_produit +='<select name="size" class="span1" id="size">';
 
             $.each(data.caracteristic, function( key, donnee ){
                tableau_produit +='<option data-available="'+data.nbre_en_stock+'" value="'+donnee.size+'" onclick="changerInfo(\''+donnee.id+'\')">'+donnee.size+'</option>';
                 });
 
-            tableau_produit +='</select> <span> </span><input type="number" class="span1" value="1" id="quantity" name="quantity" placeholder="Quantité." max="'+data.nbre_en_stock+'" min="1"/>  </div><hr class="soft"/><h5>Élement(s) en stock :  <span class="badge badge-warning">'+data.nbre_en_stock+'</span></h5><label class="control-label for="couleur"><span>Couleur :</span></label><div class="controls">';
+            tableau_produit +='</select></label> <span> </span><label class="control-label" for="quantity"><span>Quantité </span><input type="number" class="span1" value="1" id="quantity" name="quantity" placeholder="Quantité." max="'+data.nbre_en_stock+'" min="1"/></label>  </div><hr class="soft"/><h5>Élement(s) en stock :  <span class="badge badge-warning">'+data.nbre_en_stock+'</span></h5><label class="control-label for="couleur"><span>Couleur </span></label><div class="controls">';
             tableau_produit +='<p><select class="span2" name="couleur" id="couleur">';
 
             $.each(data.caracteristic, function( key, donnee ){
-                tableau_produit +='<option id="couleur" onclick="changerInfo(\''+donnee.id+'\')">'+donnee.couleur+'</option>';
+                tableau_produit +='<option  id="couleur" onclick="changerInfo(\''+donnee.id+'\')">'+donnee.couleur+'</option>';
                 });
-            tableau_produit +='</select></a></div></form><hr class="soft clr"/><p><h3>Description de '+data.nom+'</h3><br/>'+data.description;
+            tableau_produit +='</select></div></form><hr class="soft clr"/><p><h3>Description de '+data.nom+'</h3><br/>'+data.description;
             tableau_produit +='</p><hr class="soft"/>';
         
      // affectation des produits dans l'id

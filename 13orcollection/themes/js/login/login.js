@@ -27,7 +27,6 @@
 }
 
 
-
 function sendData(data, url){
     
     $.ajax({ url: url,
@@ -36,7 +35,7 @@ function sendData(data, url){
         crossDomain: true,
         data: data,
         success: function (rs) {      
-            $('#result-title').html('Reultat de l\'operation');
+            $('#result-title').html('Résultat de l\'opération');
             $('#result-info').html(rs.status);
 
              if (rs.id!=0) {
@@ -44,7 +43,7 @@ function sendData(data, url){
                 sessionStorage.setItem("token_vente_en_ligne",rs.token);
 
                 sessionStorage.setItem("id_user_vente_en_ligne",rs.id);
-                window.location = "index.php";
+                window.location = "index.php?p="+localStorage.getItem("OldPage");
             }
              else{
             $.when($('#myModal').modal('show').delay(3000)).done(function(){

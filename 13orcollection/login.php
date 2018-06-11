@@ -2,7 +2,13 @@
     include 'log.php';
 ?>
 
+<style>
+    .btn-large{
+        border-radius: 0px;
+        width:100%;
+    }
 
+</style>
 <div id="mainBody">
     <div class="container">
     <div class="row">
@@ -10,21 +16,20 @@
 
 <!-- Sidebar End ================================================== -->
     <div class="span12">
-    <ul class="breadcrumb">
+    <!-- <ul class="breadcrumb">
         <li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
         <li class="active">Connection</li>
-    </ul>
+    </ul>  
+    <hr class="soft"/>-->
     
-    <h3><p class="textcolors text-center"> Connection</p></h3>  
-    <hr class="soft"/>
-    
-    <div class="container" style=" margin-left: 80px;">
+    <!-- <div class="container" style=" margin-left: 80px;"> -->
+        <div class="container">
     <div class="row" >
         
-        <div class="span3"></div>
+        <div class="span4"></div>
         <div class="span4">
             <div class="well" id="save_login">
-            <h5><p class="textcolors text-center">DÉJÀ ENREGISTRÉ ?</p></h5><hr><br/>
+            <h3><p class="textcolors text-center"> Connection </p></h3> <hr><br/>
             <form method="post" class="form-vertical loginFrm">
 
                
@@ -39,10 +44,11 @@
                 <div class="controls">
                   <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="Password" value="<?=$password;?>">
                 </div>
-              </div>
+              </div><br/>
               <div class="control-group">
                 <div class="controls">
-                  <button type="button" class="btn btn-warning block" onclick="connection();">Connecter </button> <a href="forgetpass.html">Forget password?</a>
+                  <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
+                  <a  href="#"><p class="text-center">Forget password?</p></a>
                 </div>
               </div>
             </form>
@@ -80,12 +86,8 @@
 
     <script src="themes/js/jquery.validate.min.js"></script>
     <script src="themes/js/login/login.js"></script>
-<<<<<<< HEAD
-    
-=======
     <script src="themes/js/config.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
 </body>
 </html>
     <script src="themes/js/header.js"></script>
->>>>>>> 083b8bbcd9ccd2f9531658fb18668d11564a24d8

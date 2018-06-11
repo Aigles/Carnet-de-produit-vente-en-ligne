@@ -1,19 +1,11 @@
 
-<?php 
-//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
-	define('ROOT', __DIR__);
 
-	require_once ROOT.'/core/init.php'; 
-	// $password = 'password';
-	// $hashed = password_hash($password, PASSWORD_DEFAULT);
-	// echo $hashed;
-	//echo $_SESSION['SBUser'];
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Acceuil | 13 Or Collection</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -23,6 +15,7 @@
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/oldNavigation.js"></script>
   </head>
 <body>
 <!-- =========== Header =============================================-->
@@ -38,27 +31,6 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================================= -->
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3 id="result-title"></h3>
-                </div>
-                <div class="modal-body">
-                    <p id="result-info"></p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Fermer</a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- Placed at the end of the document so the pages load faster ============================================= -->
-
 	<script src="themes/js/header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
@@ -69,6 +41,7 @@
     <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
+   
 	<!-- Themes switcher section ============================================================================================= -->
 <?php include 'script.php'; ?>
 

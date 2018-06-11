@@ -1,5 +1,28 @@
 
+<?php 
+//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
+	define('ROOT', __DIR__);
+
+	require_once ROOT.'/core/init.php'; 
+	// $password = 'password';
+	// $hashed = password_hash($password, PASSWORD_DEFAULT);
+	// echo $hashed;
+	//echo $_SESSION['SBUser'];
+?>
 <!-- =========== END Header =========================================-->
+<style>
+    .btn-large{
+        border-radius: 0px;
+        width:100%;
+        text-shadow: none;
+    }
+    .btn-default{
+    	background-color: lightgrey;
+    	/*color: #fff;*/
+    	text-shadow: none;
+    }
+
+</style>
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
 
@@ -10,8 +33,8 @@
 <br /> -->
 
 
-<div class="container" id="zerocommande_panier">
-<div class='alert alert-info text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b id="qte_minimum_report"></b></div>
+<div class="container" id="zerocommande_panier"             >
+<div id="qte_minimum_report"></div>
   <div class="row">
         <div class="col-sm-12 col-md-12 col-md-offset-1">
             <table class="table table-hover">
@@ -111,4 +134,5 @@
 	<br/>
 			
 		
+    <script src="themes/js/login/checkConnectionCommande.js"></script>
 	

@@ -13,8 +13,8 @@
 	}
 	else
 	{
-		//dans le cas contraire on initialise la page d'aceuille par defaut
-		$p = 'home';
+		//dans le cas contraire on initialise la page d'acceuil par defaut
+		$p = 'acceuil';
 	}
 >>>>>>> 2c3596471c569261c6e984d83931f0e9566655f1
 
@@ -25,12 +25,12 @@
 	//un switch pour tout controle dans notre index.php
 	switch ($p)
 	{
-		case 'log':
+		case 'connection':
 			# code...
 			require('login.php');
 			break;
 
-		case 'home':
+		case 'acceuil':
 			# code...
 			require('home.php');
 			break;
@@ -50,6 +50,18 @@
 
 		case 'detail':
 			require('product_details.php');
+			break;
+
+		case 'profile':
+			require('profil.php');
+			break;
+
+		case 'modification':
+			require('modchanger.php');
+			break;
+
+		case 'reset':
+			require('reset.php');
 			break;
 
 	default:
