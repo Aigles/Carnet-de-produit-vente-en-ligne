@@ -6,8 +6,9 @@ import (
     "html/template"
 )
 
-var user_mail="bellunetabithamegane@gmail.com";
-var password_mail= "Tabie123";
+var user_mail="13orcollectionaigle@gmail.com";
+var user_Name="13 or collection";
+var password_mail= "Aigle@123";
 
 func Messagehtml(body string) string  {
 

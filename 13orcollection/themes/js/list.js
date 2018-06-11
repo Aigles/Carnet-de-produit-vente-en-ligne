@@ -30,6 +30,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
     $.ajax({ 
             url: url,
             type: 'GET', 
+            cache:false,
             dataType: 'json', 
             Accept : "application/json;charset=UTF-8"
             })
