@@ -4,7 +4,7 @@
            <a href="#">Tableau de bord</a>
        </li>
        <li>
-           <a href="#">Ajouter un Vetement</a>
+           <a href="#">Ajouter un Paiement</a>
        </li>
     </ul>
 </div>
@@ -13,7 +13,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Ajouter un vetement</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Ajouter un Paiement</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i

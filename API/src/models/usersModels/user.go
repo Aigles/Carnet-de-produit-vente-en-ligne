@@ -213,3 +213,23 @@ func Connection(Users *Users) Message{
 	}
 	return message
 }
+
+func UpdateUsersdeconnection(id int64){
+	
+	var Users Users
+   loc,_:=time.LoadLocation("America/New_York")
+  Users.UpdateAt=time.Now().UTC().In(loc)
+
+  Users.Etat_connection=0
+  Users.Date_derniere_connection=time.Now().UTC().In(loc)
+  fmt.Println(Users.Date_derniere_connection)
+
+  stmt, err := Configuration.Db().Prepare("UPDATE users SET  date_derniere_connection=?,etat_connection=?, Date_update=? WHERE idUsers=?;")
+  
+  if err !=nil{
+  fmt.Println(err)
+  }
+
+  _, err = stmt.Exec(&Users.Date_derniere_connection,&Users.Etat_connection,&Users.UpdateAt,id)
+}
+

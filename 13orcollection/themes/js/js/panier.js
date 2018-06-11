@@ -53,9 +53,9 @@ var obj = {};
 obj.ajouter_produit_dans_panier = function(nom, prix, count,image) {
 for(var item in panier) {
   if(panier[item].nom === nom) {
-	panier[item].count ++;
-	savepanier();
-	return;
+  panier[item].count ++;
+  savepanier();
+  return;
   }
 }
 var item = new Item(nom, prix, count,image);
@@ -66,21 +66,21 @@ savepanier();
 obj.setCountForItem = function(nom, count) {
 for(var i in panier) {
   if (panier[i].nom === nom) {
-	panier[i].count = count;
-	break;
+  panier[i].count = count;
+  break;
   }
 }
 };
 
 obj.enlever_produit_de_panier = function(nom) {
   for(var item in panier) {
-	if(panier[item].nom === nom) {
-	  panier[item].count --;
-	  if(panier[item].count === 0) {
-		panier.splice(item, 1);
-	  }
-	  break;
-	}
+  if(panier[item].nom === nom) {
+    panier[item].count --;
+    if(panier[item].count === 0) {
+    panier.splice(item, 1);
+    }
+    break;
+  }
 }
 savepanier();
 }
@@ -88,8 +88,8 @@ savepanier();
 obj.enlever_produit_de_panier_tous = function(nom) {
 for(var item in panier) {
   if(panier[item].nom === nom) {
-	panier.splice(item, 1);
-	break;
+  panier.splice(item, 1);
+  break;
   }
 }
 savepanier();
@@ -122,7 +122,7 @@ for(i in panier) {
   item = panier[i];
   itemCopy = {};
   for(p in item) {
-	itemCopy[p] = item[p];
+  itemCopy[p] = item[p];
 
   }
   itemCopy.total = Number(item.prix * item.count).toFixed(2);
@@ -176,33 +176,33 @@ function afficherpanier() {
   $('.total-count').html(MonPanier.totalCount());
 
   
-  if(page == 'cart.php'||" index.php" || page == ''){
+  if(page == 'cart.php'|| page == "index.php" || page == ''){
   $('.show-panier').html(output);
 
   $('.total-panier').html(MonPanier.totalpanier().toFixed(2));
 
   if ((Qte_Minimum == true) && (Number.isInteger(MonPanier.totalCount() / Qte_Minimum_Valeur) == false) && (MonPanier.totalCount() != 0))
   {
-	document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_bad;
+  document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_bad;
   }
   else if ((Qte_Minimum == true) && (Number.isInteger(MonPanier.totalCount() / Qte_Minimum_Valeur) == true) && (MonPanier.totalCount() != 0))
   {
-	document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_ok;
+  document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_ok;
   }
   else if (Qte_Minimum == true)
   {
-    document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_defaut;	  
+    document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_defaut;   
   }
   else if (Qte_Minimum == false)
   {
-	document.getElementById('qte_minimum_report').innerHTML = "";
+  document.getElementById('qte_minimum_report').innerHTML = "";
   }
-	  
+    
   $('.clear-panier').click(function() {
     MonPanier.clearpanier();
     afficherpanier();
   });
-	  
+    
 }}
 
 $('.show-panier').on("click", ".effacer-item", function(event) {

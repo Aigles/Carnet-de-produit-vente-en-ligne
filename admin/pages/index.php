@@ -136,7 +136,32 @@
 		case 'tabie':
 			require('coeur/love.php');
 			break;
+		
+			case 'creerPersonnel':
+			# code...
+			require('personnel/create.php');
+			break;
 
+		case 'editerPersonnel':
+			require('personnel/edit.php');
+			break;
+
+		case 'listerPersonnel':
+			require('personnel/liste.php');
+			break;
+
+			case 'creerClient':
+			# code...
+			require('client/create.php');
+			break;
+
+		case 'editerClient':
+			require('client/edit.php');
+			break;
+
+		case 'listerClient'   :
+			require('client/liste.php');
+			break;
 
 	default:
 			# code...
