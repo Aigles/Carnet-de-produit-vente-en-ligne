@@ -1,11 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-<?php 
-
-//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
-	define('ROOT', __DIR__);
-=======
 	if(isset($_GET['p']))
 	{
 		//si notre variable est defini on la met dans une autre
@@ -16,7 +10,6 @@
 		//dans le cas contraire on initialise la page d'acceuil par defaut
 		$p = 'acceuil';
 	}
->>>>>>> 2c3596471c569261c6e984d83931f0e9566655f1
 
 
 	//ob_start pour executer la pages comme dans la variable
