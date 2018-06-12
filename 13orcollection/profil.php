@@ -130,6 +130,8 @@ img {
             background-color: #c32f10;
         }
     </style>
+    
+<script src="themes/js/login/checkConnection.js"></script>
 </head>
 <body>
    
