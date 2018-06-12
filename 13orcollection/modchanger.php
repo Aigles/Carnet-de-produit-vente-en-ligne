@@ -33,20 +33,15 @@
             <form method="post" class="form-vertical loginFrm">
 
                
+            
               <div class="control-group">
-                <label class="control-label" for="inputEmail1">Email</label>
-                <div class="controls">
-                  <input required class="span3"  type="email" name="email" id="inputEmail1" placeholder="" value="<?=$email;?>">
-                </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label" for="inputPassword1">ancien mot de passe</label>
+                <label class="control-label" for="inputPassword1">nouveau mot de passe</label>
                 <div class="controls">
                   <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="" value="<?=$password;?>">
                 </div>
               </div>
               <div class="control-group">
-                <label class="control-label" for="inputPassword2">nouveau mot de passe</label>
+                <label class="control-label" for="inputPassword2">confirmer nouveau mot de passe</label>
                 <div class="controls">
                   <input required type="password" class="span3"  name="password" id="inputPassword2" placeholder="" value="<?=$password;?>">
                 </div>

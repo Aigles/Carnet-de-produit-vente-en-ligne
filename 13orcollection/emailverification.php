@@ -29,26 +29,20 @@
         <div class="span4"></div>
         <div class="span4">
             <div class="well" id="save_login">
-            <h3><p class="textcolors text-center"> Connection </p></h3> <hr><br/>
+            <h3><p class="textcolors text-center"> Récuperation</p></h3> <hr><br/>
             <form method="post" class="form-vertical loginFrm">
 
-               
+              <p>Un message sera envoyé sur votre adresse éléctronique pour la récuperation de votre mot de passe</p>
               <div class="control-group">
                 <label class="control-label" for="inputEmail1">Email</label>
                 <div class="controls">
                   <input required class="span3"  type="email" name="email" id="inputEmail1" placeholder="Email" value="<?=$email;?>">
                 </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label" for="inputPassword1">Password</label>
-                <div class="controls">
-                  <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="Password" value="<?=$password;?>">
-                </div>
               </div><br/>
               <div class="control-group">
                 <div class="controls">
-                  <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
-                  <a  href="index.php?p=re-s-et"><p class="text-center">Forget password?</p></a>
+                  <button type="button" class="btn btn-warning btn-large block" onclick="connnection();"><span class="icon-ok"> </span> Envoyer </button> 
+                  <!-- <a  href="#"><p class="text-center">Forget password?</p></a> -->
                 </div>
               </div>
             </form>

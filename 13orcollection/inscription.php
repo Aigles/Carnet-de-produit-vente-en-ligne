@@ -70,7 +70,7 @@
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword1">Mot de passe</label>
 				<div class="controls">
-				  <input type="password" class="span3"  name="password1" id="inputPassword1" placeholder="Password" value="<?=$password1;?>">
+				  <input type="password" class="span3"  name="password1" id="inputPassword1" placeholder="Mot de passe" value="<?=$password1;?>">
 				</div>
 				<div id="result-password" style="color: red;"></div>
 				<div id="result-lpassword" style="color: red;"></div>
@@ -78,7 +78,7 @@
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword2">Confirmer le Mot de passe</label>
 				<div class="controls">
-				  <input type="password" class="span3"  name="password2" id="inputPassword2" placeholder="Verifier Password" value="<?=$password2;?>">
+				  <input type="password" class="span3"  name="password2" id="inputPassword2" placeholder="Mot de passe" value="<?=$password2;?>">
 				</div>
 				<div id="result-vpassword" style="color: red;"></div>
 			  </div><br/>

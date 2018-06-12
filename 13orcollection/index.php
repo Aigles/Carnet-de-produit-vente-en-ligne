@@ -53,8 +53,8 @@
 			require('modchanger.php');
 			break;
 
-		case 'reset':
-			require('reset.php');
+		case 're-s-et':
+			require('emailverification.php');
 			break;
 
 	default:
