@@ -14,6 +14,8 @@ import (
 )
 
 func main() {
+	//mail.Send("bellunetabithamegane@gmail.com"," tests de email");
+	
 	newapp := iris.New()
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.

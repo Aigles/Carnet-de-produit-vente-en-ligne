@@ -37,7 +37,7 @@ func NewUsers(u *Users) Message{
 
 var message Message
 
-var body="Bonjour "+u.Nom+","+" \n\n Vous venez d'etre inscrite sur le site de vente 13 or Collection.\n\n Nous vous souhaitons la bienvenue sur notre Plateforme";
+var body="Bonjour "+u.Nom+","+" \n\n Vous venez d'etre inscrit(e) sur le site de vente 13 or Collection.\n\n Croyez-nous vous avez fait le bon choix  !!!\n\n";
 var to =u.Email;
 if u==nil{
 	fmt.Println(u)
@@ -56,7 +56,7 @@ if err==nil{
 	message.Id=id
 	message.Code=200
 	message.Status="insertion reussie"
-	mail.Send(body,to);
+	mail.Send(to,body);
 
 }else{
 	fmt.Println(err)
