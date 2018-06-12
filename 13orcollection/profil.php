@@ -1,146 +1,222 @@
-   <style>
-           input.hidden {
-    position: absolute;
-    left: -9999px;
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Bootstrap user profile template</title>
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <!-- <link href="assets/css/bootstrap.css" rel="stylesheet" /> -->
+    <!-- FONT-AWESOME STYLE SHEET FOR BEAUTIFUL ICONS -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- CUSTOM STYLE CSS -->
+    <style type="text/css">
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .col-md-4 {
+  width: 33.33333333%;
+}
+    .col-md-8 {
+  width: 66.66666667%;
 }
 
-#profile-image1 {
-    cursor: pointer;
-  
-     width: 100px;
-    height: 100px;
-	border:2px solid #03b1ce ;}
-	.tital{ font-size:16px; font-weight:500;}
-	 .bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}	
-	</style>
-<div id="mainBody">
-    <div class="container">
-    <div class="row">
-<!-- Sidebar ================================================== -->
+.down{ margin-top: 52.09px; }
+.squarebutton{ box-shadow: none; text-shadow: none; font-weight: bold;}
 
-<!-- Sidebar End ================================================== -->
-    <div class="span12">
-    <ul class="breadcrumb">
-        <li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
-        <li class="active">Mon profile</li>
-    </ul>
-    
-    <h3><p class="textcolors text-center"> Mon Profile</p></h3>  
-    <hr class="soft"/>
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  float: left;
+}
 
-    	
-<!------ Include the above in your HEAD tag ---------->
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
-<div class="container">
-	<div class="row">
-		<h2>Create your snippet's HTML, CSS and Javascript in the editor tabs</h2>
-        
-        
-       <div class="col-md-7 ">
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+    .form-control ,input[type='password'],input[type='text']{
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
 
-<div class="panel panel-default">
-  <div class="panel-heading">  <h4 >User Profile</h4></div>
-   <div class="panel-body">
-       
-    <div class="box box-info">
-        
-            <div class="box-body">
-                     <div class="col-sm-6">
-                     <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
-                
-                <input id="profile-image-upload" class="hidden" type="file">
-<div style="color:#999;" >click here to change profile image</div>
-                <!--Upload Image Js And Css-->
-           
-              
+.btn{
+  line-height: 1.73857143;
+  display: inline-block;
+  height: 34px;
+}
+.img-rounded {
+  border-radius: 10px;
+}
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  display: block;
+  max-width: 250px;
+  height: 250px;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+               .btn-social {
+            color: white;
+            opacity: 0.8;
+        }
+
+            .btn-social:hover {
+                color: white;
+                opacity: 1;
+                text-decoration: none;
+            }
+
+        .btn-facebook {
+            background-color: #3b5998;
+        }
+
+        .btn-twitter {
+            background-color: #00aced;
+        }
+
+        .btn-linkedin {
+            background-color: #0e76a8;
+        }
+
+        .btn-google {
+            background-color: #c32f10;
+        }
+    </style>
+</head>
+<body>
    
-                
-                
-                     
-                     
-                     </div>
-              
-              <br>
-    
-              <!-- /input-group -->
+    <!-- NAVBAR CODE END -->
+
+
+    <div class="container">
+        <section style="padding-bottom: 50px; padding-top: 50px;">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-4">
+                    <img src="assets/img/250x250.png" id="profileImage" class="img-rounded img-responsive" />
+                    <br />
+                    <input id="imageUpload" type="file" name="photoutilisateur" value="<?php if(isset($photoutilisateur)){ echo $photoutilisateur;}?>">
+                    <br /><br />
+                    <label>Nom</label>
+                    <input type="text" class="form-control" placeholder="Modifier Nom" value="krena">
+                    <label>Prenom</label>
+                    <input type="text" class="form-control" placeholder="Modifier Prenom">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="Modifier Mail">
+                    <br>
+                    <a href="#" class="btn btn-success squarebutton">Modifier les details</a>
+                    <br /><br/>
+                </div>
+                <div class="col-md-8">
+                    <div class="alert alert-info">
+                        <h2>User Bio : </h2>
+                        <h4>Bootstrap user profile template </h4>
+                        <p>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                             3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. 
+                        </p>
+                    </div>
+
+                   <!--  <div >
+                        <a href="#" class="btn btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i>&nbsp; Facebook</a>
+                        <a href="#" class="btn btn-social btn-google">
+                            <i class="fa fa-google-plus"></i>&nbsp; Google</a>
+                        <a href="#" class="btn btn-social btn-twitter">
+                            <i class="fa fa-twitter"></i>&nbsp; Twitter </a>
+                        <a href="#" class="btn btn-social btn-linkedin">
+                            <i class="fa fa-linkedin"></i>&nbsp; Linkedin </a>
+                    </div> -->
+                    <div class="form-group col-md-8 down">
+                        <h3>Change YOur Password</h3>
+                        <br /><br /><br />
+                        <label>Enter Old Password</label>
+                        <input type="password" class="form-control">
+                        <label>Enter New Password</label>
+                        <input type="password" class="form-control">
+                        <label>Confirm New Password</label>
+                        <input type="password" class="form-control" />
+                        <br>
+                        <a href="#" class="btn btn-warning squarebutton">Changer mot de passe</a>
+                    </div>
+                </div>
+                 </div>
             </div>
-            <div class="col-sm-6">
-            <h4 style="color:#00b1b1;">Prasad Shankar Huddedar </h4></span>
-              <span><p>Aspirant</p></span>            
-            </div>
-            <div class="clearfix"></div>
-            <hr style="margin:5px 0 5px 0;">
-    
-              
-<div class="col-sm-5 col-xs-6 tital " >First Name:</div><div class="col-sm-7 col-xs-6 ">Prasad</div>
-     <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Middle Name:</div><div class="col-sm-7"> Shankar</div>
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Last Name:</div><div class="col-sm-7"> Huddedar</div>
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Date Of Joining:</div><div class="col-sm-7">15 Jun 2016</div>
-
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div><div class="col-sm-7">11 Jun 1998</div>
-
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Place Of Birth:</div><div class="col-sm-7">Shirdi</div>
-
- <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Nationality:</div><div class="col-sm-7">Indian</div>
-
- <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Relition:</div><div class="col-sm-7">Hindu</div>
+            <!-- ROW END -->
 
 
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-
-        </div>
-       
-            
-    </div> 
+        </section>
+        <!-- SECTION END -->
     </div>
-</div>  
-    <script>
-              $(function() {
-    $('#profile-image1').on('click', function() {
-        $('#profile-image-upload').click();
-    });
-});       
-              </script> 
-       
-       
-       
-       
-       
-       
-       
-       
-       
-   </div>
-</div>
+    <!-- CONATINER END -->
 
+    <!-- REQUIRED SCRIPTS FILES -->
+    <!-- CORE JQUERY FILE -->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- REQUIRED BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+<script type="text/javascript">
+$("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
 
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src', 
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
 
-
-         
-</div></div></div></div>
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});
+  </script>           
