@@ -43,6 +43,9 @@ function sendData(data, url){
                 sessionStorage.setItem("token_vente_en_ligne",rs.token);
 
                 sessionStorage.setItem("id_user_vente_en_ligne",rs.id);
+                // sessionStorage.setItem("id_user_vente_en_ligne",rs.nom);
+                // sessionStorage.setItem("id_user_vente_en_ligne",rs.prenom);
+                // sessionStorage.setItem("id_user_vente_en_ligne",rs.email);
                 window.location = "index.php?p="+localStorage.getItem("OldPage");
             }
              else{

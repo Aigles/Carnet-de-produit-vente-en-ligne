@@ -136,8 +136,9 @@ input[type='password']{
 }
 .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   display: block;
-  max-width: 250px;
+  /*max-width: 250px;*/
   height: 250px;
+  width: 250px;
 }
 img {
   vertical-align: middle;
@@ -214,20 +215,19 @@ label {
                     <br /><br/>
                 </div>
                 <div class="col-md-8 alert alert-warning">
-                    <!-- <div class="alert alert-info"> -->
-                      <div class="col-md-6">
-                        <h2> 13 or collection  </h2>
+                      <div class="col-md-6 api">
+                        <!-- <h2> 13 or collection  </h2>
                         <h4>Informations de votre compte :</h4><br/>
                         <b>Nom  :</b> Doudou <br/><br/>
                         <b>Prenom  :</b> Jeyda<br/><br/>
-                        <b>Email  :</b> doudoujean32@yahoo.com<br/><br/>
+                        <b>Email  :</b> doudoujean32@yahoo.com<br/><br/> -->
                       </div><br/>
-                      <div class="col-md-6">
-                        <h4><img src="assets/img/hb.png" id="profileImage" class="img-rounded1 img-responsive" /></h4><br/>
+                      <div class="col-md-6 avatarr">
+                        <!-- <h4><img src="assets/img/noimage-29.png" id="profileImage" class="img-rounded1 img-responsive" /></h4><br/> -->
                       </div>
 <!-- </div> -->
                         <p>
-                           Vous etes sur le site de vente "<b>13 or collection</b>", c'est toujours une grande plaisir de voir que vous etes toujours connecté pour verifier nos vetements disponibles. <br/>
+                           Vous etes sur le site de vente "<b>13 or collection</b>", c'est toujours un grand plaisir de voir que vous etes toujours connecté pour verifier nos vetements disponibles. <br/>
                                             Bon achat Merci!!!
                         </p>
                     
