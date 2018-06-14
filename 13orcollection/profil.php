@@ -129,7 +129,7 @@ input[type='password']{
   border-radius: 4px;
 }
 .img-rounded1 {
-  border-radius: 10px;
+  blorder-radius: 10px;
 }
 .img-rounded {
   border-radius: 120px;
@@ -226,10 +226,10 @@ label {
                         <!-- <h4><img src="assets/img/noimage-29.png" id="profileImage" class="img-rounded1 img-responsive" /></h4><br/> -->
                       </div>
 <!-- </div> -->
-                        <p>
+                        <!-- <p>
                            Vous etes sur le site de vente "<b>13 or collection</b>", c'est toujours un grand plaisir de voir que vous etes toujours connecté pour verifier nos vetements disponibles. <br/>
                                             Bon achat Merci!!!
-                        </p>
+                        </p> -->
                     
 
 
