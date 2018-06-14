@@ -8,12 +8,23 @@
         <![endif]-->
     <title>Bootstrap user profile template</title>
     <!-- BOOTSTRAP STYLE SHEET -->
-    <!-- <link href="assets/css/bootstrap.css" rel="stylesheet" /> -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT-AWESOME STYLE SHEET FOR BEAUTIFUL ICONS -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
      <!-- CUSTOM STYLE CSS -->
     <style type="text/css">
-label {
+
+    #footerSection{
+      /*position: absolute;*/
+      width: 100%;
+      bottom: 0;
+      color: white;
+      padding: 28px 0 44px;
+      margin-top: 20px;
+      clear: both;
+    }
+    
+/*label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
@@ -101,6 +112,53 @@ img {
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}*/
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
+
+input[type='password']{
+  border-radius: 4px;
+}
+.img-rounded1 {
+  border-radius: 10px;
+}
+.img-rounded {
+  border-radius: 120px;
+}
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  display: block;
+  max-width: 250px;
+  height: 250px;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+.down{ margin-top: 52.09px; }
+    input[type='text']{
+      height: 34px;
+    }
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
                .btn-social {
@@ -133,41 +191,49 @@ img {
     
 <script src="themes/js/login/checkConnection.js"></script>
 </head>
-<body>
    
     <!-- NAVBAR CODE END -->
 
 
     <div class="container">
-        <section style="padding-bottom: 50px; padding-top: 50px;">
+        <section style="padding-bottom: 50px; padding-top: 20px; padding-left: 40px;">
             <div class="row">
-              <div class="col-md-12">
                 <div class="col-md-4">
                     <img src="assets/img/250x250.png" id="profileImage" class="img-rounded img-responsive" />
                     <br />
-                    <input id="imageUpload" type="file" name="photoutilisateur" value="<?php if(isset($photoutilisateur)){ echo $photoutilisateur;}?>">
+                    <input id="imageUpload" type="file" name="photoutilisateur" value="<?php if(isset($photoutilisateur)){ echo $photoutilisateurs;}?>">
                     <br /><br />
                     <label>Nom</label>
-                    <input type="text" class="form-control" placeholder="Modifier Nom" value="krena">
+                    <input type="text" class="form-control" placeholder="Modifier Nom" value="">
                     <label>Prenom</label>
                     <input type="text" class="form-control" placeholder="Modifier Prenom">
                     <label>Email</label>
                     <input type="text" class="form-control" placeholder="Modifier Mail">
-                    <br>
-                    <a href="#" class="btn btn-success squarebutton">Modifier les details</a>
+                    <br/><br/>
+                    <a href="#" class="btn btn-success squarebutton"><span class="icon-ok"></span>Modifier détails</a>
                     <br /><br/>
                 </div>
-                <div class="col-md-8">
-                    <div class="alert alert-info">
-                        <h2>User Bio : </h2>
-                        <h4>Bootstrap user profile template </h4>
+                <div class="col-md-8 alert alert-warning">
+                    <!-- <div class="alert alert-info"> -->
+                      <div class="col-md-6">
+                        <h2> 13 or collection  </h2>
+                        <h4>Informations de votre compte :</h4><br/>
+                        <b>Nom  :</b> Doudou <br/><br/>
+                        <b>Prenom  :</b> Jeyda<br/><br/>
+                        <b>Email  :</b> doudoujean32@yahoo.com<br/><br/>
+                      </div><br/>
+                      <div class="col-md-6">
+                        <h4><img src="assets/img/hb.png" id="profileImage" class="img-rounded1 img-responsive" /></h4><br/>
+                      </div>
+<!-- </div> -->
                         <p>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                             3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. 
+                           Vous etes sur le site de vente "<b>13 or collection</b>", c'est toujours une grande plaisir de voir que vous etes toujours connecté pour verifier nos vetements disponibles. <br/>
+                                            Bon achat Merci!!!
                         </p>
-                    </div>
+                    
 
-                   <!--  <div >
+
+                    <!-- <div >
                         <a href="#" class="btn btn-social btn-facebook">
                             <i class="fa fa-facebook"></i>&nbsp; Facebook</a>
                         <a href="#" class="btn btn-social btn-google">
@@ -177,20 +243,19 @@ img {
                         <a href="#" class="btn btn-social btn-linkedin">
                             <i class="fa fa-linkedin"></i>&nbsp; Linkedin </a>
                     </div> -->
-                    <div class="form-group col-md-8 down">
-                        <h3>Change YOur Password</h3>
-                        <br /><br /><br />
-                        <label>Enter Old Password</label>
+                    <div class="form-group col-md-8">
+                        <h3>Changer votre Mot de passe</h3>
+                        <br />
+                        <label>Ancien mot de passe</label>
                         <input type="password" class="form-control">
-                        <label>Enter New Password</label>
+                        <label>Nouveau mot de passe</label>
                         <input type="password" class="form-control">
-                        <label>Confirm New Password</label>
+                        <label>Confirmer nouveau mot de passe</label>
                         <input type="password" class="form-control" />
-                        <br>
-                        <a href="#" class="btn btn-warning squarebutton">Changer mot de passe</a>
+                        <br/><br/>
+                        <a href="#" class="btn btn-warning squarebutton"><span class="icon-ok"></span>Changer</a>
                     </div>
                 </div>
-                 </div>
             </div>
             <!-- ROW END -->
 
@@ -198,14 +263,15 @@ img {
         </section>
         <!-- SECTION END -->
     </div>
+  
     <!-- CONATINER END -->
 
     <!-- REQUIRED SCRIPTS FILES -->
     <!-- CORE JQUERY FILE -->
     <script src="assets/js/jquery-1.11.1.js"></script>
     <!-- REQUIRED BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.js"></script>
-</body>
+    <!-- <script src="assets/js/bootstrap.js"></script> -->
+
 <script type="text/javascript">
 $("#profileImage").click(function(e) {
     $("#imageUpload").click();
