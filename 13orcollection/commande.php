@@ -49,6 +49,7 @@ select{
                         <form style ="position: center;">
                             <!-- Form start -->
                             <div class="row">
+                            <div id="result-statut" class="span6" style="color: red;"></div>
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="name">Nom</label>
@@ -76,6 +77,13 @@ select{
                                         <input id="postal" name="postal" type="text" placeholder="C930W0" class="form-control span4">
                                     </div>
                                 </div>
+                                 <!-- Text input-->
+                                 <div class="span6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="pays">Ville</label>
+                                        <input id="ville" name="pays" type="text" placeholder="Port-au-prince" class="form-control span4">
+                                    </div>
+                                </div>
                                 <!-- Text input-->
                                 <div class="span6">
                                     <div class="form-group">
@@ -94,7 +102,7 @@ select{
                                 <div class="span6">
                                     <div class="form-group">
                                         <label class="control-label" for="date">Date commande / livraison</label>
-                                        <input id="date" name="date" type="date" placeholder="" class="form-control span4">
+                                        <input id="date_commande" name="date" type="date" placeholder="" class="form-control span4">
                                     </div><br/>
                                 </div>
                                 
@@ -113,7 +121,7 @@ select{
                                 <!-- Button -->
                                 <div class="span4">
                                     <div class="form-group">
-                                        <button id="singlebutton" name="singlebutton"  class="btn btn-large btn-warning">Livrer a cette adresse</button>
+                                        <a  href="#result-statut" id="" name="singlebutton" type="button" onclick="saveLivraison();" class="btn btn-large btn-warning">Livrer a cette adresse</a>
                                     </div>
                                 </div>
                             </div>

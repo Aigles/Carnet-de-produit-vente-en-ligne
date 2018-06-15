@@ -18,6 +18,7 @@ type Users struct{
 	Date_derniere_connection time.Time          `json:"date_derniere_connection"`
 	Etat_connection          int                `json:"etat_connection"`
 	Avatar                   string             `json:"avatar"`
+	Url                      string             `json:"url"`
 	Role_idRole              int                `json:"role_id"`
 	CreateAt                 time.Time          `json:"date_creation"`
 	UpdateAt                 time.Time          `json:"date_update"`
@@ -36,6 +37,17 @@ type Message struct{
 func NewUsers(u *Users) Message{
 
 var message Message
+var verifier_email bool
+
+verifier_email=FindUsersByemail(u.Email);
+
+fmt.Println(verifier_email)
+
+if verifier_email{
+	message.Status="L'adresse éléctronique que vous avez mis existe déja."
+	fmt.Println(message.Status)
+	return message
+}
 
 var body="Bonjour "+u.Nom+","+" \n\n Vous venez d'etre inscrit(e) sur le site de vente 13 or Collection.\n\n Croyez-nous vous avez fait le bon choix  !!!\n\n";
 var to =u.Email;
@@ -55,14 +67,14 @@ if err==nil{
 	id,_:=res.LastInsertId()
 	message.Id=id
 	message.Code=200
-	message.Status="insertion reussie"
+	message.Status="Votre inscription a été effectuée."
 	mail.Send(to,body);
 
 }else{
 	fmt.Println(err)
 	message.Id=0
 	message.Code=0
-	message.Status="insertion echouee"
+	message.Status="Votre inscription a echouée"
 }
 
 return message
@@ -84,6 +96,51 @@ func FindUsersById(id int) *Users{
 }
 
 
+
+//fonction permettant de trouver un utilisateur  par email
+func FindUsersByemail(email string) bool{
+
+	var trouver bool = true; 
+	var users Users ;
+ 
+	row:=Configuration.Db().QueryRow("SELECT email FROM users WHERE email=?;",email)
+	err:= row.Scan(&users.Email)
+     
+	fmt.Println(row)
+
+	if err !=nil{
+		fmt.Println(err)
+		trouver=false;
+		
+	}
+	return trouver
+}
+
+//fonction permettant de trouver un utilisateur  par email
+func Sendusersemail(u *Users) Message{
+	var message Message
+	var verifier_email bool
+	var body="Bonjour , \n\n Vous venez d'effectuer une demande pour la modification de votre mot de passe.\n\n Veuillez cliquer sur ce lien :" + u.Url;
+	var to =u.Email;
+	
+	verifier_email=FindUsersByemail(u.Email);
+	
+	fmt.Println(verifier_email)
+	
+	if verifier_email{
+		message.Status="Nous vous  prions de bien vouloir vérifier votre courriel."
+		fmt.Println(message.Status)
+
+		mail.Send(to,body);
+	
+	}else{
+		message.Id=0
+		message.Code=0
+		message.Status="l'email que vous avez fourni n'existe pas !!!"
+	}
+	
+	return message
+}
 
 
 //fonction permettant de trouver toutes les voitures
@@ -140,7 +197,58 @@ func UpdateUsers(Users *Users)Message{
 	}else{
 		fmt.Println(err)
 		message.Code=0
-		message.Status="Modification echouee"
+		message.Status="Modification échouée"
+	}
+	return message
+}
+
+
+func UpdateUserspasswordbyid(Users *Users)Message{
+	
+	var message Message
+	Users.UpdateAt=time.Now().UTC()
+
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE idUsers=?;")
+	
+	if err !=nil{
+	fmt.Println(err)
+	}
+
+	_, err = stmt.Exec(&Users.UpdateAt,&Users.Password,Users.Id)
+
+	if err==nil{
+		message.Code=200
+		message.Status="Modification reussie"
+	
+	}else{
+		fmt.Println(err)
+		message.Code=0
+		message.Status="Modification echouée"
+	}
+	return message
+}
+
+func UpdateUserspasswordbyemail(Users *Users)Message{
+	
+	var message Message
+	Users.UpdateAt=time.Now().UTC()
+
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE email=?;")
+	
+	if err !=nil{
+	fmt.Println(err)
+	}
+
+	_, err = stmt.Exec(&Users.UpdateAt,&Users.Password,Users.Email)
+
+	if err==nil{
+		message.Code=200
+		message.Status="Modification reussie"
+	
+	}else{
+		fmt.Println(err)
+		message.Code=0
+		message.Status="Modification échouée"
 	}
 	return message
 }
@@ -187,7 +295,7 @@ func DeleteUsersById(id int) Message{
 	}else{
 		fmt.Println(err)
 		message.Code=0
-		message.Status="Suppression echouee"
+		message.Status="Suppression échouée"
 	}
 	return message
 	
@@ -214,12 +322,12 @@ func Connection(Users *Users) Message{
 		fmt.Println(err)
 		message.Id=0
 		message.Code=0
-		message.Status="connexion echouee"
+		message.Status="connexion échouée"
 	}
 	return message
 }
 
-func UpdateUsersdeconnection(id int64){
+func UpdateUsersdeconnection(id int){
 	
 	var Users Users
    loc,_:=time.LoadLocation("America/New_York")

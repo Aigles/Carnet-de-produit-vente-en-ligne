@@ -90,7 +90,7 @@
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
    <!-- <li ><a style="color: #faa732; cursor: default;">|</a></li> -->
    <li class="clientname"></li>
-   <li class="deconnecter"><a href="index.php?p=acceuil" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="deconnecter"><a href="index.php?p=acceuil" onclick="deconnection();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
@@ -103,3 +103,25 @@
 
 <script src="themes/js/js/panier.js"></script>
     <script src="themes/js/listerRecherche.js"></script>
+<script>
+function deconnection() {
+  var id= sessionStorage.id_user_vente_en_ligne;
+
+ $.ajax({
+    url: Fullurl+"deconnecter/Utilisateur/"+id,
+    type: "GET",
+    dataType: "json", 
+    crossDomain: true,
+    Accept : "application/json;charset=UTF-8"
+    }).done(function (data) {
+      sessionStorage.removeItem('id_user_vente_en_ligne');
+      sessionStorage.removeItem('token_vente_en_ligne');
+      location.reload();
+    // window.location = "index.php?p=connection";
+  }).fail(function (error) {
+  
+  });
+
+ 
+}
+</script>

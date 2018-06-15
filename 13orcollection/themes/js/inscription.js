@@ -82,11 +82,12 @@ function sendData(data, url) {
   $.ajax({
     url: url,
     type: "POST",
-    dataType: "json",
+    dataType: "json", 
     crossDomain: true,
     data: data, 
     Accept : "application/json;charset=UTF-8"
     }).done(function (data) {
+        
         jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
         jQuery('#result-info').html('<h4><p class="text-center">'+data.status+'</p></h4>');
         jQuery('#myModal').modal('show').delay(10);

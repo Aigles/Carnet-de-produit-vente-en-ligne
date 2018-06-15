@@ -239,6 +239,33 @@ func main() {
 
 	})
 
+	//modifier password un utilisateur
+	app.Post("/modifier/passwordUtilisateur", func(ctx iris.Context) {
+		var users usersModels.Users 
+
+		ctx.ReadJSON(&users)
+	  
+	   ctx.JSON( usersModels.UpdateUserspasswordbyid(&users))
+
+	})
+
+ //modifier password un utilisateur
+ app.Post("/oublier/passwordUtilisateur", func(ctx iris.Context) {
+	var users usersModels.Users  
+
+	ctx.ReadJSON(&users)
+  
+   ctx.JSON( usersModels.UpdateUserspasswordbyemail(&users))
+
+})
+	//deconnecter un utilisateur
+	app.Get("/deconnecter/Utilisateur/{id:int}", func(ctx iris.Context) {
+		userID, _ := ctx.Params().GetInt("id")
+
+		usersModels.UpdateUsersdeconnection(userID)
+
+	})
+	
 	//Routage pour les differents roles
 	app.Post("/creerRolle", func(ctx iris.Context) {
 		var role rolleModels.Roles 
