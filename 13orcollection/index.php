@@ -10,7 +10,6 @@
 		//dans le cas contraire on initialise la page d'acceuil par defaut
 		$p = 'acceuil';
 	}
-           
 
 	//ob_start pour executer la pages comme dans la variable
 	ob_start();
@@ -53,8 +52,8 @@
 			require('modchanger.php');
 			break;
 
-		case 'reset':
-			require('reset.php');
+		case 're-s-et':
+			require('emailverification.php');
 			break;
 
 	default:

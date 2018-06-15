@@ -25,10 +25,10 @@
             tableau_produit += ' <div class="row"><span id="modal_errors" class="bg-danger"></span><div id="gallery" class="span4"><a href="themes/images/products/large/f1.jpg" title="'+data.nom+'"><div ><img  id="principale_image" src="'+data.caracteristic[0].image+'" style="width:392px height:588px" alt=""/></div>';
             tableau_produit += '</a><div id="differentview" class="moreOptopm carousel slide"><div class="carousel-inner"><div class="item active">';
             
-            $.each(data.caracteristic, function( key, donnee ){
-                tableau_produit +=' <a ><img style="width:29%; height: 29%;" src="'+donnee.image+'" alt="" onmouseover="changerImage(\''+donnee.image+'\')"/></a>';
-                tableau_produit +=' <a ><img style="width:29%; height: 29%;" src="'+donnee.image_1+'" alt="" onmouseover="changerImage(\''+donnee.image_1+'\')"/></a>';
-                });
+            $.each(data.caracteristic, function (key, donnee) {
+              tableau_produit += ' <a ><img style="width:29%; height: 29%;" src="' + donnee.image + '" alt="" onmouseover="changerImage(\'' + donnee.image + '\')"/></a>';
+              tableau_produit += ' <a ><img style="width:29%; height: 29%;" src="' + donnee.image_1 + '" alt="" onmouseover="changerImage(\'' + donnee.image_1 + '\')"/></a>';
+            });
             
             tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : <span class="badge badge-warning">HTG '+data.caracteristic[0].prix+'</span></span></label>';
             tableau_produit +='<button type="button" class="btn btn-large btn-warning pull-right ajouter-panier"  data-image="'+data.caracteristic[0].image+'" data-nom="'+data.nom+'" data-prix="'+data.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span></button>';
@@ -64,6 +64,10 @@
     
 });
 
+}
+function changerImage(argument) {
+  jQuery('#principale_image').attr("src",argument);
+  //alert(argument)
 }
 function changerInfo(argument) {
   //jQuery('#detail_produit').attr("src",argument);
