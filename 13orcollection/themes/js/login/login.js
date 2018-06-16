@@ -1,4 +1,24 @@
+function modifierUser(){
 
+    var user      = {};
+    user.id       =  parseInt(sessionStorage.getItem("id_user_vente_en_ligne"));
+    user.nom      = $('#user-nom').val();
+    user.prenom   = $('#user-prenom').val();
+    user.avatar = $('#profileImage').src;
+
+    // if(user.nom == "" || user.prenom == "" || user.avatar == ""){
+    // //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
+    // alert('Aucun modification dans les details');
+    // }
+    // // else if(user.prenom == ""){
+    // // jQuery('#result-prenom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le prénom svp !!!</p>');
+    // // }
+    // else{
+        data = JSON.stringify(user);
+        console.log(data);
+        var url = Fullurl+'modifierUtilisateur';
+        sendData(data, url);
+}
     function connection(){
     //validatiion
     var $valid;

@@ -31,6 +31,7 @@
 <?php include 'footer.php'; ?>
 <!-- =================== END Footer ========================================================= -->
 
+  <!-- <script src="themes/js/modifier.js"></script> -->
 	<script src="themes/js/header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>

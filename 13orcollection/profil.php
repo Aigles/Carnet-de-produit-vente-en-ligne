@@ -124,6 +124,11 @@ img {
 
 
 
+  
+  .btn-large{
+        border-radius: 0px;
+        width:100%;
+    }
 
 input[type='password']{
   border-radius: 4px;
@@ -204,13 +209,13 @@ label {
                     <input id="imageUpload" type="file" name="photoutilisateur" value="<?php if(isset($photoutilisateur)){ echo $photoutilisateurs;}?>">
                     <br /><br />
                     <label>Nom</label>
-                    <input type="text" class="form-control" placeholder="Modifier Nom" value="">
+                    <input type="text" class="form-control" required id="user-nom" placeholder="Modifier Nom" value="">
                     <label>Prenom</label>
-                    <input type="text" class="form-control" placeholder="Modifier Prenom">
-                    <label>Email</label>
-                    <input type="text" class="form-control" placeholder="Modifier Mail">
+                    <input type="text" class="form-control" required id="user-prenom" placeholder="Modifier Prenom">
+                    <!-- <label>Email</label>
+                    <input type="text" class="form-control" placeholder="Modifier Mail"> -->
                     <br/><br/>
-                    <a href="#" class="btn btn-success squarebutton"><span class="icon-ok"></span>Modifier détails</a>
+                    <button class="btn btn-success btn-large" onclick="modifierUser();"><span class="icon-ok"> </span> Modifier détails</button>
                     <br /><br/>
                 </div>
                 <div class="col-md-8 alert alert-warning">
@@ -262,12 +267,40 @@ label {
         </section>
         <!-- SECTION END -->
     </div>
-  
+
+  <!-- Affichage de la progression par modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 id="result-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="result-info"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Fermer</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>    
+            //Fonction permettant de fermer correctement le bouton zoom de details
+                function closeModale(){
+                            // $('#fermer-modal').modal('hide');
+                            window.location = "index.php?p=connection";
+                    }
+        </script> -->
     <!-- CONATINER END -->
 
     <!-- REQUIRED SCRIPTS FILES -->
     <!-- CORE JQUERY FILE -->
-    <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- <script src="assets/js/jquery-1.11.1.js"></script> -->
     <!-- REQUIRED BOOTSTRAP SCRIPTS -->
     <!-- <script src="assets/js/bootstrap.js"></script> -->
 
@@ -287,3 +320,26 @@ $("#imageUpload").change(function(){
     fasterPreview( this );
 });
   </script>           
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3 id="result-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="result-info"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" class="close" data-dismiss="modal">Fermer</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="themes/js/login/login.js"></script>
+    <script src="themes/js/config.js"></script>

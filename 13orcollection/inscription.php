@@ -111,7 +111,7 @@
                     <p id="result-info"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" onclick="closeModale();" data-dismiss="modal">Fermer</a>
+                    <button type="button" class="btn btn-default" onclick="closeModale();" data-dismiss="modal">Fermer</button>
                     
                 </div>
             </div>
