@@ -65,7 +65,14 @@ if(page == '' || page == 'index.php'|| page == 'cart.php' || page == 'product_de
                 info +='<b>Nom  :</b> '+data.nom+' <br/><br/><b>Prenom  :</b> '+data.prenom+' <br/><br/><b>Email  :</b> '+data.email+' <br/><br/>';
                 jQuery('.col-md-6.api').append(info);
                 var avatar = "";
+                if (data.avatar.length>100) {
                 avatar += '<h4><img src="'+data.avatar+'" id="profileImage" class="img-rounded1 img-responsive" /></h4><br/>';
+
+                } else {
+                  avatar += '<h4><img src="assets/img/noimage-29.png" id="profileImage" class="img-rounded1 img-responsive" /></h4><br/>';
+
+                }
+
                 jQuery('.col-md-6.avatarr').append(avatar);
                 });
             }

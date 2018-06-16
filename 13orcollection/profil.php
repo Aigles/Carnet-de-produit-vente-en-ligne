@@ -136,10 +136,9 @@ input[type='password']{
 }
 .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   display: block;
-  /*max-width: 250px;*/
-  height: 250px;
   width: 250px;
-}
+  height: 250px;
+  }
 img {
   vertical-align: middle;
   border: 0;

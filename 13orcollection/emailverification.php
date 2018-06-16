@@ -30,7 +30,7 @@
         <div class="span4"></div>
         <div class="span4">
             <div class="well" id="save_login">
-            <h3><p class="textcolors text-center"> Récuperation</p></h3> <hr><br/>
+            <h3><p class="textcolors text-center"> Récuperer Mot de passe</p></h3> <hr><br/>
             <form method="post" class="form-vertical loginFrm">
 
               <p>Un message sera envoyé sur votre adresse éléctronique pour la récuperation de votre mot de passe</p>
