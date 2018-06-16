@@ -183,13 +183,13 @@ func UpdateUsers(Users *Users)Message{
 	var message Message
 	Users.UpdateAt=time.Now().UTC()
 
-	stmt, err := Configuration.Db().Prepare("UPDATE users SET nom=?, prenom=?, date_derniere_connection=?,etat_connection=?, Date_update=?,avatar=? WHERE idUsers=?;")
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET nom=?, prenom=?, Date_update=?,avatar=? WHERE idUsers=?;")
 	
 	if err !=nil{
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&Users.Nom,&Users.Prenom,&Users.Date_derniere_connection,&Users.Etat_connection,&Users.UpdateAt,&Users.Avatar,Users.Id)
+	_, err = stmt.Exec(&Users.Nom,&Users.Prenom,&Users.UpdateAt,&Users.Avatar,Users.Id)
 
 	if err==nil{
 		message.Code=200
