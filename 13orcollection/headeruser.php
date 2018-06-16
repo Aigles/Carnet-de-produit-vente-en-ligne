@@ -90,15 +90,15 @@
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
    <!-- <li ><a style="color: #faa732; cursor: default;">|</a></li> -->
    <li class="clientname"></li>
-   <li class="deconnecter"><a href="index.php?p=acceuil" onclick="deconnection();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="deconnecter"><a style="cursor: default;" onclick="deconnection();"><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
-   <li class=""><a href="contact.html">Contact</a></li> -->
+   <li class=""><a href="contact.html">Contact</a og43w></li> -->
 
    
     </ul>
-  </div>
+  </div>  
 </div>
 
 <script src="themes/js/js/panier.js"></script>
