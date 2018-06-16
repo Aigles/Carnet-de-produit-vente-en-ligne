@@ -129,6 +129,7 @@ func Sendusersemail(u *Users) Message{
 	
 	if verifier_email{
 		message.Status="Nous vous  prions de bien vouloir vérifier votre courriel."
+		message.Token=GenerateToken.TokenGenerator2();
 		fmt.Println(message.Status)
 
 		mail.Send(to,body);
