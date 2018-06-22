@@ -17,13 +17,27 @@
         text-shadow: none;
     }
     .btn-default{
-    	background-color: lightgrey;
-    	/*color: #fff;*/
+    	background-color: burlywood;
+    	color: #fff;
     	text-shadow: none;
     }
 
+    .btn-default:hover{
+    	background-color: coral;
+    	color: #fff;
+    	text-shadow: none;
+    }
+	
+td, input[type="number"]{
+		color:  coral;
+	}
+	th{
+		color: grey;
+		font-size: 20px;
+	}
 </style>
-    <h3 class="textcolors text-center">Votre Panier</h3><hr>
+    <!-- <h3 class="textcolors text-center">Votre Panier</h3>-->
+    	
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
 
 
@@ -34,7 +48,7 @@
 
 
 <div class="container" id="zerocommande_panier"             >
-<div id="qte_minimum_report"></div>
+<div id="qte_minimum_report"></div><hr> 
   <div class="row">
         <div class="col-sm-12 col-md-12 col-md-offset-1">
             <table class="table table-hover">

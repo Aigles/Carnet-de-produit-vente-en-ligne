@@ -1,4 +1,4 @@
-
+<script src="jquery.confirm.js"></script>
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -86,7 +86,7 @@
    <li><a href="index.php?p=panier"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
    
 	 <li class="inscrire"><a href="index.php?p=inscription">Inscrire</a></li>
-	 <li class="connecter"><a href="index.php?p=connection"><span class="badge badge-warning">Connecter</span></a></li>
+	 <li class="connecter"><a href="index.php?p=connection" id="modalOption"><span class="badge badge-warning">Connecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
@@ -100,3 +100,18 @@
 <!-- ce script affichera le panier a Zero dans le menu et faire tout le traitement -->
 <script src="themes/js/js/panier.js"></script>
     <script src="themes/js/listerRecherche.js"></script>
+<script type="text/javascript">
+  $("#modalOption").confirm({
+    text: "Message de confirmation",
+    modalOptionsBackdrop: 'static',
+    modalOptionsKeyboard: false,
+    confirm: function() {
+        alert("vous avez deconnecte.");
+    },
+    cancel: function() {
+        alert("vous avez annule.");
+    }
+});
+
+</script>
+

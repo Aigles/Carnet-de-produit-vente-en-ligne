@@ -1,10 +1,12 @@
 function modifierUser(){
+    var preview = document.querySelector('#profileImage'); //selects the query named profileImage
+    // var preview = document.querySelector(' input[type=file]').files[0]; //sames as here
 
     var user      = {};
     user.id       =  parseInt(sessionStorage.getItem("id_user_vente_en_ligne"));
     user.nom      = $('#user-nom').val();
     user.prenom   = $('#user-prenom').val();
-    user.avatar = $('#profileImage').src;
+    user.avatar = preview.src;
 
     // if(user.nom == "" || user.prenom == "" || user.avatar == ""){
     // //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
@@ -92,3 +94,26 @@ function sendData(data, url){
 
 }
 
+
+// function caracteristicProd(argument, prev, prev_1) {
+//     for (i = 0; i < currentrow; i++) {
+//       var preview = document.querySelector(prev + i + ' img');
+//       var preview_1 = document.querySelector(prev_1 + i + ' img');
+//       //dateFormat retourne une chaine vide pour les date invalides
+//       var caracteristics = {
+//       };
+//       caracteristics.produit_idProduit = parseInt(argument);
+//       caracteristics.image = preview.src;
+//       caracteristics.image_1 = preview_1.src;
+//       caracteristics.couleur = $('#couleur-' + i).val();
+//       caracteristics.prix = parseInt($('#prix-' + i).val());
+//       caracteristics.size = $('#size-' + i).val();
+//       caracteristics.quantite = parseInt($('#qte-' + i).val());
+//       data = JSON.stringify(caracteristics);
+//       console.log(data);
+//       var url = fullUrl + 'creerproduit/caracteristics';
+//       sendDataCaracteristiques(data, url);
+//       //schedules.push(caracteristics);
+//       // count=count+1;
+//     }
+//   }
