@@ -84,7 +84,7 @@
                         <div class="form-group">
                             <div class="col-md-offset-9">
                                 <button type="reset" class="btn btn-default" >Annuler</button>
-                                <button type="button" class="btn btn-primary" onclick="test();">Enregistrer</button>
+                                <button type="button" class="btn btn-primary" onclick="modifierUtilisateur();">Enregistrer</button>
                             </div>
                         </div>
                     </div>

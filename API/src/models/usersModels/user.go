@@ -1,6 +1,7 @@
 package usersModels
 
 import (
+	"strings"
 	"Configuration"
 	"time"
 	"fmt"
@@ -183,7 +184,22 @@ func UpdateUsers(Users *Users)Message{
 	var message Message
 	Users.UpdateAt=time.Now().UTC()
 
-	stmt, err := Configuration.Db().Prepare("UPDATE users SET nom=?, prenom=?, Date_update=?,avatar=? WHERE idUsers=?;")
+	var text string;
+
+	if strings.TrimRight(Users.Nom, "\n") != "" && strings.TrimRight(Users.Prenom, "\n") != ""  && strings.TrimRight(Users.Avatar, "\n") != "" {
+	text="UPDATE users SET nom=?, prenom=?, Date_update=?,avatar=? WHERE idUsers=?;";
+	}
+	if strings.TrimRight(Users.Nom, "\n") != "" && strings.TrimRight(Users.Prenom, "\n") != ""  && strings.TrimRight(Users.Avatar, "\n") == "" {
+		text="UPDATE users SET nom=?, prenom=?, Date_update=? WHERE idUsers=?;";
+	}
+	if strings.TrimRight(Users.Nom, "\n") != "" && strings.TrimRight(Users.Prenom, "\n") == ""  || strings.TrimRight(Users.Avatar, "\n") == "" {
+		text="UPDATE users SET nom=?, prenom=?, avatar=?, Date_update=? WHERE idUsers=?;";
+    }
+	
+
+
+
+	stmt, err := Configuration.Db().Prepare(text)
 	
 	if err !=nil{
 	fmt.Println(err)

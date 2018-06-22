@@ -23,6 +23,11 @@
     }
 
 </style>
+
+<div >
+	<a href="#"><img style="width:100%;height:10%; margin-top:-15px;" src="themes/images/carousel/photo.png"/></a>
+		 
+</div><hr>
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
 
