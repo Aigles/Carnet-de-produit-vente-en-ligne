@@ -17,11 +17,24 @@
         text-shadow: none;
     }
     .btn-default{
-    	background-color: lightgrey;
-    	/*color: #fff;*/
+    	background-color: burlywood;
+    	color: #fff;
     	text-shadow: none;
     }
 
+    .btn-default:hover{
+    	background-color: coral;
+    	color: #fff;
+    	text-shadow: none;
+    }
+	
+td, input[type="number"]{
+		color:  coral;
+	}
+	th{
+		color: grey;
+		font-size: 20px;
+	}
 </style>
 
 <div >
@@ -38,7 +51,7 @@
 <br /> -->
 
 
-<div class="container" id="zerocommande_panier"             >
+<div class="container" id="zerocommande_panier">
 <div id="qte_minimum_report"></div>
   <div class="row">
         <div class="col-sm-12 col-md-12 col-md-offset-1">

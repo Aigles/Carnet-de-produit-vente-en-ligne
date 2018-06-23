@@ -22,7 +22,7 @@
         var tableau_produit="";
             tableau_produit += '<div class="span12"><ul class="breadcrumb"><li><a href="index.php">Acceuil</a><span class="divider">/</span></li><li class="active"> Details produit</li></ul>';
 
-            tableau_produit += ' <div class="row"><span id="modal_errors" class="bg-danger"></span><div id="gallery" class="span4"><a href="themes/images/products/large/f1.jpg" title="'+data.nom+'"><div ><img  id="principale_image" src="'+data.caracteristic[0].image+'" style="width:392px height:588px" alt=""/></div>';
+            tableau_produit += ' <div class="row"><span id="modal_errors" class="bg-danger"></span><div id="gallery" class="span4"><a title="'+data.nom+'"><div ><img  id="principale_image" src="'+data.caracteristic[0].image+'" style="width:392px height:588px" alt=""/></div>';
             tableau_produit += '</a><div id="differentview" class="moreOptopm carousel slide"><div class="carousel-inner"><div class="item active">';
             
             $.each(data.caracteristic, function (key, donnee) {

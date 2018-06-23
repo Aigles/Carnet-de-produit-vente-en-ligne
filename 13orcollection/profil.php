@@ -14,6 +14,7 @@
      <!-- CUSTOM STYLE CSS -->
     <style type="text/css">
 
+
     #footerSection{
       /*position: absolute;*/
       width: 100%;
@@ -23,6 +24,22 @@
       margin-top: 20px;
       clear: both;
     }
+    button, input, optgroup, select, textarea {
+  /* margin: 0; */
+  font: inherit;
+  color: white;
+  background-color: coral;
+  border-radius: 4px;
+}
+    /* .navbar-inner {
+  
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  position: fixed;
+  width: 100%;
+  margin-top: -20px;
+} */
     
 /*label {
   display: inline-block;
@@ -340,6 +357,6 @@ $("#imageUpload").change(function(){
         </div>
     </div>
 
-    
+
+    <script src="themes/js/config.js"></script>    
     <script src="themes/js/login/login.js"></script>
-    <script src="themes/js/config.js"></script>

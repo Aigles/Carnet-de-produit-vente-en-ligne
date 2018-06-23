@@ -14,10 +14,10 @@
 				function closeModal(){
 							$('#details-modal').modal('hide');
 							$('#details-modal').empty();
-							$('.modal-dialog').click(function(){
-								$('.modal-dialog').modal('hide');
-								$('.modal-dialog').empty();
-							});
+							// $('.modal-dialog').click(function(){
+							// 	$('.modal-dialog').modal('hide');
+							// 	$('.modal-dialog').empty();
+							// });
 					}
 		</script>
 		

@@ -17,12 +17,13 @@
 	<script src="themes/js/js/panier.js"></script>
     <script src="themes/js/oldNavigation.js"></script>
   </head>
-<body>
+
 <!-- =========== Header =============================================-->
 <div id="header">
 
 
 </div>
+<body>
 <!--=========== Header End=========================================== -->
 <div id="content" class="col-lg-10 col-sm-10">
             <?php echo $content; ?>
