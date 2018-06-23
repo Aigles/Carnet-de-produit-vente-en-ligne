@@ -127,7 +127,7 @@ function deconnection() {
 
     
   $("#modalOption").confirm({
-    text: "Message de confirmation",
+    text: "Souhaitez vous vraiment vous deconnecter?",
     modalOptionsBackdrop: 'static',
     modalOptionsKeyboard: false,
     confirm: function() {
