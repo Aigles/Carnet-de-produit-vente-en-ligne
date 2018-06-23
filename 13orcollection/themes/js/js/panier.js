@@ -12,7 +12,7 @@ var Qte_Minimum_Valeur = 1;
 
 // les messages
 var txt_qte_minimum_bad = "<div class='alert alert-warning text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='red'>Attention les quantités ne sont pas correctes</font></b></div>";
-var txt_qte_minimum_ok = "<div class='alert alert-info text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='green'>N'oubliez pas de verifier votre panier avant de commander un produit</font></b></div>";
+var txt_qte_minimum_ok = "<div class='alert alert-info text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='#3a87ad'>N'oubliez pas de verifier votre panier avant de commander un produit</font></b></div>";
 var txt_qte_minimum_defaut = "<div class='alert alert-danger text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>La quantite de vetements a commander doit etre supérieure a zéro (0)</b></div>";
 
 // ne pas modifier la suite sauf si vous désirez modifier le code

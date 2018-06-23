@@ -103,7 +103,7 @@ td, input[type="number"]{
         <div class="row ">
 		<div class="col-md-12">		
 		<div class="well well-small">
-			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 10+ produits fournis</small></h4>
+			<h3 class="text-center"><font color='grey'>Produits proposés </font></h3><h4><small class="pull-right"> 10+ produits fournis</small></h4>
 			<div class="row-fluid">
 			<div id="featured" class="carousel slide">
 			<div class="carousel-inner" >

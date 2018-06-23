@@ -73,28 +73,21 @@
 				<div class="item"><ul class="thumbnails" id="recent_produit" >
         
 				</ul></div>
-			
 				<div class="item"><ul class="thumbnails" id="recent_produit_2" >
-        
+        			
+
 				</ul></div>
 			   <!-- <div class="item">
 			  <ul class="thumbnails" >
-				
-				
-			
-		
-				
-			
-			
-				
-			  </ul>
-			  </div> -->
+			 </div> -->
 			  </div>
 			  <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
 			  <a class="right carousel-control" href="#featured" data-slide="next">›</a>
 			  </div>
 			  </div>
 		</div>
+
+		<!-- <div class="modal-backdrop fade in"></div> -->
 		 
 	</div>
 <!-- Sidebar à droite ================================================== -->

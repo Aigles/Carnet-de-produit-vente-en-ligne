@@ -1,4 +1,4 @@
-
+<script src="jquery.confirm.js"></script>
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -90,7 +90,7 @@
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
    <!-- <li ><a style="color: #faa732; cursor: default;">|</a></li> -->
    <li class="clientname"></li>
-   <li class="deconnecter"><a style="cursor: default;" onclick="deconnection();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="deconnecter"><a style="cursor: pointer;" id="modalOption" ><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
@@ -124,4 +124,21 @@ function deconnection() {
 
  
 }
+
+    
+  $("#modalOption").confirm({
+    text: "Message de confirmation",
+    modalOptionsBackdrop: 'static',
+    modalOptionsKeyboard: false,
+    confirm: function() {
+        // alert("vous avez deconnecte.");
+        // location.reload('index.php')
+    deconnection();
+  
+    },
+    cancel: function() {
+        // alert("vous avez annule.");
+    }
+});
+
 </script>
