@@ -36,7 +36,7 @@ td, input[type="number"]{
 		font-size: 20px;
 	}
 </style>
-    <!-- <h3 class="textcolors text-center">Votre Panier</h3>-->
+     <h3 class="textcolors text-center">Mon Panier</h3>
     	
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
 
