@@ -36,17 +36,12 @@ td, input[type="number"]{
 		font-size: 20px;
 	}
 </style>
-
 <div >
 	<a href="#"><img style="width:100%;height:10%; margin-top:-15px;" src="themes/images/carousel/photo.png"/></a>
 		 
 </div><hr>
     <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
-
-
-<!-- <table class="show-panier" id="macommande"></table> -->
-<!-- <br />
 <div>Prix total: <span class="total-panier" id="prix_total"></span> euros</div>
 <br /> -->
 
@@ -107,7 +102,7 @@ td, input[type="number"]{
         <div class="row ">
 		<div class="col-md-12">		
 		<div class="well well-small">
-			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 10+ produits fournis</small></h4>
+			<h3 class="text-center"><font color='grey'>Produits proposés </font></h3><h4><small class="pull-right"> 10+ produits fournis</small></h4>
 			<div class="row-fluid">
 			<div id="featured" class="carousel slide">
 			<div class="carousel-inner" >

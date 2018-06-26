@@ -7,7 +7,6 @@
         border-radius: 0px;
         width:100%;
     }
-
 </style>
 <div id="mainBody">
     <div class="container">
@@ -48,7 +47,8 @@
               <div class="control-group">
                 <div class="controls">
                   <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
-                  <a  href="index.php?p=re-s-et"><p class="text-center">Forget password?</p></a>
+                  <a  href="index.php?p=re-s-et"><p class="text-center textcolors">Forget password?</p></a><br/>
+                  <a  href="index.php?p=inscription"><p class="text-center textcolors"><em>Creer un compte ici</em></font></p></a>
                 </div>
               </div>
             </form>

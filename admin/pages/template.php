@@ -118,6 +118,8 @@
                         <li class="nav-header"> Main</li>
                         <li><a class="ajax-link" href="index.php?p=home"><i class="glyphicon glyphicon-home"></i><span> Tableau de Bord</span></a>
                         </li>
+                        <li><a class="ajax-link" href="index.php?p=historic"><i class="glyphicon glyphicon-home"></i><span> Historique </span></a>
+                        </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-gift"></i><span>Vetement</span></a>
                             <ul class="nav nav-pills nav-stacked">

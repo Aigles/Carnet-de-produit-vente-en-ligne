@@ -163,6 +163,9 @@
 			require('client/liste.php');
 			break;
 
+		case 'historic'   :
+			require('historic/liste.php');
+			break;
 	default:
 			# code...
 			require('404.php');

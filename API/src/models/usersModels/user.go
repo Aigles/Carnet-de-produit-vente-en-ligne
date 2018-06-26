@@ -6,6 +6,7 @@ import (
 	"time"
 	"fmt"
 	"GenerateToken"
+	"models/historic"
 	"mail"
 )
 
@@ -23,6 +24,7 @@ type Users struct{
 	Role_idRole              int                `json:"role_id"`
 	CreateAt                 time.Time          `json:"date_creation"`
 	UpdateAt                 time.Time          `json:"date_update"`
+	Author                   int64              `json:"author"`
 
 }
 type users []Users
@@ -39,6 +41,7 @@ func NewUsers(u *Users) Message{
 
 var message Message
 var verifier_email bool
+var chaine ="Ajout d'un nouveau  membre '"+u.Nom+"  "+u.Prenom+"' dans le systeme."
 
 verifier_email=FindUsersByemail(u.Email);
 
@@ -70,6 +73,12 @@ if err==nil{
 	message.Code=200
 	message.Status="Votre inscription a été effectuée."
 	mail.Send(to,body);
+
+    if u.Author == 0{
+	historic.Newhistoric(chaine, id)
+	}else{
+	historic.Newhistoric(chaine,u.Author)	
+	}
 
 }else{
 	fmt.Println(err)

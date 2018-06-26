@@ -53,14 +53,15 @@ function creerUtilisateur()
     	return false;
   	}
 
-  	var user = {};
-
+	  var user = {};
+	   var IdUser=sessionStorage.getItem("id_user_vente_en_ligne");
   	user.nom = $("#user-nom").val();
   	user.prenom = $("#user-prenom").val();
   	user.email = $("#user-email").val();
   	user.avatar = $("#user-avatar").val();
   	user.password = $("#user-password").val();
   	user.role_id = parseInt($( "#user-role option:selected" ).val(), 10); //parseInt($("#user-categorie").val());
+	user.author = parseInt(IdUser, 10);
 
   	data = JSON.stringify(user);
 

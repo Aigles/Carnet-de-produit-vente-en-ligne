@@ -14,7 +14,27 @@
      <!-- CUSTOM STYLE CSS -->
     <style type="text/css">
 
-
+.modal {
+  width: auto;
+  background-color: transparent;
+  /* border: 1px solid #999; */
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+/*.modal-dialog {
+  width: 600px;
+  margin: 330px 660px;
+}*/
+.modal.fade.in {
+  top: 0%;
+}
     #footerSection{
       /*position: absolute;*/
       width: 100%;
@@ -232,7 +252,7 @@ label {
                     <!-- <label>Email</label>
                     <input type="text" class="form-control" placeholder="Modifier Mail"> -->
                     <br/><br/>
-                    <button class="btn btn-success btn-large" onclick="modifierUser();"><span class="icon-ok"> </span> Modifier détails</button>
+                    <button class="btn btn-warning btn-large" onclick="modifierUser();"><span class="icon-ok"> </span> Modifier détails</button>
                     <br /><br/>
                 </div>
                 <div class="col-md-8 alert alert-warning">

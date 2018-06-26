@@ -206,3 +206,19 @@ textarea:focus {
 .btn {border: 0;border-radius: 0.1;background-image:none;}
 .btn-large {border-radius: 0.1;}
 .btn-warning { background-color: none ;}
+
+/*-------------pour la page Detail---------------*/
+
+.positioncote{
+    float: left;
+    width:110px;
+    height:110px;
+}
+#principale_image_defaut{
+    width:345px;
+    height:420px;
+}
+#principale_image{
+    max-width:345px;
+    max-height:420px;
+}

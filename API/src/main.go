@@ -10,6 +10,7 @@ import (
 	"models/usersModels"
 	"models/statistique"
 	"models/reference_livraisonModels"
+	"models/historic"
 	"Configuration"
 )
 
@@ -371,6 +372,14 @@ func main() {
 
 		ctx.JSON(reference_livraisonModels.DeleteReference_livraisonById(reference_livraisonID))
 	})
+
+		//supprimer un utilisateur
+		app.Get("/historic", func(ctx iris.Context) {
+	
+	
+			ctx.JSON(historic.Allhistoric())
+		})
+	
 
 	newapp.Run(iris.Addr(":1230"))
 }         
