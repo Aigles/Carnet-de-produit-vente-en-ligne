@@ -28,10 +28,10 @@
   z-index: 1040;
   background-color: #000;
 }
-.modal-dialog {
+/*.modal-dialog {
   width: 600px;
   margin: 330px 660px;
-}
+}*/
 .modal.fade.in {
   top: 0%;
 }
