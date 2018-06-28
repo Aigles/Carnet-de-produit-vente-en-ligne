@@ -36,19 +36,18 @@ td, input[type="number"]{
 		font-size: 20px;
 	}
 </style>
-     <h3 class="textcolors text-center">Mon Panier</h3>
-    	
+<div >
+	<a href="#"><img style="width:100%;height:10%; margin-top:-15px;" src="themes/images/carousel/photo.png"/></a>
+		 
+</div><hr>
+    <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
-
-
-<!-- <table class="show-panier" id="macommande"></table> -->
-<!-- <br />
 <div>Prix total: <span class="total-panier" id="prix_total"></span> euros</div>
 <br /> -->
 
 
-<div class="container" id="zerocommande_panier"             >
-<div id="qte_minimum_report"></div><hr> 
+<div class="container" id="zerocommande_panier">
+<div id="qte_minimum_report"></div>
   <div class="row">
         <div class="col-sm-12 col-md-12 col-md-offset-1">
             <table class="table table-hover">
