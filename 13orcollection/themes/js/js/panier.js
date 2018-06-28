@@ -162,7 +162,7 @@ function afficherpanier() {
 
    
     output +='<tr><td class="col-sm-8 col-md-6" style="line-height: 80px;"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="' + panierArray[i].image + '" style="max-width: 72px; height: 72px;"> </a><div class="media-body">'
-            +'<h4 class="media-heading "><span style="line-height: 80px;">' + panierArray[i].nom + '</span></h4>'
+            +'<h5 class="media-heading "><span style="line-height: 80px;">' + panierArray[i].nom.substr(0, 10) + '...</span></h5>'
            // +'<h5 class="media-heading text-center"> by <a href="#">Brand name</a></h5>'
            +'</div></div></td><td class="col-sm-1 col-md-1 text-center" style="line-height: 80px;"> <div>'
       + '<input type="number" min="1" width="5%" class="form-control item-count" data-nom="' + panierArray[i].nom + '" value="' + panierArray[i].count + '">'
