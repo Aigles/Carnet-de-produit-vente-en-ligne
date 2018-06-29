@@ -1,26 +1,35 @@
 function modifierUser(){
-    var preview = document.querySelector('#profileImage'); //selects the query named profileImage
+    var argument = document.querySelector('#imageUpload'); //selects the query named profileImage
     // var preview = document.querySelector(' input[type=file]').files[0]; //sames as here
 
     var user      = {};
     user.id       =  parseInt(sessionStorage.getItem("id_user_vente_en_ligne"));
+    user.avatar   = $('#imageUpload').attr("src",argument);
     user.nom      = $('#user-nom').val();
     user.prenom   = $('#user-prenom').val();
-    user.avatar = preview.src;
+    //user.avatar = preview.src;
 
-    // if(user.nom == "" || user.prenom == "" || user.avatar == ""){
-    // //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
-    // alert('Aucun modification dans les details');
-    // }
-    // // else if(user.prenom == ""){
-    // // jQuery('#result-prenom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le prénom svp !!!</p>');
-    // // }
-    // else{
+    if(user.nom == "" || user.prenom == "" ){
+    //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
+    alert('Aucun modification dans les details');
+    }
+    else if(user.prenom == ""){
+    jQuery('#result-prenom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le prénom svp !!!</p>');
+    }
+    else{
         data = JSON.stringify(user);
         console.log(data);
         var url = Fullurl+'modifierUtilisateur';
         sendData(data, url);
 }
+
+// function changerInfo(argument) {
+//   //jQuery('#detail_produit').attr("src",argument);
+//   jQuery('#principale_image').attr("src",argument);
+//   //alert(argument)
+// }
+}
+
     function connection(){
     //validatiion
     var $valid;
