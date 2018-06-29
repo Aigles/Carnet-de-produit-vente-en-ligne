@@ -37,7 +37,7 @@ $.ajax({ url: fullUrl+"utilisateur",
             }
         });
 
-        $('.tablecategorie').dataTable({
+        $('.tableUser').dataTable({
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
