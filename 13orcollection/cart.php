@@ -37,12 +37,12 @@ td, input[type="number"]{
 	}
 </style>
 <div >
-	<a href="#"><img style="width:100%;height:10%; margin-top:-15px;" src="themes/images/carousel/photo.png"/></a>
+	<img style="width:100%;height:10%; margin-top:-20.6px;" src="themes/images/carousel/photo.png"/>
 		 
 </div><hr>
-    <h3 class="textcolors text-center">Votre Panier</h3><hr>
+    <h3 class="textcolors text-center">Mon Panier</h3><hr>
 <!-- Nombre de produit(s) dans votre panier : <span class="total-count"></span> -->
-<div>Prix total: <span class="total-panier" id="prix_total"></span> euros</div>
+<!-- <div>Prix total: <span class="total-panier" id="prix_total"></span> euros</div>
 <br /> -->
 
 
