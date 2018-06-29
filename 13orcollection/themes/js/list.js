@@ -26,7 +26,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
    }else{
     var url=Fullurl+"produit";
 }
-
+ var trouver=0;
     $.ajax({ 
             url: url,
             type: 'GET', 
@@ -40,6 +40,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
         
     
         $.each( data, function( key, produit ){
+            trouver=1;
             if (produit.caracteristic != null) {
                 var tableau_produit="";
                  tableau_produit+='<li class="span3"><div class="thumbnail"><a href="index.php?p=detail&pid='+produit.id+'"><img class="taille-img" src="'+produit.caracteristic[0].image+'" alt=""/></a>';
@@ -50,7 +51,7 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
             }
         
          });
-
+        
          $('.ajouter-panier').click(function(event) {
             event.preventDefault();
             var nom = $(this).data('nom');
@@ -62,8 +63,13 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
         });
      // affectation des produits dans l'id
      //document.getElementById('List_produit').innerHTML=tableau_produit;
+}).error(function(data) { 
+    window.location="error.php";
 });
 
+// if(trouver==0){
+// window.location="error.php";
+// }
 }
 
 
@@ -192,16 +198,7 @@ function detailsmodal(id){
         MonPanier.ajouter_produit_dans_panier(nom, prix,qte,image);
         afficherpanier();
       });
-        //      $('.ajouter-panier').click(function(event) {
-        //     event.preventDefault();
-        //     var nom = $(this).data('nom');
-        //     var prix = Number($(this).data('prix'));
-        //     var qte = 1; 
-        //     var image =$(this).data('image'); 
-        //     MonPanier.ajouter_produit_dans_panier(nom, prix,qte,image);
-        //     afficherpanier();
-        // });
-     
+
     });
     
 }

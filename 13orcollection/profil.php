@@ -6,11 +6,11 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Bootstrap user profile template</title>
+    <title>Mon profile | 13 or collection</title>
     <!-- BOOTSTRAP STYLE SHEET -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT-AWESOME STYLE SHEET FOR BEAUTIFUL ICONS -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assetls/css/font-awesome.css" rel="stylesheet" />
      <!-- CUSTOM STYLE CSS -->
     <style type="text/css">
 
@@ -25,13 +25,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  /*z-index: 1040;*/
   background-color: #000;
 }
-/*.modal-dialog {
-  width: 600px;
-  margin: 330px 660px;
-}*/
+
 .modal.fade.in {
   top: 0%;
 }
@@ -197,11 +194,11 @@ label {
   font-weight: bold;
   color: #333;
 }
-* {
+/** {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+}*/
 
                .btn-social {
             color: white;
@@ -284,6 +281,8 @@ label {
                         <a href="#" class="btn btn-social btn-linkedin">
                             <i class="fa fa-linkedin"></i>&nbsp; Linkedin </a>
                     </div> -->
+<div>&nbsp;</div>
+                  <hr>
                     <div class="form-group col-md-8">
                         <h3>Changer votre Mot de passe</h3>
                         <br />

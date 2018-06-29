@@ -10,8 +10,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
+<<<<<<< HEAD
     <!-- Bootstrap style -->
     <script type="text/javascript" src="https://www.paypalobjects.com/api/checkout.js"></script>
+=======
+<!-- Bootstrap style --> 
+<script src="themes/js/config.js"></script>  
+	<script src="themes/js/jquery.js" type="text/javascript"></script>
+	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="themes/js/oldNavigation.js"></script>
+	<script src="themes/js/js/panier.js"></script>
+  <script src="themes/js/list.js"></script>
+   
+>>>>>>> e39a296fcdfb022bfb7e4e43556598c34c90b07a
   </head>
 
 <!-- =========== Header =============================================-->
@@ -110,7 +121,7 @@
 	 
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
-    <script src="themes/js/list.js"></script>
+
     <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>

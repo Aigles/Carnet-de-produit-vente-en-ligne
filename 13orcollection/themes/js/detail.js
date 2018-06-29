@@ -30,10 +30,10 @@
               tableau_produit += ' <div class="positioncote"  ><img style="max-width:110px; max-height: 110px;" src="' + donnee.image_1 + '" alt="" onmouseover="changerImage(\'' + donnee.image_1 + '\')"/></div>';
             });
             
-            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small>- Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : <span class="badge badge-warning">HTG '+data.caracteristic[0].prix+'</span></span></label>';
+            tableau_produit +='</div></div></div></div><div class="span7"> <h3>'+data.nom+'</h3><small> Bienvenue! veuillez faire un achat</small><hr class="soft"/><form  method="POST" id="add_product_form" class="form-horizontal qtyFrm"><input type="hidden" name="product_id" value="'+data.id+'"><input type="hidden" name="available" id="available" value="'+data.nbre_en_stock+'"><div class="control-group"><label class="control-label"><span>Prix : <span class="badge badge-warning">HTG '+data.caracteristic[0].prix+'</span></span></label>';
             tableau_produit +='<button type="button" class="btn btn-large btn-warning pull-right ajouter-panier"  data-image="'+data.caracteristic[0].image+'" data-nom="'+data.nom+'" data-prix="'+data.caracteristic[0].prix+'">Ajouter <span class="icon-shopping-cart"></span></button>';
             // ========== partie Size =============
-            tableau_produit +='<label class="control-label" for="size"><span>Size </span>';
+            tableau_produit +='<label class="control-label" for="size"><span>Taille</span>';
             tableau_produit +='<select name="size" class="span1" id="size">';
 
             $.each(data.caracteristic, function( key, donnee ){

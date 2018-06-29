@@ -39,6 +39,7 @@ td, input[type="number"]{
 
 
 
+
 <h3 class="textcolors text-center">Votre Panier</h3><hr>
 <br />
 <div class="row">
