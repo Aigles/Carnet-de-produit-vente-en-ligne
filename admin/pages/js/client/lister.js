@@ -1,4 +1,5 @@
 //partie responsable de l'afficharge des differentes rolles
+$(document).ready(function () {
 $.ajax({ url: fullUrl+"utilisateur",
     type: 'GET', 
     dataType: 'json', 
@@ -53,3 +54,4 @@ $.ajax({ url: fullUrl+"utilisateur",
 
                 
     });
+});

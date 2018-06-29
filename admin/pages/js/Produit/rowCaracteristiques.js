@@ -24,10 +24,10 @@ fullcategorie('nb-categorie');
 function createRow(row) {
   var item = [
   ];
-  dataTable_tf = '<div id="divi-' + row + '"><hr></div><div class="row"><div class="col-md-3"><div class="col-md-12 " id="divimg-' + row + '"><img class="" id="start-' + row + '" src="" style="height:130px;"></br></div> ';
-  dataTable_tf += '<div class="col-md-12 " id="diva-' + row + '"><input class="btn btn-primary" id="start-' + row + '" required type="file" name="file" onchange="previewFile(\'#divimg-' + row + '\',\'#diva-' + row + '\')" style="width:150px;"></br></div></div> ';
-  dataTable_tf += '<div class="col-md-3"><div class="col-md-12 " id="divimgg-' + row + '"><img class="" id="start-' + row + '" src="" style="height:130px;"></br></div> ';
-  dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="btn btn-primary" id="startt-' + row + '" required type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')" style="width:150px;"></br></div></div> ';
+  dataTable_tf = '<div id="divi-' + row + '"><hr></div><div class="row"><div class="col-md-3"><div class="col-md-12 " id="divimg-' + row + '"><img class="img-rounded img-responsive" id="start-' + row + '" src="img/images.png" style="height:130px;" ></br></div> ';
+  dataTable_tf += '<div class="col-md-12 " id="diva-' + row + '"><input class="btn btn-primary" id="start-' + row + '" required type="file" name="file" onchange="previewFile(\'#divimg-' + row + '\',\'#diva-' + row + '\')" style="width:150px;" accept=".jpg, .jpeg, .png"  textcontent="Choisir une image"></br></div></div> ';
+  dataTable_tf += '<div class="col-md-3"><div class="col-md-12 " id="divimgg-' + row + '"><img class="img-rounded img-responsive" id="start-' + row + '" src="img/images.png" style="height:130px;"></br></div> ';
+  dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="btn btn-primary" id="startt-' + row + '" required type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')" style="width:150px;" accept=".jpg, .jpeg, .png"></br></div></div> ';
   dataTable_tf += '<div class="col-md-6 "><div class="col-md-6 " id="divb-' + row + '"><input class="form-control" required id="couleur-' + row + '" type="text" aria-describedby="nameHelp" placeholder="entrer la couleur" name="couleur" ></br></div> ';
   dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><select class="form-control" id="size-' + row + '"  required aria-describedby="nameHelp" placeholder="entrer la taille " name="size" ><option value="">Choisissez la taille</option><option value="Petit">Petit</option><option value="Moyen">Moyen</option><option value="Large">Large</option></select></br></div> ';
   dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" required aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" min=0></br></div> ';
@@ -97,8 +97,18 @@ function caracteristicProd(argument, prev, prev_1) {
     var caracteristics = {
     };
     caracteristics.produit_idProduit = parseInt(argument);
+    if(preview.src.length<100){
+      $('#result-title').html('Resultat de l\'operation');
+    $('#result-info').html('La première image ne doit pas etre vide !!!');
+    $('#myModal').modal('show'); 
+    return 0;
+    }
     caracteristics.image = preview.src;
     caracteristics.image_1 = preview_1.src;
+    if(preview_1.src.length<100){
+      caracteristics.image_1='';
+    }
+   
     caracteristics.couleur = $('#couleur-' + i).val();
     caracteristics.prix = parseInt($('#prix-' + i).val());
     caracteristics.size = $('#size-' + i).val();

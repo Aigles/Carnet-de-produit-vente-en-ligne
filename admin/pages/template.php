@@ -118,7 +118,7 @@
                         <li class="nav-header"> Main</li>
                         <li><a class="ajax-link" href="index.php?p=home"><i class="glyphicon glyphicon-home"></i><span> Tableau de Bord</span></a>
                         </li>
-                        <li><a class="ajax-link" href="index.php?p=historic"><i class="glyphicon glyphicon-home"></i><span> Historique </span></a>
+                        <li><a class="ajax-link" href="index.php?p=historic"><i class="glyphicon glyphicon-list-alt"></i><span> Historique </span></a>
                         </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-gift"></i><span>Vetement</span></a>
@@ -185,13 +185,13 @@
                             </ul>
                         </li>
 
-              <li class="accordion">
+              <!-- <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span>User</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="index.php?p=creerUser">Ajouter User</a></li>
                                 <li><a href="index.php?p=listerUser">Lister User</a></li>
                             </ul>
-                        </li>
+                        </li> -->
 
 
                     </ul>
