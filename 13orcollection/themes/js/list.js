@@ -64,12 +64,12 @@ function GET_PARAM(param) { var vars = {}; window.location.href.replace( locatio
      // affectation des produits dans l'id
      //document.getElementById('List_produit').innerHTML=tableau_produit;
 }).error(function(data) { 
-    
+    window.location="error.php";
 });
 
-if(trouver==0){
-window.location="error.php";
-}
+// if(trouver==0){
+// window.location="error.php";
+// }
 }
 
 
