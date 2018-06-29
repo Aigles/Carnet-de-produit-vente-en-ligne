@@ -10,7 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-<!-- Bootstrap style --> 
+    <!-- Bootstrap style -->
+    <script type="text/javascript" src="https://www.paypalobjects.com/api/checkout.js"></script>
   </head>
 
 <!-- =========== Header =============================================-->
@@ -62,7 +63,39 @@
         </div><!-- Container End -->
     </div>
 
+    <script type="text/javascript">
     
+            paypal.Button.render({
+              // Configure environment
+              env: 'sandbox',
+              // Customize button (optional)
+              locale: 'en_US',
+              style: {
+                size: 'small',
+                shape: 'pill',
+              },
+              // Set up a payment
+              payment: function (data, actions) {
+                return actions.payment.create({
+                  transactions: [{
+                    amount: {
+                      total: '0.01',
+                      currency: 'USD'
+                    }
+                  }]
+                });
+              },
+              // Execute the payment
+              onAuthorize: function (data, actions) {
+                return actions.payment.execute()
+                  .then(function () {
+                    // Show a confirmation message to the buyer
+                    window.alert('Thank you for your purchase!');
+                  });
+              }
+            }, '#paypal-button');
+
+    </script>
 <!-- =================== END Footer ========================================================= -->
 
      <script src="themes/js/config.js"></script>  

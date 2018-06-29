@@ -105,16 +105,3 @@ td, input[type="number"]{
 
 <br/>
 	
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-
-		$('#qte_minimum_report').show('slow').delay(2000);
-
-		$('#qte_minimum_report').hide('slow').delay(2000);
-
-	});
-
-</script>					
-<script src="themes/js/login/checkConnectionCommande.js"></script>
-	
