@@ -14,8 +14,10 @@
 <script src="themes/js/config.js"></script>  
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="themes/js/oldNavigation.js"></script>
 	<script src="themes/js/js/panier.js"></script>
-    <script src="themes/js/oldNavigation.js"></script>
+  <script src="themes/js/list.js"></script>
+   
   </head>
 
 <!-- =========== Header =============================================-->
@@ -39,7 +41,7 @@
 	 
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
-    <script src="themes/js/list.js"></script>
+
     <!-- <script src="themes/js/zoom.js"></script> -->
     <script src="themes/js/categorie.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
