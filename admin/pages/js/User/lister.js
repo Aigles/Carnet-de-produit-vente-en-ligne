@@ -1,4 +1,5 @@
 //partie responsable de l'afficharge des differentes rolles
+$(document).ready(function () {
 $.ajax({ url: fullUrl+"utilisateur",
     type: 'GET', 
     dataType: 'json', 
@@ -38,7 +39,10 @@ $.ajax({ url: fullUrl+"utilisateur",
             $('.tableUser > tbody').append(dataTable_tr);
         });
 
-        $('.tablecategorie').dataTable({
+        $('.tableUser').dataTable({
+            "language": {
+                "url": "js/dataTable.json"
+            },
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
@@ -52,6 +56,7 @@ $.ajax({ url: fullUrl+"utilisateur",
             "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>"
 
         });
-
+                       
+    });
                 
     });

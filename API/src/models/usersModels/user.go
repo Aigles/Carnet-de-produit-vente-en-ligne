@@ -17,6 +17,7 @@ type Users struct{
 	Prenom                   string             `json:"prenom"`
 	Email                    string             `json:"email"`
 	Password                 string             `json:"password"`
+	Oldpassword              string             `json:"oldpassword"`
 	Date_derniere_connection time.Time          `json:"date_derniere_connection"`
 	Etat_connection          int                `json:"etat_connection"`
 	Avatar                   string             `json:"avatar"`
@@ -25,6 +26,7 @@ type Users struct{
 	CreateAt                 time.Time          `json:"date_creation"`
 	UpdateAt                 time.Time          `json:"date_update"`
 	Author                   int64              `json:"author"`
+	
 
 }
 type users []Users
@@ -234,13 +236,13 @@ func UpdateUserspasswordbyid(Users *Users)Message{
 	var message Message
 	Users.UpdateAt=time.Now().UTC()
 
-	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE idUsers=?;")
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE idUsers=? and password=?;")
 	
 	if err !=nil{
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&Users.UpdateAt,&Users.Password,Users.Id)
+	_, err = stmt.Exec(&Users.UpdateAt,&Users.Password,Users.Id,&Users.Oldpassword)
 
 	if err==nil{
 		message.Code=200
