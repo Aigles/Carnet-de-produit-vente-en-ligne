@@ -132,7 +132,7 @@ func FindUsersByemail(email string) bool{
 func Sendusersemail(u *Users) Message{
 	var message Message
 	var verifier_email bool
-	var body="Bonjour , \n\n Vous venez d'effectuer une demande pour la modification de votre mot de passe.\n\n Veuillez cliquer sur ce lien "+u.Url+"?token="+GenerateToken.TokenGenerator2();
+	var body="Bonjour , \n\n Vous venez d'effectuer une demande pour la modification de votre mot de passe.\n\n Veuillez cliquer sur ce lien "+u.Url+"&token="+GenerateToken.TokenGenerator2();
 	var to =u.Email;
 	fmt.Printf("before close");
 	verifier_email=FindUsersByemail(u.Email);
