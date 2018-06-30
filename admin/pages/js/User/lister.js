@@ -40,9 +40,6 @@ $.ajax({ url: fullUrl+"utilisateur",
         });
 
         $('.tableUser').dataTable({
-            "language": {
-                "url": "js/dataTable.json"
-            },
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
@@ -51,7 +48,7 @@ $.ajax({ url: fullUrl+"utilisateur",
             'autoWidth'   : false,
             "sPaginationType": "bootstrap",
             "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
+                "url": "js/dataTable.json"
             },
             "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>"
 
