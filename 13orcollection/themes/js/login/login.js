@@ -4,12 +4,12 @@ function modifierPasse(){
 
     var user      = {};
     user.id       =  parseInt(sessionStorage.getItem("id_user_vente_en_ligne"));
-    user.ancien      = $('#oldPassword').val();
+    user.Oldpassword      = $('#oldPassword').val();
     user.password   = $('#newPassword').val();
     user.verifypassword   = $('#verifyPassword').val();
     //user.avatar = preview.src;
 
-    if(user.ancien == "" && user.password == "" && user.verifypassword == "" ){
+    if(user.Oldpassword == "" && user.password == "" && user.verifypassword == "" ){
     //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
     jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Aucun modification dans les champs !!!</p>');
     
@@ -26,7 +26,7 @@ function modifierPasse(){
     else if(user.password.length < 6){
     jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>longueur de mot de passe incorrect <strong>(NB: 6 caracteres ou plus)!!! </strong></p>');
     }
-    else if(user.ancien == ""){
+    else if(user.Oldpassword == ""){
     jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Entrez votre ancien mot de passe !!!</p>');
     }
     else if(user.verifypassword == ""){

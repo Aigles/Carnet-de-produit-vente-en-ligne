@@ -71,7 +71,7 @@
                     <p id="result-info"></p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-warning" data-dismiss="modal">Fermer</a>
                     
                 </div>
             </div>

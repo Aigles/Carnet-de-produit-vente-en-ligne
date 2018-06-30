@@ -42,6 +42,7 @@ function rese_t(){
 
     var user      = {};
     user.email    = $('#inputEmail').val();
+    user.url    = "http://localhost/VenteGithub/13orcollection/index.php?p=modification";
 
    
     if(user.email == ""){
