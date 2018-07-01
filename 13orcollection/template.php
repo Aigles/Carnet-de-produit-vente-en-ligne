@@ -9,20 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-	
-<<<<<<< HEAD
-    <!-- Bootstrap style -->
-    <script type="text/javascript" src="https://www.paypalobjects.com/api/checkout.js"></script>
-=======
+	<!-- Bootstrap style -->
+  <!-- <script type="text/javascript" src="https://www.paypalobjects.com/api/checkout.js"></script> -->
 <!-- Bootstrap style --> 
-<script src="themes/js/config.js"></script>  
+ <script src="themes/js/config.js"></script>  
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="themes/js/oldNavigation.js"></script>
 	<script src="themes/js/js/panier.js"></script>
+  <script src="themes/js/oldNavigation.js"></script>
   <script src="themes/js/list.js"></script>
    
->>>>>>> e39a296fcdfb022bfb7e4e43556598c34c90b07a
   </head>
 
 <!-- =========== Header =============================================-->
@@ -38,39 +34,48 @@
 <!-- Footer ================================================================== -->
     <div  id="footerSection">
         <div class="container">
+          <div class="row">
+            <div class="span6">
+              Pour autre information, Veuillez contacter le numero suivant <font color="#faa732">(509)4769-55-28</font>
+            </div>
+          </div><br/>
             <div class="row">
                 <div class="span3">
                     <h5>COMPTE</h5>
-                    <a href="#">VOTRE COMPTE</a>
-                    <a href="#">INFORMATION PERSONNEL</a> 
-                    <a href="#">ADRESSES</a> 
-                    <a href="#">RABAIS</a>  
-                    <a href="#">HISTORIQUE DES COMMANDES</a>
+                    <a>MON COMPTE</a>
+                    <a>INFORMATION PERSONNEL</a> 
+                    <!-- <a>ADRESSES</a>  -->
+                    <!-- <a>RABAIS</a>   -->
+                    <a>HISTORIQUE DES COMMANDES</a>
                  </div>
                 <div class="span3">
                     <h5>INFORMATION</h5>
-                    <a href="contact.html">CONTACTE</a>  
+                    <!-- <a href="contact.html">CONTACTE</a>   -->
                     <a href="inscription.php">ENREGISTREMENT</a>  
-                    <a href="#">AVERTISSEMENT LEGAL</a>  
-                    <a href="#">TERMES ET CONDITIONS</a> 
-                    <a href="#">FAQ</a>
+                    <a>AVERTISSEMENT LEGAL</a>  
+                    <a>TERMES ET CONDITIONS</a> 
+                    <!-- <a>FAQ</a> -->
                  </div>
                 <div class="span3">
                     <h5>NOS OFFRES</h5>
-                    <a href="#">NOUVEAUX PRODUITS</a> 
-                    <a href="#">PLUS VENDUS</a>  
-                    <a href="#">OFFRES SPECIALES</a>  
-                    <a href="#">MANUFACTURERS</a> 
-                    <a href="#">SUPPLIERS</a> 
+                    <a>NOUVEAUX PRODUITS</a> 
+                    <a>PLUS VENDUS</a>  
+                    <a>OFFRES SPECIALES</a>  
+                    <!-- <a>MANUFACTURERS</a>  -->
+                    <!-- <a>SUPPLIERS</a>  -->
                  </div>
                 <div id="socialMedia" class="span3 pull-right">
                     <h5>RESEAUX SOCIAUX</h5>
-                    <a href="#"><img width="50%" height="50%" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a>
-                    <a href="#"><img width="60" height="60" src="themes/images/twitter.png" title="twitter" alt="twitter"/></a>
-                    <a href="#"><img width="60" height="60" src="themes/images/youtube.png" title="youtube" alt="youtube"/></a>
+                    <a><img width="50%" height="50%" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a>
+                    <a><img width="60" height="60" src="themes/images/twitter.png" title="twitter" alt="twitter"/></a>
+                    <a><img width="60" height="60" src="themes/images/youtube.png" title="youtube" alt="youtube"/></a>
                  </div> 
              </div>
-            <p class="pull-right textcolors">&copy; tous droits réservés 2018-2019 | 13 Or Collection</p>
+
+             <p class="pull-right textcolors">&copy; tous droits réservés 2018-2019 | 13 Or Collection</p>
+             
+
+            
         </div><!-- Container End -->
     </div>
 
@@ -109,12 +114,12 @@
     </script>
 <!-- =================== END Footer ========================================================= -->
 
-     <script src="themes/js/config.js"></script>  
+     <!-- <script src="themes/js/config.js"></script>  
     <script src="themes/js/jquery.js" type="text/javascript"></script>
     <script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="themes/js/js/panier.js"></script>
     <script src="themes/js/oldNavigation.js"></script>
-  <!-- <script src="themes/js/modifier.js"></script> -->
+  <script src="themes/js/modifier.js"></script> -->
 	<script src="themes/js/header.js"></script>
 
 	<script src="themes/js/google-code-prettify/prettify.js"></script>

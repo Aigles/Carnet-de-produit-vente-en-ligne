@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="control-group">
-                <label class="control-label" for="inputPassword1">Password</label>
+                <label class="control-label" for="inputPassword1">Mot de passe</label>
                 <div class="controls">
                   <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="Password" value="<?=$password;?>">
                 </div>
@@ -47,8 +47,8 @@
               <div class="control-group">
                 <div class="controls">
                   <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
-                  <a  href="index.php?p=re-s-et"><p class="text-center textcolors">Forget password?</p></a><br/>
-                  <a  href="index.php?p=inscription"><p class="text-center textcolors"><em>Creer un compte ici</em></font></p></a>
+                  <a  href="index.php?p=re-s-et"><p class="text-center textcolors">Mot de passe oublié?</p></a><br/>
+                  <a  href="index.php?p=inscription"><p class="text-center textcolors">Creer un compte</font></p></a>
                 </div>
               </div>
             </form>
