@@ -36,7 +36,7 @@
         <div class="container">
           <div class="row">
             <div class="span6">
-              Pour autre information, Veuillez contacter le numero suivant <font color="#faa732">(509)4769-55-28</font>
+              <a>Pour autre information, Contacter les numeros suivants</a> <font color="#faa732">(509)4769-55-28  |  (509)4347-96-26</font>
             </div>
           </div><br/>
             <div class="row">
