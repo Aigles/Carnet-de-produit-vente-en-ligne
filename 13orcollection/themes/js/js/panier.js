@@ -37,14 +37,16 @@ this.image = image;
 
 function savepanier() {
 sessionStorage.setItem('MonPanier', JSON.stringify(panier));
+
 jQuery('#modal_errors').html("");
 var error = '<div class=\'alert alert-info text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>Vous avez ajoute un nouveau vetement au panier !!!</b></div>';
 jQuery('#modal_errors').html(error);
 jQuery('#modal_errorss').html(error);
+recupererSession();
 }
 
 function loadpanier() {
-panier = JSON.parse(sessionStorage.getItem('MonPanier'));
+panier = JSON.parse(sessionStorage.getItem('MonPanier')); 
 }
 if (sessionStorage.getItem("MonPanier") != null) {
 loadpanier();
@@ -234,3 +236,19 @@ $('.show-panier').on("change", ".item-count", function(event) {
 });
 
 afficherpanier();
+
+function recupererSession() {
+  var chaine_json_panier="baby"//sessionStorage.getItem('MonPanier');
+  $.ajax({ 
+    url: 'themes/js/js/fichier.php',
+    data:"chaine_json_panier="+chaine_json_panier,
+    dataType: 'json', 
+    Accept : "application/json;charset=UTF-8"
+    })
+.done(function(data) { 
+alert(data);
+}).error(function(data) { 
+alert("hhj");
+});
+
+}
