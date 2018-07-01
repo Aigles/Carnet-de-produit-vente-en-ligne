@@ -17,6 +17,7 @@ type Users struct{
 	Prenom                   string             `json:"prenom"`
 	Email                    string             `json:"email"`
 	Password                 string             `json:"password"`
+	Oldpassword              string             `json:"oldpassword"`
 	Date_derniere_connection time.Time          `json:"date_derniere_connection"`
 	Etat_connection          int                `json:"etat_connection"`
 	Avatar                   string             `json:"avatar"`
@@ -25,6 +26,7 @@ type Users struct{
 	CreateAt                 time.Time          `json:"date_creation"`
 	UpdateAt                 time.Time          `json:"date_update"`
 	Author                   int64              `json:"author"`
+	
 
 }
 type users []Users
@@ -234,13 +236,13 @@ func UpdateUserspasswordbyid(Users *Users)Message{
 	var message Message
 	Users.UpdateAt=time.Now().UTC()
 
-	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE idUsers=?;")
+	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE idUsers=? and password=?;")
 	
 	if err !=nil{
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&Users.UpdateAt,&Users.Password,Users.Id)
+	_, err = stmt.Exec(&Users.UpdateAt,&Users.Password,Users.Id,&Users.Oldpassword)
 
 	if err==nil{
 		message.Code=200
@@ -332,7 +334,33 @@ func Connection(Users *Users) Message{
   
 	var  message  Message
 
-	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE email=? and password=?;",&Users.Email,&Users.Password)
+	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE Role_idRole=11 and email=? and password=?;",&Users.Email,&Users.Password)
+	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
+	 
+	UpdateUsersonnection(Users.Id)
+	fmt.Println(Users.Id)
+
+
+	if err==nil{
+		message.Token=GenerateToken.TokenGenerator();
+		message.Id=Users.Id
+		message.Code=200
+		message.Status="connexion reussie"
+	
+	}else{
+		fmt.Println(err)
+		message.Id=0
+		message.Code=0
+		message.Status="connexion échouée !!! Votre mot de passe ou votre email est incorrect.Essaie encore une fois avec un compte client."
+	}
+	return message
+}
+
+func Connectionadmin(Users *Users) Message{
+  
+	var  message  Message
+
+	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE  Role_idRole in (6,7) and email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
 	 
 	UpdateUsersonnection(Users.Id)
@@ -348,7 +376,7 @@ func Connection(Users *Users) Message{
 		fmt.Println(err)
 		message.Id=0
 		message.Code=0
-		message.Status="connexion échouée"
+		message.Status="connexion échouée !!! Vous devez vous connecter etant Administrateur.Verifier votre email ou votre mot de passe."
 	}
 	return message
 }

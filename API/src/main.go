@@ -256,7 +256,8 @@ func main() {
 
 	ctx.ReadJSON(&users)
   
-   ctx.JSON( usersModels.UpdateUserspasswordbyemail(&users))
+  // ctx.JSON( usersModels.UpdateUserspasswordbyemail(&users))
+  ctx.JSON(usersModels.Sendusersemail(&users))
 
 })
 	//deconnecter un utilisateur
@@ -318,7 +319,15 @@ func main() {
 		ctx.JSON(usersModels.Connection(&conn)) 
 	
 	 })
-	 
+	 //connexion 
+	app.Post("/connexionadmin", func(ctx iris.Context) {
+        var conn usersModels.Users 
+
+		ctx.ReadJSON(&conn)
+
+		ctx.JSON(usersModels.Connectionadmin(&conn))
+	})
+
 	 app.Get("/statistique", func(ctx iris.Context) {
 
 		ctx.JSON(statistique.Statistique())
