@@ -36,6 +36,10 @@
 		case 'editerVetement':
 			require('vetement/edit.php');
 			break;
+		
+		case 'detailsVetement':
+			require('vetement/details.php');
+			break;
 
 		case 'listerVetement':
 			require('vetement/liste.php');
