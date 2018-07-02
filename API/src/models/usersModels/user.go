@@ -67,7 +67,7 @@ u.Date_derniere_connection = time.Now().UTC()
 
 u.Etat_connection=0
 
-u.Password,_=haschage.HashPassword(u.Password);
+//u.Password=haschage.Encrypt([]byte(u.Email),u.Password);
 
 res, err :=Configuration.Db().Exec("INSERT INTO users (nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
 
@@ -134,9 +134,10 @@ func FindUsersByemail(email string) bool{
 
 //fonction permettant de trouver un utilisateur  par email
 func Sendusersemail(u *Users) Message{
+	var token=GenerateToken.TokenGenerator2();
 	var message Message
 	var verifier_email bool
-	var body="Bonjour , \n\n Vous venez d'effectuer une demande pour la modification de votre mot de passe.\n\n Veuillez cliquer sur ce lien "+u.Url+"&token="+GenerateToken.TokenGenerator2();
+	var body="Bonjour , \n\n Vous venez d'effectuer une demande pour la modification de votre mot de passe.\n\n Veuillez cliquer sur ce lien "+u.Url+"&token="+token;
 	var to =u.Email;
 	fmt.Printf("before close");
 	verifier_email=FindUsersByemail(u.Email);
@@ -145,7 +146,7 @@ func Sendusersemail(u *Users) Message{
 	
 	if verifier_email{
 		message.Status="Nous vous  prions de bien vouloir vérifier votre courriel."  
-		message.Token=GenerateToken.TokenGenerator2();
+		message.Token=token;
 		fmt.Println(message.Status)
 
 		mail.Send(to,body);
@@ -341,12 +342,13 @@ func Connection(Users *Users) Message{
 	var  message  Message
 
 
-Users.Password,_=haschage.HashPassword(Users.Password);
+//Users.Password=haschage.Encrypt([]byte(Users.Email),Users.Password);
 
 fmt.Println(Users.Password);
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE Role_idRole=11 and email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
-	 
+	    
+	
 	UpdateUsersonnection(Users.Id)
 	fmt.Println(Users.Id)
 
@@ -368,9 +370,8 @@ fmt.Println(Users.Password);
 
 func Connectionadmin(Users *Users) Message{
   
-	var  message  Message
-
-	Users.Password,_=haschage.HashPassword(Users.Password);
+var  message  Message
+//Users.Password=haschage.Encrypt([]byte(Users.Email),Users.Password);
 
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE  Role_idRole in (6,7) and email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
