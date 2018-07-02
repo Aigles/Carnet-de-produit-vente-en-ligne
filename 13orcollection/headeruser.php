@@ -22,7 +22,7 @@
   #result 
   {
    margin:0;
-   margin-top:-6px;margin-left: 79px;
+   margin-top:-6px;
    position: absolute;
    /*background-color: cornsilk;*/
    width: 100%;
@@ -36,6 +36,7 @@
    font-style: italic; 
    font-weight: bold; 
    line-height: 20px;
+   margin-left: 50px;
   }
   .link-class{
     padding: 4px;

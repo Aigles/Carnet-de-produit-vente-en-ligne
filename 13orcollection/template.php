@@ -9,16 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-	<!-- Bootstrap style -->
-  <!-- <script type="text/javascript" src="https://www.paypalobjects.com/api/checkout.js"></script> -->
-<!-- Bootstrap style --> 
- <script src="themes/js/config.js"></script>  
-	<script src="themes/js/jquery.js" type="text/javascript"></script>
-	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="themes/js/js/panier.js"></script>
-  <script src="themes/js/oldNavigation.js"></script>
-  <script src="themes/js/list.js"></script>
-   
+    <script src="themes/js/config.js"></script>  
+  	<script src="themes/js/jquery.js" type="text/javascript"></script>
+  	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+  	<script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/list.js"></script>     
   </head>
 
 <!-- =========== Header =============================================-->
@@ -42,7 +37,7 @@
             <div class="row">
                 <div class="span3">
                     <h5>COMPTE</h5>
-                    <a>MON COMPTE</a>
+                    <a>MON </a>
                     <a>INFORMATION PERSONNEL</a> 
                     <!-- <a>ADRESSES</a>  -->
                     <!-- <a>RABAIS</a>   -->
@@ -51,7 +46,7 @@
                 <div class="span3">
                     <h5>INFORMATION</h5>
                     <!-- <a href="contact.html">CONTACTE</a>   -->
-                    <a href="inscription.php">ENREGISTREMENT</a>  
+                    <a href="index.php?p=inscription">ENREGISTREMENT</a>  
                     <a>AVERTISSEMENT LEGAL</a>  
                     <a>TERMES ET CONDITIONS</a> 
                     <!-- <a>FAQ</a> -->

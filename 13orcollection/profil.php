@@ -163,7 +163,10 @@ img {
         border-radius: 0px;
         width:100%;
     }
-
+.raw {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 input[type='password']{
   border-radius: 4px;
 }
@@ -236,8 +239,9 @@ label {
 
 
     <div class="container">
-        <section style="padding-bottom: 50px; padding-top: 20px; padding-left: 40px;">
-            <div class="row">
+        <!-- <section style="padding-bottom: 50px; padding-top: 20px; padding-left: 40px;"> -->
+        <section style=" ">
+            <div class="raw">
                 <div class="col-md-4">
                     <img src="assets/img/250x250.png" id="profileImage" class="img-rounded img-responsive" />
                     <br />
