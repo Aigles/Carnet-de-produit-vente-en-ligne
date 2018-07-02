@@ -25,7 +25,7 @@
   #result 
   {
    margin:0;
-   margin-top:-6px;margin-left: 79px;
+   margin-top:-6px;
    position: absolute;
    /*background-color: cornsilk;*/
    width: 100%;
@@ -39,6 +39,7 @@
    font-style: italic; 
    font-weight: bold; 
    line-height: 20px;
+   margin-left: 50px;
   }
   .link-class{
     padding: 4px;
@@ -73,7 +74,7 @@
   
 	<div class="form-inline  navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" name="q" type="text" placeholder="Rechercher..." autocomplete="off" />
-   		<a class="list-group " id="result"></a>
+   		<ul class="list-group " id="result"></ul>
 	  	<!-- <select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
