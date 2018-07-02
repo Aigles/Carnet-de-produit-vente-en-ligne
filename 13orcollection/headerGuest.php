@@ -71,9 +71,9 @@
   <div class="navbar-inner">
     <a class="brand" href="index.php?p=acceuil">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
   
-	<div class="form-inline brand navbar-search" method="post" >
+	<div class="form-inline  navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" name="q" type="text" placeholder="Rechercher..." autocomplete="off" />
-   		<a class="list-group brand" id="result"></a>
+   		<a class="list-group " id="result"></a>
 	  	<!-- <select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
@@ -96,7 +96,7 @@
     </ul>
   </div>
 </div>
-
+<a class="list-group " id="result"></a>
 <!-- ce script affichera le panier a Zero dans le menu et faire tout le traitement -->
 <script src="themes/js/js/panier.js"></script>
     <script src="themes/js/listerRecherche.js"></script>
