@@ -1,3 +1,4 @@
+<script src="themes/js/js/panier.js"></script>
 
 <?php 
 //require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
@@ -105,4 +106,5 @@ td, input[type="number"]{
 </div>
 
 <br/>
+
 	

@@ -52,6 +52,10 @@
 			require('modchanger.php');
 			break;
 
+		case 'paypal':
+			require 'paypal/index.php';
+			break;
+
 		case 're-s-et':
 			require('emailverification.php');
 			break;
