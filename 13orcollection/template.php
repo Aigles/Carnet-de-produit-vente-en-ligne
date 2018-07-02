@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="themes/js/jquery.js" type="text/javascript"></script>
     <script src="themes/js/config.js"></script>  
-  	<script src="themes/js/jquery.js" type="text/javascript"></script>
-  	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-  	<script src="themes/js/js/panier.js"></script>
     <script src="themes/js/list.js"></script>     
+    <script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- <script src="themes/js/js/panier.js"></script> -->
   </head>
 
 <!-- =========== Header =============================================-->

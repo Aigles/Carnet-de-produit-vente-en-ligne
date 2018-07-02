@@ -262,7 +262,7 @@ $('#paypal').click(function(){
 });
 
 function recupererSession() {
-  var chaine_json_panier="baby"//sessionStorage.getItem('MonPanier');
+  /*var chaine_json_panier="baby"//sessionStorage.getItem('MonPanier');
   $.ajax({ 
     url: 'themes/js/js/fichier.php',
     data:"chaine_json_panier="+chaine_json_panier,
@@ -273,6 +273,6 @@ function recupererSession() {
 alert(data);
 }).error(function(data) { 
 alert("hhj");
-});
+});*/
 
 }

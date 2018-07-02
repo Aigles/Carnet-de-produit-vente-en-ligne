@@ -20,12 +20,14 @@
 
 	$panier = new Panier($data);
 
+
 	$apiContext = new \PayPal\Rest\ApiContext(
 	    new \PayPal\Auth\OAuthTokenCredential(
 	        $ids['id'],
 	        $ids['secret']
 	    )
 	);
+	var_dump($panier);
 
 	$payment = new \PayPal\Api\Payment();
 
@@ -42,6 +44,7 @@
 	$payment->setPayer((new \PayPal\Api\Payer())->setPaymentMethod('paypal'));
 
 	try {
+	    
 	    $payment->create($apiContext);
 	    echo $payment->getApprovalLink();
 	    //header('Location: ' . $payment->getApprovalLink());
