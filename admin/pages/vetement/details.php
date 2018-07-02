@@ -4,7 +4,7 @@
            <a href="#">Tableau de bord</a>
        </li>
        <li>
-           <a href="#">Ajouter un Vetement</a>
+           <a href="#">Details d'un Vetement</a>
        </li>
     </ul>
 </div>
@@ -13,7 +13,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Ajouter un vetement</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Details d' un vetement</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -30,7 +30,7 @@
                         <div class="box col-md-6">  
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nom Vetement</label>
-                                <input type="text" class="form-control " required id="nom-poduit" placeholder="Entrer le nom d'un Vetement">
+                                <input type="text" disabled="true" class="form-control " required id="nom-poduit" placeholder="Entrer le nom d'un Vetement">
                             </div>
                             <!-- <div class="form-group">
                                 <label for="exampleInputPassword1">Code Vetement</label>
@@ -38,7 +38,7 @@
                             </div> -->
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Description</label>
-                                <textarea type="text" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
+                                <textarea type="text" disabled="true" class="form-control autogrow required" id="description-poduit" required placeholder="Entrer la description d'un Vetement "></textarea>
                             </div>                   
                         </div>
                         <div class="box col-md-6">  
@@ -48,7 +48,7 @@
                             </div> -->
                                   <div class="form-group">
                                 <label for="exampleInputPassword1">Rabais(%) </label>
-                                <input type="number" class="form-control required" min=0 id="nb-rabais" placeholder="Entrer un Rabais(%)">
+                                <input type="number"   disabled="true" class="form-control required" id="nb-rabais" placeholder="Entrer un Rabais(%)">
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="exampleInputPassword1">Categorie : </label>
-                                    <select class="form-control" id="nb-categorie">                               
+                                    <select   disabled="true" class="form-control" id="nb-categorie">                               
                                     </select>
                                 </div>
                             </div>
@@ -66,10 +66,10 @@
                     </div>
                     
                     <div class="row" id="tableday-id">
-
+                        
                     </div>                    
                     
-                    <div class="row col-md-6">
+                    <!-- <div class="row col-md-6">
                         <div class="form-group">                            
                             <div class="col-md-3 col-md-offset-1">
                                 <button type="button" id="add" class="  btn btn-success" key="ajouter_ligne">ajouter ligne</button>
@@ -78,20 +78,20 @@
                               <input class=" form-control" id="ligne" type="number" aria-describedby="nameHelp" placeholder="" name="ligne" value="1">
                             </div>
                         </div>
-                    </div>
-                            
+                    </div> -->
+<!--                             
                     <div class="row">
                         <div class="form-group">
                             <div class="col-md-offset-9">
-                                <button type="reset" class="btn btn-default" >Annuler</button>
-                                <button type="button" class="btn btn-primary" onclick="creerProduit()">Enregistrer</button>
+                                <button type="button" class="btn btn-success" onclick="modifierProduit()">Enregistrer</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
     </div>
 </div> 
+<!-- <script src="js/Produit/rowCaracteristiques.js"></script> -->
 <script src="js/Produit/creerProduit.js"></script>
-<script src="js/Produit/rowCaracteristiques.js"></script>
+<script src="js/Produit/details.js"></script>

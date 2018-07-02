@@ -174,6 +174,7 @@ error: function (xhr,status,error) {
       $('#result-title').html('Reultat de l\'operation');
       $('#result-info').html("l'enregistrement a ete effectue a avec succes.");
       $('#myModal').modal('show');
+      location.reload();
     }
   } else {
     $('#result-title').html('Reultat de l\'operation');

@@ -27,18 +27,19 @@ $.ajax({
 });
 
 function fullRow(row, image, image_1, couleur, size, prix, quantite, Cid) {/*<input type="hidden" name="caracId" value = "'+idCaracteristiques+'">*/
-  var item = [
+
+var item = [
   ];
   dataTable_tf = '<div id="divi-' + row + '"><hr></div><div class="row"><div class="col-md-3"><div class="col-md-12 " id="divimg-' + row + '"><img class="" id="start-' + row + '" src="' + image + '" style="height:130px;"></br></div> ';
-  dataTable_tf += '<div class="col-md-12 " id="diva-' + row + '"><input class="btn btn-primary" id="start-' + row + '" type="file" name="file" onchange="previewFile(\'#divimg-' + row + '\',\'#diva-' + row + '\')" style="width:150px;"></br></div></div> ';
+  dataTable_tf += '<div class="col-md-12 " id="diva-' + row + '"></br></div></div> ';
   dataTable_tf += '<div class="col-md-3"><div class="col-md-12 " id="divimgg-' + row + '"><img class="" id="start-' + row + '" src="' + image_1 + '" style="height:130px;"></br></div> ';
-  dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"><input class="btn btn-primary" id="startt-' + row + '" type="file" name="file" onchange="previewFile(\'#divimgg-' + row + '\',\'#divaa-' + row + '\')" style="width:150px;" ></br></div></div> ';
-  dataTable_tf += '<div class="col-md-6 "><div class="col-md-6 " id="divb-' + row + '"><input class="form-control" id="couleur-' + row + '" type="text" aria-describedby="nameHelp" placeholder="entrer la couleur" name="couleur" value="' + couleur + '"></br></div> ';
-  dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><select class="form-control" id="size-' + row + '" aria-describedby="nameHelp" placeholder="entrer la taille " name="size"  ><option value="' + size + '">' + size + '</option><option value="Petit">Petit</option><option value="Large">Large</option><option value="Moyen">Moyen</option></select></br></div> ';
-  dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" value="' + prix + '" min=0></br></div> ';
-  dataTable_tf += '<div class="col-md-4 " id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" aria-describedby="nameHelp" placeholder="quantite" name="quantite" value="' + quantite + '" min=1></br></div> ';
-  dataTable_tf += '<div class="col-md-4 " id="divg-' + row + '"><input class="form-control" id="cId-' + row + '" type="hidden" aria-describedby="nameHelp" placeholder="quantite" name="idCaracteristiques" value="' + Cid + '"></br></div> ';
-  dataTable_tf += '<div class="col-md-2" id="divf-' + row + '"><a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="s-' + row + '" onclick="supprimer(' + row + ')"><i class=" glyphicon glyphicon-remove"></i></a></br></div></div></div><div id="divh-' + row + '"><hr></div> ';
+  dataTable_tf += '<div class="col-md-12 " id="divaa-' + row + '"></br></div></div> ';
+  dataTable_tf += '<div class="col-md-6 "><div class="col-md-6 " id="divb-' + row + '"><input class="form-control" id="couleur-' + row + '" type="text" aria-describedby="nameHelp" placeholder="entrer la couleur" name="couleur" value="' + couleur + '" disabled="true"></br></div> ';
+  dataTable_tf += '<div class="col-md-6 " id="divc-' + row + '"><select class="form-control" id="size-' + row + '" aria-describedby="nameHelp" placeholder="entrer la taille " name="size" disabled="true" ><option value="' + size + '">' + size + '</option><option value="Petit">Petit</option><option value="Large">Large</option><option value="Moyen">Moyen</option></select></br></div> ';
+  dataTable_tf += '<div class="col-md-6 " id="divd-' + row + '"><input class="form-control" id="prix-' + row + '" type="number" aria-describedby="nameHelp" placeholder="entrer le prix" name="prix" value="' + prix + '" min=0 disabled="true"></br></div> ';
+  dataTable_tf += '<div class="col-md-4 " id="dive-' + row + '"><input class="form-control" id="qte-' + row + '" type="number" aria-describedby="nameHelp" placeholder="quantite" name="quantite" value="' + quantite + '" min=1 disabled="true"></br></div> ';
+  dataTable_tf += '<div class="col-md-4 " id="divg-' + row + '"><input class="form-control" id="cId-' + row + '" type="hidden" aria-describedby="nameHelp" placeholder="quantite" name="idCaracteristiques" value="' + Cid + '" disabled="true"></br></div> ';
+  dataTable_tf += '<div class="col-md-2" id="divf-' + row + '"></br></div></div></div><div id="divh-' + row + '"><hr></div> ';
   item.push(dataTable_tf);
   $('#tableday-id').append(item);
 }

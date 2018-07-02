@@ -128,19 +128,20 @@
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Commande</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="index.php?p=creerCommande">Passer une commande</a></li>
-                                <li><a href="index.php?p=listerCommande">Lister Commande</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-calendar"></i><span>Categorie</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="index.php?p=creerCategorie">Ajouter Categorie</a></li>
                                 <li><a href="index.php?p=listerCategorie">Lister Categorie</a></li>
                             </ul>
                         </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Commande</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <!-- <li><a href="index.php?p=creerCommande">Passer une commande</a></li> -->
+                                <li><a href="index.php?p=listerCommande">Lister Commande</a></li>
+                            </ul>
+                        </li>
+                        
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span>Personnels</span></a>
                             <ul class="nav nav-pills nav-stacked">
@@ -159,7 +160,7 @@
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-edit"></i><span>Paiements</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="index.php?p=creerPaiement">Effectuer Paiement</a></li>
+                                <!-- <li><a href="index.php?p=creerPaiement">Effectuer Paiement</a></li> -->
                                 <li><a href="index.php?p=listerPaiement">Lister Paiement</a></li>
                             </ul>
                         </li>
