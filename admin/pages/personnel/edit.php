@@ -22,7 +22,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> Modifier un utilisateur</h2>
+                <h2><i class="glyphicon glyphicon-edit"></i> Modifier un Personnel</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i

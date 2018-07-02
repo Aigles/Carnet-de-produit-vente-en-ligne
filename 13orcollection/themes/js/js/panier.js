@@ -37,14 +37,16 @@ this.image = image;
 
 function savepanier() {
 sessionStorage.setItem('MonPanier', JSON.stringify(panier));
+
 jQuery('#modal_errors').html("");
 var error = '<div class=\'alert alert-info text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>Vous avez ajoute un nouveau vetement au panier !!!</b></div>';
 jQuery('#modal_errors').html(error);
 jQuery('#modal_errorss').html(error);
+recupererSession();
 }
 
 function loadpanier() {
-panier = JSON.parse(sessionStorage.getItem('MonPanier'));
+panier = JSON.parse(sessionStorage.getItem('MonPanier')); 
 }
 if (sessionStorage.getItem("MonPanier") != null) {
 loadpanier();
@@ -175,6 +177,7 @@ function afficherpanier() {
   output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total :</h3></td><td class="text-right" ><h3>HTG <strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
   output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-default btn-carre"><span class="icon-trash"></span> Vider le panier</button>  </td><td><span>  </span><a href="index.php"><button type="button" class="btn btn-default btn-carre"><span class="icon-shopping-cart"></span> Continuer vos achats</button></a></td><td>';
   output +=' <button type="button" class="btn btn-default btn-large" id="paypal"  ><span class="icon-ok"></span> Passer la commande <span class="icon-shopping-play"></span></button></td></tr>';
+
   
   $('.total-count').html(MonPanier.totalCount());
 
@@ -236,7 +239,6 @@ $('.show-panier').on("change", ".item-count", function(event) {
 afficherpanier();
 
 
-
 $('#paypal').click(function(){
 
     var donnee = JSON.parse(sessionStorage.getItem('MonPanier'));
@@ -258,3 +260,19 @@ $('#paypal').click(function(){
 
   
 });
+
+function recupererSession() {
+  var chaine_json_panier="baby"//sessionStorage.getItem('MonPanier');
+  $.ajax({ 
+    url: 'themes/js/js/fichier.php',
+    data:"chaine_json_panier="+chaine_json_panier,
+    dataType: 'json', 
+    Accept : "application/json;charset=UTF-8"
+    })
+.done(function(data) { 
+alert(data);
+}).error(function(data) { 
+alert("hhj");
+});
+
+}

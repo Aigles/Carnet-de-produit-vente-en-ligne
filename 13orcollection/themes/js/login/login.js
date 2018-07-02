@@ -1,3 +1,45 @@
+function modifierPasse(){
+    var argument = document.querySelector('#imageUpload'); //selects the query named profileImage
+    // var preview = document.querySelector(' input[type=file]').files[0]; //sames as here
+
+    var user      = {};
+    user.id       =  parseInt(sessionStorage.getItem("id_user_vente_en_ligne"));
+    user.Oldpassword      = $('#oldPassword').val();
+    user.password   = $('#newPassword').val();
+    user.verifypassword   = $('#verifyPassword').val();
+    //user.avatar = preview.src;
+
+    if(user.Oldpassword == "" && user.password == "" && user.verifypassword == "" ){
+    //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Aucun modification dans les champs !!!</p>');
+    
+    }
+    else if(user.password == "" && user.verifypassword == ""){
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Entrez votre nouveau mot de passe !!!</p>');
+    }
+    else if(user.password == "" && user.verifypassword != ""){
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Nouveau mot de passe incorrect!!! </p>');
+    }
+    else if(user.password != user.verifypassword){
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Mot de passe differents!!! </p>');
+    }
+    else if(user.password.length < 6){
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>longueur de mot de passe incorrect <strong>(NB: 6 caracteres ou plus)!!! </strong></p>');
+    }
+    else if(user.Oldpassword == ""){
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Entrez votre ancien mot de passe !!!</p>');
+    }
+    else if(user.verifypassword == ""){
+    jQuery('#result-verifyPassword').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Verifiez le mot de passe svp !!!</p>');
+    }
+    else{
+        data = JSON.stringify(user);
+        console.log(data);
+        var url = Fullurl+'modifier/passwordUtilisateur';
+        sendData(data, url);
+}
+}
+
 function modifierUser(){
     var argument = document.querySelector('#imageUpload'); //selects the query named profileImage
     // var preview = document.querySelector(' input[type=file]').files[0]; //sames as here
@@ -9,12 +51,14 @@ function modifierUser(){
     user.prenom   = $('#user-prenom').val();
     //user.avatar = preview.src;
 
-    if(user.nom == "" || user.prenom == "" ){
-    //jQuery('#result-nom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le nom svp !!!</p>');
-    alert('Aucun modification dans les details');
+    if(user.nom == "" && user.prenom == "" ){
+    jQuery('#result-all').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Tous les champs sont vides !!!</p>');
+    }
+    else if(user.nom == ""){
+    jQuery('#result-all').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le prénom svp !!!</p>');
     }
     else if(user.prenom == ""){
-    jQuery('#result-prenom').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le prénom svp !!!</p>');
+    jQuery('#result-all').html('<p><span class="icon-exclamation-sign" aria-hidden="true"></span>Saisissez le prénom svp !!!</p>');
     }
     else{
         data = JSON.stringify(user);
@@ -23,11 +67,6 @@ function modifierUser(){
         sendData(data, url);
 }
 
-// function changerInfo(argument) {
-//   //jQuery('#detail_produit').attr("src",argument);
-//   jQuery('#principale_image').attr("src",argument);
-//   //alert(argument)
-// }
 }
 
     function connection(){

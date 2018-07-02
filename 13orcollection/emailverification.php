@@ -37,12 +37,12 @@
               <div class="control-group">
                 <label class="control-label" for="inputEmail1">Email</label>
                 <div class="controls">
-                  <input required class="span3"  type="email" name="email" id="inputEmail1" placeholder="Email" value="<?=$email;?>">
+                  <input required class="span3"  type="email" name="email" id="inputEmail" placeholder="Email" value="<?=$email;?>">
                 </div>
               </div><br/>
               <div class="control-group">
                 <div class="controls">
-                  <button type="button" class="btn btn-warning btn-large block" onclick="connnection();"><span class="icon-ok"> </span> Envoyer </button> 
+                  <button type="button" class="btn btn-warning btn-large block" onclick="rese_t();"><span class="icon-ok"> </span> Envoyer </button> 
                   <!-- <a  href="#"><p class="text-center">Forget password?</p></a> -->
                 </div>
               </div>
@@ -66,7 +66,7 @@
                     <p id="result-info"></p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-warning" data-dismiss="modal">Fermer</a>
                     
                 </div>
             </div>
@@ -87,3 +87,5 @@
 </body>
 </html>
     <script src="themes/js/header.js"></script>
+
+<script src="themes/js/verification.js"></script>

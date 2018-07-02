@@ -21,7 +21,7 @@ function connection(){
     data=JSON.stringify(login);
 
     console.log( data);
-    var url=fullUrl+"connexion";
+    var url=fullUrl+"connexionadmin";
     sendData(data, url);
 }
 

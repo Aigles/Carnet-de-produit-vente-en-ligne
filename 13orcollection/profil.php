@@ -163,7 +163,10 @@ img {
         border-radius: 0px;
         width:100%;
     }
-
+.raw {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 input[type='password']{
   border-radius: 4px;
 }
@@ -226,6 +229,7 @@ label {
         .btn-google {
             background-color: #c32f10;
         }
+        #result-all{color: #8a6d3b;}
     </style>
     
 <script src="themes/js/login/checkConnection.js"></script>
@@ -235,20 +239,20 @@ label {
 
 
     <div class="container">
-        <section style="padding-bottom: 50px; padding-top: 20px; padding-left: 40px;">
-            <div class="row">
+        <!-- <section style="padding-bottom: 50px; padding-top: 20px; padding-left: 40px;"> -->
+        <section style=" ">
+            <div class="raw">
                 <div class="col-md-4">
                     <img src="assets/img/250x250.png" id="profileImage" class="img-rounded img-responsive" />
                     <br />
                     <input id="imageUpload" type="file" name="photoutilisateur" value="<?php if(isset($photoutilisateur)){ echo $photoutilisateurs;}?>">
                     <br /><br />
                     <label>Nom</label>
-                    <input type="text" class="form-control" required id="user-nom" placeholder="Modifier Nom" value="">
+                    <input type="text" class="form-control" required id="user-nom" placeholder="Modifier Nom" value=""/>
                     <label>Prenom</label>
-                    <input type="text" class="form-control" required id="user-prenom" placeholder="Modifier Prenom">
-                    <!-- <label>Email</label>
-                    <input type="text" class="form-control" placeholder="Modifier Mail"> -->
-                    <br/><br/>
+                    <input type="text" class="form-control" required id="user-prenom" placeholder="Modifier Prenom"/>
+                     <div id="result-all"></div>
+                    <br/>
                     <button class="btn btn-warning btn-large" onclick="modifierUser();"><span class="icon-ok"> </span> Modifier détails</button>
                     <br /><br/>
                 </div>
@@ -287,13 +291,16 @@ label {
                         <h3>Changer votre Mot de passe</h3>
                         <br />
                         <label>Ancien mot de passe</label>
-                        <input type="password" class="form-control">
+                        <input type="password" id="oldPassword" class="form-control">
                         <label>Nouveau mot de passe</label>
-                        <input type="password" class="form-control">
+                        <input type="password" id="newPassword" class="form-control">
+                        <div id="result-newPassword"></div>
+                        <div id="result-Password"></div>
                         <label>Confirmer nouveau mot de passe</label>
-                        <input type="password" class="form-control" />
+                        <input type="password" id="verifyPassword" class="form-control" />
+                        <div id="result-verifyPassword"></div>
                         <br/><br/>
-                        <a href="#" class="btn btn-warning squarebutton"><span class="icon-ok"></span>Changer</a>
+                        <button class="btn btn-warning squarebutton" onclick="modifierPasse();"><span class="icon-ok"></span>Changer</button>
                     </div>
                 </div>
             </div>

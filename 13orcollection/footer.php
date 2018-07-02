@@ -1,9 +1,13 @@
 	<div  id="footerSection">
-	<div class="container">
+	<div class="container">		
+			
 		<div class="row">
+			<span style="color: #faa732;"></p>
+			</span>
 			<div class="span3">
 				<h5>COMPTE</h5>
-				<a href="#">VOTRE COMPTE</a>
+				<a href="">jowjeifjowijoifjepojfpowpgjewpojopkwejgpokjwpogjopejgpwoijgoiejgpowjepgjepoj</a>
+				<!-- <a href="#">VOTRE COMPTE</a> -->
 				<a href="#">INFORMATION PERSONNEL</a> 
 				<a href="#">ADRESSES</a> 
 				<a href="#">RABAIS</a>  
@@ -11,7 +15,7 @@
 			 </div>
 			<div class="span3">
 				<h5>INFORMATION</h5>
-				<a href="contact.html">CONTACTE</a>  
+				<a href="#">CONTACTE</a>  
 				<a href="inscription.php">ENREGISTREMENT</a>  
 				<a href="#">AVERTISSEMENT LEGAL</a>  
 				<a href="#">TERMES ET CONDITIONS</a> 

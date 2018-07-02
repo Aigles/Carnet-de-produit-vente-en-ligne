@@ -3,7 +3,6 @@
 <?php 
 //require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
 	define('ROOT', __DIR__);
-
 	require_once ROOT.'/core/init.php'; 
 
 ?>
@@ -15,7 +14,7 @@
         text-shadow: none;
     }
     .btn-default{
-    	background-color: burlywood;
+    	background-color: darkorange;
     	color: #fff;
     	text-shadow: none;
     }
