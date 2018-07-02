@@ -35,7 +35,7 @@ func Encrypt(data []byte, passphrase string) string {
 	return string(ciphertext);
 }
 
-func Decrypt(data []byte, passphrase string) string {
+func Decrypt(data []byte, passphrase string) string    {
 	key := []byte(createHash(passphrase))
 	block, err := aes.NewCipher(key)
 	if err != nil {
