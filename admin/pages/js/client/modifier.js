@@ -17,7 +17,12 @@ var id = GET_PARAM('pid');
 	    	$('#user-id').val(data.id);
 	    	$('#user-nom').val(data.nom);
 	    	$('#user-prenom').val(data.prenom);
-	    	$('#user-email').val(data.email);
+			$('#user-email').val(data.email);
+
+			if (data.avatar.length>100){
+			var preview = document.querySelector('#divimg-row img' );
+			preview.src=data.avatar;
+			}
 	    	console.log(data.role_id);
 	    	getRole(data.role_id);
 
@@ -85,8 +90,9 @@ function modifierUtilisateur()
   	var user = {};
     var IdUser=sessionStorage.getItem("id_user_vente_en_ligne");
   	user.nom = $("#user-nom").val();
-  	user.prenom = $("#user-prenom").val();
-  	user.avatar = $("#user-avatar").val();
+	 user.prenom = $("#user-prenom").val();
+	var preview = document.querySelector('#divimg-row img');
+  	user.avatar = preview.src;
   	user.id =parseInt(IdUser);
 
   	data = JSON.stringify(user);

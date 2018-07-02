@@ -57,8 +57,11 @@ function creerUtilisateur()
 
   	user.nom = $("#user-nom").val();
   	user.prenom = $("#user-prenom").val();
-  	user.email = $("#user-email").val();
-  	user.avatar = $("#user-avatar").val();
+	  user.email = $("#user-email").val();
+	
+	  var preview = document.querySelector('#divimg-row img');
+
+  	user.avatar = preview.src;//$("#user-avatar").val();
   	user.password = $("#user-password").val();
   	user.role_id = parseInt($( "#user-role option:selected" ).val(), 10); //parseInt($("#user-categorie").val());
 
@@ -86,7 +89,7 @@ function sendData(url, data)
             $('#result-title').html('Reultat de l\'operation');
             $('#result-info').html(rs.status);
             $.when($('#myModal').modal('show').delay(3000)).done(function(){
-                window.location = "index.php?p=listerUser";
+                window.location = "index.php?p=listerClient";
             });  
              
         },

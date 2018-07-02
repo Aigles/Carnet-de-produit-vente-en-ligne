@@ -8,6 +8,7 @@ import (
 	"GenerateToken"
 	"models/historic"
 	"mail"
+	"haschage"
 )
 
 
@@ -66,6 +67,7 @@ u.Date_derniere_connection = time.Now().UTC()
 
 u.Etat_connection=0
 
+u.Password,_=haschage.HashPassword(u.Password);
 
 res, err :=Configuration.Db().Exec("INSERT INTO users (nom, prenom,email,password, date_derniere_connection,etat_connection, avatar, date_creation,date_update,Role_idRole) VALUES (?,?,?,?,?,?,?,?,?,?);",u.Nom,u.Prenom,u.Email,u.Password,u.Date_derniere_connection,u.Etat_connection,u.Avatar,u.CreateAt,u.UpdateAt,u.Role_idRole)//.Scan(&u.Id)
 
@@ -95,11 +97,13 @@ return message
 //fonction permettant de trouver nue voiture  par Id
 func FindUsersById(id int) *Users{
 
-	var Users Users 
+	var Users Users
+	
+	
  
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE idUsers=?;",id)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,&Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
-	 
+	Users.Password,_=haschage.HashPassword(Users.Password);
 	if err!=nil{
 		fmt.Println(err)
 	}
@@ -173,7 +177,7 @@ func AllUsers() *users {
 		var u Users 
 	
 		err := rows.Scan(&u.Id,&u.Nom,&u.Prenom,&u.Email,&u.Password,&u.Date_derniere_connection,&u.Etat_connection,&u.CreateAt,&u.UpdateAt,&u.Avatar,&u.Role_idRole )
-
+		u.Password,_=haschage.HashPassword(u.Password);
 		fmt.Printf("before log")
 		if err !=nil{
 			fmt.Println(err)
@@ -235,6 +239,8 @@ func UpdateUserspasswordbyid(Users *Users)Message{
 	
 	var message Message
 	Users.UpdateAt=time.Now().UTC()
+
+	Users.Password,_=haschage.HashPassword(Users.Password);
 
 	stmt, err := Configuration.Db().Prepare("UPDATE users SET Date_update=?,password=? WHERE idUsers=? and password=?;")
 	
@@ -334,6 +340,10 @@ func Connection(Users *Users) Message{
   
 	var  message  Message
 
+
+Users.Password,_=haschage.HashPassword(Users.Password);
+
+fmt.Println(Users.Password);
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE Role_idRole=11 and email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
 	 
@@ -359,6 +369,8 @@ func Connection(Users *Users) Message{
 func Connectionadmin(Users *Users) Message{
   
 	var  message  Message
+
+	Users.Password,_=haschage.HashPassword(Users.Password);
 
 	row:=Configuration.Db().QueryRow("SELECT * FROM users WHERE  Role_idRole in (6,7) and email=? and password=?;",&Users.Email,&Users.Password)
 	err:= row.Scan(&Users.Id,&Users.Nom,&Users.Prenom,&Users.Email,&Users.Password,&Users.Date_derniere_connection,&Users.Etat_connection,  &Users.Avatar,&Users.CreateAt,&Users.UpdateAt,&Users.Role_idRole)
