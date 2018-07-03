@@ -40,8 +40,8 @@
 	$payment->setIntent('sale');
 
 	$redirectUrls = (new \PayPal\Api\RedirectUrls())
-	    ->setReturnUrl('http://207.246.123.38/~aigle/Vente-en-ligne/13orcollection/index.php?p=success')
-	    ->setCancelUrl('http://207.246.123.38/~aigle/Vente-en-ligne/13orcollection/index.php');
+	    ->setReturnUrl('http://127.0.0.1/work/Vente-en-ligne/13orcollection/index.php?p=success')
+	    ->setCancelUrl('http://127.0.0.1/work/Vente-en-ligne/13orcollection/index.php');
 
 	$payment->setRedirectUrls($redirectUrls);
 

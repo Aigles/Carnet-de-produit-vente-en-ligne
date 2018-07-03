@@ -21,14 +21,22 @@
 
 	$execution = (new \PayPal\Api\PaymentExecution())
 		->setPayerId($_GET['PayerID'])
-		->setTransaction($payment->getTransaction());
+		->setTransactions($payment->getTransactions());
 
 	try {
 	    
-	    $payment->execute($execution, $apiContext);
+	    //$payment->execute($execution, $apiContext);
 	    
-	    var_dump($payment);
 	    
+
 	} catch (\PayPal\Exception\PayPalConnectionException $e) {
 	    var_dump(json_decode($e->getData()));
 	}
+?>
+<div class="container">
+	<div class="row" style="height: 500px;">
+		<div class="col-lg-12">
+			<h4 class="col-lg-push-4 col-lg-4">Felicitation votre commande est valide</h4>
+		</div>
+	</div>
+</div>
