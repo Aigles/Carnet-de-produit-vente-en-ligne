@@ -27,7 +27,6 @@
 	        $ids['secret']
 	    )
 	);
-	var_dump($panier);
 
 	$payment = new \PayPal\Api\Payment();
 
@@ -36,8 +35,8 @@
 	$payment->setIntent('sale');
 
 	$redirectUrls = (new \PayPal\Api\RedirectUrls())
-	    ->setReturnUrl('http://207.246.123.38/~aigle/13orcollection/index.php?p=success')
-	    ->setCancelUrl('http://207.246.123.38/~aigle/13orcollection/index.php?p=echec');
+	    ->setReturnUrl('http://207.246.123.38/~aigle/public/Vente_en_linge/13orcollection/index.php?p=success')
+	    ->setCancelUrl('http://207.246.123.38/~aigle/public/Vente_en_linge/13orcollection/index.php?p=echec');
 
 	$payment->setRedirectUrls($redirectUrls);
 
@@ -46,7 +45,9 @@
 	try {
 	    
 	    $payment->create($apiContext);
-	    echo $payment->getApprovalLink();
+	    
+		var_dump($payment);
+	    //echo $payment->getApprovalLink();
 	    //header('Location: ' . $payment->getApprovalLink());
 	} catch (\PayPal\Exception\PayPalConnectionException $e) {
 	    var_dump(json_decode($e->getData()));
