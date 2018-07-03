@@ -50,14 +50,18 @@
                                 <input type="email" class="form-control required" required id="user-email" placeholder="Entre l'adresse email">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Rolle</label>
+                                <label for="exampleInputPassword1">Role</label>
                                 <select class="form-control" id="user-role">
                                 </select>
                             </div>
                 
                         </div>
                         <div class="box col-md-6">
-                            <div class="form-group">
+                        <div class="form-group" style="">
+                        <div class="col-md-12 " id="divimg-row"><img class="img-rounded img-responsive" id="start-row" src="img/images.png" style="height:130px;" ></div>
+                        <div class="col-md-12 " id="diva-row"><input class="btn btn-primary" id="start-row" required type="file" name="file" onchange="previewFile('#divimg-row','#diva-row')" style="width:150px;" accept=".jpg, .jpeg, .png"  textcontent="Choisir une image"></br>
+                            </div>
+                            <!-- <div class="form-group">
                                 <label>Avatar</label>
                                 <input type="file" name="img[]" class="file">
                                 <div class="input-group col-xs-12">
@@ -67,13 +71,13 @@
                                     <button class="browse btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
                                   </span>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Nouveau mot de passe</label>
+                             
                                 <input type="password" class="form-control required" required id="user-password" placeholder="Entrer le mot de passe">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Confirmer mot de passe</label>
+                             
                                 <input type="password" class="form-control required" required id="user-cPassword" placeholder="Confirmer le mot de passe">
                                 <input type="hidden" name="id" id="user-id">
                             </div>                            
@@ -105,6 +109,6 @@
 </script>
     
 <script src="js/main.js"></script>
-<script src="js/User/modifier.js"></script>
+<script src="js/Personnel/modifier.js"></script>
 
  

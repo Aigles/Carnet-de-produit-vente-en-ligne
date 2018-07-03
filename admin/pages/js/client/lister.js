@@ -29,7 +29,7 @@ $.ajax({ url: fullUrl+"utilisateur",
              value.role_id="Clients"
             dataTable_tr+='<td>'+value.role_id+'</td>';     
             dataTable_tr+='<td>';
-            dataTable_tr+='<a href="index.php?p=editerUser&pid='+value.id+'" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
+            dataTable_tr+='<a href="index.php?p=editerClient&pid='+value.id+'" class="btn btn-primary btn-xs" title="Modifier cet enregistrement"><i class="fa fa-pencil" >Modifier</i></a>&nbsp;';
             dataTable_tr+='<a class="btn btn-danger btn-xs delete-datatable-record" onclick="supprimerUser('+value.id+');"><i class="fa fa-trash" >Supprimer</i></a>';
             dataTable_tr+='</tr>';            
 

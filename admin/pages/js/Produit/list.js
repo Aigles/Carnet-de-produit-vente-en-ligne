@@ -15,7 +15,6 @@ $(document).ready(function () {
       dataTable_tr = '<tr data-pid="' + personnel.id + '">';
       dataTable_tr += '<td>' + personnel.nom + '</td>';
       dataTable_tr += '<td>' + personnel.description + '</td>';
-      dataTable_tr += '<td>' + personnel.nbre_like + '</td>';
       dataTable_tr += '<td>' + personnel.nbre_vendu + '</td>';
       dataTable_tr += '<td>' + personnel.nbre_en_stock + '</td>';
       dataTable_tr += '<td>' + personnel.rabais + '</td>';
