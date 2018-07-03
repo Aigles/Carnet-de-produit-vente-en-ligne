@@ -72,9 +72,9 @@
   <div class="navbar-inner">
     <a class="brand" href="index.php?p=acceuil">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
   
-	<div class="form-inline  navbar-search" method="post" >
+	<div class="form-inline brand navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" name="q" type="text" placeholder="Rechercher..." autocomplete="off" />
-   		<ul class="list-group " id="result"></ul>
+   		<ul class="list-group" id="result"></ul>
 	  	<!-- <select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
