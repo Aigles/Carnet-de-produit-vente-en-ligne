@@ -56,6 +56,10 @@
 			require 'paypal/index.php';
 			break;
 
+		case 'success':
+			require 'paypal/success.php';
+			break;
+
 		case 're-s-et':
 			require('emailverification.php');
 			break;

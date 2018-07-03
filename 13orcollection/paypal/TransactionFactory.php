@@ -30,12 +30,12 @@ class TransactionFactory
         }
 
         $details = (new \PayPal\Api\Details())
-            ->setTax(0.00)
-            ->setShipping(2.0)
-            ->setSubtotal(2.0);
+            ->setTax(0.0)
+            ->setShipping(0.0)
+            ->setSubtotal($panier->getTotal());
 
         $amount = (new \PayPal\Api\Amount())
-            ->setTotal($panier->getTotal() + $vatRate)
+            ->setTotal($panier->getTotal())
             ->setCurrency("USD")
             ->setDetails($details);
 

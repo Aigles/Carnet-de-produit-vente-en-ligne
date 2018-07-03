@@ -12,14 +12,19 @@
 
 
 	if(!empty($_POST)){
-		$_SESSION['panier'] = $_POST['data'];
+		$_SESSION['info'] = $_POST['data'];
 	}
 	
 
-	$data = json_decode($_SESSION['panier'][0]);
+	$data = json_decode($_SESSION['info'][0]);
 
 	$panier = new Panier($data);
 
+	$_SESSION['panier'] = $panier;
+
+	//var_dump($panier->getTotal());
+
+	//var_dump(TransactionFactory::fromPanier($panier, 0.0));
 
 	$apiContext = new \PayPal\Rest\ApiContext(
 	    new \PayPal\Auth\OAuthTokenCredential(
@@ -30,7 +35,7 @@
 
 	$payment = new \PayPal\Api\Payment();
 
-	$payment->addTransaction(TransactionFactory::fromPanier($panier));
+	$payment->addTransaction(TransactionFactory::fromPanier($panier, 0.0));
 
 	$payment->setIntent('sale');
 
@@ -46,9 +51,9 @@
 	    
 	    $payment->create($apiContext);
 	    
-		var_dump($payment);
+		//var_dump($payment);
 	    //echo $payment->getApprovalLink();
-	    //header('Location: ' . $payment->getApprovalLink());
+	    header('Location: ' . $payment->getApprovalLink());
 	} catch (\PayPal\Exception\PayPalConnectionException $e) {
 	    var_dump(json_decode($e->getData()));
 	}

@@ -27,12 +27,12 @@
 
 		public function getTotal()
 		{
-			
+			$this->total = 0;
 
 			foreach ($this->corbeil as $key => $value)
 				$this->total += ($value->count*$value->prix); 
 
-			return $this->total;
+			return (float)$this->total;
 		}
 
 

@@ -104,3 +104,5 @@ $approvalUrl = $payment->getApprovalLink();
 // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
  ResultPrinter::printResult("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $payment);
 return $payment;
+
+/*http://207.246.123.38/~aigle/public/Vente_en_linge/13orcollection/index.php?p=success&paymentId=PAY-06287267H7525141TLM5NZKI&token=EC-11Y46411YK8278623&PayerID=P6KMGHVH6GRE4*/
