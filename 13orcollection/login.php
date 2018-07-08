@@ -80,12 +80,8 @@
 
     <script src="themes/js/jquery.validate.min.js"></script>
     <script src="themes/js/login/login.js"></script>
-<<<<<<< HEAD
-    
-=======
     <script src="themes/js/config.js"></script>
     <script src="themes/js/rechCategorie.js"></script>
 </body>
 </html>
     <script src="themes/js/header.js"></script>
->>>>>>> 083b8bbcd9ccd2f9531658fb18668d11564a24d8
