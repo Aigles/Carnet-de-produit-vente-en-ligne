@@ -3,7 +3,7 @@
 #srchFld {background: url(../images/search.png) no-repeat 4px center #fff;
 	background: margin-left: -82px; border-radius: 0.1; border: 1px solid #faa732;}
 input[type="text"]#srchFld {
-    margin-left: 79px;display: table-cell;  font-size: 13px; font-weight: bold; color: lightgrey; border:0; background: dimgrey;box-shadow: none;
+    display: table-cell;  font-size: 13px; font-weight: bold; color: lightgrey; border:0; background: dimgrey;box-shadow: none;
 }
 .tag {background:url(../images/new.png) no-repeat 0 0; position: absolute; display:block; top: -4px;right: -18px; height:48px; width:48px;}
 .clr{clear:both;}
@@ -29,7 +29,17 @@ input[type="text"]#srchFld {
 .control-label.alignL, .alignL{text-align:left;}
 .loginFrm{ margin-bottom:8px;}
 .loginFrm .control-group{padding:8px 26px 0; margin-bottom:0 }
-input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }
+/*
+/
+/
+/
+/
+/
+/
+/
+/
+*/
+/*input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }*/
 /* Compair product page */
 .checkbox input[type="checkbox"]{ margin:4px 0 8px -20px }
 #sm{text-align:right}
@@ -48,9 +58,9 @@ input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }
 #myCarousel:hover .carousel-control{display:block}
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {color:#fff; background-color: #CF0007;text-shadow: none;}
 /* Footer section--------------- */
-#footerSection {bottom:0;background: #202020;color: white;padding: 28px 0 44px;margin-top: 20px;border-top: 1px solid #444;}
+#footerSection {bottom:0; background: #202020; color: white; padding: 28px 0 44px; margin-top: 20px; border-top: 1px solid #444;}
 #footerSection a{color:#ccc; font-size:11px; padding:0; line-height:24px; display:block; }
-#footerSection a:hover{color:#fff;  }
+#footerSection a:hover{color:#fff; text-decoration: none;  }
 #footerSection  #socialMedia a{ min-width:25px; display:inline; margin-right:6px; text-align:center; line-height:1.5em;}
 #socialMedia img{max-width:60px;}
 #footerSection  #socialMedia a:hover{background:none;}
@@ -124,9 +134,7 @@ input.span3, textarea.span3, .uneditable-input.span3{ width: 306px; }
     color:#faa732;
     // *background-color:#f89406;
 }
-p.textcolors{
-    color:#faa732;
-}
+
 h4{
     width: 100%;
 }
@@ -146,6 +154,11 @@ h4{
 }
 p.textcolors h4{
     color:#faa732;
+}
+p.textcolors{
+    color:#faa732;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 .textcolors{
     color:#faa732;
@@ -175,9 +188,9 @@ label, input, button, textarea {
 }
   .text-muted{color:#6c757d!important}
   .img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}
-  .list-group-item{position:relative;display:block;padding:.75rem 1.25rem;margin-bottom:-1px;background-color:#fff;border:1px solid rgba(0,0,0,.125)}.list-group-item:first-child{border-top-left-radius:.25rem;border-top-right-radius:.25rem}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}.list-group-item:focus,.list-group-item:hover{z-index:1;text-decoration:none}.list-group-item.disabled,.list-group-item:disabled{color:#6c757d;background-color:#fff}.list-group-item.active{z-index:2;color:#fff;background-color:#007bff;border-color:#007bff}
+  .list-group-item{position:relative;display:block;padding:.75rem 1.25rem;margin-bottom:-1px;background-color:#fff;}.list-group-item:first-child{border-top-left-radius:.25rem;border-top-right-radius:.25rem}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}.list-group-item:focus,.list-group-item:hover{z-index:1;text-decoration:none}.list-group-item.disabled,.list-group-item:disabled{color:#6c757d;background-color:#fff}.list-group-item.active{z-index:2;color:#fff;background-color:#007bff;border-color:#007bff}
 
-.well{border-color: #faa732;}
+.well{border-color: lightgrey;}
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -196,3 +209,19 @@ textarea:focus {
 .btn {border: 0;border-radius: 0.1;background-image:none;}
 .btn-large {border-radius: 0.1;}
 .btn-warning { background-color: none ;}
+
+/*-------------pour la page Detail---------------*/
+
+.positioncote{
+    float: left;
+    width:110px;
+    height:110px;
+}
+#principale_image_defaut{
+    width:345px;
+    height:420px;
+}
+#principale_image{
+    max-width:345px;
+    max-height:420px;
+}

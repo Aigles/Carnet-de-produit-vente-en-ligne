@@ -7,10 +7,9 @@
 	}
 	else
 	{
-		//dans le cas contraire on initialise la page d'aceuille par defaut
-		$p = 'home';
+		//dans le cas contraire on initialise la page d'acceuil par defaut
+		$p = 'acceuil';
 	}
-
 
 	//ob_start pour executer la pages comme dans la variable
 	ob_start();
@@ -18,12 +17,12 @@
 	//un switch pour tout controle dans notre index.php
 	switch ($p)
 	{
-		case 'log':
+		case 'connection':
 			# code...
 			require('login.php');
 			break;
 
-		case 'home':
+		case 'acceuil':
 			# code...
 			require('home.php');
 			break;
@@ -43,6 +42,26 @@
 
 		case 'detail':
 			require('product_details.php');
+			break;
+
+		case 'profile':
+			require('profil.php');
+			break;
+
+		case 'modification':
+			require('modchanger.php');
+			break;
+
+		case 'paypal':
+			require 'paypal/index.php';
+			break;
+
+		case 'success':
+			require 'paypal/success.php';
+			break;
+
+		case 're-s-et':
+			require('emailverification.php');
 			break;
 
 	default:

@@ -49,7 +49,7 @@
     <div class="navbar " role="navinavbar-defaultgation" id="navbar">
         <div class="navbar-inner">
             <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">Menu</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -75,7 +75,7 @@
             <div class="btn-group pull-right theme-container animated tada">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-tint"></i><span
-                        class="hidden-sm hidden-xs"> Change Theme / Skin</span>
+                        class="hidden-sm hidden-xs"> Changer le designe : </span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" id="themes">
@@ -118,18 +118,20 @@
                         <li class="nav-header"> Main</li>
                         <li><a class="ajax-link" href="index.php?p=home"><i class="glyphicon glyphicon-home"></i><span> Tableau de Bord</span></a>
                         </li>
+                        <li><a class="ajax-link" href="index.php?p=historic"><i class="glyphicon glyphicon-list-alt"></i><span> Historique </span></a>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>Inventaire</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="index.php?p=creerRole">Voir l'inventaire</a></li>
+                                <li><a href="index.php?p=listerRole">Lister vetements vendus</a></li>
+                            </ul>
+                        </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-gift"></i><span>Vetement</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="index.php?p=creerVetement">Ajouter Vetement</a></li>
                                 <li><a href="index.php?p=listerVetement">Lister Vetement</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Commande</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="index.php?p=creerCommande">Passer une commande</a></li>
-                                <li><a href="index.php?p=listerCommande">Lister Commande</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
@@ -139,6 +141,14 @@
                                 <li><a href="index.php?p=listerCategorie">Lister Categorie</a></li>
                             </ul>
                         </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span>Commande</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <!-- <li><a href="index.php?p=creerCommande">Passer une commande</a></li> -->
+                                <li><a href="index.php?p=listerCommande">Lister Commande</a></li>
+                            </ul>
+                        </li>
+                        
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span>Personnels</span></a>
                             <ul class="nav nav-pills nav-stacked">
@@ -157,7 +167,7 @@
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-edit"></i><span>Paiements</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="index.php?p=creerPaiement">Effectuer Paiement</a></li>
+                                <!-- <li><a href="index.php?p=creerPaiement">Effectuer Paiement</a></li> -->
                                 <li><a href="index.php?p=listerPaiement">Lister Paiement</a></li>
                             </ul>
                         </li>
@@ -168,13 +178,13 @@
                             </ul>
                         </li>
 
-                        <li class="accordion">
+                        <!-- <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-lock"></i><span>Permissions</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="index.php?p=creerPermission">Creer Permission</a></li>
                                 <li><a href="index.php?p=listerPermission">Lister Permissions</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>Role</span></a>
                             <ul class="nav nav-pills nav-stacked">
@@ -183,13 +193,15 @@
                             </ul>
                         </li>
 
-              <li class="accordion">
+                        
+
+              <!-- <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span>User</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="index.php?p=creerUser">Ajouter User</a></li>
                                 <li><a href="index.php?p=listerUser">Lister User</a></li>
                             </ul>
-                        </li>
+                        </li> -->
 
 
                     </ul>
@@ -225,7 +237,7 @@
 </div>
 
 <!-- chart libraries start -->
-
+<script src="js/Produit/creerProduit.js"></script>
 <script src="bower_components/flot/excanvas.min.js"></script>
 <script src="bower_components/flot/jquery.flot.js"></script>
 <script src="bower_components/flot/jquery.flot.pie.js"></script>

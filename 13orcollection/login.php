@@ -2,7 +2,12 @@
     include 'log.php';
 ?>
 
-
+<style>
+    .btn-large{
+        border-radius: 0px;
+        width:100%;
+    }
+</style>
 <div id="mainBody">
     <div class="container">
     <div class="row">
@@ -10,21 +15,20 @@
 
 <!-- Sidebar End ================================================== -->
     <div class="span12">
-    <ul class="breadcrumb">
+    <!-- <ul class="breadcrumb">
         <li><a href="index.php">Acceuil</a> <span class="divider">/</span></li>
         <li class="active">Connection</li>
-    </ul>
+    </ul>  
+    <hr class="soft"/>-->
     
-    <h3><p class="textcolors text-center"> Connection</p></h3>  
-    <hr class="soft"/>
-    
-    <div class="container" style=" margin-left: 80px;">
+    <!-- <div class="container" style=" margin-left: 80px;"> -->
+        <div class="container">
     <div class="row" >
         
-        <div class="span3"></div>
+        <div class="span4"></div>
         <div class="span4">
             <div class="well" id="save_login">
-            <h5><p class="textcolors text-center">DÉJÀ ENREGISTRÉ ?</p></h5><hr><br/>
+            <h3><p class="textcolors text-center"> Connection </p></h3> <hr><br/>
             <form method="post" class="form-vertical loginFrm">
 
                
@@ -35,14 +39,16 @@
                 </div>
               </div>
               <div class="control-group">
-                <label class="control-label" for="inputPassword1">Password</label>
+                <label class="control-label" for="inputPassword1">Mot de passe</label>
                 <div class="controls">
                   <input required type="password" class="span3"  name="password" id="inputPassword1" placeholder="Password" value="<?=$password;?>">
                 </div>
-              </div>
+              </div><br/>
               <div class="control-group">
                 <div class="controls">
-                  <button type="button" class="btn btn-warning block" onclick="connection();">Connecter </button> <a href="forgetpass.html">Forget password?</a>
+                  <button type="button" class="btn btn-warning btn-large block" onclick="connection();">Connecter </button> 
+                  <a  href="index.php?p=re-s-et"><p class="text-center textcolors">Mot de passe oublié?</p></a><br/>
+                  <a  href="index.php?p=inscription"><p class="text-center textcolors">Creer un compte</font></p></a>
                 </div>
               </div>
             </form>
@@ -65,7 +71,7 @@
                     <p id="result-info"></p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-warning" data-dismiss="modal">Fermer</a>
                     
                 </div>
             </div>

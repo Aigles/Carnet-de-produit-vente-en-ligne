@@ -29,7 +29,7 @@ $(document).ready(function(){
                 color : 'red'
             }); 
         }else{
-            $(this).addClass('glyphicon glyphicon-ok');
+            $(this).addClass('icon-ok');
             $(this).css({
                 borderColor : 'green',
                 color : 'green'
@@ -70,32 +70,31 @@ function creerUtilisateur(){
         //alert("Mot de passe differents");
     }
     else{
-        jQuery('#result-nom').hide();
         data = JSON.stringify(user);
         console.log(data);
-        var url = "http://localhost:1230/api/app/ceerUtilisateur";
+        var url = Fullurl+"ceerUtilisateur";
         sendData(data, url);
 }
+
 }
 
 function sendData(data, url) {
   $.ajax({
     url: url,
     type: "POST",
-    dataType: "json",
+    dataType: "json", 
     crossDomain: true,
     data: data, 
     Accept : "application/json;charset=UTF-8"
     }).done(function (data) {
-
+        jQuery('#result-title').html('<div class="alert alert-warning" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
+        jQuery('#result-info').html('<h4><p class="text-center">'+data.status+'</p></h4>');
+        jQuery('#myModal').modal('show').delay(10);
         
-    jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
-    jQuery('#result-info').html('<h4><p class="text-center">'+data.status+'</p></h4>');
-    jQuery('#myModal').modal('show');
-
+    // window.location = "index.php?p=connection";
   }).fail(function (error) {
     
-    jQuery('#result-title').html('<div class="alert alert-success" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
+    jQuery('#result-title').html('<div class="alert alert-warning" role="alert"><p class="text-center">Resultat de l\'opération</p></div>');
     jQuery('#result-info').html('<h4><p class="text-center">Echec!!! Verifiez votre Connection...</p></h4>');
     jQuery('#myModal').modal('show');
 

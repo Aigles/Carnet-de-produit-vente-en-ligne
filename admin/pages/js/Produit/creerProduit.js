@@ -2,7 +2,7 @@ function previewFile(prev, fil) {
   var preview = document.querySelector(prev + ' img'); //selects the query named img
   var file = document.querySelector(fil + ' input[type=file]').files[0]; //sames as here
   var reader = new FileReader();
-  if (file.size <= 30720) {
+  if (file.size <= 40720) {
     reader.onloadend = function () {
       preview.src = reader.result;
     }

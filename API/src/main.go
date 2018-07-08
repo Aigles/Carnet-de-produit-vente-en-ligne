@@ -10,10 +10,13 @@ import (
 	"models/usersModels"
 	"models/statistique"
 	"models/reference_livraisonModels"
+	"models/historic"
 	"Configuration"
 )
 
 func main() {
+	//mail.Send("bellunetabithamegane@gmail.com"," tests de email");
+	
 	newapp := iris.New()
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.
@@ -237,6 +240,34 @@ func main() {
 
 	})
 
+	//modifier password un utilisateur
+	app.Post("/modifier/passwordUtilisateur", func(ctx iris.Context) {
+		var users usersModels.Users 
+
+		ctx.ReadJSON(&users)
+	  
+	   ctx.JSON( usersModels.UpdateUserspasswordbyid(&users))
+
+	})
+
+ //modifier password un utilisateur
+ app.Post("/oublier/passwordUtilisateur", func(ctx iris.Context) {
+	var users usersModels.Users  
+
+	ctx.ReadJSON(&users)
+  
+  // ctx.JSON( usersModels.UpdateUserspasswordbyemail(&users))
+  ctx.JSON(usersModels.Sendusersemail(&users))
+
+})
+	//deconnecter un utilisateur
+	app.Get("/deconnecter/Utilisateur/{id:int}", func(ctx iris.Context) {
+		userID, _ := ctx.Params().GetInt("id")
+
+		usersModels.UpdateUsersdeconnection(userID)
+
+	})
+	
 	//Routage pour les differents roles
 	app.Post("/creerRolle", func(ctx iris.Context) {
 		var role rolleModels.Roles 
@@ -288,7 +319,15 @@ func main() {
 		ctx.JSON(usersModels.Connection(&conn)) 
 	
 	 })
-	 
+	 //connexion 
+	app.Post("/connexionadmin", func(ctx iris.Context) {
+        var conn usersModels.Users 
+
+		ctx.ReadJSON(&conn)
+
+		ctx.JSON(usersModels.Connectionadmin(&conn))
+	})
+
 	 app.Get("/statistique", func(ctx iris.Context) {
 
 		ctx.JSON(statistique.Statistique())
@@ -342,6 +381,14 @@ func main() {
 
 		ctx.JSON(reference_livraisonModels.DeleteReference_livraisonById(reference_livraisonID))
 	})
+
+		//supprimer un utilisateur
+		app.Get("/historic", func(ctx iris.Context) {
+	
+	
+			ctx.JSON(historic.Allhistoric())
+		})
+	
 
 	newapp.Run(iris.Addr(":1230"))
 }         

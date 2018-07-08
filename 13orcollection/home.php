@@ -1,37 +1,47 @@
 
+<?php 
+//require_once $_SERVER['DOCUMENT_ROOT'].'/13orcollection/core/init.php';
+	define('ROOT', __DIR__);
+
+	require_once ROOT.'/core/init.php'; 
+	// $password = 'password';
+	// $hashed = password_hash($password, PASSWORD_DEFAULT);
+	// echo $hashed;
+	//echo $_SESSION['SBUser'];
+?>
 <div id="carouselBlk">
 	<div id="myCarousel" class="carousel slide">
 		<div class="carousel-inner" >
 		  <div class="item active">
 		  <div class="container">
-			<a href="#"><img style="width:100%" src="themes/images/carousel/1.png"/></a>
+			<a ><img style="width:100%" src="themes/images/carousel/1.png"/></a>
 		  </div>
 		  </div>
 		  <div class="item">
 		  <div class="container">
-			<a href="#"><img style="width:100%" src="themes/images/carousel/2.png"/></a>
+			<a ><img style="width:100%" src="themes/images/carousel/2.png"/></a>
 		  </div>
 		  </div>
 		  <div class="item">
 		  <div class="container">
-			<a href="#"><img style="width:100%" src="themes/images/carousel/3.png"/></a>
+			<a ><img style="width:100%" src="themes/images/carousel/3.png"/></a>
 			
 		  </div>
 		  </div>
 		   <div class="item">
 		   <div class="container">
-			<a href="#"><img style="width:100%" src="themes/images/carousel/4.png"/></a>
+			<a ><img style="width:100%" src="themes/images/carousel/4.png"/></a>
 		   
 		  </div>
 		  </div>
 		   <div class="item">
 		   <div class="container">
-			<a href="#"><img style="width:100%" src="themes/images/carousel/5.png"/></a>
+			<a ><img style="width:100%" src="themes/images/carousel/5.png"/></a>
 		  </div>
 		  </div>
 		   <div class="item">
 		   <div class="container">
-			<a href="#"><img style="width:100%" src="themes/images/carousel/6.png" /></a>
+			<a ><img style="width:100%" src="themes/images/carousel/6.png" /></a>
 		  </div>
 		  </div>
 		</div>
@@ -48,7 +58,7 @@
 		<!-- <div class="span12"> -->
 		<div class="span9">		
 			<div class="well well-small">
-			<h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 10+ produits fournis</small></h4>
+			<!-- <h4 class="text-center">Produits proposés </h4><h4><small class="pull-right"> 10+ produits fournis</small></h4> -->
 			<div class="row-fluid">
 			<div id="featured" class="carousel slide">
 			<div class="carousel-inner" >
@@ -63,28 +73,21 @@
 				<div class="item"><ul class="thumbnails" id="recent_produit" >
         
 				</ul></div>
-			
 				<div class="item"><ul class="thumbnails" id="recent_produit_2" >
-        
+        			
+
 				</ul></div>
 			   <!-- <div class="item">
 			  <ul class="thumbnails" >
-				
-				
-			
-		
-				
-			
-			
-				
-			  </ul>
-			  </div> -->
+			 </div> -->
 			  </div>
 			  <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
 			  <a class="right carousel-control" href="#featured" data-slide="next">›</a>
 			  </div>
 			  </div>
 		</div>
+
+		<!-- <div class="modal-backdrop fade in"></div> -->
 		 
 	</div>
 <!-- Sidebar à droite ================================================== -->
@@ -94,9 +97,11 @@
 			
 		
 		</div>
-		<h4 class="text-center">Derniers produits </h4>
+		<h2 class="text-center">Derniers produits </h2><hr>
 			  <ul class="thumbnails" id="List_produit"></ul>
 	</div>
 <?php include 'each_product.php'; ?>
 </div>
+
+    <script src="themes/js/listerRecherche.js"></script>
   

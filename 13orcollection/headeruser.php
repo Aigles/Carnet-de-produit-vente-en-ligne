@@ -1,4 +1,4 @@
-
+<script src="jquery.confirm.js"></script>
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -22,7 +22,7 @@
   #result 
   {
    margin:0;
-   margin-top:-6px;margin-left: 79px;
+   margin-top:-6px;
    position: absolute;
    /*background-color: cornsilk;*/
    width: 100%;
@@ -36,6 +36,7 @@
    font-style: italic; 
    font-weight: bold; 
    line-height: 20px;
+   margin-left: 50px;
   }
   .link-class{
     padding: 4px;
@@ -66,8 +67,8 @@
 	<span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <a class="brand" href="index.php">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
-	<div class="form-inline navbar-search" method="post" >
+    <a class="brand" href="index.php?p=acceuil">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
+	<div class="form-inline brand navbar-search" method="post" >
 		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off"/>
    		<ul class="list-group" id="result"></ul>
 	  	<!-- <select class="srchTxt" id="search">
@@ -85,20 +86,60 @@
 	 
     </ul> -->
     <ul id="topMenu" class="nav pull-right">
-   <li class="bold"><a href="index.php?p=home"><span class="textcolors icon-home"></span>Accueil</a></li>
+   <li class="bold"><a href="index.php?p=acceuil"><span class="textcolors icon-home"></span>Accueil</a></li>
    <li><a href="index.php?p=panier"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
    <li class="username"><a href="index.php?p=profile"><span class="textcolors icon-user"></span>Profile</a></li>
-   <li ><a style="color: #faa732; cursor: default;">|</a></li>
+   <!-- <li ><a style="color: #faa732; cursor: default;">|</a></li> -->
    <li class="clientname"></li>
-   <li class="deconnecter"><a href="index.php?p=home" onclick="sessionStorage.removeItem('id_user_vente_en_ligne');sessionStorage.removeItem('token_vente_en_ligne');location.reload();"><span class="badge badge-warning">Deconnecter</span></a></li>
+   <li class="deconnecter"><a style="cursor: pointer;" id="modalOption" ><span class="badge badge-warning">Deconnecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
-   <li class=""><a href="contact.html">Contact</a></li> -->
+   <li class=""><a href="contact.html">Contact</a og43w></li> -->
 
    
     </ul>
-  </div>
+  </div>  
 </div>
 
 <script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/listerRecherche.js"></script>
+<script>
+function deconnection() {
+  var id= sessionStorage.id_user_vente_en_ligne;
+
+ $.ajax({
+    url: Fullurl+"deconnecter/Utilisateur/"+id,
+    type: "GET",
+    dataType: "json", 
+    crossDomain: true,
+    Accept : "application/json;charset=UTF-8"
+    }).done(function (data) {
+      sessionStorage.removeItem('id_user_vente_en_ligne');
+      sessionStorage.removeItem('token_vente_en_ligne');
+      location.reload();
+    // window.location = "index.php?p=connection";
+  }).fail(function (error) {
+  
+  });
+
+ 
+}
+
+    
+  $("#modalOption").confirm({
+    text: "Souhaitez vous vraiment vous deconnecter?",
+    modalOptionsBackdrop: 'static',
+    modalOptionsKeyboard: false,
+    confirm: function() {
+        // alert("vous avez deconnecte.");
+        // location.reload('index.php')
+    deconnection();
+  
+    },
+    cancel: function() {
+        // alert("vous avez annule.");
+    }
+});
+
+</script>

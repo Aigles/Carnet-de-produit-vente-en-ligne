@@ -1,4 +1,5 @@
 //partie responsable de l'afficharge des differentes rolles
+$(document).ready(function () {
 $.ajax({ url: fullUrl+"utilisateur",
     type: 'GET', 
     dataType: 'json', 
@@ -38,7 +39,7 @@ $.ajax({ url: fullUrl+"utilisateur",
             $('.tableUser > tbody').append(dataTable_tr);
         });
 
-        $('.tablecategorie').dataTable({
+        $('.tableUser').dataTable({
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
@@ -47,11 +48,33 @@ $.ajax({ url: fullUrl+"utilisateur",
             'autoWidth'   : false,
             "sPaginationType": "bootstrap",
             "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
+
+                    "sProcessing":     "Traitement en cours...",
+                    "sSearch":         "Rechercher&nbsp;:",
+                    "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+                    "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
+                    "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    "sInfoPostFix":    "",
+                    "sLoadingRecords": "Chargement en cours...",
+                    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+                    "oPaginate": {
+                        "sFirst":      "Premier",
+                        "sPrevious":   "Pr&eacute;c&eacute;dent",
+                        "sNext":       "Suivant",
+                        "sLast":       "Dernier"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+                        "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+                    }
+                
             },
             "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>"
 
         });
-
+                       
+    });
                 
     });

@@ -1,4 +1,4 @@
-
+<script src="jquery.confirm.js"></script>
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -25,7 +25,7 @@
   #result 
   {
    margin:0;
-   margin-top:-6px;margin-left: 79px;
+   margin-top:-6px;
    position: absolute;
    /*background-color: cornsilk;*/
    width: 100%;
@@ -39,6 +39,7 @@
    font-style: italic; 
    font-weight: bold; 
    line-height: 20px;
+   margin-left: 50px;
   }
   .link-class{
     padding: 4px;
@@ -69,20 +70,24 @@
   <span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <a class="brand" href="index.php?p=home">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
-	<div class="form-inline navbar-search" method="post" >
-		<input id="srchFld" class="srchFld" type="text" placeholder="Rechercher..." autocomplete="off" />
+    <a class="brand" href="index.php?p=acceuil">13 Or Collection<!-- <img src="themes/images/" alt=""/> --></a>
+  
+	<div class="form-inline brand navbar-search" method="post" >
+		<input id="srchFld" class="srchFld" name="q" type="text" placeholder="Rechercher..." autocomplete="off" />
    		<ul class="list-group" id="result"></ul>
 	  	<!-- <select class="srchTxt" id="search">
 			<option>TOUT</option>
 		</select>  
 	  <button type="submit" id="submitButton" class="btn btn-warning">Recherche</button> -->
+    
 	</div>
+  
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="index.php?p=home">Accueil</a></li>
-	 <li><a href="index.php?p=panier"><span class="badge total-count"></span></span><span class="icon-shopping-cart"></span>Panier</a></li>
+	 <li class="bold"><a href="index.php?p=acceuil"><span class="textcolors icon-home"></span>Accueil</a></li>
+   <li><a href="index.php?p=panier"><span class="badge badge-warning total-count"></span><span class="textcolors icon-shopping-cart"></span>Panier</a></li>
+   
 	 <li class="inscrire"><a href="index.php?p=inscription">Inscrire</a></li>
-	 <li class="connecter"><a href="index.php?p=log"><span class="badge badge-warning">Connecter</span></a></li>
+	 <li class="connecter"><a href="index.php?p=connection" ><span class="badge badge-warning">Connecter</span></a></li>
 
    <!-- <li class=""><a href="special_offer.html">Offres</a></li>
    <li class=""><a href="normal.html">Livraison</a></li>
@@ -92,6 +97,9 @@
     </ul>
   </div>
 </div>
-
+<a class="list-group " id="result"></a>
 <!-- ce script affichera le panier a Zero dans le menu et faire tout le traitement -->
 <script src="themes/js/js/panier.js"></script>
+    <script src="themes/js/listerRecherche.js"></script>
+
+

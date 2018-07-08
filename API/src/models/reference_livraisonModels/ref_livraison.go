@@ -9,10 +9,11 @@ import (
 
 
 type Reference_livraison struct{
-	Id               int         `json:"id"`
+	Id              int               `json:"id"`
+	Nom             string            `json:"nom"`
 	Date_livraison  time.Time         `json:"date_livraison"`
-	Numero          int               `json:"numero"`
-	Rue            string             `json:"rue"`
+	Adresse          int              `json:"adresse"`
+	Email            string           `json:"email"`
 	Ville          string             `json:"ville"`
 	Pays           string             `json:"pays"`
 	CodePostal     string             `json:"codepostal"`
@@ -37,7 +38,7 @@ if c==nil{
 // c.Date_livraison=time.Now().UTC();
 // }
 
-res, err :=Configuration.Db().Exec("INSERT INTO reference_livraison (date_livraison,numero,rue,ville,pays,codePostal,telephone) VALUES (?,?,?,?,?,?,?);",c.Date_livraison,c.Numero,c.Rue,c.Ville,c.Pays,c.CodePostal,c.Telephone)//.Scan(&c.Id)
+res, err :=Configuration.Db().Exec("INSERT INTO reference_livraison (nom,date_livraison,adresse,email,ville,pays,codePostal,telephone) VALUES (?,?,?,?,?,?,?,?);",c.Nom,c.Date_livraison,c.Adresse,c.Email,c.Ville,c.Pays,c.CodePostal,c.Telephone)//.Scan(&c.Id)
 
 if err==nil{
 	id,_:=res.LastInsertId()
@@ -61,7 +62,7 @@ func FindReference_livraisonById(id int) *Reference_livraison{
 	var reference_livraison Reference_livraison 
  
 	row:=Configuration.Db().QueryRow("SELECT * FROM reference_livraison WHERE idReference_livraison=?;",id)
-	err:= row.Scan(&reference_livraison.Id,&reference_livraison.Date_livraison,&reference_livraison.Numero,&reference_livraison.Rue,&reference_livraison.Ville,&reference_livraison.Pays,&reference_livraison.CodePostal,&reference_livraison.Telephone)
+	err:= row.Scan(&reference_livraison.Id,&reference_livraison.Nom,&reference_livraison.Date_livraison,&reference_livraison.Adresse,&reference_livraison.Email,&reference_livraison.Ville,&reference_livraison.Pays,&reference_livraison.CodePostal,&reference_livraison.Telephone)
 	 
 	if err!=nil{
 		fmt.Println(err)
@@ -77,7 +78,7 @@ func FindReference_livraisonById(id int) *Reference_livraison{
 func AllReference_livraison() *reference_livraison {
 	var reference_livraison reference_livraison 
 
-	rows, err :=Configuration.Db().Query("SELECT reference_livraison.idReference_livraison, date_livraison,numero,rue,ville,pays,codePostal,telephone FROM reference_livraison")
+	rows, err :=Configuration.Db().Query("SELECT reference_livraison.idReference_livraison, nom, date_livraison,adresse,email,ville,pays,codePostal,telephone FROM reference_livraison")
 	//fmt.Println("after rows")
 	if err!=nil{
 		fmt.Println(err)
@@ -89,7 +90,7 @@ func AllReference_livraison() *reference_livraison {
 	for rows.Next(){
 		var c Reference_livraison 
 	
-		err := rows.Scan(&c.Id,&c.Date_livraison,&c.Numero,&c.Rue,&c.Ville,&c.Pays,&c.CodePostal,&c.Telephone)
+		err := rows.Scan(&c.Id,&c.Nom,&c.Date_livraison,&c.Adresse,&c.Email,&c.Ville,&c.Pays,&c.CodePostal,&c.Telephone)
 		
 		fmt.Printf("before log")
 		if err !=nil{
@@ -115,7 +116,7 @@ func UpdateReference_livraison(reference_livraison *Reference_livraison)Message{
 	fmt.Println(err)
 	}
 
-	_, err = stmt.Exec(&reference_livraison.Id,&reference_livraison.Date_livraison,&reference_livraison.Numero,&reference_livraison.Rue,&reference_livraison.Ville,&reference_livraison.Pays,&reference_livraison.CodePostal,&reference_livraison.Telephone)
+	_, err = stmt.Exec(&reference_livraison.Id,&reference_livraison.Date_livraison,&reference_livraison.Adresse,&reference_livraison.Email,&reference_livraison.Ville,&reference_livraison.Pays,&reference_livraison.CodePostal,&reference_livraison.Telephone)
 
 	if err==nil{
 		message.Code=200

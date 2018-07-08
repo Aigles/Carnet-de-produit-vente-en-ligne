@@ -14,6 +14,7 @@ $.ajax({
   // $('#nb-vendu').val(data.nbre_vendu)
   $('#nb-poduit').val(data.nbre_en_stock);
   $('#nb-rabais').val(data.rabais);
+  fullcategorie('nb-categorie', parseInt(data.categorie_id));
   if (data.activer == 1)
   $('#toggle-two').prop('checked', 'true')
   if (data.caracteristic != null) {
@@ -123,5 +124,29 @@ function updateProduit(data, url)
         console.log("Error: " + error);
         console.log("xhr: " + JSON.stringify(xhr));
       }
+  });
+}
+
+function fullcategorie(chaine, id = 1) {
+  var items = [
+  ];
+  var url = fullUrl + 'categorie'
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    crossDomain: true,
+  }).done(function (data) {
+    var items = [
+    ];
+    $.each(data, function (key, personnel) {
+      var mon = '';
+      if (personnel.id == id)
+      mon = 'selected'
+      personnels = '<option  ' + mon + ' value="' + personnel.id + '">' + personnel.type + '</option>';
+      items.push(personnels);
+    });
+    $('#' + chaine).append(items);
+    console.log(items);
   });
 }

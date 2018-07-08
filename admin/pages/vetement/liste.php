@@ -18,7 +18,6 @@
                         <tr>
                             <th>Nom</th>
                             <th>Description</th>
-                            <th>Nombre Like</th>
                             <th>Code Article</th>
                             <th>Nombre en stock</th>
                             <th>Rabais</th>

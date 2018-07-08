@@ -1,4 +1,4 @@
-<script src="js/User/create.js"></script>
+<script src="js/Personnel/create.js"></script>
 <div>
     <ul class="breadcrumb">
        <li>
@@ -49,16 +49,16 @@
                 
                         </div>
                         <div class="box col-md-6">  
-                             <div class="form-group">
-                                <label for="exampleInputPassword1">Avatar</label>
-                                <input type="text" class="form-control required" required id="user-avatar" placeholder="Choisir un avatar">
+                        <div class="form-group" style="">
+                        <div class="col-md-12 " id="divimg-row"><img class="img-rounded img-responsive" id="start-row" src="img/images.png" style="height:130px;" ></div>
+                        <div class="col-md-12 " id="diva-row"><input class="btn btn-primary" id="start-row" required type="file" name="file" onchange="previewFile('#divimg-row','#diva-row')" style="width:150px;" accept=".jpg, .jpeg, .png"  textcontent="Choisir une image"></br>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
+                              
                                 <input type="password" class="form-control required" required id="user-password" placeholder="Entrer le mot de passe">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Confirmer mot de passe</label>
+                         
                                 <input type="password" class="form-control required" required id="user-cPassword" placeholder="Confirmer le mot de passe">
                             </div>                            
                         </div>

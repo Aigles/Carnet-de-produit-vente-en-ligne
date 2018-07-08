@@ -42,10 +42,10 @@
                             </div>                   
                         </div>
                         <div class="box col-md-6">  
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="exampleInputPassword1">Nombre de Vetements en stock</label>
                                 <input type="number" class="form-control required" id="nb-poduit" placeholder="Entrer le nombre de Vetements en stock">
-                            </div>
+                            </div> -->
                                   <div class="form-group">
                                 <label for="exampleInputPassword1">Rabais(%) </label>
                                 <input type="number" class="form-control required" min=0 id="nb-rabais" placeholder="Entrer un Rabais(%)">

@@ -9,10 +9,11 @@ var Qte_Minimum = true;
 // la quantité des lots
 var Qte_Minimum_Valeur = 1; 
 
+
 // les messages
-var txt_qte_minimum_bad = "<font color='red'>Attention les quantités ne sont pas correctes</font>";
-var txt_qte_minimum_ok = "<font color='green'>Le nombre de vetements commandés est correct</font>";
-var txt_qte_minimum_defaut = "La quantite de vetements a commander doit etre supérieure a zéro (0)";
+var txt_qte_minimum_bad = "<div class='alert alert-warning text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='red'>Attention les quantités ne sont pas correctes</font></b></div>";
+var txt_qte_minimum_ok = "<div class='alert alert-info text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><font color='#3a87ad'>N'oubliez pas de verifier votre panier avant de commander un produit</font></b></div>";
+var txt_qte_minimum_defaut = "<div class='alert alert-danger text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>La quantite de vetements a commander doit etre supérieure a zéro (0)</b></div>";
 
 // ne pas modifier la suite sauf si vous désirez modifier le code
 //Dans cette partie nous faisons la gestion du panier, 
@@ -36,13 +37,16 @@ this.image = image;
 
 function savepanier() {
 sessionStorage.setItem('MonPanier', JSON.stringify(panier));
+
 jQuery('#modal_errors').html("");
 var error = '<div class=\'alert alert-info text-center\'><a href=\'#\' class=\'close\' data-dismiss=\'alert\' aria-label=\'close\'>&times;</a><b>Vous avez ajoute un nouveau vetement au panier !!!</b></div>';
 jQuery('#modal_errors').html(error);
+jQuery('#modal_errorss').html(error);
+recupererSession();
 }
 
 function loadpanier() {
-panier = JSON.parse(sessionStorage.getItem('MonPanier'));
+panier = JSON.parse(sessionStorage.getItem('MonPanier')); 
 }
 if (sessionStorage.getItem("MonPanier") != null) {
 loadpanier();
@@ -150,7 +154,7 @@ function afficherpanier() {
   var output = "";
 
   if(panierArray.length==0){
-    $('#zerocommande_panier').html("Votre panier est vide pour le moment.</br>Mais vous avez des vetements mis de côté pour un achat ultérieur. Pour en acheter un ou plus maintenant, cliquez sur Mettre dans le panier au bas du vetement.");
+    $('#zerocommande_panier').html("<div class='alert alert-default text-center' style='font-size: 20px; line-height: 188%;'>PANIER VIDE</div>");
     $('.total-count').html(MonPanier.totalCount());
     return false;
   }
@@ -159,19 +163,21 @@ function afficherpanier() {
   for(var i in panierArray) {
 
    
-    output +='<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="' + panierArray[i].image + '" style="width: 72px; height: 72px;"> </a><div class="media-body">'
-            +'<h4 class="media-heading"><a href="#">' + panierArray[i].nom + '</a></h4>'
-           +'<h5 class="media-heading"> by <a href="#">Brand name</a></h5></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"> <div>'
+    output +='<tr><td class="col-sm-8 col-md-6" style="line-height: 80px;"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="' + panierArray[i].image + '" style="max-width: 72px; height: 72px;"> </a><div class="media-body">'
+            +'<h5 class="media-heading "><span style="line-height: 80px;">' + panierArray[i].nom.substr(0, 10) + '...</span></h5>'
+           // +'<h5 class="media-heading text-center"> by <a href="#">Brand name</a></h5>'
+           +'</div></div></td><td class="col-sm-1 col-md-1 text-center" style="line-height: 80px;"> <div>'
       + '<input type="number" min="1" width="5%" class="form-control item-count" data-nom="' + panierArray[i].nom + '" value="' + panierArray[i].count + '">'
-      + '</div></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1">'
-      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"> X </button></td></tr>'
+      + '</div></td><td class="col-sm-1 col-md-1 text-center" style="line-height: 80px;"><strong>HTG '+ panierArray[i].prix.toFixed(2) + '</strong></td><td class="col-sm-1 col-md-1 text-center" style="line-height: 80px;"><strong>HTG ' + panierArray[i].total + '</strong></td><td align="center" class="col-sm-1 col-md-1" style="line-height: 80px;">'
+      +'<button type="button" class="btn btn-warning effacer-item" data-nom="' + panierArray[i].nom + '"><span class="icon-trash"></span></button></td></tr>'
 
  
   }
 
-  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total</h3></td><td class="text-right" ><h3>$<strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
-  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-warning">Vider le panier</button>  </td><td><span>  </span><button type="button" class="btn btn-default"><span class="icon-shopping-cart"></span> <a href="index.php">Continuer vos achats</a></button></td><td>';
-  output +='<button type="button" class="btn btn-success"> Passer la commande <span class="icon-shopping-play"></span></button></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td>   </td><td><h3>Total :</h3></td><td class="text-right" ><h3>HTG <strong class="total-panier" id="prix_total_1">31.53</strong></h3></td></tr>';
+  output +='<tr><td>   </td><td>   </td><td> <button type="button" class="clear-panier btn btn-default btn-carre"><span class="icon-trash"></span> Vider le panier</button>  </td><td><span>  </span><a href="index.php"><button type="button" class="btn btn-default btn-carre"><span class="icon-shopping-cart"></span> Continuer vos achats</button></a></td><td>';
+  output +=' <button type="button" class="btn btn-default btn-large" id="paypal"  ><span class="icon-ok"></span> Passer la commande <span class="icon-shopping-play"></span></button></td></tr>';
+
   
   $('.total-count').html(MonPanier.totalCount());
 
@@ -187,7 +193,7 @@ function afficherpanier() {
   }
   else if ((Qte_Minimum == true) && (Number.isInteger(MonPanier.totalCount() / Qte_Minimum_Valeur) == true) && (MonPanier.totalCount() != 0))
   {
-  document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_ok;
+  //document.getElementById('qte_minimum_report').innerHTML = txt_qte_minimum_ok;
   }
   else if (Qte_Minimum == true)
   {
@@ -231,3 +237,42 @@ $('.show-panier').on("change", ".item-count", function(event) {
 });
 
 afficherpanier();
+
+
+$('#paypal').click(function(){
+
+    var donnee = JSON.parse(sessionStorage.getItem('MonPanier'));
+    var data = [];
+    var item = "";
+    var produit = {};
+    for(i in donnee){
+        delete donnee[i]['image'];
+        item = donnee[i];
+        data.push(item);
+    }
+
+    data = JSON.stringify(data);
+    
+    $.post("paypal/index.php", {"data[]":data});
+    window.location.replace('index.php?p=paypal');
+      
+
+
+  
+});
+
+function recupererSession() {
+  /*var chaine_json_panier="baby"//sessionStorage.getItem('MonPanier');
+  $.ajax({ 
+    url: 'themes/js/js/fichier.php',
+    data:"chaine_json_panier="+chaine_json_panier,
+    dataType: 'json', 
+    Accept : "application/json;charset=UTF-8"
+    })
+.done(function(data) { 
+alert(data);
+}).error(function(data) { 
+alert("hhj");
+});*/
+
+}

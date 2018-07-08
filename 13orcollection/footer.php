@@ -1,9 +1,13 @@
 	<div  id="footerSection">
-	<div class="container">
+	<div class="container">		
+			
 		<div class="row">
+			<span style="color: #faa732;"></p>
+			</span>
 			<div class="span3">
 				<h5>COMPTE</h5>
-				<a href="#">VOTRE COMPTE</a>
+				<a href="">jowjeifjowijoifjepojfpowpgjewpojopkwejgpokjwpogjopejgpwoijgoiejgpowjepgjepoj</a>
+				<!-- <a href="#">VOTRE COMPTE</a> -->
 				<a href="#">INFORMATION PERSONNEL</a> 
 				<a href="#">ADRESSES</a> 
 				<a href="#">RABAIS</a>  
@@ -11,7 +15,7 @@
 			 </div>
 			<div class="span3">
 				<h5>INFORMATION</h5>
-				<a href="contact.html">CONTACTE</a>  
+				<a href="#">CONTACTE</a>  
 				<a href="inscription.php">ENREGISTREMENT</a>  
 				<a href="#">AVERTISSEMENT LEGAL</a>  
 				<a href="#">TERMES ET CONDITIONS</a> 
@@ -27,7 +31,7 @@
 			 </div>
 			<div id="socialMedia" class="span3 pull-right">
 				<h5>RESEAUX SOCIAUX</h5>
-				<a href="#"><img width="60" height="60" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a>
+				<a href="#"><img width="50%" height="50%" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a>
 				<a href="#"><img width="60" height="60" src="themes/images/twitter.png" title="twitter" alt="twitter"/></a>
 				<a href="#"><img width="60" height="60" src="themes/images/youtube.png" title="youtube" alt="youtube"/></a>
 			 </div> 

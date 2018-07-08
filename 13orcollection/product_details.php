@@ -1,4 +1,12 @@
+<style>
+	
+	.btn-large{
+        border-radius: 0px;
+        width:25%;
+        text-shadow: none;
+    }
 
+</style>
 <div id="mainBody">
 	<div class="container">
 		<div class="row">
@@ -12,15 +20,16 @@
 	
 	</div>
 </div>
-	</div>
+<!-- 	</div>
 </div>
 </div> </div>
-</div>
+</div> -->
 <!-- MainBody End ============================= -->
 <!-- =========== Footer ===================================================== -->
 
 
     <script src="themes/js/detail.js"></script>
+    <script src="themes/js/listerRecherche.js"></script>
 
 
 
